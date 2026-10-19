@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <title>Spectacast</title>
+  <rect width="512" height="512" rx="112" fill="#111318"/>
+  <g transform="translate(-10 4)">
+    <path d="M290 116 H252 A68 68 0 0 0 252 252 H260 A68 68 0 0 1 260 388 H196" fill="none" stroke="#f4f1ea" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="356" cy="116" r="27" fill="#ff3b30"/>
+  </g>
+</svg>
