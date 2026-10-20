@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Spectacast</title>
-<meta name="description" content="Spectacast runs live hybrid events: the halls, the online meeting and the microphones from one control room, through connectors for the tools you already use.">
+<meta name="description" content="Spectacast runs live hybrid events: the halls, the online meeting, the microphones and live translation from one control room, through connectors for the tools you already use.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:title" content="Spectacast">
@@ -58,7 +58,7 @@
 
   h2 { font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
        color: var(--muted); margin: 0 0 22px; }
-  .modules { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .modules { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px;
           padding: 26px 24px 24px; display: flex; flex-direction: column; }
   .card h3 { margin: 0 0 4px; font-size: 24px; letter-spacing: -0.03em; }
@@ -148,6 +148,15 @@
           The PC side receives them as audio devices, next to the hall's own mics.</p>
         <div class="chips"><span>Android</span><span>iOS</span><span>Windows · macOS</span></div>
       </article>
+      <article class="card">
+        <h3><span>Spectacast</span> Translator</h3>
+        <p class="what">Live translation, as an audio source.</p>
+        <p>Takes a microphone, a hall mic or a phone through Mic, and gives back the speech
+          translated into another language on any audio output, for the hall, the meeting or a
+          headset. Director starts and stops it like any other device. Gemini today; the
+          translation service is a connector.</p>
+        <div class="chips"><span>Live speech</span><span>Web control</span><span>Windows · macOS</span></div>
+      </article>
     </div>
   </section>
 
@@ -161,6 +170,7 @@
       <li><b>NDI</b>video and audio between PCs, with a multiview to watch it all</li>
       <li><b>Spectacast Meet</b>the online meeting as isolated feeds, and who is in it</li>
       <li><b>Spectacast Mic</b>phones as mics and talkback</li>
+      <li><b>Spectacast Translator</b>live translation of a speaker into another language</li>
       <li><b>Sennheiser EW-DX</b>the hall's wireless mics: levels, battery, who is on</li>
       <li><b>Dante</b>the hall's networked audio, through Dante Virtual Soundcard on the mic hub</li>
       <li><b>MIDI</b>control surfaces and faders</li>
