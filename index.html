@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Spectacast</title>
-<meta name="description" content="Spectacast runs live hybrid events: the halls, the online meeting, the microphones and live translation from one control room, through connectors for the tools you already use.">
+<meta name="description" content="Spectacast runs live hybrid events: the halls, the online meeting, the microphones and live translation from one control room, through connectors for the tools you already use, and attendance at the doors with Pass.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:title" content="Spectacast">
@@ -66,6 +66,7 @@
   .card .what { margin: 0 0 14px; font-weight: 600; }
   .card p { margin: 0 0 18px; color: var(--muted); font-size: 16px; }
   .chips { margin-top: auto; display: flex; flex-wrap: wrap; gap: 6px; }
+  .card.wide { grid-column: 1 / -1; }
   .chips span { background: var(--chip); border-radius: 999px; padding: 3px 10px; font-size: 13px; }
 
   .intro { color: var(--muted); max-width: 60ch; margin: -6px 0 26px; }
@@ -156,6 +157,17 @@
           headset. Director starts and stops it like any other device. Gemini today; the
           translation service is a connector.</p>
         <div class="chips"><span>Live speech</span><span>Web control</span><span>Windows · macOS</span></div>
+      </article>
+      <article class="card wide">
+        <h3><span>Spectacast</span> Pass</h3>
+        <p class="what">Badges, doors and attendance.</p>
+        <p>Every badge carries a QR code. At each door a phone, a tablet or any keyboard scanner
+          reads it, and the door answers at once in green, amber or red with a sound, even when the
+          network drops: scans wait offline and are sent when it is back. Afterwards Pass tells who
+          was in which session, when and for how long, ready to export. The organiser sets the
+          categories and the rules for each event, tries them in a tester, imports attendees from
+          a spreadsheet or a registration site and prints the badges.</p>
+        <div class="chips"><span>Web scan app</span><span>Any scanner</span><span>Offline</span><span>Badge print</span><span>Rules</span><span>Live occupancy</span><span>Reports</span><span>English · Italiano</span></div>
       </article>
     </div>
   </section>
