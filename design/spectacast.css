@@ -1,0 +1,838 @@
+/*
+ * Spectacast design system: "Paper" (A), version 0.1.0
+ * One file every module copies (see design/README.md). Do not edit a module's copy:
+ * change it here, then run design/sync.sh into the module.
+ *
+ * Theme: follows the system; <html data-theme="light|dark"> forces one.
+ * Console (Director panels): add data-surface="console" on <html> or any container.
+ * Components are prefixed sc- so they never clash with a module's own classes.
+ */
+
+/* ---------- Fonts (self-hosted: hall PCs run without internet) ---------- */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('fonts/inter-latin-wght-normal.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304,
+    U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('fonts/inter-latin-ext-wght-normal.woff2') format('woff2-variations');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308,
+    U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113,
+    U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Inter Tight';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('fonts/inter-tight-latin-wght-normal.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304,
+    U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Inter Tight';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('fonts/inter-tight-latin-ext-wght-normal.woff2') format('woff2-variations');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308,
+    U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113,
+    U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 800;
+  src: url('fonts/jetbrains-mono-latin-wght-normal.woff2') format('woff2-variations');
+}
+
+/* ---------- Tokens ---------- */
+:root {
+  color-scheme: light;
+  /* Paper */
+  --sc-bg: #f4f1ea;
+  --sc-surface: #ffffff;
+  --sc-chip: #ebe6db; /* buttons, chips, quiet fills */
+  --sc-line: #dcd7cc;
+  --sc-hover: #faf8f3;
+  --sc-ink: #111318;
+  --sc-muted: #5b5f68;
+  /* Status. Red means on air / recording / you are live, nothing else. */
+  --sc-live: #cf2e25; /* text, borders, dots */
+  --sc-live-fill: #cf2e25; /* solid fill that carries --sc-on-live text */
+  --sc-live-halo: rgba(207, 46, 37, 0.18);
+  --sc-on-live: #ffffff;
+  --sc-ok: #2a6f46;
+  --sc-warn: #8a5208;
+  /* Categories (Pass categories, Program types). Never red. White text passes AA on all. */
+  --sc-cat-1: #4a6fa5;
+  --sc-cat-2: #7a4e9b;
+  --sc-cat-3: #2c6e64;
+  --sc-cat-4: #8a6d3b;
+  --sc-cat-5: #55606e;
+  /* Shape and type */
+  --sc-r-sm: 6px;
+  --sc-r-md: 10px;
+  --sc-r-lg: 18px;
+  --sc-font: 'Inter', 'Segoe UI', system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --sc-font-display: 'Inter Tight', 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --sc-font-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  --sc-focus: 0 0 0 2px var(--sc-bg), 0 0 0 4px var(--sc-ink);
+  --sc-shadow: 0 12px 40px rgba(17, 19, 24, 0.18);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --sc-bg: #111318;
+    --sc-surface: #1a1d24;
+    --sc-chip: #23272f;
+    --sc-line: #2b2f38;
+    --sc-hover: #20242c;
+    --sc-ink: #f4f1ea;
+    --sc-muted: #a2a6ae;
+    --sc-live: #ff4a3f;
+    --sc-live-halo: rgba(255, 74, 63, 0.22);
+    --sc-ok: #5cc28a;
+    --sc-warn: #e9a23b;
+    --sc-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  }
+}
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --sc-bg: #111318;
+  --sc-surface: #1a1d24;
+  --sc-chip: #23272f;
+  --sc-line: #2b2f38;
+  --sc-hover: #20242c;
+  --sc-ink: #f4f1ea;
+  --sc-muted: #a2a6ae;
+  --sc-live: #ff4a3f;
+  --sc-live-halo: rgba(255, 74, 63, 0.22);
+  --sc-ok: #5cc28a;
+  --sc-warn: #e9a23b;
+  --sc-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+/* Console: the Director's control panels. Always dark, one step deeper. */
+[data-surface='console'] {
+  color-scheme: dark;
+  --sc-bg: #0c0d10;
+  --sc-surface: #15171c; /* panel */
+  --sc-tile: #1b1e24;
+  --sc-chip: #23272f;
+  --sc-line: #2b2f38;
+  --sc-hover: #20242c;
+  --sc-ink: #f4f1ea;
+  --sc-muted: #a2a6ae;
+  --sc-live: #ff4a3f;
+  --sc-live-halo: rgba(255, 74, 63, 0.22);
+  --sc-ok: #5cc28a;
+  --sc-warn: #e9a23b;
+  --sc-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+[data-surface='console'] {
+  color: var(--sc-ink);
+}
+
+/* ---------- Base (opt in with class sc on <html> or <body>) ---------- */
+.sc,
+.sc body {
+  margin: 0;
+  background: var(--sc-bg);
+  color: var(--sc-ink);
+  font: 400 14px/1.45 var(--sc-font);
+  font-feature-settings: 'cv11', 'ss01';
+  -webkit-font-smoothing: antialiased;
+}
+.sc *,
+.sc *::before,
+.sc *::after {
+  box-sizing: border-box;
+}
+.sc h1,
+.sc h2,
+.sc h3,
+.sc-h1,
+.sc-h2,
+.sc-h3 {
+  font-family: var(--sc-font-display);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin: 0;
+}
+.sc h1,
+.sc-h1 {
+  font-size: 24px;
+}
+.sc h2,
+.sc-h2 {
+  font-size: 18px;
+}
+.sc h3,
+.sc-h3 {
+  font-size: 15px;
+}
+:where(.sc) a,
+.sc-link {
+  color: var(--sc-ink);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.sc :focus-visible {
+  outline: none;
+  box-shadow: var(--sc-focus);
+}
+.sc-num,
+.sc-mono {
+  font-family: var(--sc-font-mono);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+.sc-tnum {
+  font-variant-numeric: tabular-nums;
+}
+.sc-muted {
+  color: var(--sc-muted);
+}
+.sc-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sc-muted);
+}
+/* Keeps space when hidden, so nothing moves (Liviu's no-layout-shift rule). */
+.sc-keep-hidden {
+  visibility: hidden;
+}
+.sc-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- Header and lockup ---------- */
+.sc-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 56px;
+  padding: 0 20px;
+  background: var(--sc-bg);
+  border-bottom: 1px solid var(--sc-line);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.sc-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font: 700 19px/1 var(--sc-font-display);
+  letter-spacing: -0.03em;
+  color: var(--sc-ink);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.sc-lockup svg {
+  width: 15px;
+  height: 21px;
+  flex: none;
+}
+.sc-lockup em {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--sc-muted);
+}
+
+/* ---------- Tabs and segmented control ---------- */
+.sc-tabs {
+  display: flex;
+  gap: 2px;
+  flex-wrap: wrap;
+}
+.sc-tab {
+  font: 500 14px/1 var(--sc-font);
+  height: 32px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 8px;
+  background: none;
+  color: var(--sc-muted);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+.sc-tab:hover {
+  color: var(--sc-ink);
+  background: var(--sc-chip);
+}
+.sc-tab[aria-selected='true'],
+.sc-tab[aria-current='page'],
+.sc-tab.is-on {
+  background: var(--sc-ink);
+  color: var(--sc-bg);
+}
+.sc-seg {
+  display: inline-flex;
+  border: 1px solid var(--sc-line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--sc-surface);
+}
+.sc-seg > button {
+  font: 600 13px/1 var(--sc-font);
+  height: 30px;
+  padding: 0 12px;
+  border: 0;
+  background: none;
+  color: var(--sc-muted);
+  cursor: pointer;
+}
+.sc-seg > button + button {
+  border-left: 1px solid var(--sc-line);
+}
+.sc-seg > button[aria-pressed='true'],
+.sc-seg > button.is-on {
+  background: var(--sc-ink);
+  color: var(--sc-bg);
+}
+
+/* ---------- Buttons ---------- */
+.sc-btn {
+  font: 600 13px/1 var(--sc-font);
+  height: 34px;
+  padding: 0 14px;
+  border-radius: 8px;
+  border: 1px solid var(--sc-line);
+  background: var(--sc-surface);
+  color: var(--sc-ink);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.sc-btn:hover {
+  background: var(--sc-hover);
+  border-color: var(--sc-muted);
+}
+.sc-btn:disabled,
+.sc-btn[aria-disabled='true'] {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.sc-btn--primary {
+  background: var(--sc-ink);
+  border-color: var(--sc-ink);
+  color: var(--sc-bg);
+}
+.sc-btn--primary:hover {
+  background: var(--sc-ink);
+  opacity: 0.88;
+}
+.sc-btn--quiet {
+  background: var(--sc-chip);
+  border-color: transparent;
+}
+.sc-btn--ghost {
+  background: none;
+  border-color: transparent;
+  color: var(--sc-muted);
+}
+.sc-btn--ghost:hover {
+  color: var(--sc-ink);
+  background: var(--sc-chip);
+  border-color: transparent;
+}
+/* Go live / Start: outlined red. Live now: filled red. Destructive actions are NOT red. */
+.sc-btn--go {
+  border-color: var(--sc-live);
+  color: var(--sc-live);
+  background: var(--sc-surface);
+}
+.sc-btn--live {
+  background: var(--sc-live-fill);
+  border-color: var(--sc-live-fill);
+  color: var(--sc-on-live);
+}
+.sc-btn--sm {
+  height: 26px;
+  padding: 0 9px;
+  font-size: 12px;
+  border-radius: var(--sc-r-sm);
+}
+.sc-btn--lg {
+  height: 44px;
+  padding: 0 18px;
+  font-size: 15px;
+  border-radius: var(--sc-r-md);
+}
+.sc-btn--icon {
+  width: 34px;
+  padding: 0;
+}
+.sc-btn--icon.sc-btn--sm {
+  width: 26px;
+}
+.sc-btn svg {
+  width: 16px;
+  height: 16px;
+  flex: none;
+}
+
+/* ---------- Chips (filters, channel pickers) ---------- */
+.sc-chip {
+  font: 600 12px/1 var(--sc-font);
+  min-width: 30px;
+  height: 28px;
+  padding: 0 9px;
+  border-radius: var(--sc-r-sm);
+  border: 1px solid var(--sc-line);
+  background: var(--sc-surface);
+  color: var(--sc-ink);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.sc-chip[aria-pressed='true'],
+.sc-chip.is-on {
+  background: var(--sc-ink);
+  border-color: var(--sc-ink);
+  color: var(--sc-bg);
+}
+.sc-chip.is-live {
+  color: var(--sc-live);
+  border-color: var(--sc-live);
+}
+.sc-chip.is-warn {
+  color: var(--sc-warn);
+  border-color: var(--sc-warn);
+}
+
+/* ---------- Status badges: always a word, colour is extra ---------- */
+.sc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 22px;
+  padding: 0 9px;
+  border-radius: 999px;
+  font: 700 11px/1 var(--sc-font);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  background: var(--sc-chip);
+  color: var(--sc-muted);
+  border: 1px solid transparent;
+}
+.sc-badge::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  flex: none;
+}
+.sc-badge--plain::before {
+  display: none;
+}
+.sc-badge--ok {
+  color: var(--sc-ok);
+}
+.sc-badge--warn {
+  color: var(--sc-warn);
+  border-color: var(--sc-warn);
+  background: transparent;
+}
+.sc-badge--live {
+  background: var(--sc-live-fill);
+  color: var(--sc-on-live);
+}
+.sc-badge--off {
+  background: transparent;
+  border-color: var(--sc-line);
+}
+/* Problem: ink with an icon, never red. */
+.sc-badge--problem {
+  background: var(--sc-ink);
+  color: var(--sc-bg);
+}
+.sc-badge--problem::before {
+  content: '!';
+  width: auto;
+  height: auto;
+  background: none;
+  font-weight: 800;
+}
+/* Pulse only for live; respects reduced motion. */
+.sc-badge--live.is-pulsing::before {
+  animation: sc-pulse 1.6s ease-in-out infinite;
+}
+@keyframes sc-pulse {
+  50% {
+    opacity: 0.35;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sc-badge--live.is-pulsing::before {
+    animation: none;
+  }
+}
+/* Small inline status dot + word, for dense grids. */
+.sc-dot {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font: 700 10px/1 var(--sc-font);
+  letter-spacing: 0.06em;
+  color: var(--sc-muted);
+}
+.sc-dot::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.sc-dot--ok {
+  color: var(--sc-ok);
+}
+.sc-dot--warn {
+  color: var(--sc-warn);
+}
+.sc-dot--live {
+  color: var(--sc-live);
+}
+
+/* ---------- Category marker (Pass categories, Program types) ---------- */
+.sc-cat {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.sc-cat::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--sc-cat, var(--sc-cat-5));
+  flex: none;
+}
+.sc-tag {
+  display: inline-flex;
+  align-items: center;
+  height: 18px;
+  padding: 0 6px;
+  border-radius: 4px;
+  font: 700 10px/1 var(--sc-font);
+  letter-spacing: 0.04em;
+  color: #fff;
+  background: var(--sc-cat, var(--sc-cat-5));
+  white-space: nowrap;
+}
+
+/* ---------- Surfaces: card, tile ---------- */
+.sc-card {
+  background: var(--sc-surface);
+  border: 1px solid var(--sc-line);
+  border-radius: var(--sc-r-lg);
+}
+.sc-card--pad {
+  padding: 16px 18px;
+}
+/* Compact item card (Program cases etc.): actions open in a popup or float on hover. */
+.sc-tile {
+  position: relative;
+  background: var(--sc-tile, var(--sc-surface));
+  border: 1px solid var(--sc-line);
+  border-radius: var(--sc-r-md);
+  padding: 9px 10px;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+.sc-tile[aria-selected='true'],
+.sc-tile.is-selected {
+  box-shadow: inset 0 0 0 2px var(--sc-ink);
+  border-color: var(--sc-ink);
+}
+.sc-tile.is-live {
+  border-color: var(--sc-live);
+  box-shadow: inset 0 0 0 1px var(--sc-live);
+}
+.sc-tile.is-warn {
+  border-color: var(--sc-warn);
+}
+/* Overlay actions: float over the tile on hover, take no space. */
+.sc-overlay-actions {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  display: flex;
+  gap: 4px;
+  visibility: hidden;
+}
+.sc-tile:hover .sc-overlay-actions,
+.sc-tile:focus-within .sc-overlay-actions {
+  visibility: visible;
+}
+
+/* ---------- Tables: fixed column widths, row actions on hover ---------- */
+.sc-table-wrap {
+  background: var(--sc-surface);
+  border: 1px solid var(--sc-line);
+  border-radius: var(--sc-r-lg);
+  overflow: auto;
+}
+.sc-table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+  font-size: 13px;
+}
+.sc-table th {
+  font: 600 11px/1.2 var(--sc-font);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sc-muted);
+  text-align: left;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--sc-line);
+  position: sticky;
+  top: 0;
+  background: var(--sc-surface);
+}
+.sc-table td {
+  padding: 0 14px;
+  height: 40px;
+  border-bottom: 1px solid var(--sc-line);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sc-table tr:last-child td {
+  border-bottom: 0;
+}
+.sc-table tbody tr:hover td {
+  background: var(--sc-hover);
+}
+.sc-table .is-num {
+  text-align: right;
+  font-family: var(--sc-font-mono);
+  font-variant-numeric: tabular-nums;
+}
+.sc-table .sc-row-actions {
+  display: flex;
+  gap: 4px;
+  justify-content: flex-end;
+  visibility: hidden;
+}
+.sc-table tr:hover .sc-row-actions,
+.sc-table tr:focus-within .sc-row-actions {
+  visibility: visible;
+}
+@media (hover: none) {
+  .sc-table .sc-row-actions {
+    visibility: visible;
+  }
+}
+
+/* ---------- Forms ---------- */
+.sc-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+}
+.sc-field > span:first-child,
+.sc-field > label {
+  font-weight: 600;
+}
+.sc-hint {
+  font-size: 12px;
+  color: var(--sc-muted);
+}
+.sc-input,
+.sc-select,
+.sc-textarea {
+  font: 400 14px/1.3 var(--sc-font);
+  height: 36px;
+  padding: 0 12px;
+  border: 1px solid var(--sc-line);
+  border-radius: 8px;
+  background: var(--sc-surface);
+  color: var(--sc-ink);
+  width: 100%;
+  min-width: 0;
+}
+.sc-textarea {
+  height: auto;
+  min-height: 80px;
+  padding: 8px 12px;
+  resize: vertical;
+}
+.sc-input:hover,
+.sc-select:hover,
+.sc-textarea:hover {
+  border-color: var(--sc-muted);
+}
+.sc-input:focus,
+.sc-select:focus,
+.sc-textarea:focus {
+  outline: none;
+  border-color: var(--sc-ink);
+  box-shadow: 0 0 0 1px var(--sc-ink);
+}
+.sc-input[aria-invalid='true'] {
+  border-color: var(--sc-ink);
+  border-width: 2px;
+}
+.sc-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.sc-check input {
+  accent-color: var(--sc-ink);
+  width: 16px;
+  height: 16px;
+  margin: 0;
+}
+/* Messages: problems use ink + icon, never red. */
+.sc-note {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 10px 12px;
+  border-radius: var(--sc-r-md);
+  background: var(--sc-chip);
+  font-size: 13px;
+}
+.sc-note::before {
+  content: 'i';
+  flex: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font: 700 11px/1 var(--sc-font);
+  background: var(--sc-muted);
+  color: var(--sc-bg);
+}
+.sc-note--problem {
+  background: var(--sc-surface);
+  border: 2px solid var(--sc-ink);
+}
+.sc-note--problem::before {
+  content: '!';
+  background: var(--sc-ink);
+}
+.sc-note--ok::before {
+  content: '✓';
+  background: var(--sc-ok);
+}
+.sc-note--warn::before {
+  content: '!';
+  background: var(--sc-warn);
+}
+
+/* ---------- Dialog (native <dialog class="sc-dialog">) ---------- */
+.sc-dialog {
+  border: 1px solid var(--sc-line);
+  border-radius: var(--sc-r-lg);
+  background: var(--sc-surface);
+  color: var(--sc-ink);
+  padding: 0;
+  width: min(520px, calc(100vw - 32px));
+  max-height: calc(100vh - 48px);
+  box-shadow: var(--sc-shadow);
+}
+.sc-dialog::backdrop {
+  background: rgba(17, 19, 24, 0.45);
+}
+.sc-dialog > header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 18px 8px;
+}
+.sc-dialog > header h2 {
+  font: 700 18px/1.2 var(--sc-font-display);
+  letter-spacing: -0.03em;
+  margin: 0;
+  flex: 1;
+}
+.sc-dialog > .sc-dialog-body {
+  padding: 8px 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: auto;
+}
+.sc-dialog > footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 12px 18px 16px;
+  border-top: 1px solid var(--sc-line);
+}
+
+/* ---------- Level meter ---------- */
+.sc-meter {
+  height: 8px;
+  border-radius: 4px;
+  background: var(--sc-chip);
+  overflow: hidden;
+}
+.sc-meter > i {
+  display: block;
+  height: 100%;
+  width: var(--sc-level, 0%);
+  background: var(--sc-ink);
+  border-radius: 4px;
+  transition: width 80ms linear;
+}
+.sc-meter.is-clip > i {
+  background: var(--sc-warn);
+}
+
+/* ---------- Phone and tablet ---------- */
+@media (max-width: 720px) {
+  .sc-header {
+    flex-wrap: wrap;
+    padding: 8px 16px;
+    gap: 8px 12px;
+  }
+  .sc-btn,
+  .sc-chip,
+  .sc-tab,
+  .sc-input,
+  .sc-select {
+    min-height: 40px;
+  }
+}
