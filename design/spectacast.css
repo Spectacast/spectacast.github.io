@@ -1,5 +1,5 @@
 /*
- * Spectacast design system: "Paper" (A), version 0.1.0
+ * Spectacast design system: "Paper" (A), version 0.1.1
  * One file every module copies (see design/README.md). Do not edit a module's copy:
  * change it here, then run design/sync.sh into the module.
  *
@@ -585,18 +585,27 @@
 .sc-tile.is-warn {
   border-color: var(--sc-warn);
 }
-/* Overlay actions: float over the tile on hover, take no space. */
+/* Overlay actions: float over the tile on hover, take no space. Transparent rather than
+   hidden, so the keyboard can still Tab to them (they show on focus). */
 .sc-overlay-actions {
   position: absolute;
   top: 6px;
   right: 6px;
   display: flex;
   gap: 4px;
-  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
 .sc-tile:hover .sc-overlay-actions,
 .sc-tile:focus-within .sc-overlay-actions {
-  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+@media (hover: none) {
+  .sc-overlay-actions {
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
 
 /* ---------- Tables: fixed column widths, row actions on hover ---------- */
@@ -647,15 +656,18 @@
   display: flex;
   gap: 4px;
   justify-content: flex-end;
-  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
 .sc-table tr:hover .sc-row-actions,
 .sc-table tr:focus-within .sc-row-actions {
-  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
 }
 @media (hover: none) {
   .sc-table .sc-row-actions {
-    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
   }
 }
 
