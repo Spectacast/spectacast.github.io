@@ -6,7 +6,7 @@ with every component in light, dark and console.
 
 | file | what |
 |---|---|
-| `spectacast.css` | tokens (`--sc-*`), base (`class="sc"`), components (`sc-btn`, `sc-badge`, `sc-table`, `sc-tile`, `sc-dialog`, forms, tabs, chips, meter) |
+| `spectacast.css` | tokens (`--sc-*`), base (`class="sc"`), components (`sc-btn`, `sc-badge`, `sc-dot`, `sc-table` / `sc-table--wrap`, `sc-tile`, `sc-dialog`, `sc-toast`, `sc-stale`, forms, tabs, chips, meter) |
 | `tokens.json` | the same values for native code (Mic Android/iOS, Meet and Mic desktop) |
 | `fonts/` | Inter, Inter Tight, JetBrains Mono (latin + latin-ext, variable, SIL OFL) |
 | `guide.html` | brand guide and component sheet |
@@ -42,3 +42,11 @@ Theme follows the system; `<html data-theme="light|dark">` forces one. Director 
 Light `ok`, `warn` and `live` are one shade darker than the first mock-ups so small text passes
 WCAG AA on paper and white (`#2a6f46`, `#8a5208`, `#cf2e25`). Red fills with white text use
 `--sc-live-fill` (`#cf2e25`) in every theme.
+
+## Changes
+
+- 0.1.2: `[hidden]` always hides; `sc-table--wrap` (text wraps, rows grow); `sc-dot--off`; `sc-stale` for a page that lost its server; `sc-toast`; table scroll box keeps screen-reader text inside.
+- 0.1.1: hover-only actions (`sc-row-actions`, `sc-overlay-actions`) are transparent, not hidden, so the keyboard reaches them.
+- 0.1.0: first version.
+
+Still built per page (candidates for later): row menu / popover, file picker, stepper, sticky save bar, expandable row.

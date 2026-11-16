@@ -1,5 +1,5 @@
 /*
- * Spectacast design system: "Paper" (A), version 0.1.1
+ * Spectacast design system: "Paper" (A), version 0.1.2
  * One file every module copies (see design/README.md). Do not edit a module's copy:
  * change it here, then run design/sync.sh into the module.
  *
@@ -211,6 +211,10 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--sc-muted);
+}
+/* The hidden attribute wins over components that set display (sc-note, sc-field…). */
+.sc [hidden] {
+  display: none !important;
 }
 /* Keeps space when hidden, so nothing moves (Liviu's no-layout-shift rule). */
 .sc-keep-hidden {
@@ -523,6 +527,16 @@
 .sc-dot--live {
   color: var(--sc-live);
 }
+.sc-dot--off::before {
+  background: transparent;
+  box-shadow: inset 0 0 0 1.5px currentColor;
+}
+/* A page that lost its server: the last known state stays readable but looks stale. */
+.sc-stale {
+  opacity: 0.55;
+  filter: grayscale(1);
+  pointer-events: none;
+}
 
 /* ---------- Category marker (Pass categories, Program types) ---------- */
 .sc-cat {
@@ -610,6 +624,7 @@
 
 /* ---------- Tables: fixed column widths, row actions on hover ---------- */
 .sc-table-wrap {
+  position: relative; /* keeps sc-sr text inside the scroll box */
   background: var(--sc-surface);
   border: 1px solid var(--sc-line);
   border-radius: var(--sc-r-lg);
@@ -640,6 +655,15 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+/* Text wraps instead of stretching the column (Liviu's rule); rows grow, columns don't. */
+.sc-table--wrap td {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  height: auto;
+  min-height: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .sc-table tr:last-child td {
   border-bottom: 0;
@@ -812,6 +836,22 @@
   gap: 8px;
   padding: 12px 18px 16px;
   border-top: 1px solid var(--sc-line);
+}
+
+/* ---------- Toast (short confirmation; problems stay on screen as sc-note) ---------- */
+.sc-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  max-width: min(480px, calc(100vw - 32px));
+  padding: 10px 16px;
+  border-radius: var(--sc-r-md);
+  background: var(--sc-ink);
+  color: var(--sc-bg);
+  font: 500 14px/1.4 var(--sc-font);
+  box-shadow: var(--sc-shadow);
+  z-index: 100;
 }
 
 /* ---------- Level meter ---------- */
