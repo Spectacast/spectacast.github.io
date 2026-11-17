@@ -1,0 +1,90 @@
+/* spectacast.com: layout for the text pages (legal, pricing). Tokens and fonts come from
+   /design/spectacast.css; this file only lays the pages out for reading. */
+.sc body {
+  font-size: 17px;
+  line-height: 1.6;
+}
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+.site-head { display: flex; align-items: center; justify-content: space-between; padding: 28px 0; }
+.brand {
+  display: flex; align-items: center; gap: 12px; color: var(--sc-ink); text-decoration: none;
+  font: 700 22px/1 var(--sc-font-display); letter-spacing: -0.03em;
+}
+.brand svg { width: 26px; height: 36px; color: var(--sc-ink); }
+.site-head nav a {
+  color: var(--sc-muted); text-decoration: none; font-weight: 400; font-size: 15px; margin-left: 22px;
+}
+.site-head nav a:hover { color: var(--sc-ink); }
+
+/* Reading column */
+.doc { max-width: 720px; padding: 32px 0 24px; }
+.sc .doc h1, .sc .pricing h1 { font-size: clamp(34px, 5vw, 52px); letter-spacing: -0.04em; line-height: 1.05; margin: 0 0 10px; }
+.doc h1 + p { color: var(--sc-muted); font-size: 15px; margin: 0 0 32px; }
+.sc .doc h2, .sc .pricing h2 { font-size: 22px; margin: 40px 0 10px; }
+.doc p, .doc li { color: var(--sc-ink); }
+.doc ul { padding-left: 22px; }
+.doc li { margin: 6px 0; }
+.doc table {
+  width: 100%; border-collapse: collapse; font-size: 15px; margin: 16px 0;
+  background: var(--sc-surface); border: 1px solid var(--sc-line); border-radius: var(--sc-r-md);
+  overflow: hidden; display: block; overflow-x: auto;
+}
+.doc th, .doc td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--sc-line); }
+.doc th { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--sc-muted); }
+.doc tr:last-child td { border-bottom: 0; }
+
+/* Placeholders still to fill in (drafts only) */
+mark.todo {
+  background: color-mix(in srgb, var(--sc-warn) 22%, transparent); color: var(--sc-ink);
+  border-radius: 4px; padding: 0 4px;
+}
+.draft-note {
+  font-size: 14px; color: var(--sc-ink); background: var(--sc-chip); border-radius: var(--sc-r-md);
+  padding: 10px 14px; margin: 0 0 24px;
+}
+
+/* Pricing */
+.pricing { padding: 32px 0 24px; }
+.pricing > p { max-width: 62ch; color: var(--sc-muted); font-size: 19px; }
+.billing {
+  display: inline-flex; gap: 2px; padding: 3px; margin: 24px 0 20px;
+  background: var(--sc-chip); border-radius: 999px;
+}
+.billing input { position: absolute; opacity: 0; pointer-events: none; }
+.billing label { padding: 6px 16px; border-radius: 999px; font-size: 15px; font-weight: 600; cursor: pointer; color: var(--sc-muted); }
+.billing input:checked + label { background: var(--sc-ink); color: var(--sc-bg); }
+.billing input:focus-visible + label { box-shadow: var(--sc-focus); }
+.plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.plan {
+  background: var(--sc-surface); border: 1px solid var(--sc-line); border-radius: var(--sc-r-lg);
+  padding: 24px 22px; display: flex; flex-direction: column;
+}
+.sc .plan h3 { font-size: 24px; margin: 0 0 4px; }
+.plan h3 span { color: var(--sc-muted); font-weight: 500; }
+.plan .what { font-weight: 600; margin: 0; }
+.plan .mods { color: var(--sc-muted); font-size: 14px; margin: 2px 0 16px; }
+/* Both prices share one cell so switching never moves anything */
+.price { display: grid; margin: 0 0 16px; padding: 14px 0; border-top: 1px solid var(--sc-line); border-bottom: 1px solid var(--sc-line); }
+.price p { grid-area: 1 / 1; margin: 0; color: var(--sc-muted); font-size: 14px; }
+.price b { display: block; color: var(--sc-ink); font: 700 32px/1.15 var(--sc-font-display); letter-spacing: -0.03em; }
+.price .p-event { visibility: hidden; }
+.pricing:has(#b-event:checked) .p-year { visibility: hidden; }
+.pricing:has(#b-event:checked) .p-event { visibility: visible; }
+.plan ul { list-style: none; margin: 0; padding: 0; font-size: 15px; }
+.plan li { padding: 5px 0 5px 22px; position: relative; }
+.plan li::before { content: "✓"; position: absolute; left: 0; color: var(--sc-ok); font-weight: 600; }
+.pricing ul:not(.plan ul) { padding-left: 22px; }
+.pricing h2 + p, .pricing p { max-width: 70ch; }
+
+.legal-foot { padding: 40px 0 56px; color: var(--sc-muted); font-size: 13px; }
+.legal-foot p { margin: 0 0 6px; }
+.legal-foot a { color: var(--sc-muted); font-weight: 400; }
+
+@media (max-width: 820px) {
+  .plans { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .wrap { padding: 0 16px; }
+  .site-head nav a { margin-left: 14px; }
+}
