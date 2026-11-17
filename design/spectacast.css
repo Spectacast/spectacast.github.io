@@ -1,5 +1,5 @@
 /*
- * Spectacast design system: "Paper" (A), version 0.1.2
+ * Spectacast design system: "Paper" (A), version 0.1.3
  * One file every module copies (see design/README.md). Do not edit a module's copy:
  * change it here, then run design/sync.sh into the module.
  *
@@ -121,8 +121,9 @@
   --sc-warn: #e9a23b;
   --sc-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
 }
-/* Console: the Director's control panels. Always dark, one step deeper. */
-[data-surface='console'] {
+/* Console: the Director's control panels. Always dark, one step deeper. The doubled selector
+   outranks the light/dark theme rules when both sit on <html>. */
+[data-surface='console'][data-surface='console'][data-surface='console'] {
   color-scheme: dark;
   --sc-bg: #0c0d10;
   --sc-surface: #15171c; /* panel */

@@ -45,6 +45,7 @@ WCAG AA on paper and white (`#2a6f46`, `#8a5208`, `#cf2e25`). Red fills with whi
 
 ## Changes
 
+- 0.1.3: `data-surface="console"` wins over the theme rules even on `<html>`.
 - 0.1.2: `[hidden]` always hides; `sc-table--wrap` (text wraps, rows grow); `sc-dot--off`; `sc-stale` for a page that lost its server; `sc-toast`; table scroll box keeps screen-reader text inside.
 - 0.1.1: hover-only actions (`sc-row-actions`, `sc-overlay-actions`) are transparent, not hidden, so the keyboard reaches them.
 - 0.1.0: first version.
