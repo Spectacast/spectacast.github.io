@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en" class="sc">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Spectacast brand guide</title>
+<link rel="stylesheet" href="spectacast.css">
+<style>
+  main { max-width: 1080px; margin: 0 auto; padding: 32px 20px 80px; display: flex; flex-direction: column; gap: 40px; }
+  section { display: flex; flex-direction: column; gap: 14px; }
+  .lead { font-size: 16px; color: var(--sc-muted); max-width: 680px; margin: 0; }
+  .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+  .sw { border: 1px solid var(--sc-line); border-radius: 10px; overflow: hidden; background: var(--sc-surface); font-size: 12px; }
+  .sw b { display: block; height: 52px; border-bottom: 1px solid var(--sc-line); }
+  .sw div { padding: 8px 10px; display: flex; flex-direction: column; gap: 2px; }
+  .sw code { font-family: var(--sc-font-mono); font-size: 11px; color: var(--sc-muted); }
+  .rules { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 10px; }
+  .rules .sc-card { padding: 14px 16px; font-size: 13px; }
+  .rules h3 { margin-bottom: 6px; }
+  .demo { padding: 18px; display: flex; flex-direction: column; gap: 14px; }
+  .console { background: var(--sc-bg); padding: 14px; border-radius: 18px; display: flex; gap: 8px; }
+  .console .sc-tile { width: 180px; }
+  .pp { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+  .pp button { font: 600 11px/1 var(--sc-font); height: 24px; border-radius: 5px; border: 1px solid transparent; background: var(--sc-chip); color: var(--sc-ink); }
+  .pp .pv { background: transparent; box-shadow: inset 0 0 0 2px var(--sc-ink); }
+  .pp .pg { background: var(--sc-live-fill); color: var(--sc-on-live); }
+  .type-sample { display: flex; flex-direction: column; gap: 8px; }
+  pre { font-family: var(--sc-font-mono); font-size: 12px; background: var(--sc-chip); padding: 12px 14px; border-radius: 10px; overflow: auto; margin: 0; }
+  @media (max-width: 720px) { .console { flex-direction: column; } .console .sc-tile { width: auto; } }
+</style>
+</head>
+<body>
+<header class="sc-header">
+  <a class="sc-lockup" href="#">
+    <svg viewBox="140 80 250 340" aria-hidden="true"><path d="M290 116 H252 A68 68 0 0 0 252 252 H260 A68 68 0 0 1 260 388 H196" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/><circle cx="356" cy="116" r="27" fill="#ff3b30"/></svg>
+    spectacast <em>brand</em>
+  </a>
+  <nav class="sc-tabs" aria-label="Sections">
+    <a class="sc-tab" href="#colour">Colour</a><a class="sc-tab" href="#type">Type</a><a class="sc-tab" href="#rules">Rules</a><a class="sc-tab" href="#components">Components</a><a class="sc-tab" href="#use">Use it</a>
+  </nav>
+  <div class="sc-seg" role="group" aria-label="Theme" style="margin-left:auto">
+    <button type="button" data-t="" aria-pressed="true">Auto</button><button type="button" data-t="light" aria-pressed="false">Light</button><button type="button" data-t="dark" aria-pressed="false">Dark</button>
+  </div>
+</header>
+<main>
+  <section>
+    <h1 style="font-size:40px">Paper</h1>
+    <p class="lead">Spectacast runs live surgery broadcasts. The interface is calm paper and ink, so the one thing that is red, on air, is never missed. Version 0.1.3, chosen 16 November 2026.</p>
+  </section>
+
+  <section id="colour">
+    <h2>Colour</h2>
+    <p class="lead">Use the tokens, never a raw hex. Light text colours for ok, warn and live are a shade darker than the mock-ups so small text passes WCAG AA (4.5:1) on paper and white.</p>
+    <div class="grid" id="swatches"></div>
+    <h3>Categories</h3>
+    <div class="row">
+      <span class="sc-tag" style="--sc-cat:var(--sc-cat-1)">Zoom</span>
+      <span class="sc-tag" style="--sc-cat:var(--sc-cat-2)">VOD</span>
+      <span class="sc-tag" style="--sc-cat:var(--sc-cat-3)">VOD Zoom</span>
+      <span class="sc-tag" style="--sc-cat:var(--sc-cat-4)">INFO</span>
+      <span class="sc-tag" style="--sc-cat:var(--sc-cat-5)">Zoom card</span>
+      <span class="sc-cat" style="--sc-cat:var(--sc-cat-1)">Socio</span>
+      <span class="sc-cat" style="--sc-cat:var(--sc-cat-2)">Faculty</span>
+      <span class="sc-cat" style="--sc-cat:var(--sc-cat-4)">Staff</span>
+    </div>
+  </section>
+
+  <section id="type">
+    <h2>Type</h2>
+    <div class="sc-card sc-card--pad type-sample">
+      <div style="font:700 32px/1.1 var(--sc-font-display);letter-spacing:-.03em">Inter Tight 700 · headings and app names</div>
+      <div style="font-size:15px">Inter 400 / 500 / 600 · interface, tables, forms. Colectomia destra laparoscopica, Dr. Huang Wei.</div>
+      <div class="sc-mono" style="font-size:14px">JetBrains Mono 500 · 7F4CK2P677 · 14:12 · −12 dB</div>
+    </div>
+    <p class="sc-hint">Fonts ship inside the module (fonts/), because hall PCs have no internet. Chinese falls back to the system font.</p>
+  </section>
+
+  <section id="rules">
+    <h2>Rules</h2>
+    <div class="rules">
+      <div class="sc-card"><h3>Red means on air</h3>On air, recording, "you are live". Never for delete, errors or warnings: a problem is ink with an icon.</div>
+      <div class="sc-card"><h3>Status has a word</h3>Every state shows a word or an icon. Colour is extra, for people who cannot tell red from green.</div>
+      <div class="sc-card"><h3>Selected is ink</h3>Selected = ink fill with paper text. Director Preview = 2px ink outline. Program live = red fill; the column stays neutral.</div>
+      <div class="sc-card"><h3>Nothing moves</h3>Controls that depend on a mode keep their space (visibility: hidden, not display: none). Fixed column widths; text wraps, columns do not stretch.</div>
+      <div class="sc-card"><h3>Cards stay compact</h3>Actions live in the popup that opens from the card. Small overlay buttons on hover are fine: they float and take no space. Table row actions appear on hover.</div>
+      <div class="sc-card"><h3>Shape</h3>Radius 6 (buttons in dense panels), 10 (tiles, inputs), 18 (cards, dialogs). No brand blue, no gradients.</div>
+      <div class="sc-card"><h3>Lockup</h3>S-stroke mark + "spectacast" + product word in muted weight: spectacast <span class="sc-muted" style="font-weight:600">pass</span>. The red dot in the mark is the logo, not a status.</div>
+      <div class="sc-card"><h3>Director</h3>Panels use the console surface (always dark). Colours, type and components may change; panel layout only with Liviu's OK.</div>
+    </div>
+  </section>
+
+  <section id="components">
+    <h2>Components</h2>
+    <div class="sc-card demo">
+      <h3>Buttons</h3>
+      <div class="row">
+        <button class="sc-btn sc-btn--primary">Add attendee</button>
+        <button class="sc-btn">Print all badges</button>
+        <button class="sc-btn sc-btn--quiet">Import</button>
+        <button class="sc-btn sc-btn--ghost">Cancel</button>
+        <button class="sc-btn sc-btn--go">Avvia</button>
+        <button class="sc-btn sc-btn--live">Live</button>
+        <button class="sc-btn" disabled>Disabled</button>
+        <button class="sc-btn sc-btn--sm">Small</button>
+        <button class="sc-btn sc-btn--icon" aria-label="More">···</button>
+      </div>
+      <h3>Status</h3>
+      <div class="row">
+        <span class="sc-badge sc-badge--live is-pulsing">On air</span>
+        <span class="sc-badge sc-badge--ok">Connected</span>
+        <span class="sc-badge sc-badge--warn">NDI lost</span>
+        <span class="sc-badge sc-badge--problem">Offline</span>
+        <span class="sc-badge">Ready</span>
+        <span class="sc-badge sc-badge--off">No meeting</span>
+        <span class="sc-dot sc-dot--ok">NDI</span><span class="sc-dot sc-dot--live">REC</span><span class="sc-dot sc-dot--warn">MIC</span><span class="sc-dot">ZOOM</span>
+      </div>
+      <h3>Tabs, segmented, chips</h3>
+      <div class="row">
+        <div class="sc-tabs"><button class="sc-tab" aria-selected="true">Attendees</button><button class="sc-tab">Rules</button><button class="sc-tab">Live</button></div>
+        <div class="sc-seg"><button aria-pressed="false">Orari</button><button aria-pressed="false">Righe</button><button aria-pressed="true">Colonne</button></div>
+        <button class="sc-chip" aria-pressed="true">All</button><button class="sc-chip is-live">1</button><button class="sc-chip is-live">2</button><button class="sc-chip is-warn">3</button><button class="sc-chip">4</button>
+      </div>
+    </div>
+
+    <div class="sc-table-wrap">
+      <table class="sc-table">
+        <colgroup><col style="width:180px"><col style="width:240px"><col style="width:140px"><col style="width:110px"><col style="width:120px"><col style="width:90px"><col></colgroup>
+        <thead><tr><th>Name</th><th>Email</th><th>Category</th><th>Status</th><th>Badge</th><th class="is-num">Minutes</th><th><span class="sc-sr">Actions</span></th></tr></thead>
+        <tbody>
+          <tr><td style="font-weight:600">Bianchi Marco</td><td class="sc-muted">marco.bianchi@example.com</td><td><span class="sc-cat" style="--sc-cat:var(--sc-cat-1)">Socio</span></td><td><span class="sc-badge sc-badge--ok">Inside</span></td><td class="sc-mono">7F4CK2P677</td><td class="is-num">212</td><td><div class="sc-row-actions"><button class="sc-btn sc-btn--sm">Print</button><button class="sc-btn sc-btn--sm">Lost badge</button></div></td></tr>
+          <tr><td style="font-weight:600">Ricci Chiara</td><td class="sc-muted">chiara.ricci@example.com</td><td><span class="sc-cat" style="--sc-cat:var(--sc-cat-2)">Faculty</span></td><td><span class="sc-badge">Out</span></td><td class="sc-mono">4285F40SN2</td><td class="is-num" style="color:var(--sc-warn);font-weight:600">83</td><td><div class="sc-row-actions"><button class="sc-btn sc-btn--sm">Print</button><button class="sc-btn sc-btn--sm">Lost badge</button></div></td></tr>
+          <tr><td style="font-weight:600">Huang Wei</td><td class="sc-muted">wei.huang@example.com</td><td><span class="sc-cat" style="--sc-cat:var(--sc-cat-4)">Staff</span></td><td><span class="sc-badge sc-badge--ok">Inside</span></td><td class="sc-mono">5SSK88CHGN</td><td class="is-num">226</td><td><div class="sc-row-actions"><button class="sc-btn sc-btn--sm">Print</button><button class="sc-btn sc-btn--sm">Lost badge</button></div></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sc-card demo">
+      <h3>Forms and messages</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px">
+        <label class="sc-field"><span>Event name</span><input class="sc-input" value="Congresso 2026"></label>
+        <label class="sc-field"><span>Door</span><select class="sc-select"><option>Entrata 1</option><option>Entrata 2</option></select></label>
+        <label class="sc-field"><span>Minimum minutes</span><input class="sc-input sc-num" value="180" aria-invalid="true"><span class="sc-hint">Must be under the event length.</span></label>
+      </div>
+      <label class="sc-check"><input type="checkbox" checked> Only channels in use</label>
+      <div class="sc-note">Clips copy to every hall PC at once: upload them before sessions.</div>
+      <div class="sc-note sc-note--ok">Saved. 598 certificates ready.</div>
+      <div class="sc-note sc-note--warn">3 people are under 180 minutes.</div>
+      <div class="sc-note sc-note--problem">The scan file could not be read. Check it is the scanner's CSV export.</div>
+      <div class="row"><button class="sc-btn" onclick="document.getElementById('dlg').showModal()">Open a dialog</button></div>
+    </div>
+
+    <div class="sc-card demo">
+      <h3>Compact tiles</h3>
+      <div class="row" style="align-items:stretch">
+        <div class="sc-tile is-live" style="width:220px"><div style="font-weight:700">Vincenti L <span class="sc-muted" style="font-weight:400">· Policlinico di Bari</span></div><div style="font-size:13px">Colectomia destra laparoscopica</div><div class="row" style="gap:6px"><span class="sc-tag" style="--sc-cat:var(--sc-cat-1)">Zoom</span><span class="sc-mono sc-muted" style="font-size:11px">14:00–15:10</span><span class="sc-badge sc-badge--live sc-badge--plain" style="margin-left:auto;height:18px;font-size:10px">In onda</span></div></div>
+        <div class="sc-tile" style="width:220px"><div class="sc-overlay-actions"><button class="sc-btn sc-btn--sm sc-btn--icon" aria-label="Back to list">↩</button><button class="sc-btn sc-btn--sm sc-btn--icon" aria-label="Delete">🗑</button></div><div style="font-weight:700">De Carlis L <span class="sc-muted" style="font-weight:400">· Niguarda</span></div><div style="font-size:13px">Epatectomia sinistra</div><div class="row" style="gap:6px"><span class="sc-tag" style="--sc-cat:var(--sc-cat-3)">VOD Zoom</span><span class="sc-mono sc-muted" style="font-size:11px">15:20–16:30</span></div></div>
+        <div class="sc-tile is-selected" style="width:220px"><div style="font-weight:700">Selected</div><div style="font-size:13px">Ink outline, no colour.</div></div>
+      </div>
+    </div>
+
+    <div class="sc-card demo">
+      <h3>Console (Director)</h3>
+      <div class="console" data-surface="console">
+        <div class="sc-tile is-live"><div class="row" style="justify-content:space-between"><b style="font:700 16px var(--sc-font-display)">1</b><span class="sc-badge sc-badge--live sc-badge--plain">On air</span></div><div class="pp"><span class="sc-label" style="text-align:center">Preview</span><span class="sc-label" style="text-align:center">Program</span><button>CARD</button><button class="pg">CARD</button><button class="pv">ZOOM</button><button>ZOOM</button><button>VOD</button><button>VOD</button></div><div class="row" style="gap:8px"><span class="sc-dot sc-dot--ok">NDI</span><span class="sc-dot sc-dot--ok">MIC</span><span class="sc-dot sc-dot--live">REC</span></div></div>
+        <div class="sc-tile is-warn"><div class="row" style="justify-content:space-between"><b style="font:700 16px var(--sc-font-display)">3</b><span class="sc-badge sc-badge--warn sc-badge--plain">NDI lost</span></div><div class="sc-meter" style="--sc-level:64%"><i></i></div><div class="sc-meter" style="--sc-level:30%"><i></i></div></div>
+        <div class="sc-tile"><div class="row" style="justify-content:space-between"><b style="font:700 16px var(--sc-font-display)">5</b><span class="sc-badge sc-badge--off">No meeting</span></div><span class="sc-hint">Start a meeting from Setup.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="use">
+    <h2>Use it in a module</h2>
+    <p class="lead">Copy, do not link: each module ships its own copy so it works offline and a change here never surprises a live show.</p>
+    <pre>./design/sync.sh ../pass/web/static/design     # copies spectacast.css, tokens.json, fonts/, VERSION</pre>
+    <pre>&lt;html class="sc"&gt;  &lt;link rel="stylesheet" href="/design/spectacast.css"&gt;
+&lt;!-- Director panels --&gt;  &lt;div data-surface="console"&gt;…&lt;/div&gt;</pre>
+    <p class="sc-hint">Native apps (Mic on Android and iOS, Meet and Mic desktop) read the same values from tokens.json.</p>
+  </section>
+</main>
+
+<dialog class="sc-dialog" id="dlg">
+  <header><h2>Lost badge</h2><button class="sc-btn sc-btn--ghost sc-btn--icon" aria-label="Close" onclick="this.closest('dialog').close()">✕</button></header>
+  <div class="sc-dialog-body"><p style="margin:0">Print a new badge for <b>Ricci Chiara</b>? The old code stops working at once.</p></div>
+  <footer><button class="sc-btn sc-btn--ghost" onclick="this.closest('dialog').close()">Cancel</button><button class="sc-btn sc-btn--primary" onclick="this.closest('dialog').close()">Print new badge</button></footer>
+</dialog>
+
+<script>
+  const tokens = [
+    ['--sc-bg', 'Paper / night'], ['--sc-surface', 'Surface'], ['--sc-chip', 'Chip / button'], ['--sc-line', 'Line'],
+    ['--sc-ink', 'Ink'], ['--sc-muted', 'Muted'], ['--sc-live', 'Live (on air only)'], ['--sc-ok', 'OK'], ['--sc-warn', 'Warn'],
+  ];
+  function paint() {
+    const cs = getComputedStyle(document.documentElement);
+    document.getElementById('swatches').innerHTML = tokens.map(([t, n]) =>
+      `<div class="sw"><b style="background:var(${t})"></b><div><strong>${n}</strong><code>${t}</code><code>${cs.getPropertyValue(t).trim()}</code></div></div>`).join('');
+  }
+  document.querySelectorAll('[data-t]').forEach((b) => b.addEventListener('click', () => {
+    if (b.dataset.t) document.documentElement.dataset.theme = b.dataset.t; else delete document.documentElement.dataset.theme;
+    document.querySelectorAll('[data-t]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    paint();
+  }));
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', paint);
+  new MutationObserver(paint).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  paint();
+</script>
+</body>
+</html>
