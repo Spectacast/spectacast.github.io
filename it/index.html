@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spectacast</title>
+<meta name="description" content="Spectacast gestisce eventi ibridi dal vivo: le sale, la riunione online, i microfoni e la traduzione simultanea da un&#x27;unica regia, tramite connettori per gli strumenti che usi già, e le presenze agli ingressi con Pass.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<!--alternates--><link rel="alternate" hreflang="en" href="https://spectacast.com/">
+<link rel="alternate" hreflang="de" href="https://spectacast.com/de/">
+<link rel="alternate" hreflang="es" href="https://spectacast.com/es/">
+<link rel="alternate" hreflang="it" href="https://spectacast.com/it/">
+<link rel="alternate" hreflang="x-default" href="https://spectacast.com/"><!--/alternates-->
+<meta property="og:title" content="Spectacast">
+<meta property="og:description" content="Un&#x27;unica regia per la sala, la riunione e i microfoni.">
+<meta property="og:image" content="https://spectacast.com/brand/lockup-light.png">
+<style>
+  :root {
+    --bg: #f4f1ea;
+    --surface: #ffffff;
+    --ink: #111318;
+    --muted: #5b5f68;
+    --line: #dcd7cc;
+    --live: #e5352b;
+    --chip: #ebe6db;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #111318;
+      --surface: #1a1d24;
+      --ink: #f4f1ea;
+      --muted: #a2a6ae;
+      --line: #2b2f38;
+      --live: #ff4a3f;
+      --chip: #23272f;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 17px/1.55 -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+  header { display: flex; align-items: center; justify-content: space-between; padding: 28px 0; }
+  .brand { display: flex; align-items: center; gap: 12px; color: inherit; text-decoration: none;
+           font-weight: 700; font-size: 22px; letter-spacing: -0.03em; }
+  .brand svg { width: 26px; height: 36px; color: var(--ink); }
+  nav a { color: var(--muted); text-decoration: none; font-size: 15px; margin-left: 22px; }
+  nav a:hover { color: var(--ink); }
+  nav { margin-left: auto; }
+  .langs { margin-left: 22px; padding-left: 8px; border-left: 1px solid var(--line); }
+  .langs a { color: var(--muted); text-decoration: none; font-size: 13px; margin-left: 12px; }
+  .langs a:hover { color: var(--ink); }
+
+  .hero { padding: 72px 0 88px; }
+  .onair { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 600;
+           letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+  .onair i { width: 10px; height: 10px; border-radius: 50%; background: var(--live);
+             box-shadow: 0 0 0 4px color-mix(in srgb, var(--live) 22%, transparent); }
+  h1 { font-size: clamp(38px, 6.4vw, 72px); line-height: 1.02; letter-spacing: -0.045em;
+       margin: 22px 0 26px; max-width: 14ch; }
+  .lede { font-size: clamp(18px, 2.2vw, 21px); color: var(--muted); max-width: 40ch; margin: 0; }
+
+  h2 { font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+       color: var(--muted); margin: 0 0 22px; }
+  .modules { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px;
+          padding: 26px 24px 24px; display: flex; flex-direction: column; }
+  .card h3 { margin: 0 0 4px; font-size: 24px; letter-spacing: -0.03em; }
+  .card h3 span { color: var(--muted); font-weight: 500; }
+  .card .what { margin: 0 0 14px; font-weight: 600; }
+  .card p { margin: 0 0 18px; color: var(--muted); font-size: 16px; }
+  .chips { margin-top: auto; display: flex; flex-wrap: wrap; gap: 6px; }
+  .card.wide { grid-column: 1 / -1; }
+  .chips span { background: var(--chip); border-radius: 999px; padding: 3px 10px; font-size: 13px; }
+
+  .intro { color: var(--muted); max-width: 60ch; margin: -6px 0 26px; }
+  .connectors { margin-top: 88px; }
+  .conn { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .conn li { background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+             padding: 16px 18px; font-size: 15px; color: var(--muted); }
+  .conn b { display: block; color: var(--ink); font-size: 16px; margin-bottom: 3px; }
+  .case { margin: 88px 0 0; padding: 40px 0 0; border-top: 1px solid var(--line); }
+  .case-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 40px; align-items: start; }
+  .case h3 { margin: 0 0 12px; font-size: 26px; letter-spacing: -0.03em; line-height: 1.15; }
+  .case p { margin: 0; color: var(--muted); }
+  .facts { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .facts li { background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+              padding: 16px 18px; font-size: 14px; color: var(--muted); }
+  .facts b { display: block; font-size: 34px; letter-spacing: -0.04em; color: var(--ink); line-height: 1.1; }
+
+  footer { padding: 40px 0 56px; color: var(--muted); font-size: 13px; }
+  footer p { margin: 0 0 6px; }
+  footer .legal a { color: var(--muted); }
+  footer .legal a:hover { color: var(--ink); }
+
+  @media (max-width: 820px) {
+    .modules { grid-template-columns: 1fr; }
+    .conn { grid-template-columns: 1fr 1fr; }
+    .case-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 480px) {
+    .wrap { padding: 0 16px; }
+    .hero { padding: 40px 0 56px; }
+    .conn { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 720px) { nav a:not(:last-child) { display: none; } }
+  @media (max-width: 360px) {
+    .brand { font-size: 19px; gap: 8px; }
+    nav a { margin-left: 10px; }
+    .langs { margin-left: 10px; padding-left: 0; }
+    .langs a { margin-left: 8px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="brand" href="/it/">
+      <svg viewBox="140 80 250 340" aria-hidden="true">
+        <path d="M290 116 H252 A68 68 0 0 0 252 252 H260 A68 68 0 0 1 260 388 H196" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="356" cy="116" r="27" fill="#ff3b30"/>
+      </svg>
+      spectacast
+    </a>
+    <nav><a href="#modules">Moduli</a><a href="#connectors">Connettori</a><a href="#case">In produzione</a><a href="/it/prezzi/">Prezzi</a></nav>
+    <!--langs--><div class="langs"><a href="/" hreflang="en" lang="en" title="English">EN</a><a href="/de/" hreflang="de" lang="de" title="Deutsch">DE</a><a href="/es/" hreflang="es" lang="es" title="Español">ES</a></div><!--/langs-->
+  </header>
+
+  <section class="hero">
+    <span class="onair"><i></i>Eventi ibridi dal vivo</span>
+    <h1>Un'unica regia per la sala, la riunione e i microfoni.</h1>
+    <p class="lede">Spectacast gestisce congressi e show che si svolgono insieme in sala e online. Le sale, la riunione con i relatori da remoto, i flussi video e i microfoni si guidano da un'unica dashboard, tramite connettori per gli strumenti che usi già, con regole che si occupano della routine.</p>
+  </section>
+
+  <section id="modules">
+    <h2>Moduli</h2>
+    <div class="modules">
+      <article class="card">
+        <h3><span>Spectacast</span> Director</h3>
+        <p class="what">La regia.</p>
+        <p>Un motore e una dashboard web che vedono insieme ogni PC di sala, la riunione e i microfoni. Cambia scena, ammetti e posiziona i relatori da remoto, instrada l'audio e lascia che le regole facciano ciò che un operatore farebbe comunque. Parla con ogni strumento tramite un connettore, così il mixer, il trasporto video e la piattaforma di riunione sono una scelta, non un vincolo.</p>
+        <div class="chips"><span>Connettori</span><span>Regole</span><span>Multiview</span><span>Windows · macOS</span></div>
+      </article>
+      <article class="card">
+        <h3><span>Spectacast</span> Meet</h3>
+        <p class="what">La riunione, in flussi separati.</p>
+        <p>Entra nella riunione online e dà a ogni partecipante, alla galleria e alle condivisioni schermo un proprio flusso video, con l'audio, che la sala usa come qualsiasi altra sorgente. Director controlla chi va dove. Oggi Zoom; la piattaforma di riunione è un connettore.</p>
+        <div class="chips"><span>Flussi separati</span><span>Controllo remoto</span><span>Windows · macOS</span></div>
+      </article>
+      <article class="card">
+        <h3><span>Spectacast</span> Mic</h3>
+        <p class="what">Telefoni come microfoni.</p>
+        <p>I relatori e la regia usano i telefoni come radiomicrofoni e intercom. Il PC li riceve come dispositivi audio, accanto ai microfoni della sala.</p>
+        <div class="chips"><span>Android</span><span>iOS</span><span>Windows · macOS</span></div>
+      </article>
+      <article class="card">
+        <h3><span>Spectacast</span> Translator</h3>
+        <p class="what">Traduzione simultanea, come sorgente audio.</p>
+        <p>Prende un microfono, un microfono di sala o un telefono tramite Mic e restituisce il parlato tradotto in un'altra lingua su qualsiasi uscita audio, per la sala, la riunione o una cuffia. Director lo avvia e lo ferma come qualsiasi altro dispositivo. Oggi Gemini; il servizio di traduzione è un connettore.</p>
+        <div class="chips"><span>Parlato dal vivo</span><span>Controllo web</span><span>Windows · macOS</span></div>
+      </article>
+      <article class="card wide">
+        <h3><span>Spectacast</span> Pass</h3>
+        <p class="what">Badge, ingressi e presenze.</p>
+        <p>Ogni badge porta un codice QR. A ogni ingresso lo legge un telefono, un tablet o qualsiasi lettore a tastiera, e l'ingresso risponde subito in verde, giallo o rosso con un suono, anche quando cade la rete: le letture aspettano offline e partono quando torna. Poi Pass dice chi era in quale sessione, quando e per quanto tempo, pronto da esportare. L'organizzatore definisce le categorie e le regole di ogni evento, le prova in un tester, importa i partecipanti da un foglio di calcolo o da un sito di iscrizione e stampa i badge.</p>
+        <div class="chips"><span>App web di lettura</span><span>Qualsiasi lettore</span><span>Offline</span><span>Stampa badge</span><span>Regole</span><span>Occupazione in tempo reale</span><span>Report</span><span>English · Italiano</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="connectors" class="connectors">
+    <h2>Connettori</h2>
+    <p class="intro">Director coordina, i connettori parlano con gli apparati. Questi ci sono già oggi; i nuovi si scrivono su un'interfaccia piccola, quindi altri possono seguire, ed è previsto un posto dove condividerli.</p>
+    <ul class="conn">
+      <li><b>OBS Studio</b>scene, sorgenti, uscite e audio su ogni PC di sala</li>
+      <li><b>NDI</b>video e audio tra i PC, con un multiview per vedere tutto</li>
+      <li><b>Spectacast Meet</b>la riunione online in flussi separati, e chi c'è dentro</li>
+      <li><b>Spectacast Mic</b>telefoni come microfoni e intercom</li>
+      <li><b>Spectacast Translator</b>traduzione simultanea di un relatore in un'altra lingua</li>
+      <li><b>Sennheiser EW-DX</b>i radiomicrofoni della sala: livelli, batteria, chi è attivo</li>
+      <li><b>Dante</b>l'audio in rete della sala, tramite Dante Virtual Soundcard sull'hub dei microfoni</li>
+      <li><b>MIDI</b>superfici di controllo e fader</li>
+      <li><b>Cartelle</b>clip e file che compaiono durante lo show</li>
+      <li><b>Il tuo</b>qualsiasi protocollo tu descriva: HTTP, OSC o socket diretti</li>
+    </ul>
+  </section>
+
+  <section id="case" class="case">
+    <h2>In produzione</h2>
+    <div class="case-grid">
+      <div>
+        <h3>Un congresso medico, diciotto sale, un'unica regia</h3>
+        <p>Ogni sala ha un PC con OBS e una telecamera, e una propria riunione che collega l'auditorium con la sala operatoria, gli ospedali della faculty e i relatori da remoto. Chiunque sia nella riunione compare in sala come flusso separato, e il programma della sala torna a loro. I microfoni di sala e quelli dei telefoni arrivano al PC che ne ha bisogno. Un solo operatore le segue tutte e diciotto, e le regole gestiscono le ammissioni, i passaggi tra relatori e l'instradamento audio che altrimenti si farebbe a mano, molte volte al giorno.</p>
+      </div>
+      <ul class="facts">
+        <li><b>18</b>sale, ognuna una postazione</li>
+        <li><b>18</b>riunioni, una per sala</li>
+        <li><b>7</b>connettori in uso</li>
+        <li><b>1</b>operatore</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p class="legal"><a href="/it/prezzi/">Prezzi</a> · <a href="/it/termini/">Termini</a> · <a href="/it/rimborsi/">Rimborsi</a> · <a href="/it/privacy/">Privacy</a></p>
+    <p class="legal"><!--footlangs--><a href="/" hreflang="en" lang="en">English</a> · <a href="/de/" hreflang="de" lang="de">Deutsch</a> · <a href="/es/" hreflang="es" lang="es">Español</a> · Italiano<!--/footlangs--></p>
+    <p>© 2026 Spectacast · spectacast.com</p>
+    <p>Zoom è un marchio di Zoom Communications, Inc. NDI è un marchio registrato di Vizrt NDI AB. OBS Studio è un progetto di OBS Project.</p>
+  </footer>
+</div>
+</body>
+</html>

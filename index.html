@@ -5,8 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Spectacast</title>
 <meta name="description" content="Spectacast runs live hybrid events: the halls, the online meeting, the microphones and live translation from one control room, through connectors for the tools you already use, and attendance at the doors with Pass.">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<!--alternates--><link rel="alternate" hreflang="en" href="https://spectacast.com/">
+<link rel="alternate" hreflang="de" href="https://spectacast.com/de/">
+<link rel="alternate" hreflang="es" href="https://spectacast.com/es/">
+<link rel="alternate" hreflang="it" href="https://spectacast.com/it/">
+<link rel="alternate" hreflang="x-default" href="https://spectacast.com/"><!--/alternates-->
 <meta property="og:title" content="Spectacast">
 <meta property="og:description" content="One control room for the hall, the meeting and the mics.">
 <meta property="og:image" content="https://spectacast.com/brand/lockup-light.png">
@@ -46,6 +51,10 @@
   .brand svg { width: 26px; height: 36px; color: var(--ink); }
   nav a { color: var(--muted); text-decoration: none; font-size: 15px; margin-left: 22px; }
   nav a:hover { color: var(--ink); }
+  nav { margin-left: auto; }
+  .langs { margin-left: 22px; padding-left: 8px; border-left: 1px solid var(--line); }
+  .langs a { color: var(--muted); text-decoration: none; font-size: 13px; margin-left: 12px; }
+  .langs a:hover { color: var(--ink); }
 
   .hero { padding: 72px 0 88px; }
   .onair { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 600;
@@ -97,8 +106,14 @@
   @media (max-width: 480px) {
     .wrap { padding: 0 16px; }
     .hero { padding: 40px 0 56px; }
-    nav a:not(:last-child) { display: none; }
     .conn { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 720px) { nav a:not(:last-child) { display: none; } }
+  @media (max-width: 360px) {
+    .brand { font-size: 19px; gap: 8px; }
+    nav a { margin-left: 10px; }
+    .langs { margin-left: 10px; padding-left: 0; }
+    .langs a { margin-left: 8px; }
   }
 </style>
 </head>
@@ -113,6 +128,7 @@
       spectacast
     </a>
     <nav><a href="#modules">Modules</a><a href="#connectors">Connectors</a><a href="#case">In production</a><a href="/pricing/">Pricing</a></nav>
+    <!--langs--><div class="langs"><a href="/de/" hreflang="de" lang="de" title="Deutsch">DE</a><a href="/es/" hreflang="es" lang="es" title="Español">ES</a><a href="/it/" hreflang="it" lang="it" title="Italiano">IT</a></div><!--/langs-->
   </header>
 
   <section class="hero">
@@ -216,7 +232,8 @@
   </section>
 
   <footer>
-    <p class="legal"><a href="/pricing/">Pricing</a> · <a href="/it/prezzi/" lang="it">Prezzi</a> · <a href="/terms/">Terms</a> · <a href="/refunds/">Refund Policy</a> · <a href="/privacy/">Privacy</a> · <a href="/it/termini/" lang="it">Termini</a> · <a href="/it/rimborsi/" lang="it">Rimborsi</a> · <a href="/it/privacy/" lang="it">Privacy (IT)</a></p>
+    <p class="legal"><a href="/pricing/">Pricing</a> · <a href="/terms/">Terms</a> · <a href="/refunds/">Refund Policy</a> · <a href="/privacy/">Privacy</a></p>
+    <p class="legal"><!--footlangs-->English · <a href="/de/" hreflang="de" lang="de">Deutsch</a> · <a href="/es/" hreflang="es" lang="es">Español</a> · <a href="/it/" hreflang="it" lang="it">Italiano</a><!--/footlangs--></p>
     <p>© 2026 Spectacast · spectacast.com</p>
     <p>Zoom is a trademark of Zoom Communications, Inc. NDI is a registered trademark of Vizrt NDI AB. OBS Studio is a project of the OBS Project.</p>
   </footer>
