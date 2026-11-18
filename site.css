@@ -55,7 +55,7 @@ mark.todo {
 .billing label { padding: 6px 16px; border-radius: 999px; font-size: 15px; font-weight: 600; cursor: pointer; color: var(--sc-muted); }
 .billing input:checked + label { background: var(--sc-ink); color: var(--sc-bg); }
 .billing input:focus-visible + label { box-shadow: var(--sc-focus); }
-.plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.plans { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
 .plan {
   background: var(--sc-surface); border: 1px solid var(--sc-line); border-radius: var(--sc-r-lg);
   padding: 24px 22px; display: flex; flex-direction: column;
