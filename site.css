@@ -69,6 +69,9 @@ mark.todo {
 .price p { grid-area: 1 / 1; margin: 0; color: var(--sc-muted); font-size: 14px; }
 .price b { display: block; color: var(--sc-ink); font: 700 32px/1.15 var(--sc-font-display); letter-spacing: -0.03em; }
 .price .p-event { visibility: hidden; }
+/* The same price with VAT, for private buyers */
+.price .vat { display: block; margin-top: 8px; }
+.price .vat strong { color: var(--sc-ink); font: 700 22px/1.2 var(--sc-font-display); letter-spacing: -0.02em; white-space: nowrap; margin-right: 2px; }
 .pricing:has(#b-event:checked) .p-year { visibility: hidden; }
 .pricing:has(#b-event:checked) .p-event { visibility: visible; }
 .plan ul { list-style: none; margin: 0; padding: 0; font-size: 15px; }
