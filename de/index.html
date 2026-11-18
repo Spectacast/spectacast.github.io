@@ -106,8 +106,14 @@
   @media (max-width: 480px) {
     .wrap { padding: 0 16px; }
     .hero { padding: 40px 0 56px; }
-    nav a:not(:last-child) { display: none; }
     .conn { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 720px) { nav a:not(:last-child) { display: none; } }
+  @media (max-width: 360px) {
+    .brand { font-size: 19px; gap: 8px; }
+    nav a { margin-left: 10px; }
+    .langs { margin-left: 10px; padding-left: 0; }
+    .langs a { margin-left: 8px; }
   }
 </style>
 </head>
@@ -137,7 +143,7 @@
       <article class="card">
         <h3><span>Spectacast</span> Director</h3>
         <p class="what">Die Regie.</p>
-        <p>Eine Engine und ein Web-Dashboard, die jeden Saal-PC, das Meeting und die Mikrofone gleichzeitig im Blick haben. Szenen schneiden, zugeschaltete Sprecher einlassen und platzieren, Ton routen und Regeln das tun lassen, was ein Operator ohnehin tun würde. Mit jedem Werkzeug spricht Director über einen Konnektor, sodass der Mischer, der Videotransport und die Meeting-Plattform eine Wahl sind und keine Vorgabe.</p>
+        <p>Eine Engine und ein Web-Dashboard, die jeden Saal-PC, das Meeting und die Mikrofone gleichzeitig im Blick haben. Szenen umschalten, zugeschaltete Sprecher einlassen und platzieren, Ton routen und Regeln das tun lassen, was ein Operator ohnehin tun würde. Mit jedem Werkzeug spricht Director über einen Konnektor, sodass der Mischer, der Videotransport und die Meeting-Plattform eine Wahl sind und keine Vorgabe.</p>
         <div class="chips"><span>Konnektoren</span><span>Regeln</span><span>Multiview</span><span>Windows · macOS</span></div>
       </article>
       <article class="card">
@@ -156,7 +162,7 @@
         <h3><span>Spectacast</span> Translator</h3>
         <p class="what">Live-Übersetzung, als Audioquelle.</p>
         <p>Nimmt ein Mikrofon, ein Saalmikrofon oder ein Telefon über Mic und gibt die Sprache in eine andere Sprache übersetzt auf einem beliebigen Audioausgang zurück, für den Saal, das Meeting oder einen Kopfhörer. Director startet und stoppt es wie jedes andere Gerät. Heute Gemini; der Übersetzungsdienst ist ein Konnektor.</p>
-        <div class="chips"><span>Live-Sprache</span><span>Steuerung im Browser</span><span>Windows · macOS</span></div>
+        <div class="chips"><span>Sprache in Echtzeit</span><span>Steuerung im Browser</span><span>Windows · macOS</span></div>
       </article>
       <article class="card wide">
         <h3><span>Spectacast</span> Pass</h3>
@@ -180,7 +186,7 @@
       <li><b>Dante</b>das Audionetzwerk des Saals, über Dante Virtual Soundcard auf dem Mikrofon-Hub</li>
       <li><b>MIDI</b>Bedienpulte und Fader</li>
       <li><b>Ordner</b>Clips und Dateien, die während der Show auftauchen</li>
-      <li><b>Ihr eigener</b>jedes Protokoll, das Sie beschreiben: HTTP, OSC oder rohe Sockets</li>
+      <li><b>Ihr eigener</b>jedes Protokoll, das Sie beschreiben: HTTP, OSC oder direkte Sockets</li>
     </ul>
   </section>
 
@@ -189,7 +195,7 @@
     <div class="case-grid">
       <div>
         <h3>Ein Medizinkongress, achtzehn Säle, eine Regie</h3>
-        <p>Jeder Saal hat einen PC mit OBS und einer Kamera und ein eigenes Meeting, das den Hörsaal mit dem Operationssaal, den Kliniken der Referenten und den zugeschalteten Sprechern verbindet. Jeder im Meeting erscheint im Saal als eigenes Signal, und das Programm des Saals geht zu ihnen zurück. Saalmikrofone und Telefon-Mikrofone erreichen den PC, der sie braucht. Ein Operator überblickt alle achtzehn, und die Regeln übernehmen das Einlassen, die Übergaben zwischen Sprechern und das Audio-Routing, das sonst viele Male am Tag von Hand erledigt würde.</p>
+        <p>Jeder Saal hat einen PC mit OBS und einer Kamera und ein eigenes Meeting, das das Auditorium mit dem Operationssaal, den Kliniken der Referenten und den zugeschalteten Sprechern verbindet. Jeder im Meeting erscheint im Saal als eigenes Signal, und das Programm des Saals geht zu ihnen zurück. Saalmikrofone und Telefon-Mikrofone erreichen den PC, der sie braucht. Ein Operator überblickt alle achtzehn, und die Regeln übernehmen das Einlassen, die Übergaben zwischen Sprechern und das Audio-Routing, das sonst viele Male am Tag von Hand erledigt würde.</p>
       </div>
       <ul class="facts">
         <li><b>18</b>Säle, jeder eine Station</li>

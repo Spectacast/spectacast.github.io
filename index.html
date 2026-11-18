@@ -106,8 +106,14 @@
   @media (max-width: 480px) {
     .wrap { padding: 0 16px; }
     .hero { padding: 40px 0 56px; }
-    nav a:not(:last-child) { display: none; }
     .conn { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 720px) { nav a:not(:last-child) { display: none; } }
+  @media (max-width: 360px) {
+    .brand { font-size: 19px; gap: 8px; }
+    nav a { margin-left: 10px; }
+    .langs { margin-left: 10px; padding-left: 0; }
+    .langs a { margin-left: 8px; }
   }
 </style>
 </head>

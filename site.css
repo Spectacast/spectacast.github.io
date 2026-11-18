@@ -88,3 +88,8 @@ mark.todo {
   .wrap { padding: 0 16px; }
   .site-head nav a { margin-left: 14px; }
 }
+@media (max-width: 360px) {
+  .brand { font-size: 19px; gap: 8px; }
+  .site-head nav a { margin-left: 10px; font-size: 14px; }
+}
+.sc .doc h1, .sc .pricing h1 { overflow-wrap: break-word; hyphens: auto; }

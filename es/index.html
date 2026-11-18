@@ -106,8 +106,14 @@
   @media (max-width: 480px) {
     .wrap { padding: 0 16px; }
     .hero { padding: 40px 0 56px; }
-    nav a:not(:last-child) { display: none; }
     .conn { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 720px) { nav a:not(:last-child) { display: none; } }
+  @media (max-width: 360px) {
+    .brand { font-size: 19px; gap: 8px; }
+    nav a { margin-left: 10px; }
+    .langs { margin-left: 10px; padding-left: 0; }
+    .langs a { margin-left: 8px; }
   }
 </style>
 </head>
@@ -137,7 +143,7 @@
       <article class="card">
         <h3><span>Spectacast</span> Director</h3>
         <p class="what">La sala de control.</p>
-        <p>Un motor y un panel web que ven a la vez cada PC de sala, la reunión y los micrófonos. Corta escenas, admite y coloca a los ponentes remotos, encamina el audio y deja que las reglas hagan lo que un operador haría de todos modos. Habla con cada herramienta a través de un conector, de modo que el mezclador, el transporte de vídeo y la plataforma de reuniones son una elección, no una imposición.</p>
+        <p>Un motor y un panel web que ven a la vez cada PC de sala, la reunión y los micrófonos. Cambia de escena, admite y coloca a los ponentes remotos, encamina el audio y deja que las reglas hagan lo que un operador haría de todos modos. Habla con cada herramienta a través de un conector, de modo que el mezclador, el transporte de vídeo y la plataforma de reuniones son una elección, no una imposición.</p>
         <div class="chips"><span>Conectores</span><span>Reglas</span><span>Multiview</span><span>Windows · macOS</span></div>
       </article>
       <article class="card">
@@ -189,7 +195,7 @@
     <div class="case-grid">
       <div>
         <h3>Un congreso médico, dieciocho salas, una sola sala de control</h3>
-        <p>Cada sala tiene un PC con OBS y una cámara, y su propia reunión que conecta el auditorio con el quirófano, los hospitales de los ponentes y los ponentes remotos. Cada persona de la reunión aparece en la sala como una señal separada, y el programa de la sala vuelve a ellos. Los micrófonos de sala y los de teléfono llegan al PC que los necesita. Un solo operador vigila las dieciocho, y las reglas se encargan de admitir a las personas, de los relevos entre ponentes y del encaminamiento de audio que de otro modo se haría a mano muchas veces al día.</p>
+        <p>Cada sala tiene un PC con OBS y una cámara, y su propia reunión que conecta el auditorio con el quirófano, los hospitales de los ponentes y los ponentes remotos. Cada persona de la reunión aparece en la sala como una señal separada, y el programa de la sala vuelve a ellas. Los micrófonos de sala y los de teléfono llegan al PC que los necesita. Un solo operador vigila las dieciocho, y las reglas se encargan de admitir a las personas, de los relevos entre ponentes y del encaminamiento de audio que de otro modo se haría a mano muchas veces al día.</p>
       </div>
       <ul class="facts">
         <li><b>18</b>salas, cada una un puesto</li>

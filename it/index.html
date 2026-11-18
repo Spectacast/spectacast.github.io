@@ -106,8 +106,14 @@
   @media (max-width: 480px) {
     .wrap { padding: 0 16px; }
     .hero { padding: 40px 0 56px; }
-    nav a:not(:last-child) { display: none; }
     .conn { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 720px) { nav a:not(:last-child) { display: none; } }
+  @media (max-width: 360px) {
+    .brand { font-size: 19px; gap: 8px; }
+    nav a { margin-left: 10px; }
+    .langs { margin-left: 10px; padding-left: 0; }
+    .langs a { margin-left: 8px; }
   }
 </style>
 </head>
@@ -161,7 +167,7 @@
       <article class="card wide">
         <h3><span>Spectacast</span> Pass</h3>
         <p class="what">Badge, ingressi e presenze.</p>
-        <p>Ogni badge porta un codice QR. A ogni ingresso lo legge un telefono, un tablet o qualsiasi lettore a tastiera, e l'ingresso risponde subito in verde, ambra o rosso con un suono, anche quando cade la rete: le letture aspettano offline e partono quando torna. Poi Pass dice chi era in quale sessione, quando e per quanto tempo, pronto da esportare. L'organizzatore definisce le categorie e le regole di ogni evento, le prova in un tester, importa i partecipanti da un foglio di calcolo o da un sito di iscrizione e stampa i badge.</p>
+        <p>Ogni badge porta un codice QR. A ogni ingresso lo legge un telefono, un tablet o qualsiasi lettore a tastiera, e l'ingresso risponde subito in verde, giallo o rosso con un suono, anche quando cade la rete: le letture aspettano offline e partono quando torna. Poi Pass dice chi era in quale sessione, quando e per quanto tempo, pronto da esportare. L'organizzatore definisce le categorie e le regole di ogni evento, le prova in un tester, importa i partecipanti da un foglio di calcolo o da un sito di iscrizione e stampa i badge.</p>
         <div class="chips"><span>App web di lettura</span><span>Qualsiasi lettore</span><span>Offline</span><span>Stampa badge</span><span>Regole</span><span>Occupazione in tempo reale</span><span>Report</span><span>English · Italiano</span></div>
       </article>
     </div>
