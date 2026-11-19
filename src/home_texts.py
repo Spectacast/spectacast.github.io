@@ -12,7 +12,9 @@ KEEP = {
     'Multiview', 'Windows · macOS', 'Android', 'iOS', 'Offline',
     'OBS Studio', 'NDI', 'Spectacast Meet', 'Spectacast Mic', 'Spectacast Translator',
     'Sennheiser EW-DX', 'Dante', 'MIDI', '18', '7', '1', '·',
-    'EN · DE · ES · IT', '© 2026 Spectacast · spectacast.com',
+    'EN · DE · ES · IT', '© 2026 Spectacast · spectacast.com', '{{cta}}',
+    'Buongiorno a tutti e grazie per essere qui.', 'Good morning everyone, and thank you for being here.',
+    'Dr. Elena Ortega', '4',
 }
 
 # Attributes in <head>: description and social card.
@@ -30,6 +32,267 @@ HEAD = {
 }
 
 BODY = {
+    # Home page as redesigned on 19 Nov 2026
+    'Spectacast runs congresses and shows that happen in a room and online at once. Every hall, every remote speaker and every microphone on one dashboard, with rules that take care of the routine.': {
+        'de': 'Spectacast steuert Kongresse und Shows, die im Saal und online zugleich stattfinden. Jeder Saal, jede zugeschaltete Person und jedes Mikrofon auf einem Dashboard, mit Regeln, die die Routine übernehmen.',
+        'es': 'Spectacast dirige congresos y eventos que ocurren en una sala y en línea a la vez. Cada sala, cada ponente remoto y cada micrófono en un solo panel, con reglas que se ocupan de la rutina.',
+        'it': "Spectacast gestisce congressi ed eventi che si svolgono in sala e online allo stesso tempo. Ogni sala, ogni relatore remoto e ogni microfono in un'unica dashboard, con regole che si occupano della routine.",
+    },
+    'Keeps running when the internet drops': {
+        'de': 'Läuft weiter, wenn das Internet ausfällt',
+        'es': 'Sigue funcionando si se cae internet',
+        'it': 'Continua a funzionare se cade internet',
+    },
+    'Works with OBS, NDI and Zoom': {
+        'de': 'Arbeitet mit OBS, NDI und Zoom',
+        'es': 'Funciona con OBS, NDI y Zoom',
+        'it': 'Funziona con OBS, NDI e Zoom',
+    },
+    'In English, German, Spanish and Italian': {
+        'de': 'Auf Deutsch, Englisch, Spanisch und Italienisch',
+        'es': 'En español, inglés, alemán e italiano',
+        'it': 'In italiano, inglese, tedesco e spagnolo',
+    },
+    'Hall A': {
+        'de': 'Saal A',
+        'es': 'Sala A',
+        'it': 'Sala A',
+    },
+    'On air': {
+        'de': 'Auf Sendung',
+        'es': 'Al aire',
+        'it': 'In onda',
+    },
+    'Program · meeting and mics': {
+        'de': 'Program · Meeting und Mikrofone',
+        'es': 'Program · reunión y micrófonos',
+        'it': 'Program · riunione e microfoni',
+    },
+    'Meeting': {
+        'de': 'Meeting',
+        'es': 'Reunión',
+        'it': 'Riunione',
+    },
+    "4 in the hall's meeting": {
+        'de': '4 im Meeting des Saals',
+        'es': '4 en la reunión de la sala',
+        'it': '4 nella riunione della sala',
+    },
+    '1 in the waiting room': {
+        'de': '1 im Warteraum',
+        'es': '1 en la sala de espera',
+        'it': "1 in sala d'attesa",
+    },
+    'Admit': {
+        'de': 'Zulassen',
+        'es': 'Admitir',
+        'it': 'Ammetti',
+    },
+    "Sofia's phone": {
+        'de': 'Sofias Telefon',
+        'es': 'El teléfono de Sofía',
+        'it': 'Il telefono di Sofia',
+    },
+    'Question from the floor': {
+        'de': 'Frage aus dem Publikum',
+        'es': 'Pregunta del público',
+        'it': 'Domanda dal pubblico',
+    },
+    'Door · Hall A': {
+        'de': 'Zugang · Saal A',
+        'es': 'Acceso · Sala A',
+        'it': 'Varco · Sala A',
+    },
+    'Welcome, Sofia': {
+        'de': 'Willkommen, Sofia',
+        'es': 'Bienvenida, Sofía',
+        'it': 'Benvenuta, Sofia',
+    },
+    'Faculty · 62 of 400 inside': {
+        'de': 'Faculty · 62 von 400 im Saal',
+        'es': 'Ponentes · 62 de 400 dentro',
+        'it': 'Faculty · 62 di 400 in sala',
+    },
+    'Spectacast Director during a congress: four halls side by side, each with its meeting, its waiting room, Preview and Program.': {
+        'de': 'Spectacast Director während eines Kongresses: vier Säle nebeneinander, jeder mit seinem Meeting, seinem Warteraum, Preview und Program.',
+        'es': 'Spectacast Director durante un congreso: cuatro salas una al lado de otra, cada una con su reunión, su sala de espera, Preview y Program.',
+        'it': "Spectacast Director durante un congresso: quattro sale affiancate, ognuna con la sua riunione, la sua sala d'attesa, Preview e Program.",
+    },
+    'How it fits together': {
+        'de': 'So greift es ineinander',
+        'es': 'Cómo encaja todo',
+        'it': 'Come si combina tutto',
+    },
+    'A PC in every hall. One screen for all of them.': {
+        'de': 'Ein PC in jedem Saal. Ein Bildschirm für alle.',
+        'es': 'Un PC en cada sala. Una sola pantalla para todas.',
+        'it': 'Un PC in ogni sala. Un solo schermo per tutte.',
+    },
+    'In each hall': {
+        'de': 'In jedem Saal',
+        'es': 'En cada sala',
+        'it': 'In ogni sala',
+    },
+    "A PC with OBS Studio and Spectacast Meet puts the remote speakers on the hall's screen and sends the hall back to them.": {
+        'de': 'Ein PC mit OBS Studio und Spectacast Meet bringt die zugeschalteten Vortragenden auf die Leinwand des Saals und schickt ihnen den Saal zurück.',
+        'es': 'Un PC con OBS Studio y Spectacast Meet pone a los ponentes remotos en la pantalla de la sala y les devuelve la sala.',
+        'it': 'Un PC con OBS Studio e Spectacast Meet porta i relatori remoti sullo schermo della sala e rimanda loro la sala.',
+    },
+    'In the control room': {
+        'de': 'In der Regie',
+        'es': 'En la sala de control',
+        'it': 'In regia',
+    },
+    "Director sees every hall PC over the venue's own network. One operator follows the halls side by side and steps in where needed.": {
+        'de': 'Director sieht jeden Saal-PC über das Netzwerk der Location. Eine Person verfolgt die Säle nebeneinander und greift ein, wo es nötig ist.',
+        'es': 'Director ve cada PC de sala por la red del recinto. Un solo operador sigue las salas una al lado de otra e interviene donde hace falta.',
+        'it': 'Director vede ogni PC di sala sulla rete della sede. Un solo operatore segue le sale affiancate e interviene dove serve.',
+    },
+    'Online': {
+        'de': 'Online',
+        'es': 'En línea',
+        'it': 'Online',
+    },
+    'Speakers and audience join an ordinary Zoom meeting, with nothing new to install on their side.': {
+        'de': 'Vortragende und Publikum treten einem gewöhnlichen Zoom-Meeting bei und müssen nichts Neues installieren.',
+        'es': 'Ponentes y público se unen a una reunión de Zoom normal, sin instalar nada nuevo.',
+        'it': 'Relatori e pubblico entrano in una normale riunione Zoom, senza installare nulla di nuovo.',
+    },
+    'At the doors': {
+        'de': 'An den Zugängen',
+        'es': 'En las puertas',
+        'it': 'Agli ingressi',
+    },
+    'Phones and scanners read the badges with Pass and count who is in which session, and for how long.': {
+        'de': 'Telefone und Scanner lesen mit Pass die Badges und zählen, wer in welcher Sitzung ist und wie lange.',
+        'es': 'Teléfonos y lectores leen las acreditaciones con Pass y cuentan quién está en cada sesión y durante cuánto tiempo.',
+        'it': 'Telefoni e lettori leggono i badge con Pass e contano chi è in quale sessione, e per quanto tempo.',
+    },
+    'Five modules. Take the ones you need.': {
+        'de': 'Fünf Module. Nehmen Sie, was Sie brauchen.',
+        'es': 'Cinco módulos. Elige los que necesitas.',
+        'it': 'Cinque moduli. Prendi quelli che ti servono.',
+    },
+    'One dashboard sees every hall PC, the meeting and the mics at once. Put a speaker on air with one touch, and let rules do what an operator would otherwise do by hand.': {
+        'de': 'Ein Dashboard sieht jeden Saal-PC, das Meeting und die Mikrofone zugleich. Schalten Sie Vortragende mit einem Tastendruck auf Sendung, und lassen Sie Regeln erledigen, was sonst von Hand zu tun wäre.',
+        'es': 'Un solo panel ve cada PC de sala, la reunión y los micrófonos a la vez. Pon a un ponente al aire con un toque y deja que las reglas hagan lo que un operador haría a mano.',
+        'it': "Un'unica dashboard vede ogni PC di sala, la riunione e i microfoni insieme. Manda in onda un relatore con un tocco e lascia alle regole ciò che un operatore farebbe a mano.",
+    },
+    'Every hall side by side': {
+        'de': 'Alle Säle nebeneinander',
+        'es': 'Todas las salas una al lado de otra',
+        'it': 'Tutte le sale affiancate',
+    },
+    'Rules for admitting people, hand-overs and audio': {
+        'de': 'Regeln für Einlass ins Meeting, Übergaben und Audio',
+        'es': 'Reglas para admitir personas, relevos y audio',
+        'it': 'Regole per ammissioni, passaggi e audio',
+    },
+    'Connectors for the tools you already use': {
+        'de': 'Konnektoren für die Werkzeuge, die Sie schon nutzen',
+        'es': 'Conectores para las herramientas que ya usas',
+        'it': 'Connettori per gli strumenti che usi già',
+    },
+    'More about Director →': {
+        'de': 'Mehr über Director →',
+        'es': 'Más sobre Director →',
+        'it': 'Scopri Director →',
+    },
+    'Joins the online meeting from the hall PC and gives each participant, the gallery and every screen share its own video feed with sound, for the hall to use like a camera.': {
+        'de': 'Tritt dem Online-Meeting vom Saal-PC aus bei und gibt jeder teilnehmenden Person, der Galerie und jeder Bildschirmfreigabe ein eigenes Videosignal mit Ton, das der Saal wie eine Kamera nutzt.',
+        'es': 'Se une a la reunión en línea desde el PC de sala y da a cada participante, a la galería y a cada pantalla compartida su propia señal de vídeo con sonido, que la sala usa como una cámara.',
+        'it': 'Entra nella riunione online dal PC di sala e dà a ogni partecipante, alla galleria e a ogni schermo condiviso un proprio flusso video con audio, che la sala usa come una camera.',
+    },
+    'More about Meet →': {
+        'de': 'Mehr über Meet →',
+        'es': 'Más sobre Meet →',
+        'it': 'Scopri Meet →',
+    },
+    "Speakers and crew talk into the phone they already have. The hall PC receives each one as an audio device, next to the hall's own microphones.": {
+        'de': 'Vortragende und Team sprechen in das Telefon, das sie schon haben. Der Saal-PC empfängt jedes als Audiogerät, neben den Mikrofonen des Saals.',
+        'es': 'Ponentes y equipo hablan por el teléfono que ya tienen. El PC de sala recibe cada uno como un dispositivo de audio, junto a los micrófonos de la sala.',
+        'it': 'Relatori e squadra parlano nel telefono che hanno già. Il PC di sala riceve ciascuno come un dispositivo audio, accanto ai microfoni della sala.',
+    },
+    'More about Mic →': {
+        'de': 'Mehr über Mic →',
+        'es': 'Más sobre Mic →',
+        'it': 'Scopri Mic →',
+    },
+    "Listens to a speaker and says it in another language on any audio output: the hall, the meeting's interpretation channel or a headset.": {
+        'de': 'Hört einer sprechenden Person zu und sagt es in einer anderen Sprache auf jedem Audioausgang: im Saal, auf dem Dolmetschkanal des Meetings oder im Kopfhörer.',
+        'es': 'Escucha a quien habla y lo dice en otro idioma por cualquier salida de audio: la sala, el canal de interpretación de la reunión o unos auriculares.',
+        'it': "Ascolta chi parla e lo dice in un'altra lingua su qualsiasi uscita audio: la sala, il canale di interpretariato della riunione o una cuffia.",
+    },
+    'Every sentence shown as heard and as said': {
+        'de': 'Jeder Satz, wie gehört und wie gesagt',
+        'es': 'Cada frase, tal como se oyó y como se dijo',
+        'it': 'Ogni frase, come sentita e come detta',
+    },
+    'A warning when the meaning flips': {
+        'de': 'Eine Warnung, wenn sich der Sinn umkehrt',
+        'es': 'Un aviso cuando el sentido se invierte',
+        'it': 'Un avviso quando il senso si capovolge',
+    },
+    'Google Gemini or OpenAI, or your own key': {
+        'de': 'Google Gemini oder OpenAI, oder Ihr eigener Schlüssel',
+        'es': 'Google Gemini u OpenAI, o tu propia clave',
+        'it': 'Google Gemini o OpenAI, o una tua chiave',
+    },
+    'More about Translator →': {
+        'de': 'Mehr über Translator →',
+        'es': 'Más sobre Translator →',
+        'it': 'Scopri Translator →',
+    },
+    'Every badge carries a QR code. A phone, a tablet or a scanner at each door answers at once in green, amber or red, even when the network is down.': {
+        'de': 'Jedes Badge trägt einen QR-Code. Ein Telefon, ein Tablet oder ein Scanner an jedem Zugang antwortet sofort in Grün, Gelb oder Rot, auch wenn das Netzwerk ausfällt.',
+        'es': 'Cada acreditación lleva un código QR. Un teléfono, una tableta o un lector en cada puerta responde al instante en verde, ámbar o rojo, incluso sin red.',
+        'it': 'Ogni badge ha un codice QR. Un telefono, un tablet o un lettore a ogni ingresso risponde subito in verde, giallo o rosso, anche senza rete.',
+    },
+    'Your rooms, sessions and rules': {
+        'de': 'Ihre Räume, Sitzungen und Regeln',
+        'es': 'Tus salas, sesiones y reglas',
+        'it': 'Le tue sale, sessioni e regole',
+    },
+    'Live occupancy for every room': {
+        'de': 'Live-Belegung für jeden Raum',
+        'es': 'Aforo en directo de cada sala',
+        'it': 'Occupazione in tempo reale di ogni sala',
+    },
+    'Attendance reports and certificates': {
+        'de': 'Anwesenheitsberichte und Bescheinigungen',
+        'es': 'Informes de asistencia y certificados',
+        'it': 'Report delle presenze e attestati',
+    },
+    'More about Pass →': {
+        'de': 'Mehr über Pass →',
+        'es': 'Más sobre Pass →',
+        'it': 'Scopri Pass →',
+    },
+    'Works with the tools you already use.': {
+        'de': 'Arbeitet mit den Werkzeugen, die Sie schon nutzen.',
+        'es': 'Funciona con las herramientas que ya usas.',
+        'it': 'Funziona con gli strumenti che usi già.',
+    },
+    "Director's fleet page: each hall's meeting, people, waiting room and output": {
+        'de': 'Die Flotte in Director: Meeting, Personen, Warteraum und Ausgang jedes Saals',
+        'es': 'La flota en Director: la reunión, las personas, la sala de espera y la salida de cada sala',
+        'it': "La flotta in Director: riunione, persone, sala d'attesa e uscita di ogni sala",
+    },
+    'The Translator control page: what was heard in Italian and what was said in English, line by line': {
+        'de': 'Die Bedienseite von Translator: was auf Italienisch gehört und was auf Englisch gesagt wurde, Zeile für Zeile',
+        'es': 'La página de control de Translator: lo que se oyó en italiano y lo que se dijo en inglés, línea a línea',
+        'it': 'La pagina di controllo di Translator: quello che è stato sentito in italiano e quello che è stato detto in inglese, riga per riga',
+    },
+    'Pass during the congress: how many people are in each room, and the latest scans at the doors': {
+        'de': 'Pass während des Kongresses: wie viele Personen in jedem Raum sind, und die letzten Scans an den Eingängen',
+        'es': 'Pass durante el congreso: cuántas personas hay en cada sala y las últimas lecturas en las puertas',
+        'it': 'Pass durante il congresso: quante persone ci sono in ogni sala e le ultime letture agli ingressi',
+    },
+    'The door app on a phone: a green screen with "Welcome Sofia"': {
+        'de': 'Die Einlass-App auf einem Telefon: ein grüner Bildschirm mit „Welcome Sofia“',
+        'es': 'La app de puerta en un teléfono: una pantalla verde con «Welcome Sofia»',
+        'it': "L'app dell'ingresso su un telefono: uno schermo verde con «Welcome Sofia»",
+    },
     'Read more →': {'de': 'Mehr erfahren →', 'es': 'Saber más →', 'it': 'Scopri di più →'},
     'Spectacast Director with four halls side by side: who is in each meeting, the waiting room, Preview and Program': {
         'de': 'Spectacast Director mit vier Sälen nebeneinander: wer in jedem Meeting ist, der Warteraum, Preview und Program',

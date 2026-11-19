@@ -1,70 +1,154 @@
   <section class="hero">
-    <span class="onair"><i></i>Live hybrid events</span>
-    <h1>One control room for the hall, the meeting and the mics.</h1>
-    <p class="lede">Spectacast runs congresses and shows that happen in a room and online at once.
-      The halls, the meeting with its remote speakers, the video feeds and the microphones are
-      driven from one dashboard, through connectors for the tools you already use, with rules
-      that take care of the routine.</p>
-    <figure class="shot hero-shot"><img src="/img/screens/director-channels-en.webp" alt="Spectacast Director with four halls side by side: who is in each meeting, the waiting room, Preview and Program" width="1600" height="1000"></figure>
-  </section>
-
-  <section id="modules">
-    <h2>Modules</h2>
-    <div class="modules">
-      <article class="card">
-        <h3><span>Spectacast</span> Director</h3>
-        <p class="what">The control room.</p>
-        <p>An engine and a web dashboard that see every hall PC, the meeting and the mics at once.
-          Cut scenes, admit and place remote speakers, route audio, and let rules do what an
-          operator would do anyway. It talks to each tool through a connector, so the mixer,
-          the video transport and the meeting platform are a choice, not a given.</p>
-        <p class="more"><a href="/products/director/">Read more →</a></p>
-        <div class="chips"><span>Connectors</span><span>Rules</span><span>Multiview</span><span>Windows · macOS</span></div>
-      </article>
-      <article class="card">
-        <h3><span>Spectacast</span> Meet</h3>
-        <p class="what">The meeting, as separate feeds.</p>
-        <p>Joins the online meeting and gives each participant, the gallery and screen shares
-          their own video feed, with the audio, for the hall to use like any other source.
-          Director controls who goes where. Zoom today; the meeting platform is a connector.</p>
-        <p class="more"><a href="/products/meet/">Read more →</a></p>
-        <div class="chips"><span>Isolated feeds</span><span>Remote control</span><span>Windows · macOS</span></div>
-      </article>
-      <article class="card">
-        <h3><span>Spectacast</span> Mic</h3>
-        <p class="what">Phones as microphones.</p>
-        <p>Speakers and the control room use their phones as wireless mics and talkback.
-          The PC side receives them as audio devices, next to the hall's own mics.</p>
-        <p class="more"><a href="/products/mic/">Read more →</a></p>
-        <div class="chips"><span>Android</span><span>iOS</span><span>Windows · macOS</span></div>
-      </article>
-      <article class="card">
-        <h3><span>Spectacast</span> Translator</h3>
-        <p class="what">Live translation, as an audio source.</p>
-        <p>Takes a microphone, a hall mic or a phone through Mic, and gives back the speech
-          translated into another language on any audio output, for the hall, the meeting or a
-          headset. Director starts and stops it like any other device. Google Gemini or OpenAI today;
-          the translation service is a connector.</p>
-        <p class="more"><a href="/products/translator/">Read more →</a></p>
-        <div class="chips"><span>Live speech</span><span>Web control</span><span>Windows · macOS</span></div>
-      </article>
-      <article class="card wide">
-        <h3><span>Spectacast</span> Pass</h3>
-        <p class="what">Badges, doors and attendance.</p>
-        <p>Every badge carries a QR code. At each door a phone, a tablet or any keyboard scanner
-          reads it, and the door answers at once in green, amber or red with a sound, even when the
-          network drops: scans wait offline and are sent when it is back. Afterwards Pass tells who
-          was in which session, when and for how long, ready to export. The organiser sets the
-          categories and the rules for each event, tries them in a tester, imports attendees from
-          a spreadsheet or a registration site and prints the badges.</p>
-        <p class="more"><a href="/products/pass/">Read more →</a></p>
-        <div class="chips"><span>Web scan app</span><span>Any scanner</span><span>Offline</span><span>Badge print</span><span>Rules</span><span>Live occupancy</span><span>Reports</span><span>EN · DE · ES · IT</span></div>
-      </article>
+    <div class="hero-copy">
+      <span class="onair"><i></i>Live hybrid events</span>
+      <h1>One control room for the hall, the meeting and the mics.</h1>
+      <p class="lede">Spectacast runs congresses and shows that happen in a room and online at once.
+        Every hall, every remote speaker and every microphone on one dashboard, with rules that
+        take care of the routine.</p>
+      {{cta}}
+      <ul class="hero-points">
+        <li>Keeps running when the internet drops</li>
+        <li>Works with OBS, NDI and Zoom</li>
+        <li>In English, German, Spanish and Italian</li>
+      </ul>
+    </div>
+    <div class="board" aria-hidden="true">
+      <div class="tile t-hall">
+        <span class="t-label">Hall A</span>
+        <span class="pill live"><i></i>On air</span>
+        <b>Dr. Elena Ortega</b>
+        <span class="t-sub">Program · meeting and mics</span>
+      </div>
+      <div class="tile t-meet">
+        <span class="t-label">Meeting</span>
+        <b>4 in the hall's meeting</b>
+        <span class="t-sub">1 in the waiting room</span>
+        <span class="t-btn">Admit</span>
+      </div>
+      <div class="tile t-mic">
+        <span class="t-label">Mic</span>
+        <b>Sofia's phone</b>
+        <span class="meter"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+        <span class="t-sub">Question from the floor</span>
+      </div>
+      <div class="tile t-tr">
+        <span class="t-label">Translator</span>
+        <span class="t-heard" lang="it">Buongiorno a tutti e grazie per essere qui.</span>
+        <b>Good morning everyone, and thank you for being here.</b>
+      </div>
+      <div class="tile t-door">
+        <span class="t-label">Door · Hall A</span>
+        <b>Welcome, Sofia</b>
+        <span class="t-sub">Faculty · 62 of 400 inside</span>
+      </div>
     </div>
   </section>
 
-  <section id="connectors" class="connectors">
-    <h2>Connectors</h2>
+  <figure class="shot hero-shot">
+    <img src="/img/screens/director-channels-en.webp" alt="Spectacast Director with four halls side by side: who is in each meeting, the waiting room, Preview and Program" width="1600" height="1000">
+    <figcaption>Spectacast Director during a congress: four halls side by side, each with its meeting, its waiting room, Preview and Program.</figcaption>
+  </figure>
+
+  <section id="how" class="band">
+    <p class="eyebrow">How it fits together</p>
+    <h2>A PC in every hall. One screen for all of them.</h2>
+    <ol class="places">
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
+        <h3>In each hall</h3>
+        <p>A PC with OBS Studio and Spectacast Meet puts the remote speakers on the hall's screen and sends the hall back to them.</p>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="8" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="8" height="8" rx="1.5"/></svg>
+        <h3>In the control room</h3>
+        <p>Director sees every hall PC over the venue's own network. One operator follows the halls side by side and steps in where needed.</p>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg>
+        <h3>Online</h3>
+        <p>Speakers and audience join an ordinary Zoom meeting, with nothing new to install on their side.</p>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><rect x="8" y="8" width="8" height="8" rx="1"/></svg>
+        <h3>At the doors</h3>
+        <p>Phones and scanners read the badges with Pass and count who is in which session, and for how long.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section id="modules" class="band">
+    <p class="eyebrow">Modules</p>
+    <h2>Five modules. Take the ones you need.</h2>
+
+    <article class="feature stack">
+      <div class="f-copy">
+        <h3><span>Spectacast</span> Director</h3>
+        <p class="what">The control room.</p>
+        <p>One dashboard sees every hall PC, the meeting and the mics at once. Put a speaker on air with one touch, and let rules do what an operator would otherwise do by hand.</p>
+        <ul class="ticks">
+          <li>Every hall side by side</li>
+          <li>Rules for admitting people, hand-overs and audio</li>
+          <li>Connectors for the tools you already use</li>
+        </ul>
+        <p class="more"><a href="/products/director/">More about Director →</a></p>
+      </div>
+      <figure class="f-shot"><img src="/img/screens/director-fleet-en.webp" alt="Director's fleet page: each hall's meeting, people, waiting room and output" width="1600" height="420" loading="lazy"></figure>
+    </article>
+
+    <div class="pair">
+      <article class="card">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="9" height="6" rx="1.5"/><rect x="12.5" y="5" width="9" height="6" rx="1.5"/><rect x="2.5" y="13" width="9" height="6" rx="1.5"/><rect x="12.5" y="13" width="9" height="6" rx="1.5"/></svg>
+        <h3><span>Spectacast</span> Meet</h3>
+        <p class="what">The meeting, as separate feeds.</p>
+        <p>Joins the online meeting from the hall PC and gives each participant, the gallery and every screen share its own video feed with sound, for the hall to use like a camera.</p>
+        <p class="more"><a href="/products/meet/">More about Meet →</a></p>
+      </article>
+      <article class="card">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M8.5 21h7"/></svg>
+        <h3><span>Spectacast</span> Mic</h3>
+        <p class="what">Phones as microphones.</p>
+        <p>Speakers and crew talk into the phone they already have. The hall PC receives each one as an audio device, next to the hall's own microphones.</p>
+        <p class="more"><a href="/products/mic/">More about Mic →</a></p>
+      </article>
+    </div>
+
+    <article class="feature flip">
+      <div class="f-copy">
+        <h3><span>Spectacast</span> Translator</h3>
+        <p class="what">Live translation, as an audio source.</p>
+        <p>Listens to a speaker and says it in another language on any audio output: the hall, the meeting's interpretation channel or a headset.</p>
+        <ul class="ticks">
+          <li>Every sentence shown as heard and as said</li>
+          <li>A warning when the meaning flips</li>
+          <li>Google Gemini or OpenAI, or your own key</li>
+        </ul>
+        <p class="more"><a href="/products/translator/">More about Translator →</a></p>
+      </div>
+      <figure class="f-shot crop"><picture><source srcset="/img/screens/translator-dark.webp" media="(prefers-color-scheme: dark)"><img src="/img/screens/translator-light.webp" alt="The Translator control page: what was heard in Italian and what was said in English, line by line" width="1440" height="900" loading="lazy"></picture></figure>
+    </article>
+
+    <article class="feature">
+      <div class="f-copy">
+        <h3><span>Spectacast</span> Pass</h3>
+        <p class="what">Badges, doors and attendance.</p>
+        <p>Every badge carries a QR code. A phone, a tablet or a scanner at each door answers at once in green, amber or red, even when the network is down.</p>
+        <ul class="ticks">
+          <li>Your rooms, sessions and rules</li>
+          <li>Live occupancy for every room</li>
+          <li>Attendance reports and certificates</li>
+        </ul>
+        <p class="more"><a href="/products/pass/">More about Pass →</a></p>
+      </div>
+      <figure class="f-shot crop with-phone">
+        <picture><source srcset="/img/screens/pass-live-dark.webp" media="(prefers-color-scheme: dark)"><img src="/img/screens/pass-live-light.webp" alt="Pass during the congress: how many people are in each room, and the latest scans at the doors" width="1440" height="900" loading="lazy"></picture>
+        <picture class="phone"><source srcset="/img/screens/pass-door-welcome-dark.webp" media="(prefers-color-scheme: dark)"><img src="/img/screens/pass-door-welcome-light.webp" alt="The door app on a phone: a green screen with &quot;Welcome Sofia&quot;" width="780" height="1688" loading="lazy"></picture>
+      </figure>
+    </article>
+  </section>
+
+  <section id="connectors" class="band connectors">
+    <p class="eyebrow">Connectors</p>
+    <h2>Works with the tools you already use.</h2>
     <p class="intro">Director coordinates, the connectors do the talking. These ship today;
       new ones are written against one small interface, so more can follow, and a place to
       share them is the plan.</p>
@@ -83,10 +167,10 @@
   </section>
 
   <section id="case" class="case">
-    <h2>In production</h2>
+    <p class="eyebrow">In production</p>
     <div class="case-grid">
       <div>
-        <h3>A medical congress, eighteen halls, one control room</h3>
+        <h2>A medical congress, eighteen halls, one control room</h2>
         <p>Each hall has a PC with OBS and a camera, and its own meeting that connects the
           auditorium with the operating room, the faculty's hospitals and the remote speakers.
           Everyone in the meeting appears in the hall as a separate feed, and the hall's program
