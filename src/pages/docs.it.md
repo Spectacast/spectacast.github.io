@@ -15,6 +15,14 @@
 - [Translator](/it/guida/translator/): traduzione dal vivo come sorgente audio
 - [Pass](/it/guida/pass/): badge, ingressi e presenze
 
+## Director in dettaglio
+
+- [Dispositivi e driver](/it/guida/director-devices/): i dispositivi che Director controlla e gli ingressi da altri sistemi
+- [Il tuo driver](/it/guida/director-drivers/): collega un tuo apparecchio, senza codice
+- [Pannelli](/it/guida/director-panels/): disponi i tuoi pulsanti, selezioni e blocchi
+- [Regole e script](/it/guida/director-rules/): lascia la routine alle regole e risolvi il resto con uno script
+- [API, webhook e Stream Deck](/it/guida/director-api/): comanda Director dai tuoi sistemi
+
 ## Download
 
 I programmi per i PC sono nella pagina [Download](/it/download/). Pass non richiede download: funziona nel browser.

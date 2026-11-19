@@ -66,6 +66,7 @@ Nella prova, due sale possono stare in onda 20 minuti di fila, e le immagini por
 - **Altre sale:** aggiungi l'OBS e il Meet di ogni sala in **Dispositivi**, poi copia una striscia di canale in **Pannelli**.
 - **Regole:** in **Regole**, ogni regola dice cosa la avvia e cosa fa, e mostra quando è partita l'ultima volta. Parti dalle regole dell'esempio e modificale.
 - **Mic e Translator:** compaiono in **Dispositivi** come ogni altro dispositivo. Vedi le guide di [Mic](/it/guida/mic/) e [Translator](/it/guida/translator/).
+- **Ogni pagina in dettaglio:** [Dispositivi e driver](/it/guida/director-devices/), [Il tuo driver](/it/guida/director-drivers/), [Pannelli](/it/guida/director-panels/), [Regole e script](/it/guida/director-rules/) e [API, webhook e Stream Deck](/it/guida/director-api/).
 
 ## Quando qualcosa non funziona
 

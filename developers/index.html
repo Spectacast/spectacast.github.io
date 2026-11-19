@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en" class="sc">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Built to be extended · Spectacast</title>
+<meta name="description" content="Every venue has a device nobody planned for. Spectacast Director is made so that you can connect it yourself: describe its protocol on a form, script what the forms cannot say, and drive…">
+<link rel="canonical" href="https://spectacast.com/developers/">
+<link rel="alternate" hreflang="en" href="https://spectacast.com/developers/">
+<link rel="alternate" hreflang="de" href="https://spectacast.com/de/entwickler/">
+<link rel="alternate" hreflang="es" href="https://spectacast.com/es/desarrolladores/">
+<link rel="alternate" hreflang="it" href="https://spectacast.com/it/sviluppatori/">
+<link rel="alternate" hreflang="x-default" href="https://spectacast.com/developers/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Spectacast">
+<meta property="og:title" content="Built to be extended · Spectacast">
+<meta property="og:description" content="Every venue has a device nobody planned for. Spectacast Director is made so that you can connect it yourself: describe its protocol on a form, script what the forms cannot say, and drive…">
+<meta property="og:url" content="https://spectacast.com/developers/">
+<meta property="og:image" content="https://spectacast.com/img/og/director-rules-en.jpg">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/design/spectacast.css">
+<link rel="stylesheet" href="/site.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="site-head">
+    <a class="brand" href="/"><svg viewBox="140 80 250 340" aria-hidden="true"><path d="M290 116 H252 A68 68 0 0 0 252 252 H260 A68 68 0 0 1 260 388 H196" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/><circle cx="356" cy="116" r="27" fill="#ff3b30"/></svg>spectacast</a>
+    <nav aria-label="Main menu"><a class="nav-product" href="/#modules">Product</a><a href="/pricing/">Pricing</a><a href="/docs/">Docs</a></nav>
+    <nav class="langs" aria-label="Language"><a href="/de/entwickler/" hreflang="de" lang="de" aria-label="Deutsch">DE</a><a href="/es/desarrolladores/" hreflang="es" lang="es" aria-label="Español">ES</a><a href="/it/sviluppatori/" hreflang="it" lang="it" aria-label="Italiano">IT</a></nav>
+    <div class="cta"><a class="sc-btn sc-btn--primary" href="/contact/">Contact us</a></div>
+  </header>
+  <main class="product info developers">
+<header class="p-hero">
+<h1>Built to be extended</h1>
+<p class="lede">Every venue has a device nobody planned for. Spectacast Director is made so that you can connect it yourself: describe its protocol on a form, script what the forms cannot say, and drive everything from your own systems through an open API.</p>
+
+<div class="cta-row"><a class="sc-btn sc-btn--primary" href="/contact/">Contact us</a><a class="sc-btn" href="/pricing/">See pricing</a></div>
+</header>
+<section class="p-row">
+<h2>Connect a device without code</h2>
+<div class="p-text"><p>On the Drivers page you describe a device's protocol: the commands it takes and the messages it sends back. Director speaks OSC, UDP, TCP, HTTP and WebSocket, which covers most lighting desks, audio mixers, video switchers and matrix routers. Once described, the device has buttons, live state and rules like the built-in ones.</p>
+<p>You test against the real device, with every message in and out listed live, and you share a finished driver as one file.</p>
+<p><a href="/docs/director-drivers/">How to describe a driver →</a></p></div>
+</section>
+<section class="p-row">
+<h2>Rules, and scripts when rules are not enough</h2>
+<div class="p-text"><p>Rules react to what happens in the halls: someone enters the waiting room, a speaker takes the floor, a source goes offline. Most are built from forms. Where the logic is your own, a step can be a few lines of JavaScript with the whole state in reach.</p>
+<figure class="shot "><img src="/img/screens/director-rules-en.webp" alt="Director&#x27;s rules page: each rule with what starts it and when it last ran" width="1600" height="1000"></figure>
+
+<p><a href="/docs/director-rules/">Rules and scripts →</a></p></div>
+</section>
+<section class="p-row">
+<h2>An API for your own systems</h2>
+<div class="p-text"><p>Everything the dashboard does goes through an HTTP API on the control-room PC, and a WebSocket sends every change as it happens. A registration system, a show controller or a script can read the state of every hall, press a button, set a variable or run a rule, each with a token that limits what it may do.</p>
+<p><a href="/docs/director-api/">The API →</a></p></div>
+</section>
+<section class="p-row">
+<h2>Webhooks and OSC in</h2>
+<div class="p-text"><p>Another system starts something in Director with one call: a webhook over HTTP, or an OSC message. The programme of the congress can announce a session, and a rule puts the right title on the right hall.</p></div>
+</section>
+<section class="p-row">
+<h2>Stream Deck and MIDI</h2>
+<div class="p-text"><p>A Stream Deck key presses any control of the dashboard through Bitfocus Companion, with nothing extra to install. A MIDI control surface gives the operator real faders and keys, and rules can light them.</p></div>
+</section>
+<section class="p-row">
+<h2>Panels of your own</h2>
+<div class="p-text"><p>The dashboard's panels are yours to lay out: buttons, choices, text fields, level meters and live pictures, built once as a block and placed once per hall.</p>
+<figure class="shot "><img src="/img/screens/director-panels-en.webp" alt="A Director panel with four halls: one block per hall, with its meeting, its waiting room, Preview and Program" width="1600" height="1000" loading="lazy"></figure>
+
+<p><a href="/docs/director-panels/">Panels →</a></p></div>
+</section>
+<section class="p-row">
+<h2>The device you need is not possible this way?</h2>
+<div class="p-text"><p>Some devices need their maker's own library. Those drivers are built into Director, like the ones for OBS Studio, NDI and Sennheiser EW-DX. Tell us what you want to control.</p></div>
+</section>
+  </main>
+  <aside class="closing">
+    <div>
+      <h2>Planning a congress or a hybrid show?</h2>
+      <p>Tell us how many halls you have and what they need to do. We will show you Spectacast on a setup like yours.</p>
+    </div>
+    <div class="closing-act">
+      <div class="cta-row"><a class="sc-btn sc-btn--primary" href="/contact/">Contact us</a><a class="sc-btn" href="/pricing/">See pricing</a></div>
+      <p><a href="mailto:info@spectacast.com">info@spectacast.com</a></p>
+    </div>
+  </aside>
+  <footer class="site-foot">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="/"><svg viewBox="140 80 250 340" aria-hidden="true"><path d="M290 116 H252 A68 68 0 0 0 252 252 H260 A68 68 0 0 1 260 388 H196" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/><circle cx="356" cy="116" r="27" fill="#ff3b30"/></svg>spectacast</a>
+        <p>Live hybrid events, from one control room.</p>
+      </div>
+      <div><p class="foot-title">Products</p><ul><li><a href="/products/director/">Director</a></li><li><a href="/products/meet/">Meet</a></li><li><a href="/products/mic/">Mic</a></li><li><a href="/products/translator/">Translator</a></li><li><a href="/products/pass/">Pass</a></li></ul></div><div><p class="foot-title">Resources</p><ul><li><a href="/pricing/">Pricing</a></li><li><a href="/docs/">Docs</a></li><li><a href="/developers/">Developers</a></li><li><a href="/downloads/">Downloads</a></li></ul></div><div><p class="foot-title">Legal</p><ul><li><a href="/terms/">Terms</a></li><li><a href="/refunds/">Refund Policy</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/security/">Security and data</a></li></ul></div><div><p class="foot-title">Contact</p><ul><li><a href="/contact/">Contact us</a></li><li><a href="mailto:info@spectacast.com">info@spectacast.com</a></li><li><a href="mailto:support@spectacast.com">support@spectacast.com</a></li></ul></div>
+    </div>
+    <div class="foot-base">
+      <p>© 2026 Spectacast · spectacast.com</p>
+      <p>English · <a href="/de/entwickler/" hreflang="de" lang="de">Deutsch</a> · <a href="/es/desarrolladores/" hreflang="es" lang="es">Español</a> · <a href="/it/sviluppatori/" hreflang="it" lang="it">Italiano</a></p>
+    </div>
+    <p class="marks">Zoom is a trademark of Zoom Communications, Inc. NDI is a registered trademark of Vizrt NDI AB. OBS Studio is a project of the OBS Project.</p>
+  </footer>
+</div>
+</body>
+</html>

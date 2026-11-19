@@ -66,6 +66,7 @@ In der Testphase können zwei Säle 20 Minuten am Stück auf Sendung sein, und d
 - **Weitere Säle:** Fügen Sie OBS und Meet jedes Saals unter **Geräte** hinzu und kopieren Sie einen Kanalstreifen unter **Panels**.
 - **Regeln:** Unter **Regeln** zeigt jede Regel, was sie auslöst, was sie tut und wann sie zuletzt lief. Beginnen Sie mit den Regeln des Beispiels und passen Sie sie an.
 - **Mic und Translator:** Sie erscheinen unter **Geräte** wie jedes andere Gerät. Siehe die Anleitungen zu [Mic](/de/hilfe/mic/) und [Translator](/de/hilfe/translator/).
+- **Jede Seite im Detail:** [Geräte und Treiber](/de/hilfe/director-devices/), [Ihr eigener Treiber](/de/hilfe/director-drivers/), [Panels](/de/hilfe/director-panels/), [Regeln und Skripte](/de/hilfe/director-rules/) und [API, Webhooks und Stream Deck](/de/hilfe/director-api/).
 
 ## Wenn etwas nicht funktioniert
 

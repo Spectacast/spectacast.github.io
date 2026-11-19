@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en" class="sc">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>API, webhooks and Stream Deck · Spectacast</title>
+<meta name="description" content="Everything the dashboard does goes through an HTTP API on the control-room PC, and other programs can use it too: a registration system, a show controller, a script, a Stream Deck.">
+<link rel="canonical" href="https://spectacast.com/docs/director-api/">
+<link rel="alternate" hreflang="en" href="https://spectacast.com/docs/director-api/">
+<link rel="alternate" hreflang="de" href="https://spectacast.com/de/hilfe/director-api/">
+<link rel="alternate" hreflang="es" href="https://spectacast.com/es/ayuda/director-api/">
+<link rel="alternate" hreflang="it" href="https://spectacast.com/it/guida/director-api/">
+<link rel="alternate" hreflang="x-default" href="https://spectacast.com/docs/director-api/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Spectacast">
+<meta property="og:title" content="API, webhooks and Stream Deck · Spectacast">
+<meta property="og:description" content="Everything the dashboard does goes through an HTTP API on the control-room PC, and other programs can use it too: a registration system, a show controller, a script, a Stream Deck.">
+<meta property="og:url" content="https://spectacast.com/docs/director-api/">
+<meta property="og:image" content="https://spectacast.com/brand/lockup-light.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/design/spectacast.css">
+<link rel="stylesheet" href="/site.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="site-head">
+    <a class="brand" href="/"><svg viewBox="140 80 250 340" aria-hidden="true"><path d="M290 116 H252 A68 68 0 0 0 252 252 H260 A68 68 0 0 1 260 388 H196" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/><circle cx="356" cy="116" r="27" fill="#ff3b30"/></svg>spectacast</a>
+    <nav aria-label="Main menu"><a class="nav-product" href="/#modules">Product</a><a href="/pricing/">Pricing</a><a href="/docs/" aria-current="page">Docs</a></nav>
+    <nav class="langs" aria-label="Language"><a href="/de/hilfe/director-api/" hreflang="de" lang="de" aria-label="Deutsch">DE</a><a href="/es/ayuda/director-api/" hreflang="es" lang="es" aria-label="Español">ES</a><a href="/it/guida/director-api/" hreflang="it" lang="it" aria-label="Italiano">IT</a></nav>
+    <div class="cta"><a class="sc-btn sc-btn--primary" href="/contact/">Contact us</a></div>
+  </header>
+  <main class="doc guide">
+<nav class="doc-nav" aria-label="Docs"><p>Docs</p><ul><li><a href="/docs/">Overview</a></li><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/account-and-billing/">Account and billing</a></li><li><a href="/docs/director/">Director guide</a></li><li class="sub"><a href="/docs/director-devices/">Devices and drivers</a></li><li class="sub"><a href="/docs/director-drivers/">Your own driver</a></li><li class="sub"><a href="/docs/director-panels/">Panels</a></li><li class="sub"><a href="/docs/director-rules/">Rules and scripts</a></li><li class="sub"><a href="/docs/director-api/" aria-current="page">API, webhooks and Stream Deck</a></li><li><a href="/docs/meet/">Meet guide</a></li><li><a href="/docs/mic/">Mic guide</a></li><li><a href="/docs/translator/">Translator guide</a></li><li><a href="/docs/pass/">Pass guide</a></li></ul></nav>
+<article>
+<h1>API, webhooks and Stream Deck</h1>
+<p class="lede">Everything the dashboard does goes through an HTTP API on the control-room PC, and other programs can use it too: a registration system, a show controller, a script, a Stream Deck.</p>
+
+<p>The address is that of the dashboard, by default <code>http://&lt;control-room PC&gt;:4700</code>. The API stays on the venue's network: Director does not open it to the internet.</p>
+<h2>Access</h2>
+<p>Set a PIN before you open Director to the network (see the <a href="/docs/director/">Director guide</a>). For a program, add an access token of its own to <code>C:\ProgramData\Spectacast\director\.env</code>, then log off and on again:</p>
+<pre><code>ACCESS_TOKENS=api:&lt;a token of 8 characters or more&gt;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>What it may do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>api:&lt;token&gt;</code></td>
+<td>Read everything, press controls, set variables, run rules, call webhooks. It cannot change the show</td>
+</tr>
+<tr>
+<td><code>viewer:&lt;token&gt;</code></td>
+<td>Read only</td>
+</tr>
+<tr>
+<td><code>operator:&lt;token&gt;</code></td>
+<td>The same as the operator PIN: the panels</td>
+</tr>
+<tr>
+<td><code>panels:&lt;token&gt;</code></td>
+<td>The panels alone, for a screen in a hall</td>
+</tr>
+</tbody>
+</table>
+<p>A program signs in with <code>POST /api/login</code> and the body <code>{ "pin": "&lt;token&gt;" }</code>, and keeps the session cookie it gets back. Webhooks and Stream Deck calls carry the token themselves, as shown below.</p>
+<h2>What you can call</h2>
+<table>
+<thead>
+<tr>
+<th>Call</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET /api/state</code></td>
+<td>Everything Director knows, as one JSON tree</td>
+</tr>
+<tr>
+<td><code>GET /api/devices</code></td>
+<td>The devices and whether they are connected</td>
+</tr>
+<tr>
+<td><code>GET /api/drivers</code></td>
+<td>Every driver's actions and events, as JSON Schema</td>
+</tr>
+<tr>
+<td><code>POST /api/actions</code></td>
+<td>Runs an action: <code>{ "target": { "device": "obs01" }, "action": "setCurrentScene", "params": { … } }</code></td>
+</tr>
+<tr>
+<td><code>POST /api/press</code></td>
+<td>Presses a panel control: <code>{ "panel": "main", "control": "goLive" }</code></td>
+</tr>
+<tr>
+<td><code>POST /api/vars</code></td>
+<td>Sets a variable: <code>{ "id": "segment", "value": "panel" }</code></td>
+</tr>
+<tr>
+<td><code>POST /api/rules/&lt;id&gt;/run</code></td>
+<td>Runs a rule now</td>
+</tr>
+<tr>
+<td><code>GET /api/rules/history</code></td>
+<td>The runs and skips of every rule</td>
+</tr>
+<tr>
+<td><code>GET /ws</code></td>
+<td>A WebSocket: the whole state once, then every change as it happens</td>
+</tr>
+</tbody>
+</table>
+<h2>Webhooks</h2>
+<p>A call to <code>POST /api/hooks/&lt;name&gt;</code> raises an event that a rule reacts to. The JSON body and the query string become the event's fields.</p>
+<pre><code>curl -X POST http://director:4700/api/hooks/session-start \
+  -H &quot;x-token: &lt;token&gt;&quot; -H &quot;content-type: application/json&quot; \
+  -d '{ &quot;hall&quot;: &quot;A&quot;, &quot;title&quot;: &quot;Opening&quot; }'
+</code></pre>
+<p>A rule with the trigger <strong>webhook</strong>, event <code>session_start</code>, then reads <code>event.hall</code> and <code>event.title</code>. The token goes in an <code>x-token</code> header, in <code>Authorization: Bearer</code>, or in the address as <code>?token=</code>.</p>
+<h2>Stream Deck</h2>
+<p>Bitfocus Companion reaches Director with its <strong>Generic HTTP</strong> module; there is nothing to install in Companion. A key sends one request:</p>
+<table>
+<thead>
+<tr>
+<th>Request</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/api/bridge/press/&lt;panel&gt;/&lt;control&gt;?token=&lt;PIN&gt;</code></td>
+<td>Presses a control, exactly like a tap on the dashboard</td>
+</tr>
+<tr>
+<td><code>/api/bridge/var/&lt;id&gt;?value=…&amp;token=&lt;PIN&gt;</code></td>
+<td>Sets a variable</td>
+</tr>
+<tr>
+<td><code>/api/bridge/action/&lt;device&gt;/&lt;action&gt;?…&amp;token=&lt;PIN&gt;</code></td>
+<td>Runs a device's action</td>
+</tr>
+<tr>
+<td><code>/api/bridge/rule/&lt;id&gt;/run?token=&lt;PIN&gt;</code></td>
+<td>Runs a rule</td>
+</tr>
+</tbody>
+</table>
+<p>The control's id is at the top of its properties on the <strong>Panels</strong> page. For keys that light up with the state, Director also speaks OSC to Companion: set <code>BRIDGE_OSC_PORT=&lt;a free UDP port&gt;</code> in <code>.env</code>.</p>
+<h2>MIDI</h2>
+<p>A control surface is a device like any other: add it on the <strong>Devices</strong> page with the <strong>MIDI controller</strong> driver. Its keys and faders arrive as events for rules, and rules can light its keys.</p>
+</article>
+  </main>
+  <footer class="site-foot">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="/"><svg viewBox="140 80 250 340" aria-hidden="true"><path d="M290 116 H252 A68 68 0 0 0 252 252 H260 A68 68 0 0 1 260 388 H196" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/><circle cx="356" cy="116" r="27" fill="#ff3b30"/></svg>spectacast</a>
+        <p>Live hybrid events, from one control room.</p>
+      </div>
+      <div><p class="foot-title">Products</p><ul><li><a href="/products/director/">Director</a></li><li><a href="/products/meet/">Meet</a></li><li><a href="/products/mic/">Mic</a></li><li><a href="/products/translator/">Translator</a></li><li><a href="/products/pass/">Pass</a></li></ul></div><div><p class="foot-title">Resources</p><ul><li><a href="/pricing/">Pricing</a></li><li><a href="/docs/">Docs</a></li><li><a href="/developers/">Developers</a></li><li><a href="/downloads/">Downloads</a></li></ul></div><div><p class="foot-title">Legal</p><ul><li><a href="/terms/">Terms</a></li><li><a href="/refunds/">Refund Policy</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/security/">Security and data</a></li></ul></div><div><p class="foot-title">Contact</p><ul><li><a href="/contact/">Contact us</a></li><li><a href="mailto:info@spectacast.com">info@spectacast.com</a></li><li><a href="mailto:support@spectacast.com">support@spectacast.com</a></li></ul></div>
+    </div>
+    <div class="foot-base">
+      <p>© 2026 Spectacast · spectacast.com</p>
+      <p>English · <a href="/de/hilfe/director-api/" hreflang="de" lang="de">Deutsch</a> · <a href="/es/ayuda/director-api/" hreflang="es" lang="es">Español</a> · <a href="/it/guida/director-api/" hreflang="it" lang="it">Italiano</a></p>
+    </div>
+    <p class="marks">Zoom is a trademark of Zoom Communications, Inc. NDI is a registered trademark of Vizrt NDI AB. OBS Studio is a project of the OBS Project.</p>
+  </footer>
+</div>
+</body>
+</html>

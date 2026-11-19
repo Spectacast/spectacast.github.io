@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="it" class="sc">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dispositivi e driver · Spectacast</title>
+<meta name="description" content="Tutto ciò che Director controlla è un dispositivo: l&#x27;OBS di una sala, la sua riunione, un ricevitore per i telefoni-microfono, un ricevitore radio, un controller MIDI. Un driver dice a Director…">
+<link rel="canonical" href="https://spectacast.com/it/guida/director-devices/">
+<link rel="alternate" hreflang="en" href="https://spectacast.com/docs/director-devices/">
+<link rel="alternate" hreflang="de" href="https://spectacast.com/de/hilfe/director-devices/">
+<link rel="alternate" hreflang="es" href="https://spectacast.com/es/ayuda/director-devices/">
+<link rel="alternate" hreflang="it" href="https://spectacast.com/it/guida/director-devices/">
+<link rel="alternate" hreflang="x-default" href="https://spectacast.com/docs/director-devices/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Spectacast">
+<meta property="og:title" content="Dispositivi e driver · Spectacast">
+<meta property="og:description" content="Tutto ciò che Director controlla è un dispositivo: l&#x27;OBS di una sala, la sua riunione, un ricevitore per i telefoni-microfono, un ricevitore radio, un controller MIDI. Un driver dice a Director…">
+<meta property="og:url" content="https://spectacast.com/it/guida/director-devices/">
+<meta property="og:image" content="https://spectacast.com/brand/lockup-light.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/design/spectacast.css">
+<link rel="stylesheet" href="/site.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="site-head">
+    <a class="brand" href="/it/"><svg viewBox="140 80 250 340" aria-hidden="true"><path d="M290 116 H252 A68 68 0 0 0 252 252 H260 A68 68 0 0 1 260 388 H196" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/><circle cx="356" cy="116" r="27" fill="#ff3b30"/></svg>spectacast</a>
+    <nav aria-label="Menu principale"><a class="nav-product" href="/it/#modules">Prodotto</a><a href="/it/prezzi/">Prezzi</a><a href="/it/guida/" aria-current="page">Guida</a></nav>
+    <nav class="langs" aria-label="Lingua"><a href="/docs/director-devices/" hreflang="en" lang="en" aria-label="English">EN</a><a href="/de/hilfe/director-devices/" hreflang="de" lang="de" aria-label="Deutsch">DE</a><a href="/es/ayuda/director-devices/" hreflang="es" lang="es" aria-label="Español">ES</a></nav>
+    <div class="cta"><a class="sc-btn sc-btn--primary" href="/it/contatti/">Contattaci</a></div>
+  </header>
+  <main class="doc guide">
+<nav class="doc-nav" aria-label="Guida"><p>Guida</p><ul><li><a href="/it/guida/">Panoramica</a></li><li><a href="/it/guida/primi-passi/">Primi passi</a></li><li><a href="/it/guida/account-e-fatturazione/">Account e fatturazione</a></li><li><a href="/it/guida/director/">Guida di Director</a></li><li class="sub"><a href="/it/guida/director-devices/" aria-current="page">Dispositivi e driver</a></li><li class="sub"><a href="/it/guida/director-drivers/">Il tuo driver</a></li><li class="sub"><a href="/it/guida/director-panels/">Pannelli</a></li><li class="sub"><a href="/it/guida/director-rules/">Regole e script</a></li><li class="sub"><a href="/it/guida/director-api/">API, webhook e Stream Deck</a></li><li><a href="/it/guida/meet/">Guida di Meet</a></li><li><a href="/it/guida/mic/">Guida di Mic</a></li><li><a href="/it/guida/translator/">Guida di Translator</a></li><li><a href="/it/guida/pass/">Guida di Pass</a></li></ul></nav>
+<article>
+<h1>Dispositivi e driver</h1>
+<p class="lede">Tutto ciò che Director controlla è un dispositivo: l'OBS di una sala, la sua riunione, un ricevitore per i telefoni-microfono, un ricevitore radio, un controller MIDI. Un driver dice a Director cosa sa fare un tipo di dispositivo e cosa comunica.</p>
+
+<h2>Aggiungere un dispositivo</h2>
+<ol>
+<li>Apri la pagina <strong>Dispositivi</strong> e fai clic su <strong>Aggiungi dispositivo</strong>.</li>
+<li>Scegli il driver e scrivi un nome. Il modulo mostra un campo per ogni impostazione che serve al driver, con il suo valore predefinito.</li>
+<li>Salva. La scheda diventa verde appena il dispositivo risponde. Fai clic su una scheda per vederne lo stato e l'ultimo errore.</li>
+</ol>
+<p><strong>modifica</strong> su una scheda cambia il nome e le impostazioni; Director si ricollega al salvataggio. <strong>Cerca nella rete</strong> e poi <strong>cerca</strong> elenca ogni OBS e ogni Spectacast Meet che risponde in rete; <strong>usa nel modulo</strong> compila il modulo con uno di questi.</p>
+<p>Le password non stanno nel file dello show. Mettile in <code>C:\ProgramData\Spectacast\director\.env</code>, per esempio <code>OBS_PASSWORD=&lt;password&gt;</code>, poi esci dalla sessione e rientra.</p>
+<h2>I driver inclusi in Director</h2>
+<table>
+<thead>
+<tr>
+<th>Driver</th>
+<th>Cosa vede e cosa fa Director</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>OBS Studio</strong></td>
+<td>Scene, fonti, audio, registrazione e streaming di un OBS, tramite il suo server WebSocket</td>
+</tr>
+<tr>
+<td><strong>NDI discovery</strong></td>
+<td>Le sorgenti NDI in rete, anche attraverso un NDI Discovery Server; le loro immagini nella pagina <strong>Wall</strong></td>
+</tr>
+<tr>
+<td><strong>Spectacast Meet</strong></td>
+<td>Chi è nella riunione e in sala d'attesa; ammettere, silenziare e mettere in evidenza; quale flusso va a quale uscita</td>
+</tr>
+<tr>
+<td><strong>Spectacast Mic</strong></td>
+<td>I telefoni collegati a un PC di sala come microfoni e interfono</td>
+</tr>
+<tr>
+<td><strong>Translator</strong></td>
+<td>Avviare e fermare una traduzione, scegliere le lingue, leggere ciò che è stato sentito e ciò che è stato detto</td>
+</tr>
+<tr>
+<td><strong>Sennheiser EW-DX receiver</strong></td>
+<td>Mute, guadagno, livello, collegamento radio e batteria di ogni canale. Attiva prima l'accesso di terze parti sul ricevitore</td>
+</tr>
+<tr>
+<td><strong>MIDI controller</strong></td>
+<td>Note e controller nei due sensi: fader e pulsanti di una superficie di controllo</td>
+</tr>
+<tr>
+<td><strong>Folder of files</strong></td>
+<td>I video di una cartella, locale o condivisa; un file copiato dentro compare da solo</td>
+</tr>
+<tr>
+<td><strong>Recorder</strong></td>
+<td>Registra il flusso della riunione di una sala in file di un'ora</td>
+</tr>
+</tbody>
+</table>
+<p>Un dispositivo che non è in questo elenco riceve un driver suo nella pagina <strong>Driver</strong>, senza codice: vedi <a href="/it/guida/director-drivers/">Il tuo driver</a>.</p>
+<h2>Ingressi dall'esterno</h2>
+<p>Due ingressi permettono a un altro sistema di avviare qualcosa in Director. Sono entrambi nella pagina <strong>Dispositivi</strong>, sotto <strong>Ingressi</strong>.</p>
+<ul>
+<li><strong>webhook:</strong> una chiamata a <code>POST /api/hooks/&lt;name&gt;</code> genera l'evento <code>&lt;name&gt;</code>. Il corpo JSON e i parametri dell'indirizzo arrivano come campi dell'evento.</li>
+<li><strong>Ingresso OSC:</strong> imposta una porta, e ogni messaggio OSC che vi arriva diventa un evento con il nome del suo indirizzo: <code>/cue/go</code> diventa <code>cue_go</code>.</li>
+</ul>
+<p>Poi una regola reagisce all'evento. Vedi <a href="/it/guida/director-rules/">Regole e script</a> e <a href="/it/guida/director-api/">API, webhook e Stream Deck</a>.</p>
+</article>
+  </main>
+  <footer class="site-foot">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="/it/"><svg viewBox="140 80 250 340" aria-hidden="true"><path d="M290 116 H252 A68 68 0 0 0 252 252 H260 A68 68 0 0 1 260 388 H196" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/><circle cx="356" cy="116" r="27" fill="#ff3b30"/></svg>spectacast</a>
+        <p>Eventi ibridi dal vivo, da un'unica regia.</p>
+      </div>
+      <div><p class="foot-title">Prodotti</p><ul><li><a href="/it/prodotti/director/">Director</a></li><li><a href="/it/prodotti/meet/">Meet</a></li><li><a href="/it/prodotti/mic/">Mic</a></li><li><a href="/it/prodotti/translator/">Translator</a></li><li><a href="/it/prodotti/pass/">Pass</a></li></ul></div><div><p class="foot-title">Risorse</p><ul><li><a href="/it/prezzi/">Prezzi</a></li><li><a href="/it/guida/">Guida</a></li><li><a href="/it/sviluppatori/">Sviluppatori</a></li><li><a href="/it/download/">Download</a></li></ul></div><div><p class="foot-title">Note legali</p><ul><li><a href="/it/termini/">Termini</a></li><li><a href="/it/rimborsi/">Rimborsi</a></li><li><a href="/it/privacy/">Privacy</a></li><li><a href="/it/sicurezza/">Sicurezza e dati</a></li></ul></div><div><p class="foot-title">Contatti</p><ul><li><a href="/it/contatti/">Contattaci</a></li><li><a href="mailto:info@spectacast.com">info@spectacast.com</a></li><li><a href="mailto:support@spectacast.com">support@spectacast.com</a></li></ul></div>
+    </div>
+    <div class="foot-base">
+      <p>© 2026 Spectacast · spectacast.com</p>
+      <p><a href="/docs/director-devices/" hreflang="en" lang="en">English</a> · <a href="/de/hilfe/director-devices/" hreflang="de" lang="de">Deutsch</a> · <a href="/es/ayuda/director-devices/" hreflang="es" lang="es">Español</a> · Italiano</p>
+    </div>
+    <p class="marks">Zoom è un marchio di Zoom Communications, Inc. NDI è un marchio registrato di Vizrt NDI AB. OBS Studio è un progetto di OBS Project.</p>
+  </footer>
+</div>
+</body>
+</html>

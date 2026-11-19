@@ -393,6 +393,146 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://spectacast.com/it/guida/director/"/>
   </url>
   <url>
+    <loc>https://spectacast.com/docs/director-devices/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spectacast.com/docs/director-devices/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://spectacast.com/de/hilfe/director-devices/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://spectacast.com/es/ayuda/director-devices/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://spectacast.com/it/guida/director-devices/"/>
+  </url>
+  <url>
+    <loc>https://spectacast.com/de/hilfe/director-devices/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spectacast.com/docs/director-devices/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://spectacast.com/de/hilfe/director-devices/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://spectacast.com/es/ayuda/director-devices/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://spectacast.com/it/guida/director-devices/"/>
+  </url>
+  <url>
+    <loc>https://spectacast.com/es/ayuda/director-devices/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spectacast.com/docs/director-devices/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://spectacast.com/de/hilfe/director-devices/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://spectacast.com/es/ayuda/director-devices/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://spectacast.com/it/guida/director-devices/"/>
+  </url>
+  <url>
+    <loc>https://spectacast.com/it/guida/director-devices/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spectacast.com/docs/director-devices/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://spectacast.com/de/hilfe/director-devices/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://spectacast.com/es/ayuda/director-devices/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://spectacast.com/it/guida/director-devices/"/>
+  </url>
+  <url>
+    <loc>https://spectacast.com/docs/director-drivers/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spectacast.com/docs/director-drivers/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://spectacast.com/de/hilfe/director-drivers/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://spectacast.com/es/ayuda/director-drivers/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://spectacast.com/it/guida/director-drivers/"/>
+  </url>
+  <url>
+    <loc>https://spectacast.com/de/hilfe/director-drivers/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spectacast.com/docs/director-drivers/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://spectacast.com/de/hilfe/director-drivers/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://spectacast.com/es/ayuda/director-drivers/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://spectacast.com/it/guida/director-drivers/"/>
+  </url>
+  <url>
+    <loc>https://spectacast.com/es/ayuda/director-drivers/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spectacast.com/docs/director-drivers/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://spectacast.com/de/hilfe/director-drivers/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://spectacast.com/es/ayuda/director-drivers/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://spectacast.com/it/guida/director-drivers/"/>
+  </url>
+  <url>
+    <loc>https://spectacast.com/it/guida/director-drivers/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spectacast.com/docs/director-drivers/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://spectacast.com/de/hilfe/director-drivers/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://spectacast.com/es/ayuda/director-drivers/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://spectacast.com/it/guida/director-drivers/"/>
+  </url>
+  <url>
+    <loc>https://spectacast.com/docs/director-panels/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spectacast.com/docs/director-panels/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://spectacast.com/de/hilfe/director-panels/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://spectacast.com/es/ayuda/director-panels/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://spectacast.com/it/guida/director-panels/"/>
+  </url>
+  <url>
+    <loc>https://spectacast.com/de/hilfe/director-panels/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spectacast.com/docs/director-panels/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://spectacast.com/de/hilfe/director-panels/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://spectacast.com/es/ayuda/director-panels/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://spectacast.com/it/guida/director-panels/"/>
+  </url>
+  <url>
+    <loc>https://spectacast.com/es/ayuda/director-panels/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spectacast.com/docs/director-panels/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://spectacast.com/de/hilfe/director-panels/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://spectacast.com/es/ayuda/director-panels/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://spectacast.com/it/guida/director-panels/"/>
+  </url>
+  <url>
+    <loc>https://spectacast.com/it/guida/director-panels/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spectacast.com/docs/director-panels/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://spectacast.com/de/hilfe/director-panels/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://spectacast.com/es/ayuda/director-panels/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://spectacast.com/it/guida/director-panels/"/>
+  </url>
+  <url>
+    <loc>https://spectacast.com/docs/director-rules/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spectacast.com/docs/director-rules/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://spectacast.com/de/hilfe/director-rules/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://spectacast.com/es/ayuda/director-rules/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://spectacast.com/it/guida/director-rules/"/>
+  </url>
+  <url>
+    <loc>https://spectacast.com/de/hilfe/director-rules/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spectacast.com/docs/director-rules/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://spectacast.com/de/hilfe/director-rules/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://spectacast.com/es/ayuda/director-rules/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://spectacast.com/it/guida/director-rules/"/>
+  </url>
+  <url>
+    <loc>https://spectacast.com/es/ayuda/director-rules/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spectacast.com/docs/director-rules/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://spectacast.com/de/hilfe/director-rules/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://spectacast.com/es/ayuda/director-rules/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://spectacast.com/it/guida/director-rules/"/>
+  </url>
+  <url>
+    <loc>https://spectacast.com/it/guida/director-rules/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spectacast.com/docs/director-rules/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://spectacast.com/de/hilfe/director-rules/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://spectacast.com/es/ayuda/director-rules/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://spectacast.com/it/guida/director-rules/"/>
+  </url>
+  <url>
+    <loc>https://spectacast.com/docs/director-api/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spectacast.com/docs/director-api/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://spectacast.com/de/hilfe/director-api/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://spectacast.com/es/ayuda/director-api/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://spectacast.com/it/guida/director-api/"/>
+  </url>
+  <url>
+    <loc>https://spectacast.com/de/hilfe/director-api/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spectacast.com/docs/director-api/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://spectacast.com/de/hilfe/director-api/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://spectacast.com/es/ayuda/director-api/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://spectacast.com/it/guida/director-api/"/>
+  </url>
+  <url>
+    <loc>https://spectacast.com/es/ayuda/director-api/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spectacast.com/docs/director-api/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://spectacast.com/de/hilfe/director-api/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://spectacast.com/es/ayuda/director-api/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://spectacast.com/it/guida/director-api/"/>
+  </url>
+  <url>
+    <loc>https://spectacast.com/it/guida/director-api/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spectacast.com/docs/director-api/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://spectacast.com/de/hilfe/director-api/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://spectacast.com/es/ayuda/director-api/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://spectacast.com/it/guida/director-api/"/>
+  </url>
+  <url>
     <loc>https://spectacast.com/docs/meet/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://spectacast.com/docs/meet/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://spectacast.com/de/hilfe/meet/"/>
@@ -587,5 +727,33 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://spectacast.com/de/sicherheit/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://spectacast.com/es/seguridad/"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://spectacast.com/it/sicurezza/"/>
+  </url>
+  <url>
+    <loc>https://spectacast.com/developers/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spectacast.com/developers/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://spectacast.com/de/entwickler/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://spectacast.com/es/desarrolladores/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://spectacast.com/it/sviluppatori/"/>
+  </url>
+  <url>
+    <loc>https://spectacast.com/de/entwickler/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spectacast.com/developers/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://spectacast.com/de/entwickler/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://spectacast.com/es/desarrolladores/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://spectacast.com/it/sviluppatori/"/>
+  </url>
+  <url>
+    <loc>https://spectacast.com/es/desarrolladores/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spectacast.com/developers/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://spectacast.com/de/entwickler/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://spectacast.com/es/desarrolladores/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://spectacast.com/it/sviluppatori/"/>
+  </url>
+  <url>
+    <loc>https://spectacast.com/it/sviluppatori/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spectacast.com/developers/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://spectacast.com/de/entwickler/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://spectacast.com/es/desarrolladores/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://spectacast.com/it/sviluppatori/"/>
   </url>
 </urlset>

@@ -28,6 +28,8 @@ Director spricht mit jedem Werkzeug über einen Konnektor, so sind Video, Audio 
 - **Dante**: das Netzwerk-Audio des Saals, über Dante Virtual Soundcard auf einem PC
 - **Ihre eigenen**: jedes Gerät, das HTTP, OSC oder einfache Sockets spricht
 
+Wie Sie ein eigenes Gerät anbinden, Regeln per Skript erweitern und die API nutzen: [Zum Erweitern gebaut](/de/entwickler/).
+
 ## Für den Saal gebaut
 
 Director läuft auf einem PC in der Regie und spricht mit den Saal-PCs über das eigene Netzwerk der Location, so läuft eine Veranstaltung weiter, wenn das Internet ausfällt. Die Flotten-Seite zeigt PC, Meeting und Ausgang jedes Saals auf einen Blick; Panels bestehen aus Bausteinen, ein neuer Saal ist also eine weitere Kopie, kein neues Design. Das Dashboard spricht Deutsch, Englisch, Spanisch und Italienisch.

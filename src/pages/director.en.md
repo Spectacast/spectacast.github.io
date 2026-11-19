@@ -28,6 +28,8 @@ Director talks to each tool through a connector, so the video, the audio and the
 - **Dante**: the hall's networked audio, through Dante Virtual Soundcard on a PC
 - **Your own**: any device that speaks HTTP, OSC or plain sockets
 
+How to connect a device of your own, script the rules and use the API: [Built to be extended](/developers/).
+
 ## Built for the hall
 
 Director runs on a PC in the control room and talks to the hall PCs over the venue's own network, so a show keeps going when the internet does not. The fleet page lists every hall's PC, meeting and output at a glance; panels are built from blocks, so a new hall is one more copy, not a new design. The dashboard speaks English, German, Spanish and Italian.
