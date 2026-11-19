@@ -8,13 +8,18 @@ spectacast.com copies `main` every 10 minutes).
 The pages are generated: edit the sources in [src/](src/), never the `index.html` files.
 
 ```sh
-pip install markdown
+pip install markdown pillow
 python3 src/build.py --check
 ```
 
 - `src/home.html`: the English home page body; its German, Spanish and Italian texts are in
   `src/home_texts.py` and the build stops on an English text without them.
-- `src/pages/<page>.<lang>.md`: pricing, terms, refunds, privacy, one file per language.
+- `src/pages/<page>.<lang>.md`: pricing, terms, refunds, privacy and the product pages (director, meet,
+  mic, translator, pass), one file per language. Product pages take `{{shot:name|alt text}}` (a
+  screenshot from `img/screens/`, in the page's language or in light and dark when those exist),
+  `{{phone:name|alt}}`, `{{plans:Director,Show}}` and `{{cta}}`.
+- `tools/screenshots/run.sh ../pass ../director ../translator ../meet`: retakes the screenshots from the apps' own code with an invented
+  Demo Congress 2027 (see the comments in each script).
 - `src/content.py`: seller details, plans, prices and VAT.
 - `src/build.py`: the shared header and footer, the page list, and `LAUNCHED`, which shows the sign-in,
   free trial and download buttons only from the 1.0 launch.

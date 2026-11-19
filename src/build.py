@@ -47,6 +47,11 @@ PAGES = {  # key: path per language
     'refunds': {'en': 'refunds/', 'de': 'de/erstattung/', 'es': 'es/reembolsos/', 'it': 'it/rimborsi/'},
     'privacy': {'en': 'privacy/', 'de': 'de/datenschutz/', 'es': 'es/privacidad/', 'it': 'it/privacy/'},
 }
+# Product pages live under a folder of their own: /pass and /meet on this domain belong to the apps.
+PRODUCTS = ('director', 'meet', 'mic', 'translator', 'pass')
+PRODUCT_DIR = {'en': 'products/', 'de': 'de/produkte/', 'es': 'es/productos/', 'it': 'it/prodotti/'}
+for _p in PRODUCTS:
+    PAGES[_p] = {l: f'{d}{_p}/' for l, d in PRODUCT_DIR.items()}
 FOOTER_LINKS = ('pricing', 'terms', 'refunds', 'privacy')
 # Paths served by other programs behind the same domain: links to them are not checked here.
 OTHER_APPS = ('/account', '/pass', '/program', '/meet')
@@ -54,19 +59,19 @@ OTHER_APPS = ('/account', '/pass', '/program', '/meet')
 LABELS = {
     'en': {'terms': 'Terms', 'refunds': 'Refund Policy', 'privacy': 'Privacy', 'pricing': 'Pricing',
            'product': 'Product', 'contact': 'Contact us', 'signin': 'Sign in', 'trial': 'Start free trial',
-           'menu': 'Main menu', 'langs': 'Language',
+           'menu': 'Main menu', 'plans': 'Included in', 'see_pricing': 'See pricing', 'more': 'More about', 'products': 'Products', 'langs': 'Language',
            'draft': 'Draft: the highlighted parts are still to be filled in.'},
     'de': {'terms': 'AGB', 'refunds': 'Erstattungen', 'privacy': 'Datenschutz', 'pricing': 'Preise',
            'product': 'Produkt', 'contact': 'Kontakt', 'signin': 'Anmelden', 'trial': 'Kostenlos testen',
-           'menu': 'Hauptmenü', 'langs': 'Sprache',
+           'menu': 'Hauptmenü', 'plans': 'Enthalten in', 'see_pricing': 'Preise ansehen', 'more': 'Mehr über', 'products': 'Produkte', 'langs': 'Sprache',
            'draft': 'Entwurf: Die markierten Stellen sind noch zu ergänzen.'},
     'es': {'terms': 'Términos', 'refunds': 'Reembolsos', 'privacy': 'Privacidad', 'pricing': 'Precios',
            'product': 'Producto', 'contact': 'Contacto', 'signin': 'Iniciar sesión', 'trial': 'Prueba gratis',
-           'menu': 'Menú principal', 'langs': 'Idioma',
+           'menu': 'Menú principal', 'plans': 'Incluido en', 'see_pricing': 'Ver precios', 'more': 'Más sobre', 'products': 'Productos', 'langs': 'Idioma',
            'draft': 'Borrador: las partes resaltadas aún están por completar.'},
     'it': {'terms': 'Termini', 'refunds': 'Rimborsi', 'privacy': 'Privacy', 'pricing': 'Prezzi',
            'product': 'Prodotto', 'contact': 'Contattaci', 'signin': 'Accedi', 'trial': 'Prova gratis',
-           'menu': 'Menu principale', 'langs': 'Lingua',
+           'menu': 'Menu principale', 'plans': 'Incluso in', 'see_pricing': 'Vedi i prezzi', 'more': 'Scopri', 'products': 'Prodotti', 'langs': 'Lingua',
            'draft': 'Bozza: le parti evidenziate sono ancora da completare.'},
 }
 TRADEMARKS = ('Zoom is a trademark of Zoom Communications, Inc. NDI is a registered trademark of Vizrt NDI AB. '
@@ -150,9 +155,25 @@ def footer(lang, key):
   </footer>'''
 
 
+def og_image(body):
+    """The page's first screenshot as a 1200 x 630 JPEG for link previews (some sites do not read WebP)."""
+    m = re.search(r'<img src="/img/screens/([\w-]+)\.webp"', body)
+    if not m:
+        return SITE + '/brand/lockup-light.png'
+    from PIL import Image
+    out = OUT / 'img' / 'og' / f'{m.group(1)}.jpg'
+    if not out.is_file():
+        out.parent.mkdir(parents=True, exist_ok=True)
+        im = Image.open(IMG / f'{m.group(1)}.webp').convert('RGB')
+        w = im.width
+        im = im.crop((0, 0, w, min(im.height, round(w * 630 / 1200)))).resize((1200, 630), Image.LANCZOS)
+        im.save(out, 'JPEG', quality=85, optimize=True, progressive=True)
+    return f'{SITE}/img/og/{m.group(1)}.jpg'
+
+
 def frame(lang, key, title, description, body, main_class):
     """A whole page: head tags, header, the page's own body and the footer."""
-    full_title = title if key == 'home' else f'{title} · Spectacast'
+    full_title = title if key == 'home' or title.startswith('Spectacast') else f'{title} · Spectacast'
     d = html.escape(description)
     return f'''<!doctype html>
 <html lang="{lang}" class="sc">
@@ -168,7 +189,7 @@ def frame(lang, key, title, description, body, main_class):
 <meta property="og:title" content="{html.escape(full_title)}">
 <meta property="og:description" content="{d}">
 <meta property="og:url" content="{SITE}{url(lang, key)}">
-<meta property="og:image" content="{SITE}/brand/lockup-light.png">
+<meta property="og:image" content="{og_image(body)}">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/design/spectacast.css">
@@ -218,6 +239,46 @@ def text_of(fragment):
     return re.sub(r'\s+', ' ', html.unescape(re.sub('<[^>]+>', '', fragment))).strip()
 
 
+IMG = OUT / 'img' / 'screens'
+
+
+def shot(lang, name, alt, cls=''):
+    """A screenshot: the page's language when there is one, and the dark one in dark mode when there is one."""
+    def have(n):
+        return (IMG / f'{n}.webp').is_file()
+    base = next((n for n in (f'{name}-{lang}', f'{name}-en', f'{name}-light', name) if have(n)), None)
+    if base is None:
+        raise SystemExit(f'no screenshot img/screens/{name}*.webp')
+    dark = base[:-6] + '-dark' if base.endswith('-light') and have(base[:-6] + '-dark') else None
+    from PIL import Image  # only for the size, so the page does not jump while images load
+    w, h = Image.open(IMG / f'{base}.webp').size
+    img = f'<img src="/img/screens/{base}.webp" alt="{html.escape(alt)}" width="{w}" height="{h}" loading="lazy">'
+    if dark:
+        img = f'<picture><source srcset="/img/screens/{dark}.webp" media="(prefers-color-scheme: dark)">{img}</picture>'
+    return f'\n<figure class="shot {cls}">{img}</figure>\n'
+
+
+def product_blocks(lang, md):
+    """{{shot:name|alt}}, {{phone:name|alt}}, {{plans:A,B}} and {{cta}} in a product page's Markdown."""
+    l = LABELS[lang]
+    md = re.sub(r'\{\{shot:([\w-]+)\|([^}]+)\}\}', lambda m: shot(lang, m.group(1), m.group(2)), md)
+    md = md.replace(' loading="lazy"', '', 1)  # the first screenshot is above the fold
+    md = re.sub(r'\{\{phone:([\w-]+)\|([^}]+)\}\}', lambda m: shot(lang, m.group(1), m.group(2), 'phone'), md)
+
+    def plans(m):
+        names = [n.strip() for n in m.group(1).split(',')]
+        chips = ''.join(f'<span>Spectacast {n}</span>' for n in names)
+        return (f'\n<div class="in-plans"><b>{l["plans"]}</b>{chips}'
+                f'<a href="{url(lang, "pricing")}">{l["see_pricing"]} →</a></div>\n')
+    md = re.sub(r'\{\{plans:([^}]+)\}\}', plans, md)
+    if LAUNCHED:
+        cta = f'<a class="sc-btn sc-btn--primary" href="{TRIAL}">{l["trial"]}</a>'
+    else:
+        cta = f'<a class="sc-btn sc-btn--primary" href="mailto:{CONTACT}">{l["contact"]}</a>'
+    cta += f'<a class="sc-btn" href="{url(lang, "pricing")}">{l["see_pricing"]}</a>'
+    return md.replace('{{cta}}', f'\n<div class="cta-row">{cta}</div>\n')
+
+
 def md_page(lang, key):
     v = dict(C.VALUES[lang])
     v['date'] = DATE[lang]
@@ -227,20 +288,23 @@ def md_page(lang, key):
     v['MINUTE_GROSS'] = euro(lang, gross(lang, C.MINUTE, 3), 3)
     assert v['MINUTE_PRICE'] == euro(lang, C.MINUTE, 2), v['MINUTE_PRICE']
     md = (HERE / 'pages' / f'{key}.{lang}.md').read_text()
+    if key in PRODUCTS:
+        md = product_blocks(lang, md)
     md = re.sub(r'\{\{(\w+)\}\}', lambda m: v[m.group(1)], md)
     body = mark(markdown.markdown(md, extensions=['tables']))
     if key == 'pricing':
         body = body.replace('<!--PLANS-->', plans_html(lang))
     title = text_of(re.search(r'<h1>(.*?)</h1>', body).group(1))
     # The description is the first paragraph after the title (for the legal pages: the paragraph after the date).
-    paras = [text_of(p) for p in re.findall(r'<p>(.*?)</p>', body, re.S)]
+    paras = [text_of(p) for p in re.findall(r'<p[^>]*>(.*?)</p>', body, re.S)]
     paras = [p for p in paras if len(p) > 60]
     description = paras[0] if paras else title
     if len(description) > 200:
         description = description[:197].rsplit(' ', 1)[0].rstrip(',;:') + '…'
     if 'class="todo"' in body:
         body = f'<p class="draft-note">{LABELS[lang]["draft"]}</p>\n' + body
-    return frame(lang, key, title, description, body, 'pricing' if key == 'pricing' else 'doc')
+    main = 'pricing' if key == 'pricing' else 'product' if key in PRODUCTS else 'doc'
+    return frame(lang, key, title, description, body, main)
 
 
 # ---------- home page ----------
@@ -266,6 +330,17 @@ def home_page(lang):
             return '>' + lead + html.escape(T.BODY[t][lang], quote=False) + trail + '<'
 
         body = re.sub(r'>([^<]+)<', sub, body)
+
+        def alt(m):
+            t = norm(html.unescape(m.group(1)))
+            if t not in T.BODY:
+                raise SystemExit(f'home page: no {lang} translation for the image text {t!r}')
+            return f'alt="{html.escape(T.BODY[t][lang])}"'
+        body = re.sub(r'alt="([^"]+)"', alt, body)
+        # A screenshot in this language when there is one.
+        body = re.sub(r'(/img/screens/[\w-]+)-en\.webp',
+                      lambda m: f'{m.group(1)}-{lang}.webp' if (OUT / f'{m.group(1)[1:]}-{lang}.webp').is_file() else m.group(0),
+                      body)
     for key in PAGES:  # links written for English point to the same page in this language
         body = body.replace(f'href="{url("en", key)}"', f'href="{url(lang, key)}"') if key != 'home' else body
     description = desc_en if lang == 'en' else T.HEAD[desc_en][lang]

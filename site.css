@@ -142,6 +142,33 @@ mark.todo {
 }
 .home .facts b { display: block; font: 700 34px/1.1 var(--sc-font-display); letter-spacing: -0.04em; color: var(--sc-ink); }
 
+
+/* Product pages */
+.product { padding: 24px 0 24px; }
+.sc .product h1 { font-size: clamp(36px, 5.6vw, 60px); letter-spacing: -0.035em; line-height: 1.04; margin: 0 0 18px; }
+.product .lede { font-size: clamp(18px, 2.2vw, 21px); color: var(--sc-muted); max-width: 46ch; margin: 0 0 24px; }
+.sc .product h2 { font-size: 26px; margin: 64px 0 12px; max-width: 30ch; }
+.product > p, .product > ul { max-width: 64ch; }
+.product ul { padding-left: 22px; }
+.product li { margin: 6px 0; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 40px; }
+.cta-row .sc-btn { height: 42px; padding: 0 18px; font-size: 15px; text-decoration: none; }
+.shot { margin: 32px 0; }
+.shot img {
+  display: block; width: 100%; height: auto; border-radius: var(--sc-r-lg);
+  border: 1px solid var(--sc-line); box-shadow: var(--sc-shadow); background: var(--sc-surface);
+}
+.shot.phone img { max-width: 300px; border-radius: 28px; margin: 0 auto; }
+.in-plans {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 64px 0 0; padding: 20px 0 0;
+  border-top: 1px solid var(--sc-line); font-size: 15px;
+}
+.in-plans b { margin-right: 6px; }
+.in-plans span { background: var(--sc-chip); border-radius: 999px; padding: 3px 12px; }
+.in-plans a { margin-left: auto; }
+.home .card .more { margin-top: 14px; font-size: 15px; }
+.home .hero-shot { margin: 40px 0 0; }
+
 @media (max-width: 820px) {
   .plans { grid-template-columns: 1fr; }
   .home .modules { grid-template-columns: 1fr; }
@@ -160,6 +187,8 @@ mark.todo {
 }
 @media (max-width: 480px) {
   .wrap { padding: 0 16px; }
+  .in-plans a { margin-left: 0; flex-basis: 100%; }
+  .sc .product h2 { margin-top: 48px; }
   .home .hero { padding: 32px 0 56px; }
   .home .conn { grid-template-columns: 1fr; }
 }

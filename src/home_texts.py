@@ -30,6 +30,12 @@ HEAD = {
 }
 
 BODY = {
+    'Read more →': {'de': 'Mehr erfahren →', 'es': 'Saber más →', 'it': 'Scopri di più →'},
+    'Spectacast Director with four halls side by side: who is in each meeting, the waiting room, Preview and Program': {
+        'de': 'Spectacast Director mit vier Sälen nebeneinander: wer in jedem Meeting ist, der Warteraum, Preview und Program',
+        'es': 'Spectacast Director con cuatro salas una al lado de otra: quién está en cada reunión, la sala de espera, Preview y Program',
+        'it': "Spectacast Director con quattro sale affiancate: chi è in ogni riunione, la sala d'attesa, Preview e Program",
+    },
     # Navigation and section titles
     'Modules': {'de': 'Module', 'es': 'Módulos', 'it': 'Moduli'},
     'Connectors': {'de': 'Konnektoren', 'es': 'Conectores', 'it': 'Connettori'},
