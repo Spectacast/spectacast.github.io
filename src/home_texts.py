@@ -26,7 +26,7 @@ HEAD = {
     },
     'One control room for the hall, the meeting and the mics.': {
         'de': 'Eine Regie für den Saal, das Meeting und die Mikrofone.',
-        'es': 'Una sola sala de control para la sala, la reunión y los micrófonos.',
+        'es': 'Una sola sala de control para tus salas, la reunión y los micrófonos.',
         'it': 'Un\'unica regia per la sala, la riunione e i microfoni.',
     },
 }
@@ -44,7 +44,7 @@ BODY = {
         'it': 'Continua a funzionare se cade internet',
     },
     'Works with OBS, NDI and Zoom': {
-        'de': 'Arbeitet mit OBS, NDI und Zoom',
+        'de': 'Funktioniert mit OBS, NDI und Zoom',
         'es': 'Funciona con OBS, NDI y Zoom',
         'it': 'Funziona con OBS, NDI e Zoom',
     },
@@ -99,9 +99,9 @@ BODY = {
         'it': 'Domanda dal pubblico',
     },
     'Door · Hall A': {
-        'de': 'Zugang · Saal A',
+        'de': 'Eingang · Saal A',
         'es': 'Acceso · Sala A',
-        'it': 'Varco · Sala A',
+        'it': 'Ingresso · Sala A',
     },
     'Welcome, Sofia': {
         'de': 'Willkommen, Sofia',
@@ -121,7 +121,7 @@ BODY = {
     'How it fits together': {
         'de': 'So greift es ineinander',
         'es': 'Cómo encaja todo',
-        'it': 'Come si combina tutto',
+        'it': 'Come funziona',
     },
     'A PC in every hall. One screen for all of them.': {
         'de': 'Ein PC in jedem Saal. Ein Bildschirm für alle.',
@@ -159,14 +159,14 @@ BODY = {
         'it': 'Relatori e pubblico entrano in una normale riunione Zoom, senza installare nulla di nuovo.',
     },
     'At the doors': {
-        'de': 'An den Zugängen',
+        'de': 'An den Eingängen',
         'es': 'En las puertas',
         'it': 'Agli ingressi',
     },
     'Phones and scanners read the badges with Pass and count who is in which session, and for how long.': {
         'de': 'Telefone und Scanner lesen mit Pass die Badges und zählen, wer in welcher Sitzung ist und wie lange.',
-        'es': 'Teléfonos y lectores leen las acreditaciones con Pass y cuentan quién está en cada sesión y durante cuánto tiempo.',
-        'it': 'Telefoni e lettori leggono i badge con Pass e contano chi è in quale sessione, e per quanto tempo.',
+        'es': 'Teléfonos y lectores escanean las acreditaciones con Pass y cuentan quién está en cada sesión y durante cuánto tiempo.',
+        'it': 'Telefoni e lettori scansionano i badge con Pass e contano chi è in quale sessione, e per quanto tempo.',
     },
     'Five modules. Take the ones you need.': {
         'de': 'Fünf Module. Nehmen Sie, was Sie brauchen.',
@@ -201,7 +201,7 @@ BODY = {
     'Joins the online meeting from the hall PC and gives each participant, the gallery and every screen share its own video feed with sound, for the hall to use like a camera.': {
         'de': 'Tritt dem Online-Meeting vom Saal-PC aus bei und gibt jeder teilnehmenden Person, der Galerie und jeder Bildschirmfreigabe ein eigenes Videosignal mit Ton, das der Saal wie eine Kamera nutzt.',
         'es': 'Se une a la reunión en línea desde el PC de sala y da a cada participante, a la galería y a cada pantalla compartida su propia señal de vídeo con sonido, que la sala usa como una cámara.',
-        'it': 'Entra nella riunione online dal PC di sala e dà a ogni partecipante, alla galleria e a ogni schermo condiviso un proprio flusso video con audio, che la sala usa come una camera.',
+        'it': 'Entra nella riunione online dal PC di sala e dà a ogni partecipante, alla galleria e a ogni schermo condiviso un proprio flusso video con audio, che la sala usa come una telecamera.',
     },
     'More about Meet →': {
         'de': 'Mehr über Meet →',
@@ -211,7 +211,7 @@ BODY = {
     "Speakers and crew talk into the phone they already have. The hall PC receives each one as an audio device, next to the hall's own microphones.": {
         'de': 'Vortragende und Team sprechen in das Telefon, das sie schon haben. Der Saal-PC empfängt jedes als Audiogerät, neben den Mikrofonen des Saals.',
         'es': 'Ponentes y equipo hablan por el teléfono que ya tienen. El PC de sala recibe cada uno como un dispositivo de audio, junto a los micrófonos de la sala.',
-        'it': 'Relatori e squadra parlano nel telefono che hanno già. Il PC di sala riceve ciascuno come un dispositivo audio, accanto ai microfoni della sala.',
+        'it': 'Relatori e staff parlano nel telefono che hanno già. Il PC di sala riceve ciascuno come un dispositivo audio, accanto ai microfoni della sala.',
     },
     'More about Mic →': {
         'de': 'Mehr über Mic →',
@@ -219,7 +219,7 @@ BODY = {
         'it': 'Scopri Mic →',
     },
     "Listens to a speaker and says it in another language on any audio output: the hall, the meeting's interpretation channel or a headset.": {
-        'de': 'Hört einer sprechenden Person zu und sagt es in einer anderen Sprache auf jedem Audioausgang: im Saal, auf dem Dolmetschkanal des Meetings oder im Kopfhörer.',
+        'de': 'Hört einer sprechenden Person zu und gibt das Gesagte in einer anderen Sprache wieder, auf jedem Audioausgang: im Saal, auf dem Dolmetschkanal des Meetings oder im Kopfhörer.',
         'es': 'Escucha a quien habla y lo dice en otro idioma por cualquier salida de audio: la sala, el canal de interpretación de la reunión o unos auriculares.',
         'it': "Ascolta chi parla e lo dice in un'altra lingua su qualsiasi uscita audio: la sala, il canale di interpretariato della riunione o una cuffia.",
     },
@@ -244,7 +244,7 @@ BODY = {
         'it': 'Scopri Translator →',
     },
     'Every badge carries a QR code. A phone, a tablet or a scanner at each door answers at once in green, amber or red, even when the network is down.': {
-        'de': 'Jedes Badge trägt einen QR-Code. Ein Telefon, ein Tablet oder ein Scanner an jedem Zugang antwortet sofort in Grün, Gelb oder Rot, auch wenn das Netzwerk ausfällt.',
+        'de': 'Jedes Badge trägt einen QR-Code. Ein Telefon, ein Tablet oder ein Scanner an jedem Eingang antwortet sofort in Grün, Gelb oder Rot, auch wenn das Netzwerk ausfällt.',
         'es': 'Cada acreditación lleva un código QR. Un teléfono, una tableta o un lector en cada puerta responde al instante en verde, ámbar o rojo, incluso sin red.',
         'it': 'Ogni badge ha un codice QR. Un telefono, un tablet o un lettore a ogni ingresso risponde subito in verde, giallo o rosso, anche senza rete.',
     },
@@ -255,7 +255,7 @@ BODY = {
     },
     'Live occupancy for every room': {
         'de': 'Live-Belegung für jeden Raum',
-        'es': 'Aforo en directo de cada sala',
+        'es': 'Ocupación en directo de cada sala',
         'it': 'Occupazione in tempo reale di ogni sala',
     },
     'Attendance reports and certificates': {
@@ -269,7 +269,7 @@ BODY = {
         'it': 'Scopri Pass →',
     },
     'Works with the tools you already use.': {
-        'de': 'Arbeitet mit den Werkzeugen, die Sie schon nutzen.',
+        'de': 'Funktioniert mit den Werkzeugen, die Sie schon nutzen.',
         'es': 'Funciona con las herramientas que ya usas.',
         'it': 'Funziona con gli strumenti che usi già.',
     },
@@ -368,10 +368,10 @@ BODY = {
     'Reports': {'de': 'Berichte', 'es': 'Informes', 'it': 'Report'},
 
     # Connectors
-    'Director coordinates, the connectors do the talking. These ship today; new ones are written against one small interface, so more can follow, and a place to share them is the plan.': {
-        'de': 'Director koordiniert, die Konnektoren sprechen mit den Geräten. Diese gibt es heute; neue werden gegen eine kleine Schnittstelle geschrieben, sodass weitere folgen können, und ein Ort, um sie zu teilen, ist geplant.',
-        'es': 'Director coordina, los conectores hablan con los equipos. Estos existen hoy; los nuevos se escriben contra una interfaz pequeña, así que pueden llegar más, y está previsto un lugar para compartirlos.',
-        'it': 'Director coordina, i connettori parlano con gli apparati. Questi ci sono già oggi; i nuovi si scrivono su un\'interfaccia piccola, quindi altri possono seguire, ed è previsto un posto dove condividerli.',
+    'Director coordinates, the connectors do the talking. These are in use today; new ones are written against one small interface, so more can follow.': {
+        'de': 'Director koordiniert, die Konnektoren sprechen mit den Geräten. Diese sind heute im Einsatz; neue werden gegen eine kleine Schnittstelle geschrieben, sodass weitere folgen können.',
+        'es': 'Director coordina, los conectores hablan con los equipos. Estos ya se usan hoy; los nuevos se escriben contra una interfaz pequeña, así que pueden llegar más.',
+        'it': "Director coordina, i connettori parlano con gli apparati. Questi sono in uso già oggi; i nuovi si scrivono su un'interfaccia piccola, quindi altri possono seguire.",
     },
     'scenes, sources, outputs and audio on every hall PC': {'de': 'Szenen, Quellen, Ausgänge und Ton auf jedem Saal-PC', 'es': 'escenas, fuentes, salidas y audio en cada PC de sala', 'it': 'scene, sorgenti, uscite e audio su ogni PC di sala'},
     'video and audio between PCs, with a multiview to watch it all': {'de': 'Video und Ton zwischen PCs, mit einem Multiview für den Überblick', 'es': 'vídeo y audio entre PC, con un multiview para verlo todo', 'it': 'video e audio tra i PC, con un multiview per vedere tutto'},
@@ -379,7 +379,7 @@ BODY = {
     'phones as mics and talkback': {'de': 'Telefone als Mikrofone und Intercom', 'es': 'teléfonos como micrófonos e intercomunicador', 'it': 'telefoni come microfoni e intercom'},
     'live translation of a speaker into another language': {'de': 'Live-Übersetzung eines Sprechers in eine andere Sprache', 'es': 'traducción en directo de un ponente a otro idioma', 'it': 'traduzione simultanea di un relatore in un\'altra lingua'},
     "the hall's wireless mics: levels, battery, who is on": {'de': 'die Funkmikrofone des Saals: Pegel, Akku, wer aktiv ist', 'es': 'los micrófonos inalámbricos de la sala: niveles, batería, quién está activo', 'it': 'i radiomicrofoni della sala: livelli, batteria, chi è attivo'},
-    "the hall's networked audio, through Dante Virtual Soundcard on the mic hub": {'de': 'das Audionetzwerk des Saals, über Dante Virtual Soundcard auf dem Mikrofon-Hub', 'es': 'el audio en red de la sala, mediante Dante Virtual Soundcard en el concentrador de micrófonos', 'it': 'l\'audio in rete della sala, tramite Dante Virtual Soundcard sull\'hub dei microfoni'},
+    "the hall's networked audio, through Dante Virtual Soundcard on a PC": {'de': 'das Audionetzwerk des Saals, über Dante Virtual Soundcard auf einem PC', 'es': 'el audio en red de la sala, mediante Dante Virtual Soundcard en un PC', 'it': "l'audio in rete della sala, tramite Dante Virtual Soundcard su un PC"},
     'control surfaces and faders': {'de': 'Bedienpulte und Fader', 'es': 'superficies de control y faders', 'it': 'superfici di controllo e fader'},
     'Folders': {'de': 'Ordner', 'es': 'Carpetas', 'it': 'Cartelle'},
     'clips and files that appear during the show': {'de': 'Clips und Dateien, die während der Show auftauchen', 'es': 'clips y archivos que aparecen durante el show', 'it': 'clip e file che compaiono durante lo show'},

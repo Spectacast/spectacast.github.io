@@ -70,25 +70,25 @@ PAGES['downloads'] = {'en': 'downloads/', 'de': 'de/downloads/', 'es': 'es/desca
 OTHER_APPS = ('/account', '/pass', '/program', '/meet')
 
 LABELS = {
-    'en': {'cta_title': 'Planning a congress or a hybrid show?', 'cta_text': 'Tell us how many halls you have and what they need to do. We will show you Spectacast on a setup like yours.', 'foot_tag': 'Live hybrid events, from one control room.', 'f_resources': 'Resources', 'f_legal': 'Legal', 'f_contact': 'Contact', 'guide': 'Read the guide', 'others': 'The other modules', 'sales': 'Sales', 'support': 'Support', 
+    'en': {'cta_title': 'Planning a congress or a hybrid show?', 'cta_text': 'Tell us how many halls you have and what they need to do. We will show you Spectacast on a setup like yours.', 'foot_tag': 'Live hybrid events, from one control room.', 'f_resources': 'Resources', 'f_legal': 'Legal', 'f_contact': 'Contact', 'guide': 'Read the guide', 'others': 'The other modules', 
            'overview': 'Overview', 'docs': 'Docs', 'downloads': 'Downloads', 'guides': 'Guides', 'soon': 'Downloads open on launch day of version 1.0. Until then, write to us and we set up Spectacast with you.',
            'terms': 'Terms', 'refunds': 'Refund Policy', 'privacy': 'Privacy', 'pricing': 'Pricing',
            'product': 'Product', 'contact': 'Contact us', 'signin': 'Sign in', 'trial': 'Start free trial',
            'menu': 'Main menu', 'plans': 'Included in', 'see_pricing': 'See pricing', 'more': 'More about', 'products': 'Products', 'langs': 'Language',
            'draft': 'Draft: the highlighted parts are still to be filled in.'},
-    'de': {'cta_title': 'Planen Sie einen Kongress oder eine hybride Veranstaltung?', 'cta_text': 'Sagen Sie uns, wie viele Säle Sie haben und was sie leisten sollen. Wir zeigen Ihnen Spectacast an einem Aufbau wie Ihrem.', 'foot_tag': 'Hybride Live-Veranstaltungen, aus einer Regie.', 'f_resources': 'Ressourcen', 'f_legal': 'Rechtliches', 'f_contact': 'Kontakt', 'guide': 'Zur Anleitung', 'others': 'Die anderen Module', 'sales': 'Vertrieb', 'support': 'Support', 
+    'de': {'cta_title': 'Planen Sie einen Kongress oder eine hybride Veranstaltung?', 'cta_text': 'Sagen Sie uns, wie viele Säle Sie haben und was sie leisten sollen. Wir zeigen Ihnen Spectacast an einem Aufbau wie Ihrem.', 'foot_tag': 'Hybride Live-Veranstaltungen, aus einer Regie.', 'f_resources': 'Ressourcen', 'f_legal': 'Rechtliches', 'f_contact': 'Kontakt', 'guide': 'Zur Anleitung', 'others': 'Die anderen Module', 
            'overview': 'Überblick', 'docs': 'Hilfe', 'downloads': 'Downloads', 'guides': 'Anleitungen', 'soon': 'Die Downloads öffnen am Tag der Veröffentlichung von Version 1.0. Bis dahin schreiben Sie uns, und wir richten Spectacast mit Ihnen ein.',
            'terms': 'AGB', 'refunds': 'Erstattungen', 'privacy': 'Datenschutz', 'pricing': 'Preise',
            'product': 'Produkt', 'contact': 'Kontakt', 'signin': 'Anmelden', 'trial': 'Kostenlos testen',
            'menu': 'Hauptmenü', 'plans': 'Enthalten in', 'see_pricing': 'Preise ansehen', 'more': 'Mehr über', 'products': 'Produkte', 'langs': 'Sprache',
            'draft': 'Entwurf: Die markierten Stellen sind noch zu ergänzen.'},
-    'es': {'cta_title': '¿Preparas un congreso o un evento híbrido?', 'cta_text': 'Cuéntanos cuántas salas tienes y qué deben hacer. Te enseñamos Spectacast en un montaje como el tuyo.', 'foot_tag': 'Eventos híbridos en directo, desde una sola sala de control.', 'f_resources': 'Recursos', 'f_legal': 'Legal', 'f_contact': 'Contacto', 'guide': 'Leer la guía', 'others': 'Los otros módulos', 'sales': 'Ventas', 'support': 'Soporte', 
+    'es': {'cta_title': '¿Preparas un congreso o un evento híbrido?', 'cta_text': 'Cuéntanos cuántas salas tienes y qué deben hacer. Te enseñamos Spectacast en un montaje como el tuyo.', 'foot_tag': 'Eventos híbridos en directo, desde una sola sala de control.', 'f_resources': 'Recursos', 'f_legal': 'Legal', 'f_contact': 'Contacto', 'guide': 'Leer la guía', 'others': 'Los otros módulos', 
            'overview': 'Resumen', 'docs': 'Ayuda', 'downloads': 'Descargas', 'guides': 'Guías', 'soon': 'Las descargas se abren el día del lanzamiento de la versión 1.0. Hasta entonces, escríbenos y configuramos Spectacast contigo.',
            'terms': 'Términos', 'refunds': 'Reembolsos', 'privacy': 'Privacidad', 'pricing': 'Precios',
            'product': 'Producto', 'contact': 'Contacto', 'signin': 'Iniciar sesión', 'trial': 'Prueba gratis',
            'menu': 'Menú principal', 'plans': 'Incluido en', 'see_pricing': 'Ver precios', 'more': 'Más sobre', 'products': 'Productos', 'langs': 'Idioma',
            'draft': 'Borrador: las partes resaltadas aún están por completar.'},
-    'it': {'cta_title': 'Stai preparando un congresso o un evento ibrido?', 'cta_text': 'Dicci quante sale hai e cosa devono fare. Ti mostriamo Spectacast su un allestimento come il tuo.', 'foot_tag': "Eventi ibridi dal vivo, da un'unica regia.", 'f_resources': 'Risorse', 'f_legal': 'Note legali', 'f_contact': 'Contatti', 'guide': 'Leggi la guida', 'others': 'Gli altri moduli', 'sales': 'Vendite', 'support': 'Assistenza', 
+    'it': {'cta_title': 'Stai preparando un congresso o un evento ibrido?', 'cta_text': 'Dicci quante sale hai e cosa devono fare. Ti mostriamo Spectacast su un allestimento come il tuo.', 'foot_tag': "Eventi ibridi dal vivo, da un'unica regia.", 'f_resources': 'Risorse', 'f_legal': 'Note legali', 'f_contact': 'Contatti', 'guide': 'Leggi la guida', 'others': 'Gli altri moduli', 
            'overview': 'Panoramica', 'docs': 'Guida', 'downloads': 'Download', 'guides': 'Guide', 'soon': 'I download aprono il giorno del lancio della versione 1.0. Fino ad allora scrivici e configuriamo Spectacast insieme.',
            'terms': 'Termini', 'refunds': 'Rimborsi', 'privacy': 'Privacy', 'pricing': 'Prezzi',
            'product': 'Prodotto', 'contact': 'Contattaci', 'signin': 'Accedi', 'trial': 'Prova gratis',
@@ -167,7 +167,7 @@ TAGLINES = {'director': 'The control room.', 'meet': 'The meeting, as separate f
             'translator': 'Live translation, as an audio source.', 'pass': 'Badges, doors and attendance.'}
 SUPPORT = 'support@spectacast.com'
 # Pages that end with the invitation to get in touch: the ones a buyer reads, not the manuals or the legal texts.
-SELLING = ('home', 'pricing', 'downloads') + PRODUCTS
+SELLING = ('home', 'pricing') + PRODUCTS
 
 
 def tagline(lang, product):
@@ -175,17 +175,17 @@ def tagline(lang, product):
     return t if lang == 'en' else T.BODY[t][lang]
 
 
-def cta_buttons(lang):
+def cta_buttons(lang, pricing=True):
     """The buttons that invite a visitor in: before the launch, to write to us; from launch day, to start the trial."""
     l = LABELS[lang]
     if LAUNCHED:
         first = f'<a class="sc-btn sc-btn--primary" href="{TRIAL}">{l["trial"]}</a>'
     else:
         first = f'<a class="sc-btn sc-btn--primary" href="mailto:{CONTACT}">{l["contact"]}</a>'
-    return first + f'<a class="sc-btn" href="{url(lang, "pricing")}">{l["see_pricing"]}</a>'
+    return first + (f'<a class="sc-btn" href="{url(lang, "pricing")}">{l["see_pricing"]}</a>' if pricing else '')
 
 
-def closing(lang):
+def closing(lang, key):
     l = LABELS[lang]
     return f'''<aside class="closing">
     <div>
@@ -193,7 +193,7 @@ def closing(lang):
       <p>{l['cta_text']}</p>
     </div>
     <div class="closing-act">
-      <div class="cta-row">{cta_buttons(lang)}</div>
+      <div class="cta-row">{cta_buttons(lang, key != 'pricing')}</div>
       <p><a href="mailto:{CONTACT}">{CONTACT}</a></p>
     </div>
   </aside>
@@ -205,7 +205,7 @@ def footer(lang, key):
 
     def col(title, links):
         items = ''.join(f'<li><a href="{h}">{t}</a></li>' for h, t in links)
-        return f'<div><h2>{title}</h2><ul>{items}</ul></div>'
+        return f'<div><p class="foot-title">{title}</p><ul>{items}</ul></div>'
     cols = [
         col(l['products'], [(url(lang, p), p.capitalize()) for p in PRODUCTS]),
         col(l['f_resources'], [(url(lang, k), l[k]) for k in ('pricing', 'docs', 'downloads')]),
@@ -216,7 +216,7 @@ def footer(lang, key):
                        for x in LANGS)
     seller = mark(C.VALUES[lang]['SELLER'])
     marks = TRADEMARKS if lang == 'en' else T.BODY[TRADEMARKS][lang]
-    return f'''{closing(lang) if key in SELLING else ''}<footer class="site-foot">
+    return f'''{closing(lang, key) if key in SELLING else ''}<footer class="site-foot">
     <div class="foot-grid">
       <div class="foot-brand">
         <a class="brand" href="{url(lang, 'home')}">{MARK_SVG}spectacast</a>
@@ -390,7 +390,7 @@ def product_layout(lang, key, body):
     rows = []
     for part in parts:
         h2, rest = re.match(r'(<h2>.*?</h2>)(.*)', part, re.S).groups()
-        wide = re.findall(r'<figure class="shot ">.*?</figure>', rest, re.S)
+        wide = re.findall(r'<figure class="shot ?">.*?</figure>', rest, re.S)
         for f in wide:
             rest = rest.replace(f, '')
         rows.append(f'<section class="p-row">\n{h2}\n<div class="p-text">{rest.strip()}</div>\n{"".join(wide)}\n</section>')

@@ -128,13 +128,13 @@ mark.todo {
 .closing-act p { font-size: 15px; }
 .closing-act a:not(.sc-btn) { color: var(--sc-ink); }
 .site-foot { margin-top: 80px; padding: 48px 0 56px; border-top: 1px solid var(--sc-line); color: var(--sc-muted); font-size: 14px; }
-.foot-grid { display: grid; grid-template-columns: minmax(0, 1.5fr) repeat(4, minmax(0, 1fr)); gap: 32px; }
+.foot-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) repeat(3, minmax(0, 1fr)) minmax(max-content, 1.3fr); gap: 32px; }
 .foot-brand .brand { font-size: 20px; }
 .foot-brand .brand svg { width: 22px; height: 30px; }
 .foot-brand p { margin: 14px 0 0; max-width: 24ch; }
-.sc .site-foot h2 { font: 600 12px/1.3 var(--sc-font); letter-spacing: 0.1em; text-transform: uppercase; color: var(--sc-muted); margin: 6px 0 12px; }
+.site-foot .foot-title { font: 600 12px/1.3 var(--sc-font); letter-spacing: 0.1em; text-transform: uppercase; color: var(--sc-muted); margin: 6px 0 12px; }
 .site-foot ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
-.site-foot li a { color: var(--sc-ink); text-decoration: none; font-weight: 400; overflow-wrap: anywhere; }
+.site-foot li a { color: var(--sc-ink); text-decoration: none; font-weight: 400; }
 .site-foot li a:hover { text-decoration: underline; }
 .foot-base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--sc-line); font-size: 13px; }
 .foot-base p { margin: 0; }
@@ -173,7 +173,7 @@ mark.todo {
 /* The hero's board: what the control room knows at one moment */
 .board { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .board::before {
-  content: ""; position: absolute; inset: -12% -8%; z-index: 0; border-radius: 50%;
+  content: ""; position: absolute; inset: -12% 0; z-index: 0; border-radius: 50%;
   background: radial-gradient(closest-side, var(--sc-live-halo), transparent 72%);
 }
 .tile {
@@ -238,6 +238,7 @@ mark.todo {
 .feature .f-copy > p:not(.what):not(.more), .home .card > p:not(.what):not(.more) { margin: 0 0 18px; color: var(--sc-muted); font-size: 16px; }
 .feature .ticks { font-size: 15px; margin: 0 0 18px; }
 .feature .more, .home .card .more { margin: 0; font-size: 15px; }
+.more a:hover, .in-plans a:hover { text-decoration-thickness: 2px; color: var(--sc-live); }
 .f-shot { margin: 0; position: relative; }
 .f-shot img { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--sc-line); }
 .f-shot.crop { margin: 0 -44px -44px 0; height: 400px; overflow: hidden; }
@@ -263,14 +264,19 @@ mark.todo {
 .home .conn li { border-top: 1px solid var(--sc-line); padding: 16px 0 22px; font-size: 14px; line-height: 1.5; color: var(--sc-muted); }
 .home .conn b { display: block; color: var(--sc-ink); font: 600 17px/1.3 var(--sc-font-display); margin-bottom: 4px; }
 
-.home .case { margin: 120px 0 0; padding: 56px; border-radius: 28px; background: var(--sc-ink); color: var(--sc-bg); }
-.home .case .eyebrow, .home .case p, .home .case .facts li { color: color-mix(in srgb, var(--sc-bg) 68%, var(--sc-ink)); }
+/* The one dark panel of the page; in the dark theme it becomes a raised surface, not a bright block */
+.home .case { --case-bg: var(--sc-ink); --case-fg: var(--sc-bg); margin: 120px 0 0; padding: 56px; border-radius: 28px; background: var(--case-bg); color: var(--case-fg); border: 1px solid var(--case-bg); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .home .case { --case-bg: var(--sc-surface); --case-fg: var(--sc-ink); border-color: var(--sc-line); }
+}
+:root[data-theme='dark'] .home .case { --case-bg: var(--sc-surface); --case-fg: var(--sc-ink); border-color: var(--sc-line); }
+.home .case .eyebrow, .home .case p, .home .case .facts li { color: color-mix(in srgb, var(--case-fg) 68%, var(--case-bg)); }
 .home .case-grid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 56px; align-items: center; }
-.sc .home .case h2 { color: var(--sc-bg); margin-bottom: 20px; max-width: 18ch; }
+.sc .home .case h2 { color: var(--case-fg); margin-bottom: 20px; max-width: 18ch; }
 .home .case p { margin: 0; }
 .home .facts { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 32px 24px; }
 .home .facts li { font-size: 14px; }
-.home .facts b { display: block; font: 700 clamp(44px, 5vw, 64px)/1 var(--sc-font-display); letter-spacing: -0.04em; color: var(--sc-bg); margin-bottom: 6px; font-variant-numeric: tabular-nums; }
+.home .facts b { display: block; font: 700 clamp(44px, 5vw, 64px)/1 var(--sc-font-display); letter-spacing: -0.04em; color: var(--case-fg); margin-bottom: 6px; font-variant-numeric: tabular-nums; }
 
 /* Product pages */
 .product { padding: 32px 0 24px; }
@@ -287,7 +293,7 @@ mark.todo {
 .p-text li { margin: 6px 0; }
 .p-row > .shot { grid-column: 1 / -1; margin: 36px 0 0; }
 .p-text .shot.phone { margin: 28px 0 0; }
-.p-text .shot.phone img { margin: 0; }
+.p-text .shot.phone img { margin: 0; max-width: 200px; border-radius: 22px; }
 .in-plans {
   display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 24px 0 0;
   border-top: 1px solid var(--sc-line); font-size: 15px;
@@ -310,7 +316,6 @@ mark.todo {
 @media (max-width: 960px) {
   .home .hero { grid-template-columns: minmax(0, 1fr); gap: 40px; padding-top: 40px; }
   .board { max-width: 520px; }
-  .board::before { inset: -8% 0; }
   .places { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 0; }
   .places li:nth-child(odd) { padding-left: 0; border-left: 0; }
   .feature, .feature.flip { grid-template-columns: minmax(0, 1fr); gap: 32px; padding: 32px; }
@@ -328,7 +333,8 @@ mark.todo {
   .home .case { padding: 40px 32px; }
   .home .case-grid { grid-template-columns: minmax(0, 1fr); gap: 40px; }
   .closing { grid-template-columns: minmax(0, 1fr); padding: 36px 32px; }
-  .foot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .foot-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .foot-grid > :last-child { grid-column: 1 / -1; }
   .foot-brand { grid-column: 1 / -1; }
   .p-row { grid-template-columns: minmax(0, 1fr); row-gap: 14px; padding: 32px 0; }
   .others div { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -354,6 +360,7 @@ mark.todo {
 @media (max-width: 480px) {
   .wrap { padding: 0 16px; }
   .home .hero { padding-top: 24px; }
+  .home .hero-shot { display: none; }
   .places { grid-template-columns: minmax(0, 1fr); }
   .places li { padding-left: 0; border-left: 0; }
   .feature, .feature.flip, .home .card { padding: 24px; border-radius: 20px; }
@@ -371,5 +378,6 @@ mark.todo {
   .brand svg { width: 22px; height: 30px; }
   .site-head nav a { font-size: 14px; }
   .board { grid-template-columns: minmax(0, 1fr); }
+  .foot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 24px; }
 }
 .sc .doc h1, .sc .pricing h1 { overflow-wrap: break-word; hyphens: auto; }
