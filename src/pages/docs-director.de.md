@@ -33,7 +33,7 @@ Ohne PIN ist Director im Netzwerk nicht erreichbar. Wer das Dashboard öffnet, g
 2. Wählen Sie das Beispiel mit zwei Räumen.
 3. Bestätigen Sie mit **Verwenden**. Das ersetzt die leere Show.
 
-Das Beispiel hat zwei Säle, Room A und Room B, jeder mit Meet und OBS. Dazu kommen ein Kanalstreifen pro Saal, die Wall mit beiden Bildschirmen und die Regel, die einen Saal auf Sendung schaltet. Seine Adressen (192.168.1.11 und .12) sind Platzhalter, die Sie im nächsten Schritt ändern.
+Das Beispiel hat zwei Säle, Raum A und Raum B, jeder mit Meet und OBS. Dazu kommen ein Kanalstreifen pro Saal, die Wall mit beiden Bildschirmen und die Regel, die einen Saal auf Sendung schaltet. Seine Adressen (192.168.1.11 und .12) sind Platzhalter, die Sie im nächsten Schritt ändern.
 
 ## 4. Ihr erster Saal
 
@@ -45,17 +45,17 @@ Auf dem Saal-PC:
 Im Dashboard, auf der Seite **Geräte**:
 
 1. Klicken Sie unter **Netzwerk durchsuchen** auf **suchen**. Director listet die OBS und Meet auf, die er im Netzwerk findet.
-2. Öffnen Sie die OBS-Karte von Room A und setzen Sie die Adresse auf `ws://<Saal-PC>:4455`. Öffnen Sie dann die Meeting-Karte von Room A und setzen Sie den Host auf die Adresse des Saal-PCs. Jede Karte wird grün, sobald das Gerät antwortet.
+2. Öffnen Sie die OBS-Karte von Raum A und setzen Sie die Adresse auf `ws://<Saal-PC>:4455`. Öffnen Sie dann die Meeting-Karte von Raum A und setzen Sie den Host auf die Adresse des Saal-PCs. Jede Karte wird grün, sobald das Gerät antwortet.
 3. Tragen Sie das OBS-Passwort in `.env` als `OBS_PASSWORD=<Passwort>` ein, melden Sie sich dann ab und wieder an.
-4. Haben Sie nur einen Saal, entfernen Sie die zwei Geräte von Room B oder lassen Sie sie: Sie erscheinen offline und tun nichts.
+4. Haben Sie nur einen Saal, entfernen Sie die zwei Geräte von Raum B oder lassen Sie sie: Sie erscheinen offline und tun nichts.
 
 ## 5. Auf Sendung
 
-Öffnen Sie **Panels**. Der Kanalstreifen von Room A zeigt sein Bild, sein Meeting und ob er auf Sendung ist.
+Öffnen Sie **Panels**. Der Kanalstreifen von Raum A zeigt sein Bild, sein Meeting und ob er auf Sendung ist.
 
 1. Starten Sie das Meeting über den Streifen.
-2. Drücken Sie **on air**: OBS beginnt, an die in OBS eingestellte Adresse zu streamen.
-3. Drücken Sie erneut **on air**, um zu stoppen.
+2. Drücken Sie **Streaming** auf dem Streifen: OBS beginnt, an die in OBS eingestellte Adresse zu streamen.
+3. Drücken Sie erneut **Streaming**, um zu stoppen. **Alle Streams starten** startet alle Säle auf einmal.
 
 In der Testphase können zwei Säle 20 Minuten am Stück auf Sendung sein, und die Bilder tragen eine Test-Markierung. Nach 20 Minuten gehen die Säle von der Sendung; starten Sie Director neu (ab- und wieder anmelden), um es erneut zu versuchen.
 

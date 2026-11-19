@@ -17,8 +17,7 @@ La lista de arriba dice qué falta todavía.
 
 En **Asistentes**:
 
-- **+ Persona** añade a alguien a mano, por ejemplo quien se inscribe en el mostrador.
-- **Importar** lee un CSV, o un Excel guardado como CSV, con encabezados como First name, Last name, Email, Category e ID (también sirven encabezados en italiano y alemán). Las demás columnas se guardan como campos que las reglas y los mensajes pueden usar. Importar otra vez actualiza a las mismas personas.
+- **+ Persona o importar** añade a alguien a mano, por ejemplo quien se inscribe en el mostrador, o lee un CSV, o un Excel guardado como CSV, con encabezados como First name, Last name, Email, Category e ID (también sirven los italianos). Las demás columnas se guardan como campos que las reglas y los mensajes pueden usar. Importar otra vez actualiza a las mismas personas.
 - Las **Fuentes** traen la lista de una web de inscripción por sí solas, y las **Claves para otros sistemas** permiten que una web envíe sus inscripciones. Pide al proveedor de tu web de inscripción, o a nosotros, que las conecte.
 
 Cada asistente recibe una credencial con un código QR. **Imprimir todas las credenciales** las imprime, sobre tu propio fondo si subes uno, o **Credenciales por correo** envía a cada persona la suya.

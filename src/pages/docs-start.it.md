@@ -7,7 +7,7 @@
 - **Un'organizzazione in Spectacast Account.** Lì ci sono i tuoi piani, i tuoi PC e i tuoi colleghi.
 - **Un PC di regia** con Windows 10 o 11. Esegue Director, e la dashboard si apre in un browser su di esso o su un tablet.
 - **Un PC per sala** con Windows 10 o 11, per OBS Studio, Meet e, se li usi, il ricevitore di Mic e Translator.
-- **Un'unica rete per tutti i PC.** Le sale e la regia comunicano sulla rete della sede, quindi l'evento continua anche se cade internet. La riunione online e i motori di traduzione hanno bisogno di internet; inoltre i PC rinnovano lì la licenza almeno ogni 14 giorni.
+- **Un'unica rete per tutti i PC.** Le sale e la regia comunicano sulla rete della sede, quindi l'evento continua anche se cade internet. La riunione online e i motori di traduzione hanno bisogno di internet; inoltre i PC rinnovano la licenza tramite internet almeno ogni 14 giorni.
 
 Pass non ha bisogno di niente di tutto questo: funziona online, nel browser, e gli ingressi sono telefoni, tablet o lettori.
 

@@ -4,7 +4,7 @@
 
 ## Qué necesitas
 
-- El receptor de Mic en un PC con Windows o un Mac en la sala. Setup lo instala en un PC de sala, o solo con **Mic receiver only**.
+- El receptor de Mic en un PC con Windows en la sala. Spectacast Setup lo instala con el rol **Mic receiver only**.
 - La app gratuita Spectacast Mic en cada teléfono, para Android y iPhone, en las tiendas de apps a partir de la versión 1.0.
 - El wifi del recinto, con los teléfonos y el PC en la misma red. Mic no necesita internet.
 
@@ -29,7 +29,7 @@ Los receptores pueden formar un grupo: en la página de control de uno elige **A
 
 En Director el receptor aparece en **Dispositivos**. El panel muestra el nivel de cada teléfono y puede silenciarlo. La página de control del receptor tiene además un volumen por teléfono, para uno que llega demasiado fuerte.
 
-## Bueno saber
+## Conviene saber
 
 - Un teléfono en altavoz en la misma sala que los altavoces no es problema: la app cancela el eco.
 - Un wifi saturado se nota en el teléfono como una conexión más débil. Ayuda una red para el equipo, aparte del wifi de los invitados.

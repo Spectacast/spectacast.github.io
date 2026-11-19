@@ -48,4 +48,4 @@ Paddle, our reseller, takes the payment and sends the invoice, with VAT where it
 
 ## Cancelling and refunds
 
-A yearly plan renews each year until you cancel it; an event pass does not renew. You can cancel at any time on [spectacast.com/account/cancel](/account/cancel), without signing in, or in Paddle's portal from the link in your receipt; you get a confirmation by email. The plan stays active until the end of the period already paid. What you can get back, and when, is in the [Refund Policy](/refunds/) and the [Terms](/terms/).
+A yearly plan renews each year until you cancel it; an event pass does not renew. You can cancel at any time on [spectacast.com/account/cancel](/account/cancel), without signing in, or in Paddle's portal from the link in your receipt; you get a confirmation by email. The plan stays active until the end of the period already paid; consumers have extra rights after an automatic renewal, set out in the Terms. What you can get back, and when, is in the [Refund Policy](/refunds/) and the [Terms](/terms/).

@@ -4,7 +4,7 @@
 
 ## Cosa ti serve
 
-- Il ricevitore di Mic su un PC Windows o un Mac in sala. Setup lo installa su un PC di sala, oppure da solo con **Mic receiver only**.
+- Il ricevitore di Mic su un PC Windows in sala. Spectacast Setup lo installa con il ruolo **Mic receiver only**.
 - L'app gratuita Spectacast Mic su ogni telefono, per Android e iPhone, negli store dalla versione 1.0.
 - Il Wi-Fi della sede, con i telefoni e il PC sulla stessa rete. Mic non ha bisogno di internet.
 

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Guía de Translator · Spectacast</title>
-<meta name="description" content="Translator escucha a quien habla y dice lo que dice en otro idioma, en directo, por cualquier salida de audio. Un Translator, llamado canal, por idioma.">
+<meta name="description" content="Translator escucha a quien habla y dice lo que dice en otro idioma, en directo, por cualquier salida de audio. Un Translator, llamado pista, por idioma.">
 <link rel="canonical" href="https://spectacast.com/es/ayuda/translator/">
 <link rel="alternate" hreflang="en" href="https://spectacast.com/docs/translator/">
 <link rel="alternate" hreflang="de" href="https://spectacast.com/de/hilfe/translator/">
@@ -14,7 +14,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Spectacast">
 <meta property="og:title" content="Guía de Translator · Spectacast">
-<meta property="og:description" content="Translator escucha a quien habla y dice lo que dice en otro idioma, en directo, por cualquier salida de audio. Un Translator, llamado canal, por idioma.">
+<meta property="og:description" content="Translator escucha a quien habla y dice lo que dice en otro idioma, en directo, por cualquier salida de audio. Un Translator, llamado pista, por idioma.">
 <meta property="og:url" content="https://spectacast.com/es/ayuda/translator/">
 <meta property="og:image" content="https://spectacast.com/img/og/translator-light.jpg">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -34,7 +34,7 @@
 <nav class="doc-nav" aria-label="Ayuda"><p>Ayuda</p><ul><li><a href="/es/ayuda/">Resumen</a></li><li><a href="/es/ayuda/primeros-pasos/">Primeros pasos</a></li><li><a href="/es/ayuda/cuenta-y-facturacion/">Cuenta y facturación</a></li><li><a href="/es/ayuda/director/">Guía de Director</a></li><li><a href="/es/ayuda/meet/">Guía de Meet</a></li><li><a href="/es/ayuda/mic/">Guía de Mic</a></li><li><a href="/es/ayuda/translator/" aria-current="page">Guía de Translator</a></li><li><a href="/es/ayuda/pass/">Guía de Pass</a></li></ul></nav>
 <article>
 <h1>Guía de Translator</h1>
-<p class="lede">Translator escucha a quien habla y dice lo que dice en otro idioma, en directo, por cualquier salida de audio. Un Translator, llamado canal, por idioma.</p>
+<p class="lede">Translator escucha a quien habla y dice lo que dice en otro idioma, en directo, por cualquier salida de audio. Un Translator, llamado pista, por idioma.</p>
 
 <h2>Qué necesitas</h2>
 <ul>
@@ -43,25 +43,25 @@
 <li>Una entrada con la voz de quien habla: un micrófono, el mezclador, un teléfono a través de <a href="/es/ayuda/mic/">Mic</a> o una señal por NDI.</li>
 </ul>
 <h2>La página de control</h2>
-<p>Cada canal tiene su propia página de control, en <strong>http://127.0.0.1:4720</strong> para el primer canal de ese PC. Elige:</p>
+<p>Cada pista tiene su propia página de control, en <strong>http://127.0.0.1:4720</strong> para la primera pista de ese PC. Elige:</p>
 <ol>
-<li>la <strong>entrada</strong>: una tarjeta de sonido, o una fuente NDI como un participante de <a href="/es/ayuda/meet/">Meet</a>;</li>
-<li>la <strong>salida</strong>: una tarjeta de sonido, un cable virtual hacia OBS o el mezclador, o el canal de interpretación de Meet;</li>
-<li>el <strong>idioma</strong> en que hablar;</li>
+<li>el <strong>Micrófono</strong>, la entrada: una tarjeta de sonido, o una fuente NDI como un participante de <a href="/es/ayuda/meet/">Meet</a>;</li>
+<li>la <strong>Salida</strong>: una tarjeta de sonido, un cable virtual hacia OBS o el mezclador, o el canal de interpretación de Meet;</li>
+<li><strong>Hablar en</strong>: el idioma en que hablar;</li>
 </ol>
 <p>y pulsa <strong>Iniciar</strong>. La página muestra cada frase dos veces, tal como se oyó y tal como se dijo, mientras se habla.</p>
 <figure class="shot "><picture><source srcset="/img/screens/translator-dark.webp" media="(prefers-color-scheme: dark)"><img src="/img/screens/translator-light.webp" alt="La página de control de Translator: lo que se oyó en italiano y lo que se dijo en inglés, línea a línea" width="1440" height="900"></picture></figure>
 
 <h2>Motores</h2>
-<p>El motor decide cómo suena Translator y lo rápido que responde. Google Gemini es el predeterminado; OpenAI es el otro. Los motores de <strong>intérprete</strong> actúan como una intérprete de congreso: dales el <strong>Tema</strong> de la sesión y un glosario de nombres y términos técnicos, uno por línea, y los usan.</p>
+<p>El motor decide cómo suena Translator y lo rápido que responde. Google Gemini es el predeterminado; OpenAI es el otro. Los motores de <strong>intérprete</strong> actúan como una intérprete de congreso: dales el <strong>Tema</strong> de la sesión en la página de control; además usan un glosario de nombres y términos técnicos guardado en el PC, uno por línea. El glosario lo preparamos contigo.</p>
 <h2>Sentido invertido</h2>
-<p>Mientras un canal funciona, un segundo modelo lee lo que se oyó junto a lo que se dijo y marca en rojo los puntos donde la traducción dice algo distinto: un «no» perdido, un número, izquierda por derecha, un nombre. No cambia nada de lo que dice el canal; es para quien lo vigila. La casilla <strong>Avisar cuando el sentido se invierte</strong> lo desactiva.</p>
+<p>Mientras una pista funciona, un segundo modelo lee lo que se oyó junto a lo que se dijo y marca en rojo los puntos donde la traducción dice algo distinto: un «no» perdido, un número, izquierda por derecha, un nombre. No cambia nada de lo que dice la pista; es para quien la vigila. La casilla <strong>Avisar cuando el sentido se invierte</strong> lo desactiva.</p>
 <h2>En la reunión</h2>
-<p>Para dar un idioma a quienes escuchan en la reunión en línea, pon la salida del canal en el canal de interpretación de Meet. Meet se une como intérprete de ese idioma, y quienes escuchan eligen el idioma en Zoom. Consulta <a href="/es/ayuda/meet/">Meet</a>.</p>
+<p>Para dar un idioma a quienes escuchan en la reunión en línea, pon la salida de la pista en el canal de interpretación de Meet. Meet se une como intérprete de ese idioma, y quienes escuchan eligen el idioma en Zoom. Consulta <a href="/es/ayuda/meet/">Meet</a>.</p>
 <h2>Tras un reinicio</h2>
-<p>Un canal recuerda lo que estaba haciendo. Tras un reinicio del PC vuelve con la misma entrada, salida e idioma, y arranca de nuevo si estaba en marcha; lo reintenta durante diez minutos mientras falte una tarjeta de sonido o la red.</p>
+<p>Una pista recuerda lo que estaba haciendo. Tras un reinicio del PC vuelve con la misma entrada, salida e idioma, y arranca de nuevo si estaba en marcha; lo reintenta durante diez minutos mientras falte una tarjeta de sonido o la red.</p>
 <h2>Minutos</h2>
-<p>Cada minuto que habla un canal cuenta, por idioma. Los planes con Translator incluyen 300 minutos por sala; tu cuenta muestra cuántos has usado. Consulta <a href="/es/ayuda/cuenta-y-facturacion/">Cuenta y facturación</a>.</p>
+<p>Cada minuto que habla una pista cuenta, por idioma. Los planes con Translator incluyen 300 minutos por sala; tu cuenta muestra cuántos has usado. Consulta <a href="/es/ayuda/cuenta-y-facturacion/">Cuenta y facturación</a>.</p>
 </article>
   </main>
   <footer class="site-foot">

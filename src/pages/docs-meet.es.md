@@ -4,7 +4,7 @@
 
 ## Qué necesitas
 
-- Un PC con Windows en la sala, en la misma red que la sala de control. También sirve un Mac, sin canales de interpretación.
+- Un PC con Windows en la sala, en la misma red que la sala de control.
 - Una cuenta de Zoom que pueda organizar la reunión.
 - OBS Studio en el mismo PC, o un mezclador que reciba NDI.
 
@@ -27,12 +27,12 @@ Meet se vuelve a iniciar solo tras un reinicio del PC, con los mismos ajustes y 
 
 ## Las señales
 
-Cada salida es una fuente NDI en la red. Para cada una, elige qué muestra:
+Cada salida es una fuente NDI en la red. Para cada una, elige qué muestra (los modos aparecen en inglés):
 
-- **Participante:** una persona, elegida por su nombre.
-- **Orador activo:** quien habló por última vez.
-- **Destacado:** la persona destacada, o una persona elegida cuando no hay nadie destacado.
-- **Vista de Zoom:** la reunión dispuesta como en Zoom, sin nombres ni gráficos de Zoom: la pantalla compartida mientras alguien comparte, si no la galería o el orador.
+- **Participant** (participante): una persona, elegida por su nombre.
+- **Active Speaker** (orador activo): quien habló por última vez.
+- **Spotlight** (destacado): la persona destacada, o una persona elegida cuando no hay nadie destacado.
+- **Zoom view** (vista de Zoom): la reunión dispuesta como en Zoom, sin nombres ni gráficos de Zoom: la pantalla compartida mientras alguien comparte, si no la galería o el orador.
 
 Después elige la imagen (la cámara, o la pantalla compartida cuando la hay) y el sonido: el de esa persona, el de toda la reunión, o la reunión sin una persona, para un retorno que la sala ya oye. En OBS, añade la señal como fuente NDI.
 
@@ -42,12 +42,12 @@ En Director, Meet aparece en **Dispositivos** como cualquier otro dispositivo, y
 
 ## Canales de interpretación
 
-Cuando la reunión tiene interpretación, Meet puede unirse como intérprete de un idioma y hablar con una voz de [Translator](/es/ayuda/translator/) o de una persona en la cabina. Los oyentes eligen el idioma en Zoom como siempre. Los canales de interpretación necesitan Meet en Windows.
+Cuando la reunión tiene interpretación, Meet puede unirse como intérprete de un idioma y hablar con una voz de [Translator](/es/ayuda/translator/) o de una persona en la cabina. Los oyentes eligen el idioma en Zoom como siempre.
 
 {{shot:meet-interpreter-card|La tarjeta que Meet muestra en un canal de interpretación: el idioma e «Interpretación en vivo»}}
 
 ## Cuando algo no funciona
 
 - **«Cannot connect to Zoom (no internet?)»:** Meet lo reintenta cada minuto; revisa el internet del PC de sala.
-- **Una salida está en negro:** nadie corresponde a ella, por ejemplo porque la persona elegida se ha ido. Elige otra persona, o pon la salida en Orador activo.
+- **Una salida está en negro:** nadie corresponde a ella, por ejemplo porque la persona elegida se ha ido. Elige otra persona, o pon la salida en Active Speaker.
 - **Qué respondió Zoom:** el registro está al final de **Ajustes**.

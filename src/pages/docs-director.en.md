@@ -54,8 +54,8 @@ On the dashboard, on the **Devices** page:
 Open **Panels**. Room A's channel strip shows its picture, its meeting and its on-air state.
 
 1. Start the meeting from the strip.
-2. Press **on air**: OBS starts streaming to the address set in OBS.
-3. Press **on air** again to stop.
+2. Press **Streaming** on the strip: OBS starts streaming to the address set in OBS.
+3. Press **Streaming** again to stop. **Start all streams** starts every hall at once.
 
 In the trial, two halls can be on air for 20 minutes per run, and the pictures carry a trial mark. After 20 minutes the halls go off air; restart Director (log off and on) to try again.
 

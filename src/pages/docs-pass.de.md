@@ -17,8 +17,7 @@ Die Checkliste oben sagt, was noch fehlt.
 
 Unter **Teilnehmende**:
 
-- **+ Person** fügt jemanden von Hand hinzu, etwa wer sich am Empfang anmeldet.
-- **Importieren** liest eine CSV-Datei oder eine als CSV gespeicherte Excel-Datei, mit Spaltenköpfen wie First name, Last name, Email, Category und ID (Vorname, Nachname und italienische Spaltenköpfe gehen auch). Weitere Spalten bleiben als Felder erhalten, die Regeln und Meldungen nutzen können. Ein erneuter Import aktualisiert dieselben Personen.
+- **+ Person oder Import** fügt jemanden von Hand hinzu, etwa wer sich am Empfang anmeldet, oder liest eine CSV-Datei oder eine als CSV gespeicherte Excel-Datei, mit Spaltenköpfen wie First name, Last name, Email, Category und ID (italienische gehen auch, ebenso Vorname und Nachname). Weitere Spalten bleiben als Felder erhalten, die Regeln und Meldungen nutzen können. Ein erneuter Import aktualisiert dieselben Personen.
 - **Feeds** holen die Liste selbstständig von einer Anmeldeseite, und **Schlüssel für andere Systeme** lassen eine Seite ihre Anmeldungen senden. Bitten Sie den Anbieter Ihrer Anmeldeseite oder uns, sie zu verbinden.
 
 Jede Person erhält ein Badge mit QR-Code. **Alle Badges drucken** druckt sie, auf Ihrem eigenen Hintergrund, wenn Sie einen hochladen, oder **Badges per E-Mail** schickt jeder Person ihres.

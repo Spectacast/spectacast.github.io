@@ -12,9 +12,9 @@
 
 Each lane has its own control page, at **http://127.0.0.1:4720** for the first lane on that PC. Pick:
 
-1. the **input**: a sound card, or an NDI source such as one participant from [Meet](/docs/meet/);
-2. the **output**: a sound card, a virtual cable into OBS or the mixer, or Meet's interpreter channel;
-3. the **language** to speak;
+1. the **Microphone**, the input: a sound card, or an NDI source such as one participant from [Meet](/docs/meet/);
+2. the **Output**: a sound card, a virtual cable into OBS or the mixer, or Meet's interpreter channel;
+3. **Speak in**: the language to speak;
 
 then press **Start**. The page shows each sentence twice, as heard and as said, while it is spoken.
 
@@ -22,7 +22,7 @@ then press **Start**. The page shows each sentence twice, as heard and as said, 
 
 ## Engines
 
-The engine decides how Translator sounds and how fast it answers. Google Gemini is the default; OpenAI is the other. The **interpreter** engines act as a congress interpreter: give them the session's **Topic**, and a glossary of names and technical terms, one per line, and they use them.
+The engine decides how Translator sounds and how fast it answers. Google Gemini is the default; OpenAI is the other. The **interpreter** engines act as a congress interpreter: give them the session's **Topic** on the control page, and they also use a glossary of names and technical terms kept on the PC, one per line. We set up the glossary with you.
 
 ## Flagged meaning
 

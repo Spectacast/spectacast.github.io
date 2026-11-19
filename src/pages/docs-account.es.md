@@ -48,4 +48,4 @@ Paddle, nuestro revendedor, cobra el pago y envía la factura, con IVA cuando co
 
 ## Cancelación y reembolsos
 
-Un plan anual se renueva cada año hasta que lo canceles; un pase de evento no se renueva. Puedes cancelar en cualquier momento en [spectacast.com/account/cancel](/account/cancel), sin iniciar sesión, o en el portal de Paddle desde el enlace de tu recibo; recibes una confirmación por correo. El plan sigue activo hasta el final del periodo ya pagado. Qué puedes recuperar, y cuándo, está en la [política de reembolsos](/es/reembolsos/) y en los [Términos](/es/terminos/).
+Un plan anual se renueva cada año hasta que lo canceles; un pase de evento no se renueva. Puedes cancelar en cualquier momento en [spectacast.com/account/cancel](/account/cancel), sin iniciar sesión, o en el portal de Paddle desde el enlace de tu recibo; recibes una confirmación por correo. El plan sigue activo hasta el final del periodo ya pagado; los consumidores tienen derechos adicionales tras una renovación automática, recogidos en los Términos. Qué puedes recuperar, y cuándo, está en la [política de reembolsos](/es/reembolsos/) y en los [Términos](/es/terminos/).

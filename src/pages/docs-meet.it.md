@@ -4,7 +4,7 @@
 
 ## Cosa ti serve
 
-- Un PC Windows in sala, sulla stessa rete della regia. Va bene anche un Mac, senza canali di interpretariato.
+- Un PC Windows in sala, sulla stessa rete della regia.
 - Un account Zoom che possa ospitare la riunione.
 - OBS Studio sullo stesso PC, o un mixer che riceve NDI.
 
@@ -27,12 +27,12 @@ Meet riparte da solo dopo un riavvio del PC, con le stesse impostazioni e uscite
 
 ## I segnali
 
-Ogni uscita è una sorgente NDI in rete. Per ognuna, scegli cosa mostra:
+Ogni uscita è una sorgente NDI in rete. Per ognuna, scegli cosa mostra (le modalità sono in inglese):
 
-- **Partecipante:** una persona, scelta per nome.
-- **Chi parla:** chi ha parlato per ultimo.
-- **In evidenza:** la persona in evidenza, o una persona scelta quando non c'è nessuno in evidenza.
-- **Vista Zoom:** la riunione disposta come in Zoom, senza nomi né grafica di Zoom: la condivisione mentre qualcuno condivide, altrimenti la galleria o chi parla.
+- **Participant** (partecipante): una persona, scelta per nome.
+- **Active Speaker** (chi parla): chi ha parlato per ultimo.
+- **Spotlight** (in evidenza): la persona in evidenza, o una persona scelta quando non c'è nessuno in evidenza.
+- **Zoom view** (vista Zoom): la riunione disposta come in Zoom, senza nomi né grafica di Zoom: la condivisione mentre qualcuno condivide, altrimenti la galleria o chi parla.
 
 Poi scegli l'immagine (la camera, o la condivisione dello schermo quando c'è) e l'audio: quello di quella persona, di tutta la riunione, o la riunione senza una persona, per un ritorno che la sala sente già. In OBS, aggiungi il segnale come sorgente NDI.
 
@@ -42,12 +42,12 @@ In Director, Meet compare in **Dispositivi** come ogni altro dispositivo, e la s
 
 ## Canali di interpretariato
 
-Quando la riunione ha l'interpretariato, Meet può entrare come interprete di una lingua e parlare con una voce di [Translator](/it/guida/translator/) o di una persona in cabina. Chi ascolta sceglie la lingua in Zoom come sempre. I canali di interpretariato richiedono Meet su Windows.
+Quando la riunione ha l'interpretariato, Meet può entrare come interprete di una lingua e parlare con una voce di [Translator](/it/guida/translator/) o di una persona in cabina. Chi ascolta sceglie la lingua in Zoom come sempre.
 
 {{shot:meet-interpreter-card|La scheda che Meet mostra su un canale di interpretariato: la lingua e «Interpretazione dal vivo»}}
 
 ## Quando qualcosa non funziona
 
 - **«Cannot connect to Zoom (no internet?)»:** Meet riprova ogni minuto; controlla l'internet del PC di sala.
-- **Un'uscita è nera:** nessuno corrisponde, ad esempio la persona scelta è uscita. Scegli un'altra persona, o imposta l'uscita su Chi parla.
+- **Un'uscita è nera:** nessuno corrisponde, ad esempio la persona scelta è uscita. Scegli un'altra persona, o imposta l'uscita su Active Speaker.
 - **Cosa ha risposto Zoom:** il log è in fondo a **Impostazioni**.

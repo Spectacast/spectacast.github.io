@@ -12,9 +12,9 @@
 
 Ogni corsia ha la sua pagina di controllo, su **http://127.0.0.1:4720** per la prima corsia di quel PC. Scegli:
 
-1. l'**ingresso**: una scheda audio, o una sorgente NDI come un partecipante di [Meet](/it/guida/meet/);
-2. l'**uscita**: una scheda audio, un cavo virtuale verso OBS o il mixer, o il canale di interpretariato di Meet;
-3. la **lingua** in cui parlare;
+1. il **Microfono**, cioè l'ingresso: una scheda audio, o una sorgente NDI come un partecipante di [Meet](/it/guida/meet/);
+2. l'**Uscita**: una scheda audio, un cavo virtuale verso OBS o il mixer, o il canale di interpretariato di Meet;
+3. **Parla in**: la lingua in cui parlare;
 
 e premi **Avvia**. La pagina mostra ogni frase due volte, come sentita e come detta, mentre viene pronunciata.
 
@@ -22,7 +22,7 @@ e premi **Avvia**. La pagina mostra ogni frase due volte, come sentita e come de
 
 ## Motori
 
-Il motore decide come suona Translator e quanto velocemente risponde. Google Gemini è quello predefinito; OpenAI è l'altro. I motori **interprete** lavorano come un'interprete di congresso: dai loro l'**Argomento** della sessione e un glossario di nomi e termini tecnici, uno per riga, e li usano.
+Il motore decide come suona Translator e quanto velocemente risponde. Google Gemini è quello predefinito; OpenAI è l'altro. I motori **interprete** lavorano come un'interprete di congresso: dai loro l'**Argomento** della sessione nella pagina di controllo; usano inoltre un glossario di nomi e termini tecnici sul PC, uno per riga. Il glossario lo prepariamo insieme a te.
 
 ## Senso capovolto
 

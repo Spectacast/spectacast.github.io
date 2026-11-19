@@ -26,7 +26,7 @@ Pass no necesita nada de esto: funciona en línea, en el navegador, y las puerta
 1. **Tu cuenta.** Inicia sesión, comprueba el nombre de tu organización e invita a tus compañeros. Consulta [Cuenta y facturación](/es/ayuda/cuenta-y-facturacion/).
 2. **El PC de control.** Descarga Spectacast Setup, ejecútalo y elige **Control room** (sala de control). Setup instala Director y muestra un código: escríbelo en tu cuenta, en **Plan y PC**, antes de una hora. El PC ya tiene su licencia.
 3. **Cada PC de sala.** Ejecuta Setup en el PC de sala, elige **Hall PC** (PC de sala) y actívalo igual con su código, como PC de sala.
-4. **El espectáculo.** Abre el panel, empieza con el espectáculo de ejemplo y conecta tu primera sala. Consulta la [guía de Director](/es/ayuda/director/).
+4. **El show.** Abre el panel, empieza con el show de ejemplo y conecta tu primera sala. Consulta la [guía de Director](/es/ayuda/director/).
 5. **Lo demás.** Añade [Meet](/es/ayuda/meet/), [Mic](/es/ayuda/mic/) y [Translator](/es/ayuda/translator/) en las salas que los necesiten, y configura [Pass](/es/ayuda/pass/) para las puertas.
 
 ## La prueba gratuita

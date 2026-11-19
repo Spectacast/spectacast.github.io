@@ -49,8 +49,9 @@
 <h2>2. Das Dashboard öffnen</h2>
 <p>Öffnen Sie <strong>http://127.0.0.1:4700</strong> in einem Browser auf diesem PC. Das Sprachmenü oben rechts wechselt zwischen English, Deutsch, Español und Italiano.</p>
 <p>Um das Dashboard von einem Tablet oder einem anderen PC zu öffnen, fügen Sie diese zwei Zeilen in <code>C:\ProgramData\Spectacast\director\.env</code> ein, melden Sie sich dann ab und wieder an:</p>
-<p><code>HOST=0.0.0.0
-PIN=&lt;eine eigene PIN&gt;</code></p>
+<pre><code>HOST=0.0.0.0
+PIN=&lt;eine eigene PIN&gt;
+</code></pre>
 <p>Ohne PIN ist Director im Netzwerk nicht erreichbar. Wer das Dashboard öffnet, gibt die PIN einmal ein. Für jemanden, der die Show fahren, aber nicht ändern soll, fügen Sie <code>OPERATOR_PIN=&lt;eine andere PIN&gt;</code> hinzu: Sie öffnet nur die Panels.</p>
 <h2>3. Mit der Beispiel-Show beginnen</h2>
 <ol>
@@ -58,7 +59,7 @@ PIN=&lt;eine eigene PIN&gt;</code></p>
 <li>Wählen Sie das Beispiel mit zwei Räumen.</li>
 <li>Bestätigen Sie mit <strong>Verwenden</strong>. Das ersetzt die leere Show.</li>
 </ol>
-<p>Das Beispiel hat zwei Säle, Room A und Room B, jeder mit Meet und OBS. Dazu kommen ein Kanalstreifen pro Saal, die Wall mit beiden Bildschirmen und die Regel, die einen Saal auf Sendung schaltet. Seine Adressen (192.168.1.11 und .12) sind Platzhalter, die Sie im nächsten Schritt ändern.</p>
+<p>Das Beispiel hat zwei Säle, Raum A und Raum B, jeder mit Meet und OBS. Dazu kommen ein Kanalstreifen pro Saal, die Wall mit beiden Bildschirmen und die Regel, die einen Saal auf Sendung schaltet. Seine Adressen (192.168.1.11 und .12) sind Platzhalter, die Sie im nächsten Schritt ändern.</p>
 <h2>4. Ihr erster Saal</h2>
 <p>Auf dem Saal-PC:</p>
 <ol>
@@ -68,16 +69,16 @@ PIN=&lt;eine eigene PIN&gt;</code></p>
 <p>Im Dashboard, auf der Seite <strong>Geräte</strong>:</p>
 <ol>
 <li>Klicken Sie unter <strong>Netzwerk durchsuchen</strong> auf <strong>suchen</strong>. Director listet die OBS und Meet auf, die er im Netzwerk findet.</li>
-<li>Öffnen Sie die OBS-Karte von Room A und setzen Sie die Adresse auf <code>ws://&lt;Saal-PC&gt;:4455</code>. Öffnen Sie dann die Meeting-Karte von Room A und setzen Sie den Host auf die Adresse des Saal-PCs. Jede Karte wird grün, sobald das Gerät antwortet.</li>
+<li>Öffnen Sie die OBS-Karte von Raum A und setzen Sie die Adresse auf <code>ws://&lt;Saal-PC&gt;:4455</code>. Öffnen Sie dann die Meeting-Karte von Raum A und setzen Sie den Host auf die Adresse des Saal-PCs. Jede Karte wird grün, sobald das Gerät antwortet.</li>
 <li>Tragen Sie das OBS-Passwort in <code>.env</code> als <code>OBS_PASSWORD=&lt;Passwort&gt;</code> ein, melden Sie sich dann ab und wieder an.</li>
-<li>Haben Sie nur einen Saal, entfernen Sie die zwei Geräte von Room B oder lassen Sie sie: Sie erscheinen offline und tun nichts.</li>
+<li>Haben Sie nur einen Saal, entfernen Sie die zwei Geräte von Raum B oder lassen Sie sie: Sie erscheinen offline und tun nichts.</li>
 </ol>
 <h2>5. Auf Sendung</h2>
-<p>Öffnen Sie <strong>Panels</strong>. Der Kanalstreifen von Room A zeigt sein Bild, sein Meeting und ob er auf Sendung ist.</p>
+<p>Öffnen Sie <strong>Panels</strong>. Der Kanalstreifen von Raum A zeigt sein Bild, sein Meeting und ob er auf Sendung ist.</p>
 <ol>
 <li>Starten Sie das Meeting über den Streifen.</li>
-<li>Drücken Sie <strong>on air</strong>: OBS beginnt, an die in OBS eingestellte Adresse zu streamen.</li>
-<li>Drücken Sie erneut <strong>on air</strong>, um zu stoppen.</li>
+<li>Drücken Sie <strong>Streaming</strong> auf dem Streifen: OBS beginnt, an die in OBS eingestellte Adresse zu streamen.</li>
+<li>Drücken Sie erneut <strong>Streaming</strong>, um zu stoppen. <strong>Alle Streams starten</strong> startet alle Säle auf einmal.</li>
 </ol>
 <p>In der Testphase können zwei Säle 20 Minuten am Stück auf Sendung sein, und die Bilder tragen eine Test-Markierung. Nach 20 Minuten gehen die Säle von der Sendung; starten Sie Director neu (ab- und wieder anmelden), um es erneut zu versuchen.</p>
 <figure class="shot "><img src="/img/screens/director-channels-de.webp" alt="Director mit vier Sälen nebeneinander: wer in jedem Meeting ist, der Warteraum, Preview und Program" width="1600" height="1000"></figure>

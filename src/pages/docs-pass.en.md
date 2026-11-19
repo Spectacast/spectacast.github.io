@@ -17,8 +17,7 @@ The checklist at the top says what is still missing.
 
 Under **Attendees**:
 
-- **+ Person** adds one by hand, for example someone who registers at the desk.
-- **Import** reads a CSV, or Excel saved as CSV, with headers such as First name, Last name, Email, Category and ID (Italian and German headers work too). Other columns are kept as fields that rules and messages can use. Importing again updates the same people.
+- **+ Person or import** adds someone by hand, for example a person who registers at the desk, or reads a CSV, or Excel saved as CSV, with headers such as First name, Last name, Email, Category and ID (Italian ones work too, and German Vorname and Nachname). Other columns are kept as fields that rules and messages can use. Importing again updates the same people.
 - **Feeds** pull the list from a registration site by themselves, and **Keys for other systems** let a site push its registrations. Ask your registration site's provider, or us, to connect them.
 
 Each attendee gets a badge with a QR code. **Print all badges** prints them, on your own background if you upload one, or **Email badges** sends each person theirs.

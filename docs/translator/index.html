@@ -45,15 +45,15 @@
 <h2>The control page</h2>
 <p>Each lane has its own control page, at <strong>http://127.0.0.1:4720</strong> for the first lane on that PC. Pick:</p>
 <ol>
-<li>the <strong>input</strong>: a sound card, or an NDI source such as one participant from <a href="/docs/meet/">Meet</a>;</li>
-<li>the <strong>output</strong>: a sound card, a virtual cable into OBS or the mixer, or Meet's interpreter channel;</li>
-<li>the <strong>language</strong> to speak;</li>
+<li>the <strong>Microphone</strong>, the input: a sound card, or an NDI source such as one participant from <a href="/docs/meet/">Meet</a>;</li>
+<li>the <strong>Output</strong>: a sound card, a virtual cable into OBS or the mixer, or Meet's interpreter channel;</li>
+<li><strong>Speak in</strong>: the language to speak;</li>
 </ol>
 <p>then press <strong>Start</strong>. The page shows each sentence twice, as heard and as said, while it is spoken.</p>
 <figure class="shot "><picture><source srcset="/img/screens/translator-dark.webp" media="(prefers-color-scheme: dark)"><img src="/img/screens/translator-light.webp" alt="The Translator control page: what was heard in Italian and what was said in English, line by line" width="1440" height="900"></picture></figure>
 
 <h2>Engines</h2>
-<p>The engine decides how Translator sounds and how fast it answers. Google Gemini is the default; OpenAI is the other. The <strong>interpreter</strong> engines act as a congress interpreter: give them the session's <strong>Topic</strong>, and a glossary of names and technical terms, one per line, and they use them.</p>
+<p>The engine decides how Translator sounds and how fast it answers. Google Gemini is the default; OpenAI is the other. The <strong>interpreter</strong> engines act as a congress interpreter: give them the session's <strong>Topic</strong> on the control page, and they also use a glossary of names and technical terms kept on the PC, one per line. We set up the glossary with you.</p>
 <h2>Flagged meaning</h2>
 <p>While a lane runs, a second model reads what was heard beside what was said and flags in red the places where the translation says something different: a dropped "not", a number, left for right, a name. It changes nothing in what the lane says; it is for whoever watches the lane. The box <strong>Warn when the meaning flips</strong> turns it off.</p>
 <h2>In the meeting</h2>

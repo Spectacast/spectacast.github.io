@@ -32,7 +32,7 @@ Un **pass evento** dura 7 giorni dal primo giorno del tuo evento, e funziona dal
 
 ## Attivare un PC
 
-Ogni PC con Spectacast mostra un codice dopo l'installazione, come `K7QM-3XRB`. Inseriscilo in **Piano e PC**, **Attiva un PC**, entro un'ora, e indica se è un PC di sala o il PC di regia. Il PC riceve la sua licenza e la rinnova da solo ogni poche ore.
+Ogni PC con Spectacast mostra un codice dopo l'installazione, come `K7QM-3XRB`. Inseriscilo in **Piano e PC**, **Attiva un PC**, entro un'ora, e indica se è un PC di sala o il PC di regia. Il PC riceve la sua licenza e la rinnova da solo ogni qualche ora.
 
 - **Offline:** una licenza a pagamento funziona 14 giorni senza internet. Per una sede del tutto senza internet, un titolare può scaricare il **File di licenza** del PC in **Piano e PC** e copiarlo sul PC.
 - **Un PC che non usi più:** premi **Rilascia**. Non riceve più licenze, e la sua postazione si libera per un altro PC dopo 24 ore.
@@ -48,4 +48,4 @@ Paddle, il nostro rivenditore, incassa il pagamento e invia la fattura, con l'IV
 
 ## Disdetta e rimborsi
 
-Un piano annuale si rinnova ogni anno finché non lo disdici; un pass evento non si rinnova. Puoi disdire in qualsiasi momento su [spectacast.com/account/cancel](/account/cancel), senza accedere, oppure nel portale di Paddle dal link nella ricevuta; ricevi una conferma via email. Il piano resta attivo fino alla fine del periodo già pagato. Cosa puoi riavere, e quando, è nella [politica di rimborso](/it/rimborsi/) e nei [Termini](/it/termini/).
+Un piano annuale si rinnova ogni anno finché non lo disdici; un pass evento non si rinnova. Puoi disdire in qualsiasi momento su [spectacast.com/account/cancel](/account/cancel), senza accedere, oppure nel portale di Paddle dal link nella ricevuta; ricevi una conferma via email. Il piano resta attivo fino alla fine del periodo già pagato; i consumatori hanno diritti in più dopo un rinnovo automatico, descritti nei Termini. Cosa puoi riavere, e quando, è nella [politica di rimborso](/it/rimborsi/) e nei [Termini](/it/termini/).

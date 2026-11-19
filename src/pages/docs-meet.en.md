@@ -4,7 +4,7 @@
 
 ## What you need
 
-- A Windows PC in the hall, on the same network as the control room. A Mac works too, without interpretation channels.
+- A Windows PC in the hall, on the same network as the control room.
 - A Zoom account that can host the meeting.
 - OBS Studio on the same PC, or a mixer that receives NDI.
 
@@ -30,7 +30,7 @@ Meet starts again by itself after a restart of the PC, with the same settings an
 Each output is an NDI source on the network. For each one, choose what it shows:
 
 - **Participant:** one person, chosen by name.
-- **Active speaker:** whoever spoke last.
+- **Active Speaker:** whoever spoke last.
 - **Spotlight:** the spotlighted person, or a chosen person when nobody is.
 - **Zoom view:** the meeting laid out the way Zoom does, without names or Zoom's graphics: the share while someone shares, otherwise the gallery or the speaker.
 
@@ -42,12 +42,12 @@ In Director, Meet appears on **Devices** like any other device, and the channel 
 
 ## Interpretation channels
 
-When the meeting has interpretation, Meet can join as the interpreter of a language and speak with a voice from [Translator](/docs/translator/), or from a person in the booth. Listeners choose the language in Zoom as usual. Interpretation channels need Meet on Windows.
+When the meeting has interpretation, Meet can join as the interpreter of a language and speak with a voice from [Translator](/docs/translator/), or from a person in the booth. Listeners choose the language in Zoom as usual.
 
 {{shot:meet-interpreter-card|The card Meet shows on an interpretation channel: the language and "Live interpretation"}}
 
 ## When something does not work
 
 - **"Cannot connect to Zoom (no internet?)":** Meet keeps trying every minute; check the hall PC's internet.
-- **An output is black:** nobody matches it, for example the chosen person has left. Pick another person, or set the output to Active speaker.
+- **An output is black:** nobody matches it, for example the chosen person has left. Pick another person, or set the output to Active Speaker.
 - **What Zoom answered:** the log is at the bottom of **Settings**.

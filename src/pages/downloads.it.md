@@ -8,7 +8,7 @@
 
 | Cosa | Dove | Per |
 | --- | --- | --- |
-| Spectacast Setup | Windows 10 o 11, 64 bit | installa Director sul PC di regia, e Meet, Translator e il ricevitore di Mic sui PC di sala |
+| Spectacast Setup | Windows 10 o 11, 64 bit | installa Director sul PC di regia; Meet, la configurazione OBS della sala e Translator su ogni PC di sala; e il ricevitore di Mic |
 | Spectacast Mic | Android e iPhone, dagli store | i telefoni che parlano in sala |
 
 Setup chiede il ruolo del PC, installa ciò che quel ruolo esegue e mostra il codice che attiva il PC nel tuo account. Come proseguire è in [Primi passi](/it/guida/primi-passi/).

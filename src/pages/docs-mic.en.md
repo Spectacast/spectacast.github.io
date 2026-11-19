@@ -4,7 +4,7 @@
 
 ## What you need
 
-- The Mic receiver on a Windows PC or a Mac in the hall. Setup installs it on a hall PC, or alone with **Mic receiver only**.
+- The Mic receiver on a Windows PC in the hall. Spectacast Setup installs it with the role **Mic receiver only**.
 - The free Spectacast Mic app on each phone, for Android and iPhone, in the app stores from version 1.0.
 - The venue's Wi-Fi, with the phones and the PC on the same network. Mic needs no internet.
 

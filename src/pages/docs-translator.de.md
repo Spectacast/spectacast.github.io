@@ -12,9 +12,9 @@
 
 Jede Spur hat ihre eigene Bedienseite, unter **http://127.0.0.1:4720** für die erste Spur auf diesem PC. Wählen Sie:
 
-1. den **Eingang**: eine Soundkarte oder eine NDI-Quelle, etwa eine teilnehmende Person aus [Meet](/de/hilfe/meet/);
+1. das **Mikrofon**, also den Eingang: eine Soundkarte oder eine NDI-Quelle, etwa eine teilnehmende Person aus [Meet](/de/hilfe/meet/);
 2. den **Ausgang**: eine Soundkarte, ein virtuelles Kabel in OBS oder den Mischer, oder den Dolmetschkanal von Meet;
-3. die **Sprache**, die gesprochen wird;
+3. die **Zielsprache**, in der gesprochen wird;
 
 und drücken Sie **Starten**. Die Seite zeigt jeden Satz zweimal, wie gehört und wie gesagt, während er gesprochen wird.
 
@@ -22,7 +22,7 @@ und drücken Sie **Starten**. Die Seite zeigt jeden Satz zweimal, wie gehört un
 
 ## Engines
 
-Die Engine bestimmt, wie Translator klingt und wie schnell er antwortet. Google Gemini ist voreingestellt; OpenAI ist die andere. Die **Dolmetsch**-Engines arbeiten wie eine Konferenzdolmetscherin: Geben Sie ihnen das **Thema** der Sitzung und ein Glossar mit Namen und Fachbegriffen, einer pro Zeile, und sie verwenden sie.
+Die Engine bestimmt, wie Translator klingt und wie schnell er antwortet. Google Gemini ist voreingestellt; OpenAI ist die andere. Die **Dolmetsch**-Engines arbeiten wie eine Konferenzdolmetscherin: Geben Sie ihnen auf der Bedienseite das **Thema** der Sitzung; außerdem verwenden sie ein Glossar mit Namen und Fachbegriffen auf dem PC, einer pro Zeile. Das Glossar richten wir mit Ihnen ein.
 
 ## Sinnumkehr erkennen
 

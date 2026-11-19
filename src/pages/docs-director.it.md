@@ -33,7 +33,7 @@ Senza PIN, Director non si apre alla rete. Chi apre la dashboard inserisce il PI
 2. Scegli l'esempio con due sale.
 3. Conferma con **Usalo**. Sostituisce lo show vuoto.
 
-L'esempio ha due sale, Room A e Room B, ognuna con Meet e OBS. Ha anche una striscia di canale per sala, il Wall con entrambi gli schermi e la regola che manda una sala in onda. I suoi indirizzi (192.168.1.11 e .12) sono segnaposto, che cambi nel passo successivo.
+L'esempio ha due sale, Sala A e Sala B, ognuna con Meet e OBS. Ha anche una striscia di canale per sala, il Wall con entrambi gli schermi e la regola che manda una sala in onda. I suoi indirizzi (192.168.1.11 e .12) sono segnaposto, che cambi nel passo successivo.
 
 ## 4. La tua prima sala
 
@@ -45,19 +45,19 @@ Sul PC di sala:
 Nella dashboard, nella pagina **Dispositivi**:
 
 1. Fai clic su **cerca** sotto **Cerca nella rete**. Director elenca gli OBS e i Meet che trova in rete.
-2. Apri la scheda OBS di Room A e imposta l'indirizzo `ws://<PC di sala>:4455`. Poi apri la scheda della riunione di Room A e imposta come host l'indirizzo del PC di sala. Ogni scheda diventa verde quando il dispositivo risponde.
+2. Apri la scheda OBS di Sala A e imposta l'indirizzo `ws://<PC di sala>:4455`. Poi apri la scheda della riunione di Sala A e imposta come host l'indirizzo del PC di sala. Ogni scheda diventa verde quando il dispositivo risponde.
 3. Metti la password di OBS in `.env` come `OBS_PASSWORD=<password>`, poi esci e rientra in Windows.
-4. Se hai una sola sala, rimuovi i due dispositivi di Room B, oppure lasciali: risultano offline e non fanno nulla.
+4. Se hai una sola sala, rimuovi i due dispositivi di Sala B, oppure lasciali: risultano offline e non fanno nulla.
 
 ## 5. In onda
 
-Apri **Pannelli**. La striscia di canale di Room A mostra la sua immagine, la sua riunione e se è in onda.
+Apri **Pannelli**. La striscia di canale di Sala A mostra la sua immagine, la sua riunione e se è in onda.
 
 1. Avvia la riunione dalla striscia.
-2. Premi **on air**: OBS inizia a trasmettere all'indirizzo impostato in OBS.
-3. Premi di nuovo **on air** per fermare.
+2. Premi **Streaming** sulla striscia: OBS inizia a trasmettere all'indirizzo impostato in OBS.
+3. Premi di nuovo **Streaming** per fermare. **Avvia tutti gli stream** manda in onda tutte le sale insieme.
 
-Nella prova, due sale possono stare in onda 20 minuti di fila, e le immagini portano un marchio di prova. Dopo 20 minuti le sale escono di onda; riavvia Director (esci e rientra in Windows) per riprovare.
+Nella prova, due sale possono stare in onda 20 minuti di fila, e le immagini portano un marchio di prova. Dopo 20 minuti le sale vanno fuori onda; riavvia Director (esci e rientra in Windows) per riprovare.
 
 {{shot:director-channels|Spectacast Director con quattro sale affiancate: chi è in ogni riunione, la sala d'attesa, Preview e Program}}
 

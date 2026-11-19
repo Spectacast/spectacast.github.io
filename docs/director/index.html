@@ -49,8 +49,9 @@
 <h2>2. Open the dashboard</h2>
 <p>Open <strong>http://127.0.0.1:4700</strong> in a browser on that PC. The language menu at the top right switches between English, Deutsch, Español and Italiano.</p>
 <p>To open the dashboard from a tablet or another PC, add these two lines to <code>C:\ProgramData\Spectacast\director\.env</code>, then log off and on again:</p>
-<p><code>HOST=0.0.0.0
-PIN=&lt;a PIN of your own&gt;</code></p>
+<pre><code>HOST=0.0.0.0
+PIN=&lt;a PIN of your own&gt;
+</code></pre>
 <p>Director refuses to listen on the network without a PIN. Whoever opens the dashboard types the PIN once. For someone who should run the show without changing it, add <code>OPERATOR_PIN=&lt;another PIN&gt;</code>: that opens the panels only.</p>
 <h2>3. Start from the example show</h2>
 <ol>
@@ -76,8 +77,8 @@ PIN=&lt;a PIN of your own&gt;</code></p>
 <p>Open <strong>Panels</strong>. Room A's channel strip shows its picture, its meeting and its on-air state.</p>
 <ol>
 <li>Start the meeting from the strip.</li>
-<li>Press <strong>on air</strong>: OBS starts streaming to the address set in OBS.</li>
-<li>Press <strong>on air</strong> again to stop.</li>
+<li>Press <strong>Streaming</strong> on the strip: OBS starts streaming to the address set in OBS.</li>
+<li>Press <strong>Streaming</strong> again to stop. <strong>Start all streams</strong> starts every hall at once.</li>
 </ol>
 <p>In the trial, two halls can be on air for 20 minutes per run, and the pictures carry a trial mark. After 20 minutes the halls go off air; restart Director (log off and on) to try again.</p>
 <figure class="shot "><img src="/img/screens/director-channels-en.webp" alt="Director with four halls side by side: who is in each meeting, the waiting room, Preview and Program" width="1600" height="1000"></figure>

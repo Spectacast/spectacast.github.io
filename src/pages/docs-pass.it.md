@@ -17,8 +17,7 @@ La lista in alto dice cosa manca ancora.
 
 In **Partecipanti**:
 
-- **+ Persona** aggiunge qualcuno a mano, ad esempio chi si iscrive al desk.
-- **Importa** legge un CSV, o un Excel salvato come CSV, con intestazioni come Nome, Cognome, Email, Categoria e ID (vanno bene anche in inglese o tedesco). Le altre colonne restano come campi che regole e messaggi possono usare. Importando di nuovo si aggiornano le stesse persone.
+- **+ Persona o importa** aggiunge qualcuno a mano, ad esempio chi si iscrive al desk, oppure legge un CSV, o un Excel salvato come CSV, con intestazioni come Nome, Cognome, Email, Categoria e ID (vanno bene anche in inglese, come First name e Last name). Le altre colonne restano come campi che regole e messaggi possono usare. Importando di nuovo si aggiornano le stesse persone.
 - I **Feed** scaricano da soli l'elenco da un sito di iscrizione, e le **Chiavi per altri sistemi** permettono a un sito di inviare le sue iscrizioni. Chiedi al fornitore del tuo sito di iscrizione, o a noi, di collegarli.
 
 Ogni partecipante riceve un badge con un codice QR. **Stampa tutti i badge** li stampa, sul tuo sfondo se ne carichi uno, oppure **Invia badge via email** manda a ognuno il suo.

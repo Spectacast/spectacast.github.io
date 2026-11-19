@@ -4,7 +4,7 @@
 
 ## Was Sie brauchen
 
-- Einen Windows-PC im Saal, im selben Netzwerk wie die Regie. Ein Mac geht auch, ohne Dolmetschkanäle.
+- Einen Windows-PC im Saal, im selben Netzwerk wie die Regie.
 - Ein Zoom-Konto, das das Meeting veranstalten kann.
 - OBS Studio auf demselben PC oder ein Mischer, der NDI empfängt.
 
@@ -27,12 +27,12 @@ Meet startet nach einem Neustart des PCs von selbst wieder, mit denselben Einste
 
 ## Die Signale
 
-Jeder Ausgang ist eine NDI-Quelle im Netzwerk. Wählen Sie für jeden, was er zeigt:
+Jeder Ausgang ist eine NDI-Quelle im Netzwerk. Wählen Sie für jeden, was er zeigt (die Modi heißen auf Englisch):
 
-- **Teilnehmer:** eine Person, nach Namen gewählt.
-- **Aktiver Sprecher:** wer zuletzt gesprochen hat.
+- **Participant** (Teilnehmer): eine Person, nach Namen gewählt.
+- **Active Speaker** (aktiver Sprecher): wer zuletzt gesprochen hat.
 - **Spotlight:** die hervorgehobene Person, oder eine gewählte Person, wenn niemand hervorgehoben ist.
-- **Zoom-Ansicht:** das Meeting so angeordnet wie in Zoom, ohne Namen und ohne Zoom-Grafiken: die Freigabe, während jemand teilt, sonst die Galerie oder der Sprecher.
+- **Zoom view** (Zoom-Ansicht): das Meeting so angeordnet wie in Zoom, ohne Namen und ohne Zoom-Grafiken: die Freigabe, während jemand teilt, sonst die Galerie oder der Sprecher.
 
 Wählen Sie dann das Bild (die Kamera, oder die Bildschirmfreigabe, wenn es eine gibt) und den Ton: den dieser Person, das ganze Meeting oder das Meeting ohne eine Person, für ein Rücksignal, das der Raum schon hört. Fügen Sie das Signal in OBS als NDI-Quelle hinzu.
 
@@ -42,12 +42,12 @@ In Director erscheint Meet unter **Geräte** wie jedes andere Gerät, und der Ka
 
 ## Dolmetschkanäle
 
-Hat das Meeting Dolmetschen eingerichtet, kann Meet als Dolmetscher einer Sprache beitreten und mit einer Stimme aus [Translator](/de/hilfe/translator/) oder von einer Person in der Kabine sprechen. Die Zuhörenden wählen die Sprache wie gewohnt in Zoom. Dolmetschkanäle brauchen Meet unter Windows.
+Hat das Meeting Dolmetschen eingerichtet, kann Meet als Dolmetscher einer Sprache beitreten und mit einer Stimme aus [Translator](/de/hilfe/translator/) oder von einer Person in der Kabine sprechen. Die Zuhörenden wählen die Sprache wie gewohnt in Zoom.
 
 {{shot:meet-interpreter-card|Die Karte, die Meet auf einem Dolmetschkanal zeigt: die Sprache und „Live interpretation“}}
 
 ## Wenn etwas nicht funktioniert
 
 - **„Cannot connect to Zoom (no internet?)“:** Meet versucht es jede Minute erneut; prüfen Sie das Internet des Saal-PCs.
-- **Ein Ausgang ist schwarz:** Niemand passt dazu, etwa weil die gewählte Person gegangen ist. Wählen Sie eine andere Person oder stellen Sie den Ausgang auf Aktiver Sprecher.
+- **Ein Ausgang ist schwarz:** Niemand passt dazu, etwa weil die gewählte Person gegangen ist. Wählen Sie eine andere Person oder stellen Sie den Ausgang auf Active Speaker.
 - **Was Zoom geantwortet hat:** Das Protokoll steht unten unter **Einstellungen**.

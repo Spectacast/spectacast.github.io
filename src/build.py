@@ -339,7 +339,7 @@ def md_page(lang, key):
         md = product_blocks(lang, md)
     md = md.replace('{{downloads}}', downloads_block(lang))
     md = re.sub(r'\{\{(\w+)\}\}', lambda m: v[m.group(1)], md)
-    body = mark(markdown.markdown(md, extensions=['tables']))
+    body = mark(markdown.markdown(md, extensions=['tables', 'fenced_code']))
     if key == 'pricing':
         body = body.replace('<!--PLANS-->', plans_html(lang))
     title = text_of(re.search(r'<h1>(.*?)</h1>', body).group(1))
