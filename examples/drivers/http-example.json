@@ -1,0 +1,52 @@
+{
+  "id": "restswitcher",
+  "title": "REST switcher (example)",
+  "version": "1",
+  "description": "An HTTP device with a JSON status endpoint polled every second and a POST that picks the program input.",
+  "transport": { "type": "http" },
+  "config": [
+    { "id": "baseUrl", "type": "string", "default": "http://127.0.0.1:8080" },
+    { "id": "apiKey", "type": "string", "default": "", "description": "Sent as x-api-key" }
+  ],
+  "commands": [
+    {
+      "id": "status",
+      "title": "Get status",
+      "send": {
+        "kind": "http",
+        "method": "GET",
+        "path": "/api/status",
+        "headers": { "x-api-key": "{{config.apiKey}}" }
+      }
+    },
+    {
+      "id": "setProgram",
+      "title": "Set program input",
+      "params": [{ "id": "input", "type": "number", "required": true }],
+      "send": {
+        "kind": "http",
+        "method": "POST",
+        "path": "/api/program",
+        "headers": { "x-api-key": "{{config.apiKey}}" },
+        "body": { "input": "{{params.input}}" }
+      }
+    }
+  ],
+  "feedback": [
+    {
+      "id": "status",
+      "match": { "kind": "json", "when": "contains(msg, \"program\")" },
+      "set": [
+        { "path": "program", "value": "msg.program" },
+        { "path": "recording", "value": "msg.recording == true" }
+      ],
+      "emit": {
+        "event": "programChanged",
+        "title": "Program input changed",
+        "payload": { "program": "msg.program" },
+        "onChange": true
+      }
+    }
+  ],
+  "polls": [{ "id": "status", "path": "/api/status", "everyMs": 1000 }]
+}

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en" class="sc">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rules and scripts · Spectacast</title>
+<meta name="description" content="A rule does what an operator would otherwise do by hand: when something happens, and a condition holds, it runs a list of steps. Rules are what lets one operator follow many halls.">
+<link rel="canonical" href="https://spectacast.com/docs/director-rules/">
+<link rel="alternate" hreflang="en" href="https://spectacast.com/docs/director-rules/">
+<link rel="alternate" hreflang="de" href="https://spectacast.com/de/hilfe/director-rules/">
+<link rel="alternate" hreflang="es" href="https://spectacast.com/es/ayuda/director-rules/">
+<link rel="alternate" hreflang="it" href="https://spectacast.com/it/guida/director-rules/">
+<link rel="alternate" hreflang="x-default" href="https://spectacast.com/docs/director-rules/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Spectacast">
+<meta property="og:title" content="Rules and scripts · Spectacast">
+<meta property="og:description" content="A rule does what an operator would otherwise do by hand: when something happens, and a condition holds, it runs a list of steps. Rules are what lets one operator follow many halls.">
+<meta property="og:url" content="https://spectacast.com/docs/director-rules/">
+<meta property="og:image" content="https://spectacast.com/img/og/director-rules-en.jpg">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/design/spectacast.css">
+<link rel="stylesheet" href="/site.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="site-head">
+    <a class="brand" href="/"><svg viewBox="140 80 250 340" aria-hidden="true"><path d="M290 116 H252 A68 68 0 0 0 252 252 H260 A68 68 0 0 1 260 388 H196" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/><circle cx="356" cy="116" r="27" fill="#ff3b30"/></svg>spectacast</a>
+    <nav aria-label="Main menu"><a class="nav-product" href="/#modules">Product</a><a href="/pricing/">Pricing</a><a href="/docs/" aria-current="page">Docs</a></nav>
+    <nav class="langs" aria-label="Language"><a href="/de/hilfe/director-rules/" hreflang="de" lang="de" aria-label="Deutsch">DE</a><a href="/es/ayuda/director-rules/" hreflang="es" lang="es" aria-label="Español">ES</a><a href="/it/guida/director-rules/" hreflang="it" lang="it" aria-label="Italiano">IT</a></nav>
+    <div class="cta"><a class="sc-btn sc-btn--primary" href="/contact/">Contact us</a></div>
+  </header>
+  <main class="doc guide">
+<nav class="doc-nav" aria-label="Docs"><p>Docs</p><ul><li><a href="/docs/">Overview</a></li><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/account-and-billing/">Account and billing</a></li><li><a href="/docs/director/">Director guide</a></li><li class="sub"><a href="/docs/director-devices/">Devices and drivers</a></li><li class="sub"><a href="/docs/director-drivers/">Your own driver</a></li><li class="sub"><a href="/docs/director-panels/">Panels</a></li><li class="sub"><a href="/docs/director-rules/" aria-current="page">Rules and scripts</a></li><li class="sub"><a href="/docs/director-api/">API, webhooks and Stream Deck</a></li><li><a href="/docs/meet/">Meet guide</a></li><li><a href="/docs/mic/">Mic guide</a></li><li><a href="/docs/translator/">Translator guide</a></li><li><a href="/docs/pass/">Pass guide</a></li></ul></nav>
+<article>
+<h1>Rules and scripts</h1>
+<p class="lede">A rule does what an operator would otherwise do by hand: when something happens, and a condition holds, it runs a list of steps. Rules are what lets one operator follow many halls.</p>
+
+<h2>A rule has three parts</h2>
+<ol>
+<li><strong>Trigger:</strong> an event of a device (someone enters the waiting room), a value in the state that changes (an OBS starts streaming), an interval, or <strong>Only when run by hand</strong>. A trigger can watch one device or every device of a driver, so one rule serves every hall.</li>
+<li><strong>Condition</strong> (optional): an expression that must hold, such as <code>obs.studioA.streaming</code>.</li>
+<li><strong>Steps:</strong> the same steps a button runs. See <a href="/docs/director-panels/">Panels</a>.</li>
+</ol>
+<p>On the <strong>Rules</strong> page, <strong>+ rule</strong> starts an empty rule and <strong>+ from template</strong> builds a common one from your own devices, for example "the active speaker goes to a scene, after a hold time" or "an NDI source goes offline, switch to a fallback scene".</p>
+<figure class="shot "><img src="/img/screens/director-rules-en.webp" alt="Director&#x27;s rules page: each rule with what starts it and when it last ran" width="1600" height="1000"></figure>
+
+<h2>Timing and order</h2>
+<ul>
+<li><strong>hold time (ms):</strong> the rule waits, and only the last trigger of a burst counts. A speaker must keep the floor for a moment before the picture changes.</li>
+<li><strong>cooldown (ms):</strong> the rule does not run again for this long.</li>
+<li><strong>priority:</strong> when one event matches several rules, the higher one runs first.</li>
+</ul>
+<h2>Try before you trust</h2>
+<ul>
+<li><strong>dry run:</strong> the rule logs what it would do and does nothing.</li>
+<li><strong>Run now</strong> runs a rule once without waiting for its trigger. Its condition must still hold.</li>
+<li><strong>History</strong>, at the bottom of the page, lists every run and every skip with its reason, and each action with its error.</li>
+<li><strong>Graph</strong> draws the whole rule set: triggers on the left, rules in the middle, the devices they touch on the right.</li>
+</ul>
+<p>The <strong>AUTOMATION ON</strong> switch at the top of the <strong>Rules</strong> page pauses every rule at once. While they are paused it reads <strong>AUTOMATION OFF</strong>, and the header shows the same on every page. Buttons and <strong>Run now</strong> keep working.</p>
+<h2>Script steps</h2>
+<p>For logic the forms cannot express, a step can be a short JavaScript snippet. It runs on the control-room PC and has what it needs in reach:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>state</code></td>
+<td>Everything Director knows about every device</td>
+</tr>
+<tr>
+<td><code>event</code></td>
+<td>What triggered the rule</td>
+</tr>
+<tr>
+<td><code>vars</code></td>
+<td>The variables</td>
+</tr>
+<tr>
+<td><code>setVar(id, value)</code></td>
+<td>Sets a variable</td>
+</tr>
+<tr>
+<td><code>await run(target, action, params)</code></td>
+<td>Runs an action on a device</td>
+</tr>
+<tr>
+<td><code>log(...)</code></td>
+<td>Writes a line to the event log</td>
+</tr>
+<tr>
+<td><code>await sleep(ms)</code></td>
+<td>Waits</td>
+</tr>
+</tbody>
+</table>
+<pre><code>// Trigger: a meeting's event &quot;Entered the waiting room&quot;.
+// Admit the faculty at once; everyone else waits for the operator.
+if (event.name.startsWith('Dr.')) {
+  await run({ eventDevice: true }, 'admit', { by: 'zoomID', user: event.zoomId });
+  log('admitted', event.name);
+}
+</code></pre>
+<p><strong>Try (dry run)</strong> in the editor runs the snippet once without touching any device and shows its log. A snippet that fails, or runs longer than its <strong>timeout (ms)</strong> (five seconds unless you change it), counts as one failed step, and the steps after it still run.</p>
+</article>
+  </main>
+  <footer class="site-foot">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="/"><svg viewBox="140 80 250 340" aria-hidden="true"><path d="M290 116 H252 A68 68 0 0 0 252 252 H260 A68 68 0 0 1 260 388 H196" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/><circle cx="356" cy="116" r="27" fill="#ff3b30"/></svg>spectacast</a>
+        <p>Live hybrid events, from one control room.</p>
+      </div>
+      <div><p class="foot-title">Products</p><ul><li><a href="/products/director/">Director</a></li><li><a href="/products/meet/">Meet</a></li><li><a href="/products/mic/">Mic</a></li><li><a href="/products/translator/">Translator</a></li><li><a href="/products/pass/">Pass</a></li></ul></div><div><p class="foot-title">Resources</p><ul><li><a href="/pricing/">Pricing</a></li><li><a href="/docs/">Docs</a></li><li><a href="/developers/">Developers</a></li><li><a href="/downloads/">Downloads</a></li></ul></div><div><p class="foot-title">Legal</p><ul><li><a href="/terms/">Terms</a></li><li><a href="/refunds/">Refund Policy</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/security/">Security and data</a></li></ul></div><div><p class="foot-title">Contact</p><ul><li><a href="/contact/">Contact us</a></li><li><a href="mailto:info@spectacast.com">info@spectacast.com</a></li><li><a href="mailto:support@spectacast.com">support@spectacast.com</a></li></ul></div>
+    </div>
+    <div class="foot-base">
+      <p>© 2026 Spectacast · spectacast.com</p>
+      <p>English · <a href="/de/hilfe/director-rules/" hreflang="de" lang="de">Deutsch</a> · <a href="/es/ayuda/director-rules/" hreflang="es" lang="es">Español</a> · <a href="/it/guida/director-rules/" hreflang="it" lang="it">Italiano</a></p>
+    </div>
+    <p class="marks">Zoom is a trademark of Zoom Communications, Inc. NDI is a registered trademark of Vizrt NDI AB. OBS Studio is a project of the OBS Project.</p>
+  </footer>
+</div>
+</body>
+</html>

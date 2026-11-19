@@ -50,6 +50,7 @@ const stop = () => { engine?.kill(); web.kill(); fs.rmSync(runner, { force: true
   for (let i = 0; i < 100; i++) { try { if ((await fetch('http://127.0.0.1:4721/')).ok) break; } catch {} await new Promise((r) => setTimeout(r, 200)); }
   await new Promise((r) => setTimeout(r, 2500));
   const b = await chromium.launch();
+  const place = { wall: -1, fleet: -1, rules: -1 };
   for (const lang of ['en', 'de', 'es', 'it']) {
     await startEngine(lang);
     const pg = await b.newPage({ viewport: { width: 1600, height: 1000 }, locale: lang });
@@ -57,12 +58,14 @@ const stop = () => { engine?.kill(); web.kill(); fs.rmSync(runner, { force: true
     await pg.screenshot({ path: `${out}/director-panels-${lang}.png` });
     await pg.locator('button:has-text("left_panel_close")').first().click(); await pg.waitForTimeout(800);
     await pg.screenshot({ path: `${out}/director-channels-${lang}.png` });
-    if (lang === 'en') {
-      for (const [i, name] of ['wall', 'fleet', 'rules', 'devices'].entries()) {
-        await pg.locator('header button').nth(i + 1).click(); await pg.waitForTimeout(1500);
-        // The fleet is a short table: no need for the empty page under it.
-        await pg.screenshot({ path: `${out}/director-${name}-en.png`, ...(name === 'fleet' ? { clip: { x: 0, y: 0, width: 1600, height: 420 } } : {}) });
-      }
+    // The tabs are found by their place in the header, read once from the English names.
+    const tabs = (await pg.locator('header button').allInnerTexts()).map((t) => t.trim());
+    if (lang === 'en') for (const name of Object.keys(place)) place[name] = tabs.findIndex((t) => t.toLowerCase() === name);
+    for (const name of lang === 'en' ? ['wall', 'fleet', 'rules'] : ['rules']) {
+      if (place[name] < 0) throw new Error(`no ${name} tab among: ${tabs.join(' | ')}`);
+      await pg.locator('header button').nth(place[name]).click(); await pg.waitForTimeout(1500);
+      // The fleet is a short table: no need for the empty page under it.
+      await pg.screenshot({ path: `${out}/director-${name}-${lang}.png`, ...(name === 'fleet' ? { clip: { x: 0, y: 0, width: 1600, height: 420 } } : {}) });
     }
     await pg.close();
     engine.kill(); await new Promise((r) => setTimeout(r, 800));

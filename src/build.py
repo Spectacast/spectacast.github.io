@@ -60,7 +60,10 @@ DOC_SLUGS = {
     'account': {'en': 'account-and-billing', 'de': 'konto-und-abrechnung', 'es': 'cuenta-y-facturacion',
                 'it': 'account-e-fatturazione'},
 }
-DOCS = ('docs', 'docs-start', 'docs-account') + tuple(f'docs-{p}' for p in PRODUCTS)
+# Director's guide is followed by its reference pages: what each tab does, and how to extend it.
+DIRECTOR_REFERENCE = tuple(f'docs-director-{n}' for n in ('devices', 'drivers', 'panels', 'rules', 'api'))
+DOCS = (('docs', 'docs-start', 'docs-account', 'docs-director') + DIRECTOR_REFERENCE
+        + tuple(f'docs-{p}' for p in PRODUCTS if p != 'director'))
 PAGES['docs'] = dict(DOC_DIR)
 for _d in DOCS[1:]:
     _name = _d[5:]
@@ -68,33 +71,34 @@ for _d in DOCS[1:]:
 PAGES['downloads'] = {'en': 'downloads/', 'de': 'de/downloads/', 'es': 'es/descargas/', 'it': 'it/download/'}
 PAGES['contact'] = {'en': 'contact/', 'de': 'de/kontakt/', 'es': 'es/contacto/', 'it': 'it/contatti/'}
 PAGES['security'] = {'en': 'security/', 'de': 'de/sicherheit/', 'es': 'es/seguridad/', 'it': 'it/sicurezza/'}
+PAGES['developers'] = {'en': 'developers/', 'de': 'de/entwickler/', 'es': 'es/desarrolladores/', 'it': 'it/sviluppatori/'}
 # Pages about us and about how we work: a title block, then one row or one card per section.
-INFO = ('contact', 'security')
+INFO = ('contact', 'security', 'developers')
 # Paths served by other programs behind the same domain: links to them are not checked here.
 OTHER_APPS = ('/account', '/pass', '/program', '/meet')
 
 LABELS = {
     'en': {'cta_title': 'Planning a congress or a hybrid show?', 'cta_text': 'Tell us how many halls you have and what they need to do. We will show you Spectacast on a setup like yours.', 'foot_tag': 'Live hybrid events, from one control room.', 'f_resources': 'Resources', 'f_legal': 'Legal', 'f_contact': 'Contact', 'guide': 'Read the guide', 'others': 'The other modules', 
            'overview': 'Overview', 'docs': 'Docs', 'downloads': 'Downloads', 'guides': 'Guides', 'soon': 'Downloads open on launch day of version 1.0. Until then, write to us and we set up Spectacast with you.',
-           'security': 'Security and data', 'terms': 'Terms', 'refunds': 'Refund Policy', 'privacy': 'Privacy', 'pricing': 'Pricing',
+           'developers': 'Developers', 'security': 'Security and data', 'terms': 'Terms', 'refunds': 'Refund Policy', 'privacy': 'Privacy', 'pricing': 'Pricing',
            'product': 'Product', 'contact': 'Contact us', 'signin': 'Sign in', 'trial': 'Start free trial',
            'menu': 'Main menu', 'plans': 'Included in', 'see_pricing': 'See pricing', 'more': 'More about', 'products': 'Products', 'langs': 'Language',
            'draft': 'Draft: the highlighted parts are still to be filled in.'},
     'de': {'cta_title': 'Planen Sie einen Kongress oder eine hybride Veranstaltung?', 'cta_text': 'Sagen Sie uns, wie viele Säle Sie haben und was sie leisten sollen. Wir zeigen Ihnen Spectacast an einem Aufbau wie Ihrem.', 'foot_tag': 'Hybride Live-Veranstaltungen, aus einer Regie.', 'f_resources': 'Ressourcen', 'f_legal': 'Rechtliches', 'f_contact': 'Kontakt', 'guide': 'Zur Anleitung', 'others': 'Die anderen Module', 
            'overview': 'Überblick', 'docs': 'Hilfe', 'downloads': 'Downloads', 'guides': 'Anleitungen', 'soon': 'Die Downloads öffnen am Tag der Veröffentlichung von Version 1.0. Bis dahin schreiben Sie uns, und wir richten Spectacast mit Ihnen ein.',
-           'security': 'Sicherheit und Daten', 'terms': 'AGB', 'refunds': 'Erstattungen', 'privacy': 'Datenschutz', 'pricing': 'Preise',
+           'developers': 'Entwickler', 'security': 'Sicherheit und Daten', 'terms': 'AGB', 'refunds': 'Erstattungen', 'privacy': 'Datenschutz', 'pricing': 'Preise',
            'product': 'Produkt', 'contact': 'Kontakt', 'signin': 'Anmelden', 'trial': 'Kostenlos testen',
            'menu': 'Hauptmenü', 'plans': 'Enthalten in', 'see_pricing': 'Preise ansehen', 'more': 'Mehr über', 'products': 'Produkte', 'langs': 'Sprache',
            'draft': 'Entwurf: Die markierten Stellen sind noch zu ergänzen.'},
     'es': {'cta_title': '¿Preparas un congreso o un evento híbrido?', 'cta_text': 'Cuéntanos cuántas salas tienes y qué deben hacer. Te enseñamos Spectacast en un montaje como el tuyo.', 'foot_tag': 'Eventos híbridos en directo, desde una sola sala de control.', 'f_resources': 'Recursos', 'f_legal': 'Legal', 'f_contact': 'Contacto', 'guide': 'Leer la guía', 'others': 'Los otros módulos', 
            'overview': 'Resumen', 'docs': 'Ayuda', 'downloads': 'Descargas', 'guides': 'Guías', 'soon': 'Las descargas se abren el día del lanzamiento de la versión 1.0. Hasta entonces, escríbenos y configuramos Spectacast contigo.',
-           'security': 'Seguridad y datos', 'terms': 'Términos', 'refunds': 'Reembolsos', 'privacy': 'Privacidad', 'pricing': 'Precios',
+           'developers': 'Desarrolladores', 'security': 'Seguridad y datos', 'terms': 'Términos', 'refunds': 'Reembolsos', 'privacy': 'Privacidad', 'pricing': 'Precios',
            'product': 'Producto', 'contact': 'Contacto', 'signin': 'Iniciar sesión', 'trial': 'Prueba gratis',
            'menu': 'Menú principal', 'plans': 'Incluido en', 'see_pricing': 'Ver precios', 'more': 'Más sobre', 'products': 'Productos', 'langs': 'Idioma',
            'draft': 'Borrador: las partes resaltadas aún están por completar.'},
     'it': {'cta_title': 'Stai preparando un congresso o un evento ibrido?', 'cta_text': 'Dicci quante sale hai e cosa devono fare. Ti mostriamo Spectacast su un allestimento come il tuo.', 'foot_tag': "Eventi ibridi dal vivo, da un'unica regia.", 'f_resources': 'Risorse', 'f_legal': 'Note legali', 'f_contact': 'Contatti', 'guide': 'Leggi la guida', 'others': 'Gli altri moduli', 
            'overview': 'Panoramica', 'docs': 'Guida', 'downloads': 'Download', 'guides': 'Guide', 'soon': 'I download aprono il giorno del lancio della versione 1.0. Fino ad allora scrivici e configuriamo Spectacast insieme.',
-           'security': 'Sicurezza e dati', 'terms': 'Termini', 'refunds': 'Rimborsi', 'privacy': 'Privacy', 'pricing': 'Prezzi',
+           'developers': 'Sviluppatori', 'security': 'Sicurezza e dati', 'terms': 'Termini', 'refunds': 'Rimborsi', 'privacy': 'Privacy', 'pricing': 'Prezzi',
            'product': 'Prodotto', 'contact': 'Contattaci', 'signin': 'Accedi', 'trial': 'Prova gratis',
            'menu': 'Menu principale', 'plans': 'Incluso in', 'see_pricing': 'Vedi i prezzi', 'more': 'Scopri', 'products': 'Prodotti', 'langs': 'Lingua',
            'draft': 'Bozza: le parti evidenziate sono ancora da completare.'},
@@ -174,7 +178,7 @@ TAGLINES = {'director': 'The control room.', 'meet': 'The meeting, as separate f
             'translator': 'Live translation, as an audio source.', 'pass': 'Badges, doors and attendance.'}
 SUPPORT = 'support@spectacast.com'
 # Pages that end with the invitation to get in touch: the ones a buyer reads, not the manuals or the legal texts.
-SELLING = ('home', 'pricing') + PRODUCTS
+SELLING = ('home', 'pricing', 'developers') + PRODUCTS
 
 
 def tagline(lang, product):
@@ -215,7 +219,7 @@ def footer(lang, key):
         return f'<div><p class="foot-title">{title}</p><ul>{items}</ul></div>'
     cols = [
         col(l['products'], [(url(lang, p), p.capitalize()) for p in PRODUCTS]),
-        col(l['f_resources'], [(url(lang, k), l[k]) for k in ('pricing', 'docs', 'downloads')]),
+        col(l['f_resources'], [(url(lang, k), l[k]) for k in ('pricing', 'docs', 'developers', 'downloads')]),
         col(l['f_legal'], [(url(lang, k), l[k]) for k in ('terms', 'refunds', 'privacy', 'security')]),
         col(l['f_contact'], [(url(lang, 'contact'), l['contact']), (f'mailto:{CONTACT}', CONTACT), (f'mailto:{SUPPORT}', SUPPORT)]),
     ]
@@ -371,7 +375,8 @@ def doc_nav(lang, key):
     items = []
     for k in DOCS:
         cur = ' aria-current="page"' if k == key else ''
-        items.append(f'<li><a href="{url(lang, k)}"{cur}>{html.escape(doc_title(lang, k), quote=False)}</a></li>')
+        sub = ' class="sub"' if k in DIRECTOR_REFERENCE else ''
+        items.append(f'<li{sub}><a href="{url(lang, k)}"{cur}>{html.escape(doc_title(lang, k), quote=False)}</a></li>')
     return (f'<nav class="doc-nav" aria-label="{LABELS[lang]["docs"]}">'
             f'<p>{LABELS[lang]["docs"]}</p><ul>{"".join(items)}</ul></nav>')
 
@@ -437,7 +442,7 @@ def md_page(lang, key):
     v['MINUTE_GROSS'] = euro(lang, gross(lang, C.MINUTE, 3), 3)
     assert v['MINUTE_PRICE'] == euro(lang, C.MINUTE, 2), v['MINUTE_PRICE']
     md = (HERE / 'pages' / f'{key}.{lang}.md').read_text()
-    if key in PRODUCTS or key in DOCS:
+    if key in PRODUCTS or key in DOCS or key in INFO:
         md = product_blocks(lang, md)
     md = md.replace('{{downloads}}', downloads_block(lang))
     md = re.sub(r'\{\{(\w+)\}\}', lambda m: v[m.group(1)], md)

@@ -15,6 +15,14 @@
 - [Translator](/docs/translator/): live translation as an audio source
 - [Pass](/docs/pass/): badges, doors and attendance
 
+## Director in depth
+
+- [Devices and drivers](/docs/director-devices/): the devices Director controls, and inputs from other systems
+- [Your own driver](/docs/director-drivers/): connect a device of your own, without code
+- [Panels](/docs/director-panels/): lay out your own buttons, choices and blocks
+- [Rules and scripts](/docs/director-rules/): let rules do the routine, and script the rest
+- [API, webhooks and Stream Deck](/docs/director-api/): drive Director from your own systems
+
 ## Downloads
 
 The programs for the PCs are on the [Downloads](/downloads/) page. Pass needs no download: it runs in the browser.

@@ -66,6 +66,7 @@ In the trial, two halls can be on air for 20 minutes per run, and the pictures c
 - **More halls:** add each hall's OBS and Meet on **Devices**, then copy a channel strip on **Panels**.
 - **Rules:** on **Rules**, each rule says what starts it and what it does, and shows when it last ran. Start from the example's rules and change them.
 - **Mic and Translator:** they appear on **Devices** like any other device. See the [Mic](/docs/mic/) and [Translator](/docs/translator/) guides.
+- **Every page in depth:** [Devices and drivers](/docs/director-devices/), [Your own driver](/docs/director-drivers/), [Panels](/docs/director-panels/), [Rules and scripts](/docs/director-rules/) and [API, webhooks and Stream Deck](/docs/director-api/).
 
 ## When something does not work
 

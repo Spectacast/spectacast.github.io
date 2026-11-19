@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="de" class="sc">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zum Erweitern gebaut · Spectacast</title>
+<meta name="description" content="An jedem Veranstaltungsort steht ein Gerät, mit dem niemand gerechnet hat. Spectacast Director ist so gemacht, dass Sie es selbst anbinden können: sein Protokoll in einem Formular beschreiben, per…">
+<link rel="canonical" href="https://spectacast.com/de/entwickler/">
+<link rel="alternate" hreflang="en" href="https://spectacast.com/developers/">
+<link rel="alternate" hreflang="de" href="https://spectacast.com/de/entwickler/">
+<link rel="alternate" hreflang="es" href="https://spectacast.com/es/desarrolladores/">
+<link rel="alternate" hreflang="it" href="https://spectacast.com/it/sviluppatori/">
+<link rel="alternate" hreflang="x-default" href="https://spectacast.com/developers/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Spectacast">
+<meta property="og:title" content="Zum Erweitern gebaut · Spectacast">
+<meta property="og:description" content="An jedem Veranstaltungsort steht ein Gerät, mit dem niemand gerechnet hat. Spectacast Director ist so gemacht, dass Sie es selbst anbinden können: sein Protokoll in einem Formular beschreiben, per…">
+<meta property="og:url" content="https://spectacast.com/de/entwickler/">
+<meta property="og:image" content="https://spectacast.com/img/og/director-rules-de.jpg">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/design/spectacast.css">
+<link rel="stylesheet" href="/site.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="site-head">
+    <a class="brand" href="/de/"><svg viewBox="140 80 250 340" aria-hidden="true"><path d="M290 116 H252 A68 68 0 0 0 252 252 H260 A68 68 0 0 1 260 388 H196" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/><circle cx="356" cy="116" r="27" fill="#ff3b30"/></svg>spectacast</a>
+    <nav aria-label="Hauptmenü"><a class="nav-product" href="/de/#modules">Produkt</a><a href="/de/preise/">Preise</a><a href="/de/hilfe/">Hilfe</a></nav>
+    <nav class="langs" aria-label="Sprache"><a href="/developers/" hreflang="en" lang="en" aria-label="English">EN</a><a href="/es/desarrolladores/" hreflang="es" lang="es" aria-label="Español">ES</a><a href="/it/sviluppatori/" hreflang="it" lang="it" aria-label="Italiano">IT</a></nav>
+    <div class="cta"><a class="sc-btn sc-btn--primary" href="/de/kontakt/">Kontakt</a></div>
+  </header>
+  <main class="product info developers">
+<header class="p-hero">
+<h1>Zum Erweitern gebaut</h1>
+<p class="lede">An jedem Veranstaltungsort steht ein Gerät, mit dem niemand gerechnet hat. Spectacast Director ist so gemacht, dass Sie es selbst anbinden können: sein Protokoll in einem Formular beschreiben, per Skript ergänzen, was die Formulare nicht sagen können, und alles über seine API aus Ihren eigenen Systemen steuern.</p>
+
+<div class="cta-row"><a class="sc-btn sc-btn--primary" href="/de/kontakt/">Kontakt</a><a class="sc-btn" href="/de/preise/">Preise ansehen</a></div>
+</header>
+<section class="p-row">
+<h2>Ein Gerät ohne Code anbinden</h2>
+<div class="p-text"><p>Auf der Seite Treiber beschreiben Sie das Protokoll eines Geräts: die Befehle, die es annimmt, und die Nachrichten, die es zurückschickt. Director spricht OSC, UDP, TCP, HTTP und WebSocket; das deckt die meisten Lichtpulte, Audiomischer, Bildmischer und Kreuzschienen ab. Danach hat das Gerät Tasten, einen Live-Zustand und Regeln wie die mitgelieferten.</p>
+<p>Sie testen am echten Gerät, wobei jede ein- und ausgehende Nachricht live aufgelistet wird, und geben einen fertigen Treiber als eine Datei weiter.</p>
+<p><a href="/de/hilfe/director-drivers/">So beschreiben Sie einen Treiber →</a></p></div>
+</section>
+<section class="p-row">
+<h2>Regeln, und Skripte, wenn Regeln nicht reichen</h2>
+<div class="p-text"><p>Regeln reagieren auf das, was in den Sälen geschieht: Jemand betritt den Warteraum, eine Person ergreift das Wort, eine Quelle fällt aus. Die meisten entstehen aus Formularen. Wo die Logik Ihre eigene ist, kann ein Schritt aus ein paar Zeilen JavaScript bestehen, mit dem ganzen Zustand zur Hand.</p>
+<figure class="shot "><img src="/img/screens/director-rules-de.webp" alt="Die Regeln in Director: jede mit ihrem Auslöser und dem letzten Lauf" width="1600" height="1000"></figure>
+
+<p><a href="/de/hilfe/director-rules/">Regeln und Skripte →</a></p></div>
+</section>
+<section class="p-row">
+<h2>Eine API für Ihre eigenen Systeme</h2>
+<div class="p-text"><p>Alles, was das Dashboard tut, läuft über eine HTTP-API auf dem Regie-PC, und ein WebSocket sendet jede Änderung, sobald sie geschieht. Ein Registrierungssystem, eine Showsteuerung oder ein Skript kann den Zustand jedes Saals lesen, eine Taste drücken, eine Variable setzen oder eine Regel ausführen, jeweils mit einem Token, das begrenzt, was es darf.</p>
+<p><a href="/de/hilfe/director-api/">Die API →</a></p></div>
+</section>
+<section class="p-row">
+<h2>Webhooks und OSC-Eingang</h2>
+<div class="p-text"><p>Ein anderes System löst in Director mit einem einzigen Aufruf etwas aus: mit einem Webhook über HTTP oder mit einer OSC-Nachricht. Das Programm des Kongresses kann eine Sitzung ankündigen, und eine Regel setzt den richtigen Titel auf den richtigen Saal.</p></div>
+</section>
+<section class="p-row">
+<h2>Stream Deck und MIDI</h2>
+<div class="p-text"><p>Eine Taste des Stream Deck drückt über Bitfocus Companion jedes Bedienelement des Dashboards, ohne zusätzliche Installation. Ein MIDI-Bedienpult gibt dem Operator echte Fader und Tasten, und Regeln können sie leuchten lassen.</p></div>
+</section>
+<section class="p-row">
+<h2>Ihre eigenen Panels</h2>
+<div class="p-text"><p>Die Panels des Dashboards ordnen Sie selbst an: Tasten, Auswahlen, Textfelder, Pegelanzeigen und Live-Bilder, einmal als Block gebaut und einmal pro Saal platziert.</p>
+<figure class="shot "><img src="/img/screens/director-panels-de.webp" alt="Ein Panel in Director mit vier Sälen: ein Block pro Saal, mit Meeting, Warteraum, Preview und Program" width="1600" height="1000" loading="lazy"></figure>
+
+<p><a href="/de/hilfe/director-panels/">Panels →</a></p></div>
+</section>
+<section class="p-row">
+<h2>Ihr Gerät lässt sich so nicht anbinden?</h2>
+<div class="p-text"><p>Manche Geräte brauchen die eigene Bibliothek ihres Herstellers. Diese Treiber sind in Director eingebaut, wie die für OBS Studio, NDI und Sennheiser EW-DX.</p>
+<p><a href="/de/kontakt/">Schreiben Sie uns, was Sie steuern möchten →</a></p></div>
+</section>
+  </main>
+  <aside class="closing">
+    <div>
+      <h2>Planen Sie einen Kongress oder eine hybride Veranstaltung?</h2>
+      <p>Sagen Sie uns, wie viele Säle Sie haben und was sie leisten sollen. Wir zeigen Ihnen Spectacast an einem Aufbau wie Ihrem.</p>
+    </div>
+    <div class="closing-act">
+      <div class="cta-row"><a class="sc-btn sc-btn--primary" href="/de/kontakt/">Kontakt</a><a class="sc-btn" href="/de/preise/">Preise ansehen</a></div>
+      <p><a href="mailto:info@spectacast.com">info@spectacast.com</a></p>
+    </div>
+  </aside>
+  <footer class="site-foot">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="/de/"><svg viewBox="140 80 250 340" aria-hidden="true"><path d="M290 116 H252 A68 68 0 0 0 252 252 H260 A68 68 0 0 1 260 388 H196" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/><circle cx="356" cy="116" r="27" fill="#ff3b30"/></svg>spectacast</a>
+        <p>Hybride Live-Veranstaltungen, aus einer Regie.</p>
+      </div>
+      <div><p class="foot-title">Produkte</p><ul><li><a href="/de/produkte/director/">Director</a></li><li><a href="/de/produkte/meet/">Meet</a></li><li><a href="/de/produkte/mic/">Mic</a></li><li><a href="/de/produkte/translator/">Translator</a></li><li><a href="/de/produkte/pass/">Pass</a></li></ul></div><div><p class="foot-title">Ressourcen</p><ul><li><a href="/de/preise/">Preise</a></li><li><a href="/de/hilfe/">Hilfe</a></li><li><a href="/de/entwickler/">Entwickler</a></li><li><a href="/de/downloads/">Downloads</a></li></ul></div><div><p class="foot-title">Rechtliches</p><ul><li><a href="/de/agb/">AGB</a></li><li><a href="/de/erstattung/">Erstattungen</a></li><li><a href="/de/datenschutz/">Datenschutz</a></li><li><a href="/de/sicherheit/">Sicherheit und Daten</a></li></ul></div><div><p class="foot-title">Kontakt</p><ul><li><a href="/de/kontakt/">Kontakt</a></li><li><a href="mailto:info@spectacast.com">info@spectacast.com</a></li><li><a href="mailto:support@spectacast.com">support@spectacast.com</a></li></ul></div>
+    </div>
+    <div class="foot-base">
+      <p>© 2026 Spectacast · spectacast.com</p>
+      <p><a href="/developers/" hreflang="en" lang="en">English</a> · Deutsch · <a href="/es/desarrolladores/" hreflang="es" lang="es">Español</a> · <a href="/it/sviluppatori/" hreflang="it" lang="it">Italiano</a></p>
+    </div>
+    <p class="marks">Zoom ist eine Marke von Zoom Communications, Inc. NDI ist eine eingetragene Marke der Vizrt NDI AB. OBS Studio ist ein Projekt des OBS Project.</p>
+  </footer>
+</div>
+</body>
+</html>

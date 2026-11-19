@@ -15,6 +15,14 @@
 - [Translator](/de/hilfe/translator/): Live-Übersetzung als Audioquelle
 - [Pass](/de/hilfe/pass/): Badges, Zugänge und Anwesenheit
 
+## Director im Detail
+
+- [Geräte und Treiber](/de/hilfe/director-devices/): die Geräte, die Director steuert, und Eingänge aus anderen Systemen
+- [Ihr eigener Treiber](/de/hilfe/director-drivers/): ein eigenes Gerät anbinden, ohne Code
+- [Panels](/de/hilfe/director-panels/): eigene Tasten, Auswahlen und Blöcke anordnen
+- [Regeln und Skripte](/de/hilfe/director-rules/): Regeln die Routine überlassen und den Rest per Skript lösen
+- [API, Webhooks und Stream Deck](/de/hilfe/director-api/): Director aus Ihren eigenen Systemen steuern
+
 ## Downloads
 
 Die Programme für die PCs finden Sie auf der Seite [Downloads](/de/downloads/). Pass braucht keinen Download: Es läuft im Browser.

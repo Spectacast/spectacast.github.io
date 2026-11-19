@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" class="sc">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your own driver · Spectacast</title>
+<meta name="description" content="The Drivers page describes a device&#x27;s protocol without code. Once described, the device has actions, events and state like a built-in one, and panels and rules use it in the same way.">
+<link rel="canonical" href="https://spectacast.com/docs/director-drivers/">
+<link rel="alternate" hreflang="en" href="https://spectacast.com/docs/director-drivers/">
+<link rel="alternate" hreflang="de" href="https://spectacast.com/de/hilfe/director-drivers/">
+<link rel="alternate" hreflang="es" href="https://spectacast.com/es/ayuda/director-drivers/">
+<link rel="alternate" hreflang="it" href="https://spectacast.com/it/guida/director-drivers/">
+<link rel="alternate" hreflang="x-default" href="https://spectacast.com/docs/director-drivers/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Spectacast">
+<meta property="og:title" content="Your own driver · Spectacast">
+<meta property="og:description" content="The Drivers page describes a device&#x27;s protocol without code. Once described, the device has actions, events and state like a built-in one, and panels and rules use it in the same way.">
+<meta property="og:url" content="https://spectacast.com/docs/director-drivers/">
+<meta property="og:image" content="https://spectacast.com/brand/lockup-light.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/design/spectacast.css">
+<link rel="stylesheet" href="/site.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="site-head">
+    <a class="brand" href="/"><svg viewBox="140 80 250 340" aria-hidden="true"><path d="M290 116 H252 A68 68 0 0 0 252 252 H260 A68 68 0 0 1 260 388 H196" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/><circle cx="356" cy="116" r="27" fill="#ff3b30"/></svg>spectacast</a>
+    <nav aria-label="Main menu"><a class="nav-product" href="/#modules">Product</a><a href="/pricing/">Pricing</a><a href="/docs/" aria-current="page">Docs</a></nav>
+    <nav class="langs" aria-label="Language"><a href="/de/hilfe/director-drivers/" hreflang="de" lang="de" aria-label="Deutsch">DE</a><a href="/es/ayuda/director-drivers/" hreflang="es" lang="es" aria-label="Español">ES</a><a href="/it/guida/director-drivers/" hreflang="it" lang="it" aria-label="Italiano">IT</a></nav>
+    <div class="cta"><a class="sc-btn sc-btn--primary" href="/contact/">Contact us</a></div>
+  </header>
+  <main class="doc guide">
+<nav class="doc-nav" aria-label="Docs"><p>Docs</p><ul><li><a href="/docs/">Overview</a></li><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/account-and-billing/">Account and billing</a></li><li><a href="/docs/director/">Director guide</a></li><li class="sub"><a href="/docs/director-devices/">Devices and drivers</a></li><li class="sub"><a href="/docs/director-drivers/" aria-current="page">Your own driver</a></li><li class="sub"><a href="/docs/director-panels/">Panels</a></li><li class="sub"><a href="/docs/director-rules/">Rules and scripts</a></li><li class="sub"><a href="/docs/director-api/">API, webhooks and Stream Deck</a></li><li><a href="/docs/meet/">Meet guide</a></li><li><a href="/docs/mic/">Mic guide</a></li><li><a href="/docs/translator/">Translator guide</a></li><li><a href="/docs/pass/">Pass guide</a></li></ul></nav>
+<article>
+<h1>Your own driver</h1>
+<p class="lede">The Drivers page describes a device's protocol without code. Once described, the device has actions, events and state like a built-in one, and panels and rules use it in the same way.</p>
+
+<p>A driver you define speaks one of five transports: <strong>OSC</strong>, <strong>UDP</strong>, <strong>TCP</strong>, <strong>HTTP</strong> or <strong>WebSocket</strong>. That covers most lighting desks, audio mixers, video switchers, matrix routers and building controls.</p>
+<h2>1. Start the driver</h2>
+<p>On the <strong>Drivers</strong> page click <strong>+ driver over…</strong> and pick the transport. Give the driver a name, then list the settings each device of it asks for: a host, a port, an API key. A setting has a default or is marked <strong>req</strong> (required), and the templates below read it as <code>config.&lt;id&gt;</code>.</p>
+<h2>2. Commands</h2>
+<p>Click <strong>+ command</strong> for each thing the device can be told. A command becomes an action that buttons and rules can run.</p>
+<ul>
+<li>Its <strong>parameters</strong> are typed fields, read in the message as <code>params.&lt;id&gt;</code>.</li>
+<li>Its <strong>message</strong> is a template. For OSC it is an address and typed arguments, such as <code>/cue/{{params.cue}}/go</code>. For HTTP it is a method, a path, headers and a body. For UDP, TCP and WebSocket it is a line of text, or bytes written in hex for a binary protocol.</li>
+</ul>
+<h2>3. Feedback</h2>
+<p>Click <strong>+ feedback entry</strong> for each message the device sends back. An entry recognises a message and says what to do with it.</p>
+<ul>
+<li><strong>Recognise</strong> by an OSC address pattern (<code>/cue/{n}/active</code>, where <code>{n}</code> captures a part of the address), by a regular expression over text, or by an expression over a JSON message.</li>
+<li><strong>Set state:</strong> write values from the message into the device's state, where panels show them and rules read them.</li>
+<li><strong>Raise an event</strong> that a rule can react to.</li>
+</ul>
+<p>An HTTP driver can also <strong>poll</strong>: it asks an address every few seconds and passes the answer through the same entries.</p>
+<h2>4. Online or offline</h2>
+<p>TCP and WebSocket devices are online while the connection is up, and Director reconnects by itself. UDP, OSC and HTTP devices need a <strong>heartbeat</strong>: a command sent at an interval whose answer shows the device is there. Without one they count as online.</p>
+<h2>5. Try it against the real device</h2>
+<p>Click <strong>Create driver</strong>, then add a device with your driver on the <strong>Devices</strong> page. Back on the <strong>Drivers</strong> page, click <strong>try</strong> on the driver's card, pick the device and click <strong>trace messages</strong>. Every message in and out is listed live, and each incoming one shows which feedback entries match it and what they would set. <strong>Send test</strong> runs a command with the parameters you type.</p>
+<h2>6. Share it</h2>
+<p><strong>export</strong> downloads the definition as a JSON file; <strong>import JSON</strong> adds one to another show. The definitions are saved inside the show file, so a show carries its drivers with it.</p>
+<p>Two examples to import and adapt: <a href="/examples/drivers/generic-osc.json">a generic OSC device</a> and <a href="/examples/drivers/http-example.json">an HTTP device whose status is polled</a>.</p>
+<h2>When this is not enough</h2>
+<p>A device that needs a vendor's own library, or a protocol these five transports cannot carry, needs a driver built into Director. <a href="/contact/">Tell us</a> which device you want to control.</p>
+</article>
+  </main>
+  <footer class="site-foot">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="/"><svg viewBox="140 80 250 340" aria-hidden="true"><path d="M290 116 H252 A68 68 0 0 0 252 252 H260 A68 68 0 0 1 260 388 H196" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/><circle cx="356" cy="116" r="27" fill="#ff3b30"/></svg>spectacast</a>
+        <p>Live hybrid events, from one control room.</p>
+      </div>
+      <div><p class="foot-title">Products</p><ul><li><a href="/products/director/">Director</a></li><li><a href="/products/meet/">Meet</a></li><li><a href="/products/mic/">Mic</a></li><li><a href="/products/translator/">Translator</a></li><li><a href="/products/pass/">Pass</a></li></ul></div><div><p class="foot-title">Resources</p><ul><li><a href="/pricing/">Pricing</a></li><li><a href="/docs/">Docs</a></li><li><a href="/developers/">Developers</a></li><li><a href="/downloads/">Downloads</a></li></ul></div><div><p class="foot-title">Legal</p><ul><li><a href="/terms/">Terms</a></li><li><a href="/refunds/">Refund Policy</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/security/">Security and data</a></li></ul></div><div><p class="foot-title">Contact</p><ul><li><a href="/contact/">Contact us</a></li><li><a href="mailto:info@spectacast.com">info@spectacast.com</a></li><li><a href="mailto:support@spectacast.com">support@spectacast.com</a></li></ul></div>
+    </div>
+    <div class="foot-base">
+      <p>© 2026 Spectacast · spectacast.com</p>
+      <p>English · <a href="/de/hilfe/director-drivers/" hreflang="de" lang="de">Deutsch</a> · <a href="/es/ayuda/director-drivers/" hreflang="es" lang="es">Español</a> · <a href="/it/guida/director-drivers/" hreflang="it" lang="it">Italiano</a></p>
+    </div>
+    <p class="marks">Zoom is a trademark of Zoom Communications, Inc. NDI is a registered trademark of Vizrt NDI AB. OBS Studio is a project of the OBS Project.</p>
+  </footer>
+</div>
+</body>
+</html>

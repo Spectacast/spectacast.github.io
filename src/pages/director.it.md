@@ -28,6 +28,8 @@ Director parla con ogni strumento tramite un connettore, così video, audio e pi
 - **Dante**: l'audio in rete della sala, tramite Dante Virtual Soundcard su un PC
 - **I tuoi**: qualsiasi apparecchio che parli HTTP, OSC o socket
 
+Come collegare un tuo apparecchio, programmare le regole e usare l'API: [Fatto per essere esteso](/it/sviluppatori/).
+
 ## Fatto per la sala
 
 Director gira su un PC in regia e parla con i PC di sala attraverso la rete della sede, così l'evento continua anche se cade internet. La pagina della flotta mostra a colpo d'occhio PC, riunione e uscita di ogni sala; i pannelli si compongono a blocchi, quindi una sala nuova è una copia in più, non un nuovo progetto. La dashboard parla italiano, inglese, tedesco e spagnolo.

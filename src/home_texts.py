@@ -268,6 +268,11 @@ BODY = {
         'es': 'Más sobre Pass →',
         'it': 'Scopri Pass →',
     },
+    'Connect a device of your own →': {
+        'de': 'Ein eigenes Gerät anbinden →',
+        'es': 'Conecta un equipo tuyo →',
+        'it': 'Collega un tuo apparecchio →',
+    },
     'Works with the tools you already use.': {
         'de': 'Funktioniert mit den Werkzeugen, die Sie schon nutzen.',
         'es': 'Funciona con las herramientas que ya usas.',

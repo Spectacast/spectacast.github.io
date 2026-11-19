@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="it" class="sc">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>API, webhook e Stream Deck · Spectacast</title>
+<meta name="description" content="Tutto ciò che fa la dashboard passa da un&#x27;API HTTP sul PC di regia, e anche altri programmi possono usarla: un sistema di iscrizioni, un controller di show, uno script, uno Stream Deck.">
+<link rel="canonical" href="https://spectacast.com/it/guida/director-api/">
+<link rel="alternate" hreflang="en" href="https://spectacast.com/docs/director-api/">
+<link rel="alternate" hreflang="de" href="https://spectacast.com/de/hilfe/director-api/">
+<link rel="alternate" hreflang="es" href="https://spectacast.com/es/ayuda/director-api/">
+<link rel="alternate" hreflang="it" href="https://spectacast.com/it/guida/director-api/">
+<link rel="alternate" hreflang="x-default" href="https://spectacast.com/docs/director-api/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Spectacast">
+<meta property="og:title" content="API, webhook e Stream Deck · Spectacast">
+<meta property="og:description" content="Tutto ciò che fa la dashboard passa da un&#x27;API HTTP sul PC di regia, e anche altri programmi possono usarla: un sistema di iscrizioni, un controller di show, uno script, uno Stream Deck.">
+<meta property="og:url" content="https://spectacast.com/it/guida/director-api/">
+<meta property="og:image" content="https://spectacast.com/brand/lockup-light.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/design/spectacast.css">
+<link rel="stylesheet" href="/site.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="site-head">
+    <a class="brand" href="/it/"><svg viewBox="140 80 250 340" aria-hidden="true"><path d="M290 116 H252 A68 68 0 0 0 252 252 H260 A68 68 0 0 1 260 388 H196" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/><circle cx="356" cy="116" r="27" fill="#ff3b30"/></svg>spectacast</a>
+    <nav aria-label="Menu principale"><a class="nav-product" href="/it/#modules">Prodotto</a><a href="/it/prezzi/">Prezzi</a><a href="/it/guida/" aria-current="page">Guida</a></nav>
+    <nav class="langs" aria-label="Lingua"><a href="/docs/director-api/" hreflang="en" lang="en" aria-label="English">EN</a><a href="/de/hilfe/director-api/" hreflang="de" lang="de" aria-label="Deutsch">DE</a><a href="/es/ayuda/director-api/" hreflang="es" lang="es" aria-label="Español">ES</a></nav>
+    <div class="cta"><a class="sc-btn sc-btn--primary" href="/it/contatti/">Contattaci</a></div>
+  </header>
+  <main class="doc guide">
+<nav class="doc-nav" aria-label="Guida"><p>Guida</p><ul><li><a href="/it/guida/">Panoramica</a></li><li><a href="/it/guida/primi-passi/">Primi passi</a></li><li><a href="/it/guida/account-e-fatturazione/">Account e fatturazione</a></li><li><a href="/it/guida/director/">Guida di Director</a></li><li class="sub"><a href="/it/guida/director-devices/">Dispositivi e driver</a></li><li class="sub"><a href="/it/guida/director-drivers/">Il tuo driver</a></li><li class="sub"><a href="/it/guida/director-panels/">Pannelli</a></li><li class="sub"><a href="/it/guida/director-rules/">Regole e script</a></li><li class="sub"><a href="/it/guida/director-api/" aria-current="page">API, webhook e Stream Deck</a></li><li><a href="/it/guida/meet/">Guida di Meet</a></li><li><a href="/it/guida/mic/">Guida di Mic</a></li><li><a href="/it/guida/translator/">Guida di Translator</a></li><li><a href="/it/guida/pass/">Guida di Pass</a></li></ul></nav>
+<article>
+<h1>API, webhook e Stream Deck</h1>
+<p class="lede">Tutto ciò che fa la dashboard passa da un'API HTTP sul PC di regia, e anche altri programmi possono usarla: un sistema di iscrizioni, un controller di show, uno script, uno Stream Deck.</p>
+
+<p>Sul PC di regia l'indirizzo è <code>http://127.0.0.1:4700</code>. Un altro computer raggiunge <code>http://&lt;PC di regia&gt;:4700</code> quando <code>.env</code> contiene <code>HOST=0.0.0.0</code> e un <code>PIN</code> (vedi la <a href="/it/guida/director/">guida di Director</a>). L'API è HTTP non cifrato e resta sulla rete della sede: Director non la apre a internet.</p>
+<h2>Accesso</h2>
+<p>I token di accesso funzionano solo se è impostato un PIN. Per un programma, aggiungi un token di accesso suo in <code>C:\ProgramData\Spectacast\director\.env</code>, poi esci e rientra in Windows:</p>
+<pre><code>ACCESS_TOKENS=api:&lt;un token di almeno 8 caratteri&gt;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Cosa può fare</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>api:&lt;token&gt;</code></td>
+<td>Leggere tutto, premere i controlli, impostare variabili, eseguire regole, chiamare i webhook. Non può modificare lo show</td>
+</tr>
+<tr>
+<td><code>viewer:&lt;token&gt;</code></td>
+<td>Solo leggere</td>
+</tr>
+<tr>
+<td><code>operator:&lt;token&gt;</code></td>
+<td>Come il PIN operatore: i pannelli</td>
+</tr>
+<tr>
+<td><code>panels:&lt;token&gt;</code></td>
+<td>Solo i pannelli, per uno schermo in una sala</td>
+</tr>
+</tbody>
+</table>
+<p>Un programma accede con <code>POST /api/login</code> e il corpo <code>{ "pin": "&lt;token&gt;" }</code>, e conserva il cookie di sessione che riceve. Una sessione finisce quando Director si riavvia: accedi di nuovo quando una chiamata risponde <code>401</code>. Cinque tentativi sbagliati bloccano un indirizzo per 30 secondi. I webhook portano il token a ogni chiamata; le richieste dello Stream Deck portano il PIN o il PIN operatore.</p>
+<h2>Cosa puoi chiamare</h2>
+<table>
+<thead>
+<tr>
+<th>Chiamata</th>
+<th>Cosa fa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET /api/state</code></td>
+<td>Tutto ciò che Director sa, come un albero JSON</td>
+</tr>
+<tr>
+<td><code>GET /api/devices</code></td>
+<td>I dispositivi e se sono collegati</td>
+</tr>
+<tr>
+<td><code>GET /api/drivers</code></td>
+<td>Le azioni e gli eventi di ogni driver, come JSON Schema</td>
+</tr>
+<tr>
+<td><code>POST /api/actions</code></td>
+<td>Esegue un'azione: <code>{ "target": { "device": "obs01" }, "action": "setCurrentScene", "params": { … } }</code></td>
+</tr>
+<tr>
+<td><code>POST /api/press</code></td>
+<td>Preme un controllo di un pannello: <code>{ "panel": "main", "control": "goLive" }</code></td>
+</tr>
+<tr>
+<td><code>POST /api/vars</code></td>
+<td>Imposta una variabile: <code>{ "id": "segment", "value": "panel" }</code></td>
+</tr>
+<tr>
+<td><code>POST /api/rules/&lt;id&gt;/run</code></td>
+<td>Esegue subito una regola</td>
+</tr>
+<tr>
+<td><code>GET /api/rules/history</code></td>
+<td>Le esecuzioni e i salti di ogni regola</td>
+</tr>
+<tr>
+<td><code>GET /ws</code></td>
+<td>Un WebSocket: tutto lo stato una volta, poi ogni cambiamento appena avviene</td>
+</tr>
+</tbody>
+</table>
+<p>Una pressione fatta dall'API o da uno Stream Deck viene eseguita subito: <strong>Chiedi prima</strong> chiede solo sulla dashboard.</p>
+<h2>Webhook</h2>
+<p>Una chiamata a <code>POST /api/hooks/&lt;name&gt;</code> genera un evento a cui reagisce una regola. Il corpo JSON e i parametri dell'indirizzo diventano i campi dell'evento.</p>
+<pre><code>curl -X POST http://director:4700/api/hooks/session-start \
+  -H &quot;x-token: &lt;token&gt;&quot; -H &quot;content-type: application/json&quot; \
+  -d '{ &quot;hall&quot;: &quot;A&quot;, &quot;title&quot;: &quot;Opening&quot; }'
+</code></pre>
+<p>Una regola con il trigger <strong>webhook</strong> e l'evento <code>session_start</code> legge poi <code>event.hall</code> ed <code>event.title</code>. Il token va in un'intestazione <code>x-token</code>, in <code>Authorization: Bearer</code> oppure nell'indirizzo come <code>?token=</code>.</p>
+<p>L'operatore può trattenere i webhook con l'interruttore <strong>LE CHIAMATE API SI APPLICANO</strong> nella pagina <strong>Regole</strong>. Finché mostra <strong>CHIAMATE API SOLO REGISTRATE</strong>, una chiamata viene registrata e riceve <code>"applied": false</code>, e nessuna regola parte.</p>
+<h2>Stream Deck</h2>
+<p>Bitfocus Companion raggiunge Director con il suo modulo <strong>Generic HTTP</strong>; in Companion non c'è nulla da installare. Un tasto invia una richiesta:</p>
+<table>
+<thead>
+<tr>
+<th>Richiesta</th>
+<th>Cosa fa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/api/bridge/press/&lt;panel&gt;/&lt;control&gt;?token=&lt;PIN&gt;</code></td>
+<td>Preme un controllo, proprio come un tocco sulla dashboard</td>
+</tr>
+<tr>
+<td><code>/api/bridge/var/&lt;id&gt;?value=…&amp;token=&lt;PIN&gt;</code></td>
+<td>Imposta una variabile</td>
+</tr>
+<tr>
+<td><code>/api/bridge/action/&lt;device&gt;/&lt;action&gt;?…&amp;token=&lt;PIN&gt;</code></td>
+<td>Esegue l'azione di un dispositivo</td>
+</tr>
+<tr>
+<td><code>/api/bridge/rule/&lt;id&gt;/run?token=&lt;PIN&gt;</code></td>
+<td>Esegue una regola</td>
+</tr>
+</tbody>
+</table>
+<p><code>&lt;PIN&gt;</code> è il PIN o, meglio, il PIN operatore (<code>OPERATOR_PIN</code>), che non può modificare lo show. Un token di accesso qui non funziona. L'id di un controllo è in alto nelle sue proprietà, nella pagina <strong>Pannelli</strong>.</p>
+<p>Per i tasti che si illuminano in base allo stato, Director parla anche OSC con Companion: metti in <code>.env</code> <code>BRIDGE_OSC_PORT=&lt;una porta UDP libera&gt;</code> e <code>BRIDGE_OSC_FEEDBACK=&lt;indirizzo di Companion&gt;:&lt;la sua porta di ascolto OSC&gt;</code>, e fai inviare a Companion il messaggio OSC <code>/subscribe</code> con la parte dello stato che gli serve come argomento, per esempio <code>obs.obs01</code>. La porta OSC non chiede PIN: usala solo sulla rete di regia.</p>
+<h2>MIDI</h2>
+<p>Una superficie di controllo è un dispositivo come gli altri: aggiungila nella pagina <strong>Dispositivi</strong> con il driver <strong>MIDI controller</strong>. I suoi tasti e fader arrivano come eventi per le regole, e le regole possono illuminarne i tasti.</p>
+</article>
+  </main>
+  <footer class="site-foot">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="/it/"><svg viewBox="140 80 250 340" aria-hidden="true"><path d="M290 116 H252 A68 68 0 0 0 252 252 H260 A68 68 0 0 1 260 388 H196" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/><circle cx="356" cy="116" r="27" fill="#ff3b30"/></svg>spectacast</a>
+        <p>Eventi ibridi dal vivo, da un'unica regia.</p>
+      </div>
+      <div><p class="foot-title">Prodotti</p><ul><li><a href="/it/prodotti/director/">Director</a></li><li><a href="/it/prodotti/meet/">Meet</a></li><li><a href="/it/prodotti/mic/">Mic</a></li><li><a href="/it/prodotti/translator/">Translator</a></li><li><a href="/it/prodotti/pass/">Pass</a></li></ul></div><div><p class="foot-title">Risorse</p><ul><li><a href="/it/prezzi/">Prezzi</a></li><li><a href="/it/guida/">Guida</a></li><li><a href="/it/sviluppatori/">Sviluppatori</a></li><li><a href="/it/download/">Download</a></li></ul></div><div><p class="foot-title">Note legali</p><ul><li><a href="/it/termini/">Termini</a></li><li><a href="/it/rimborsi/">Rimborsi</a></li><li><a href="/it/privacy/">Privacy</a></li><li><a href="/it/sicurezza/">Sicurezza e dati</a></li></ul></div><div><p class="foot-title">Contatti</p><ul><li><a href="/it/contatti/">Contattaci</a></li><li><a href="mailto:info@spectacast.com">info@spectacast.com</a></li><li><a href="mailto:support@spectacast.com">support@spectacast.com</a></li></ul></div>
+    </div>
+    <div class="foot-base">
+      <p>© 2026 Spectacast · spectacast.com</p>
+      <p><a href="/docs/director-api/" hreflang="en" lang="en">English</a> · <a href="/de/hilfe/director-api/" hreflang="de" lang="de">Deutsch</a> · <a href="/es/ayuda/director-api/" hreflang="es" lang="es">Español</a> · Italiano</p>
+    </div>
+    <p class="marks">Zoom è un marchio di Zoom Communications, Inc. NDI è un marchio registrato di Vizrt NDI AB. OBS Studio è un progetto di OBS Project.</p>
+  </footer>
+</div>
+</body>
+</html>

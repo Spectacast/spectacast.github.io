@@ -66,6 +66,7 @@ En la prueba, dos salas pueden estar al aire 20 minutos seguidos, y las imágene
 - **Más salas:** añade el OBS y el Meet de cada sala en **Dispositivos** y copia una tira de canal en **Paneles**.
 - **Reglas:** en **Reglas**, cada regla dice qué la activa y qué hace, y muestra cuándo se ejecutó por última vez. Parte de las reglas del ejemplo y cámbialas.
 - **Mic y Translator:** aparecen en **Dispositivos** como cualquier otro dispositivo. Consulta las guías de [Mic](/es/ayuda/mic/) y [Translator](/es/ayuda/translator/).
+- **Cada página a fondo:** [Dispositivos y drivers](/es/ayuda/director-devices/), [Tu propio driver](/es/ayuda/director-drivers/), [Paneles](/es/ayuda/director-panels/), [Reglas y scripts](/es/ayuda/director-rules/) y [API, webhooks y Stream Deck](/es/ayuda/director-api/).
 
 ## Cuando algo no funciona
 

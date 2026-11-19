@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="es" class="sc">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paneles · Spectacast</title>
+<meta name="description" content="Un panel es una página de controles que colocas tú: botones, interruptores, selecciones, campos de texto y los recuadros de cada sala. Los paneles del show de ejemplo son un punto de partida, y…">
+<link rel="canonical" href="https://spectacast.com/es/ayuda/director-panels/">
+<link rel="alternate" hreflang="en" href="https://spectacast.com/docs/director-panels/">
+<link rel="alternate" hreflang="de" href="https://spectacast.com/de/hilfe/director-panels/">
+<link rel="alternate" hreflang="es" href="https://spectacast.com/es/ayuda/director-panels/">
+<link rel="alternate" hreflang="it" href="https://spectacast.com/it/guida/director-panels/">
+<link rel="alternate" hreflang="x-default" href="https://spectacast.com/docs/director-panels/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Spectacast">
+<meta property="og:title" content="Paneles · Spectacast">
+<meta property="og:description" content="Un panel es una página de controles que colocas tú: botones, interruptores, selecciones, campos de texto y los recuadros de cada sala. Los paneles del show de ejemplo son un punto de partida, y…">
+<meta property="og:url" content="https://spectacast.com/es/ayuda/director-panels/">
+<meta property="og:image" content="https://spectacast.com/img/og/director-panels-es.jpg">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/design/spectacast.css">
+<link rel="stylesheet" href="/site.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="site-head">
+    <a class="brand" href="/es/"><svg viewBox="140 80 250 340" aria-hidden="true"><path d="M290 116 H252 A68 68 0 0 0 252 252 H260 A68 68 0 0 1 260 388 H196" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/><circle cx="356" cy="116" r="27" fill="#ff3b30"/></svg>spectacast</a>
+    <nav aria-label="Menú principal"><a class="nav-product" href="/es/#modules">Producto</a><a href="/es/precios/">Precios</a><a href="/es/ayuda/" aria-current="page">Ayuda</a></nav>
+    <nav class="langs" aria-label="Idioma"><a href="/docs/director-panels/" hreflang="en" lang="en" aria-label="English">EN</a><a href="/de/hilfe/director-panels/" hreflang="de" lang="de" aria-label="Deutsch">DE</a><a href="/it/guida/director-panels/" hreflang="it" lang="it" aria-label="Italiano">IT</a></nav>
+    <div class="cta"><a class="sc-btn sc-btn--primary" href="/es/contacto/">Contacto</a></div>
+  </header>
+  <main class="doc guide">
+<nav class="doc-nav" aria-label="Ayuda"><p>Ayuda</p><ul><li><a href="/es/ayuda/">Resumen</a></li><li><a href="/es/ayuda/primeros-pasos/">Primeros pasos</a></li><li><a href="/es/ayuda/cuenta-y-facturacion/">Cuenta y facturación</a></li><li><a href="/es/ayuda/director/">Guía de Director</a></li><li class="sub"><a href="/es/ayuda/director-devices/">Dispositivos y drivers</a></li><li class="sub"><a href="/es/ayuda/director-drivers/">Tu propio driver</a></li><li class="sub"><a href="/es/ayuda/director-panels/" aria-current="page">Paneles</a></li><li class="sub"><a href="/es/ayuda/director-rules/">Reglas y scripts</a></li><li class="sub"><a href="/es/ayuda/director-api/">API, webhooks y Stream Deck</a></li><li><a href="/es/ayuda/meet/">Guía de Meet</a></li><li><a href="/es/ayuda/mic/">Guía de Mic</a></li><li><a href="/es/ayuda/translator/">Guía de Translator</a></li><li><a href="/es/ayuda/pass/">Guía de Pass</a></li></ul></nav>
+<article>
+<h1>Paneles</h1>
+<p class="lede">Un panel es una página de controles que colocas tú: botones, interruptores, selecciones, campos de texto y los recuadros de cada sala. Los paneles del show de ejemplo son un punto de partida, y todos se pueden cambiar.</p>
+
+<figure class="shot "><img src="/img/screens/director-panels-es.webp" alt="Un panel de Director con cuatro salas: un bloque por sala, con su reunión, su sala de espera, Preview y Program" width="1600" height="1000"></figure>
+
+<h2>Editar un panel</h2>
+<p>En la página <strong>Paneles</strong> haz clic en <strong>Editar</strong>. Ahora un clic en una celda vacía añade un control, y un clic en un control abre sus propiedades.</p>
+<ul>
+<li>Selecciona varios controles con Mayús-clic o arrastrando un rectángulo, y muévelos, cópialos o bórralos juntos.</li>
+<li><strong>Deshacer</strong> y <strong>Rehacer</strong> retroceden y avanzan hasta cien pasos.</li>
+<li><strong>Guardar</strong> conserva los cambios para todos los dashboards; <strong>Descartar</strong> los desecha.</li>
+</ul>
+<p><strong>+ panel</strong> añade una página. Quien inicia sesión con el PIN de operador ve los paneles y nada más.</p>
+<h2>Controles</h2>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Qué hace</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Botón</strong></td>
+<td>Ejecuta sus pasos al pulsarlo</td>
+</tr>
+<tr>
+<td><strong>Interruptor</strong></td>
+<td>Una lista de pasos para encender y otra para apagar</td>
+</tr>
+<tr>
+<td><strong>Selección (opciones)</strong></td>
+<td>Una fila de opciones: una lista fija o una en vivo, como las escenas de un OBS o las personas de una reunión</td>
+</tr>
+<tr>
+<td><strong>Entrada de texto</strong></td>
+<td>Un campo con un botón para aplicar, para un rótulo o un nombre</td>
+</tr>
+<tr>
+<td><strong>Etiqueta</strong></td>
+<td>Muestra un texto o un valor</td>
+</tr>
+<tr>
+<td><strong>Estado del dispositivo</strong></td>
+<td>Muestra si un dispositivo está conectado</td>
+</tr>
+<tr>
+<td><strong>Vista previa (imagen de un dispositivo)</strong></td>
+<td>La imagen en directo de un OBS o de una fuente NDI</td>
+</tr>
+<tr>
+<td><strong>Mezclador (entradas de audio de un dispositivo)</strong></td>
+<td>Faders y silencio para las entradas de audio de un dispositivo</td>
+</tr>
+<tr>
+<td><strong>Marco (grupo)</strong></td>
+<td>Un borde con título alrededor de los controles que van juntos</td>
+</tr>
+<tr>
+<td><strong>Bloque</strong></td>
+<td>Un conjunto de controles que se construye una vez y se coloca muchas veces</td>
+</tr>
+</tbody>
+</table>
+<h2>Qué hace una pulsación</h2>
+<p>Una pulsación ejecuta una lista de pasos, de arriba abajo:</p>
+<ul>
+<li>una <strong>acción</strong> sobre un dispositivo, como «cambiar la escena de programa»;</li>
+<li>una <strong>espera</strong>;</li>
+<li><strong>fijar una variable</strong>;</li>
+<li>un <strong>si</strong> con una lista para el sí y otra para el no;</li>
+<li>pasos que se ejecutan <strong>en paralelo</strong>, o una vez <strong>por cada</strong> elemento de una lista.</li>
+</ul>
+<p><strong>Preguntar antes</strong> hace que el dashboard pregunte antes de ejecutar los pasos: para los botones que nadie debe pulsar por error.</p>
+<h2>Respuesta visual: el aspecto de un control</h2>
+<p>Las entradas de <strong>Respuesta visual</strong> cambian el color y el texto de un control según el estado en vivo: rojo mientras una sala está al aire, un nombre cuando hay alguien en la sala de espera. Las entradas se comprueban desde arriba, y gana la primera que se cumple.</p>
+<h2>Bloques: una tira para cada sala</h2>
+<p>Construye una vez los controles de una sala, selecciónalos y haz clic en <strong>Crear bloque</strong>. Los dispositivos que nombran pasan a ser los <strong>Valores</strong> del bloque. Coloca el bloque una vez por sala y da a cada copia sus propios dispositivos. Un cambio en el bloque llega a todas las salas a la vez.</p>
+<h2>Variables</h2>
+<p>La página <strong>Variables</strong> guarda valores que comparten los paneles y las reglas: el clip elegido, el ponente que tiene la palabra. <strong>Añadir variable</strong> crea una, con su tipo y su valor inicial.</p>
+</article>
+  </main>
+  <footer class="site-foot">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="/es/"><svg viewBox="140 80 250 340" aria-hidden="true"><path d="M290 116 H252 A68 68 0 0 0 252 252 H260 A68 68 0 0 1 260 388 H196" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/><circle cx="356" cy="116" r="27" fill="#ff3b30"/></svg>spectacast</a>
+        <p>Eventos híbridos en directo, desde una sola sala de control.</p>
+      </div>
+      <div><p class="foot-title">Productos</p><ul><li><a href="/es/productos/director/">Director</a></li><li><a href="/es/productos/meet/">Meet</a></li><li><a href="/es/productos/mic/">Mic</a></li><li><a href="/es/productos/translator/">Translator</a></li><li><a href="/es/productos/pass/">Pass</a></li></ul></div><div><p class="foot-title">Recursos</p><ul><li><a href="/es/precios/">Precios</a></li><li><a href="/es/ayuda/">Ayuda</a></li><li><a href="/es/desarrolladores/">Desarrolladores</a></li><li><a href="/es/descargas/">Descargas</a></li></ul></div><div><p class="foot-title">Legal</p><ul><li><a href="/es/terminos/">Términos</a></li><li><a href="/es/reembolsos/">Reembolsos</a></li><li><a href="/es/privacidad/">Privacidad</a></li><li><a href="/es/seguridad/">Seguridad y datos</a></li></ul></div><div><p class="foot-title">Contacto</p><ul><li><a href="/es/contacto/">Contacto</a></li><li><a href="mailto:info@spectacast.com">info@spectacast.com</a></li><li><a href="mailto:support@spectacast.com">support@spectacast.com</a></li></ul></div>
+    </div>
+    <div class="foot-base">
+      <p>© 2026 Spectacast · spectacast.com</p>
+      <p><a href="/docs/director-panels/" hreflang="en" lang="en">English</a> · <a href="/de/hilfe/director-panels/" hreflang="de" lang="de">Deutsch</a> · Español · <a href="/it/guida/director-panels/" hreflang="it" lang="it">Italiano</a></p>
+    </div>
+    <p class="marks">Zoom es una marca de Zoom Communications, Inc. NDI es una marca registrada de Vizrt NDI AB. OBS Studio es un proyecto de OBS Project.</p>
+  </footer>
+</div>
+</body>
+</html>

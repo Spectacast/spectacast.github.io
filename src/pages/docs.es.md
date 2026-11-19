@@ -15,6 +15,14 @@
 - [Translator](/es/ayuda/translator/): traducción en directo como fuente de audio
 - [Pass](/es/ayuda/pass/): credenciales, puertas y asistencia
 
+## Director a fondo
+
+- [Dispositivos y drivers](/es/ayuda/director-devices/): los dispositivos que controla Director y las entradas desde otros sistemas
+- [Tu propio driver](/es/ayuda/director-drivers/): conecta un equipo tuyo, sin código
+- [Paneles](/es/ayuda/director-panels/): organiza tus propios botones, selecciones y bloques
+- [Reglas y scripts](/es/ayuda/director-rules/): deja la rutina a las reglas y resuelve el resto con un script
+- [API, webhooks y Stream Deck](/es/ayuda/director-api/): maneja Director desde tus propios sistemas
+
 ## Descargas
 
 Los programas para los PC están en la página de [Descargas](/es/descargas/). Pass no necesita descarga: funciona en el navegador.

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="it" class="sc">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Regole e script · Spectacast</title>
+<meta name="description" content="Una regola fa ciò che altrimenti farebbe un operatore a mano: quando succede qualcosa e una condizione è vera, esegue un elenco di passi. Sono le regole a permettere a un solo operatore di seguire…">
+<link rel="canonical" href="https://spectacast.com/it/guida/director-rules/">
+<link rel="alternate" hreflang="en" href="https://spectacast.com/docs/director-rules/">
+<link rel="alternate" hreflang="de" href="https://spectacast.com/de/hilfe/director-rules/">
+<link rel="alternate" hreflang="es" href="https://spectacast.com/es/ayuda/director-rules/">
+<link rel="alternate" hreflang="it" href="https://spectacast.com/it/guida/director-rules/">
+<link rel="alternate" hreflang="x-default" href="https://spectacast.com/docs/director-rules/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Spectacast">
+<meta property="og:title" content="Regole e script · Spectacast">
+<meta property="og:description" content="Una regola fa ciò che altrimenti farebbe un operatore a mano: quando succede qualcosa e una condizione è vera, esegue un elenco di passi. Sono le regole a permettere a un solo operatore di seguire…">
+<meta property="og:url" content="https://spectacast.com/it/guida/director-rules/">
+<meta property="og:image" content="https://spectacast.com/img/og/director-rules-it.jpg">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/design/spectacast.css">
+<link rel="stylesheet" href="/site.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="site-head">
+    <a class="brand" href="/it/"><svg viewBox="140 80 250 340" aria-hidden="true"><path d="M290 116 H252 A68 68 0 0 0 252 252 H260 A68 68 0 0 1 260 388 H196" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/><circle cx="356" cy="116" r="27" fill="#ff3b30"/></svg>spectacast</a>
+    <nav aria-label="Menu principale"><a class="nav-product" href="/it/#modules">Prodotto</a><a href="/it/prezzi/">Prezzi</a><a href="/it/guida/" aria-current="page">Guida</a></nav>
+    <nav class="langs" aria-label="Lingua"><a href="/docs/director-rules/" hreflang="en" lang="en" aria-label="English">EN</a><a href="/de/hilfe/director-rules/" hreflang="de" lang="de" aria-label="Deutsch">DE</a><a href="/es/ayuda/director-rules/" hreflang="es" lang="es" aria-label="Español">ES</a></nav>
+    <div class="cta"><a class="sc-btn sc-btn--primary" href="/it/contatti/">Contattaci</a></div>
+  </header>
+  <main class="doc guide">
+<nav class="doc-nav" aria-label="Guida"><p>Guida</p><ul><li><a href="/it/guida/">Panoramica</a></li><li><a href="/it/guida/primi-passi/">Primi passi</a></li><li><a href="/it/guida/account-e-fatturazione/">Account e fatturazione</a></li><li><a href="/it/guida/director/">Guida di Director</a></li><li class="sub"><a href="/it/guida/director-devices/">Dispositivi e driver</a></li><li class="sub"><a href="/it/guida/director-drivers/">Il tuo driver</a></li><li class="sub"><a href="/it/guida/director-panels/">Pannelli</a></li><li class="sub"><a href="/it/guida/director-rules/" aria-current="page">Regole e script</a></li><li class="sub"><a href="/it/guida/director-api/">API, webhook e Stream Deck</a></li><li><a href="/it/guida/meet/">Guida di Meet</a></li><li><a href="/it/guida/mic/">Guida di Mic</a></li><li><a href="/it/guida/translator/">Guida di Translator</a></li><li><a href="/it/guida/pass/">Guida di Pass</a></li></ul></nav>
+<article>
+<h1>Regole e script</h1>
+<p class="lede">Una regola fa ciò che altrimenti farebbe un operatore a mano: quando succede qualcosa e una condizione è vera, esegue un elenco di passi. Sono le regole a permettere a un solo operatore di seguire molte sale.</p>
+
+<h2>Una regola ha tre parti</h2>
+<ol>
+<li><strong>Trigger:</strong> un evento di un dispositivo (qualcuno entra in sala d'attesa), un valore dello stato che cambia (un OBS inizia a trasmettere), un intervallo oppure <strong>Solo se avviata a mano</strong>. Un trigger può osservare un dispositivo o tutti i dispositivi di un driver, così una regola serve tutte le sale.</li>
+<li><strong>Condizione</strong> (facoltativa): un'espressione che deve essere vera, come <code>obs.studioA.streaming</code>.</li>
+<li><strong>Passi:</strong> gli stessi passi che esegue un pulsante. Vedi <a href="/it/guida/director-panels/">Pannelli</a>.</li>
+</ol>
+<p>Nella pagina <strong>Regole</strong>, <strong>+ regola</strong> inizia una regola vuota e <strong>+ da modello</strong> ne costruisce una comune con i tuoi dispositivi, per esempio «chi parla va su una scena dopo un tempo di attesa» o «una sorgente NDI va offline, passa a una scena di riserva».</p>
+<figure class="shot "><img src="/img/screens/director-rules-it.webp" alt="Le regole di Director: ognuna con ciò che la fa partire e la sua ultima esecuzione" width="1600" height="1000"></figure>
+
+<h2>Tempi e ordine</h2>
+<ul>
+<li><strong>tempo di attesa (ms):</strong> la regola aspetta, e conta solo l'ultimo trigger di una raffica. Chi parla deve tenere la parola per un momento prima che l'immagine cambi.</li>
+<li><strong>pausa minima (ms):</strong> la regola non riparte per questo tempo.</li>
+<li><strong>priorità:</strong> quando un evento corrisponde a più regole, parte prima la più alta.</li>
+</ul>
+<h2>Provare prima di fidarsi</h2>
+<ul>
+<li><strong>simulazione:</strong> la regola annota ciò che farebbe e non fa nulla.</li>
+<li><strong>Esegui ora</strong> esegue una regola una volta senza aspettare il suo trigger. La sua condizione deve comunque essere vera.</li>
+<li><strong>Cronologia</strong>, in fondo alla pagina, elenca ogni esecuzione e ogni salto con il motivo, e ogni azione con il suo errore.</li>
+<li><strong>Diagramma</strong> disegna tutte le regole: i trigger a sinistra, le regole al centro e, a destra, i dispositivi su cui agiscono.</li>
+</ul>
+<p>L'interruttore <strong>AUTOMAZIONE ACCESA</strong>, in alto nella pagina <strong>Regole</strong>, mette in pausa tutte le regole insieme. Finché sono in pausa mostra <strong>AUTOMAZIONE SPENTA</strong>, e l'intestazione mostra lo stesso in ogni pagina. I pulsanti ed <strong>Esegui ora</strong> continuano a funzionare.</p>
+<h2>Passi di script</h2>
+<p>Per la logica che i moduli non sanno esprimere, un passo può essere un breve frammento di JavaScript. Gira sul PC di regia e ha a portata di mano ciò che gli serve:</p>
+<table>
+<thead>
+<tr>
+<th>Nome</th>
+<th>Cos'è</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>state</code></td>
+<td>Tutto ciò che Director sa di ogni dispositivo</td>
+</tr>
+<tr>
+<td><code>event</code></td>
+<td>Ciò che ha avviato la regola</td>
+</tr>
+<tr>
+<td><code>vars</code></td>
+<td>Le variabili</td>
+</tr>
+<tr>
+<td><code>setVar(id, value)</code></td>
+<td>Imposta una variabile</td>
+</tr>
+<tr>
+<td><code>await run(target, action, params)</code></td>
+<td>Esegue un'azione su un dispositivo</td>
+</tr>
+<tr>
+<td><code>log(...)</code></td>
+<td>Scrive una riga nel registro degli eventi</td>
+</tr>
+<tr>
+<td><code>await sleep(ms)</code></td>
+<td>Aspetta</td>
+</tr>
+</tbody>
+</table>
+<pre><code>// Trigger: l'evento &quot;Entered the waiting room&quot; di una riunione.
+// Ammettere subito i relatori; tutti gli altri aspettano l'operatore.
+if (event.name.startsWith('Dr.')) {
+  await run({ eventDevice: true }, 'admit', { by: 'zoomID', user: event.zoomId });
+  log('admitted', event.name);
+}
+</code></pre>
+<p><strong>Prova (simulazione)</strong> nell'editor esegue il frammento una volta senza toccare alcun dispositivo e ne mostra il registro. Un frammento che fallisce, o che dura più del suo <strong>timeout (ms)</strong> (cinque secondi se non lo cambi), conta come un passo fallito, e i passi successivi vengono eseguiti lo stesso.</p>
+</article>
+  </main>
+  <footer class="site-foot">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="/it/"><svg viewBox="140 80 250 340" aria-hidden="true"><path d="M290 116 H252 A68 68 0 0 0 252 252 H260 A68 68 0 0 1 260 388 H196" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/><circle cx="356" cy="116" r="27" fill="#ff3b30"/></svg>spectacast</a>
+        <p>Eventi ibridi dal vivo, da un'unica regia.</p>
+      </div>
+      <div><p class="foot-title">Prodotti</p><ul><li><a href="/it/prodotti/director/">Director</a></li><li><a href="/it/prodotti/meet/">Meet</a></li><li><a href="/it/prodotti/mic/">Mic</a></li><li><a href="/it/prodotti/translator/">Translator</a></li><li><a href="/it/prodotti/pass/">Pass</a></li></ul></div><div><p class="foot-title">Risorse</p><ul><li><a href="/it/prezzi/">Prezzi</a></li><li><a href="/it/guida/">Guida</a></li><li><a href="/it/sviluppatori/">Sviluppatori</a></li><li><a href="/it/download/">Download</a></li></ul></div><div><p class="foot-title">Note legali</p><ul><li><a href="/it/termini/">Termini</a></li><li><a href="/it/rimborsi/">Rimborsi</a></li><li><a href="/it/privacy/">Privacy</a></li><li><a href="/it/sicurezza/">Sicurezza e dati</a></li></ul></div><div><p class="foot-title">Contatti</p><ul><li><a href="/it/contatti/">Contattaci</a></li><li><a href="mailto:info@spectacast.com">info@spectacast.com</a></li><li><a href="mailto:support@spectacast.com">support@spectacast.com</a></li></ul></div>
+    </div>
+    <div class="foot-base">
+      <p>© 2026 Spectacast · spectacast.com</p>
+      <p><a href="/docs/director-rules/" hreflang="en" lang="en">English</a> · <a href="/de/hilfe/director-rules/" hreflang="de" lang="de">Deutsch</a> · <a href="/es/ayuda/director-rules/" hreflang="es" lang="es">Español</a> · Italiano</p>
+    </div>
+    <p class="marks">Zoom è un marchio di Zoom Communications, Inc. NDI è un marchio registrato di Vizrt NDI AB. OBS Studio è un progetto di OBS Project.</p>
+  </footer>
+</div>
+</body>
+</html>

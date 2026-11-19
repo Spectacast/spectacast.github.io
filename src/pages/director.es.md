@@ -28,6 +28,8 @@ Director habla con cada herramienta mediante un conector, así que el vídeo, el
 - **Dante**: el audio en red de la sala, mediante Dante Virtual Soundcard en un PC
 - **Los tuyos**: cualquier equipo que hable HTTP, OSC o sockets
 
+Cómo conectar un equipo tuyo, programar las reglas y usar la API: [Hecho para ampliarse](/es/desarrolladores/).
+
 ## Hecho para la sala
 
 Director funciona en un PC de la sala de control y habla con los PC de sala por la red del propio recinto, así que el evento sigue aunque falle internet. La página de la flota muestra de un vistazo el PC, la reunión y la salida de cada sala; los paneles se montan con bloques, de modo que una sala nueva es una copia más, no un diseño nuevo. El panel habla español, inglés, alemán e italiano.

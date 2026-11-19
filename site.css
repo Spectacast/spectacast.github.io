@@ -52,6 +52,7 @@
 .doc-nav ul { list-style: none; padding: 0; margin: 0; }
 .doc-nav li { margin: 0; }
 .doc-nav a { display: block; padding: 5px 10px; margin-left: -10px; border-radius: var(--sc-r-md); color: var(--sc-muted); text-decoration: none; }
+.doc-nav li.sub a { padding-left: 24px; font-size: 13px; }
 .doc-nav a:hover { color: var(--sc-ink); }
 .doc-nav a[aria-current] { color: var(--sc-ink); background: var(--sc-chip); font-weight: 600; }
 .sc .guide .lede { font-size: 19px; color: var(--sc-muted); margin: 0 0 28px; }
@@ -61,6 +62,8 @@
 .guide pre { background: var(--sc-chip); border-radius: var(--sc-r-md); padding: 12px 14px; overflow-x: auto; font-size: 14px; }
 .guide code { font-size: 0.92em; overflow-wrap: anywhere; }
 .guide pre code { overflow-wrap: normal; }
+.guide td:first-child code { overflow-wrap: normal; white-space: nowrap; }
+@media (min-width: 721px) { .guide td:last-child { width: 100%; } .guide td:first-child { white-space: nowrap; } }
 .guide .shot { margin: 24px 0; }
 .notice { background: var(--sc-chip); border-radius: var(--sc-r-md); padding: 16px 18px; margin: 24px 0; }
 .notice p { margin: 0 0 12px; }
@@ -296,6 +299,8 @@ mark.todo {
 .p-text .shot.phone img { margin: 0; max-width: 200px; border-radius: 22px; }
 /* Contact and Security: the product page's title block and rows, without screenshots */
 .info .p-hero { margin-bottom: 48px; }
+.developers .p-text > p:last-child > a:only-child { font-weight: 600; }
+.info .p-text .shot { margin: 20px 0; }
 .info .lede a { color: inherit; }
 .info .p-text { max-width: 760px; }
 .info .p-text table {
@@ -327,6 +332,16 @@ mark.todo {
   .info .p-text tr:last-child { border-bottom: 0; }
   .info .p-text td { padding: 0; border: 0; }
   .info .p-text td + td { margin-top: 6px; color: var(--sc-muted); }
+  /* On a phone each table row becomes a small block: the guides' tables too. */
+  .guide table { overflow: visible; }
+  .guide thead { display: none; }
+  .guide tbody, .guide tr, .guide td { display: block; min-width: 0; }
+  .guide tr { padding: 14px 16px; border-bottom: 1px solid var(--sc-line); }
+  .guide tr:last-child { border-bottom: 0; }
+  .guide td { padding: 0; border: 0; }
+  .guide td + td { margin-top: 6px; color: var(--sc-muted); }
+  .guide td:first-child code { white-space: normal; overflow-wrap: anywhere; }
+  .guide td + td { color: var(--sc-ink); }
   .c-card { padding: 24px; }
 }
 .in-plans {
