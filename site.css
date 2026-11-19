@@ -107,7 +107,7 @@ mark.todo {
   box-shadow: 0 0 0 4px var(--sc-live-halo);
 }
 .sc .home h1 {
-  font-size: clamp(38px, 6.4vw, 72px); line-height: 1.02; letter-spacing: -0.045em;
+  font-size: clamp(38px, 6.4vw, 72px); line-height: 1.02; letter-spacing: -0.03em;
   margin: 22px 0 26px; max-width: 14ch;
 }
 .home .lede { font-size: clamp(18px, 2.2vw, 21px); color: var(--sc-muted); max-width: 40ch; margin: 0; }

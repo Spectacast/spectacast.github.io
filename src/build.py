@@ -120,7 +120,7 @@ def header(lang, key):
     current = ' aria-current="page"' if key == 'pricing' else ''
     nav = [f'<a class="nav-product" href="{url(lang, "home")}#modules">{l["product"]}</a>',
            f'<a href="{url(lang, "pricing")}"{current}>{l["pricing"]}</a>']
-    langs = ''.join(f'<a href="{url(x, key)}" hreflang="{x}" lang="{x}" title="{NAMES[x]}">{x.upper()}</a>'
+    langs = ''.join(f'<a href="{url(x, key)}" hreflang="{x}" lang="{x}" aria-label="{NAMES[x]}">{x.upper()}</a>'
                     for x in LANGS if x != lang)
     if LAUNCHED:
         cta = (f'<a class="signin" href="{SIGN_IN}">{l["signin"]}</a>'
@@ -130,7 +130,7 @@ def header(lang, key):
     return f'''<header class="site-head">
     <a class="brand" href="{url(lang, 'home')}">{MARK_SVG}spectacast</a>
     <nav aria-label="{l['menu']}">{''.join(nav)}</nav>
-    <div class="langs" aria-label="{l['langs']}">{langs}</div>
+    <nav class="langs" aria-label="{l['langs']}">{langs}</nav>
     <div class="cta">{cta}</div>
   </header>'''
 
@@ -237,7 +237,7 @@ def md_page(lang, key):
     paras = [p for p in paras if len(p) > 60]
     description = paras[0] if paras else title
     if len(description) > 200:
-        description = description[:197].rsplit(' ', 1)[0] + '…'
+        description = description[:197].rsplit(' ', 1)[0].rstrip(',;:') + '…'
     if 'class="todo"' in body:
         body = f'<p class="draft-note">{LABELS[lang]["draft"]}</p>\n' + body
     return frame(lang, key, title, description, body, 'pricing' if key == 'pricing' else 'doc')
@@ -294,9 +294,13 @@ def check(written):
                 if not ref.startswith('/'):
                     problems.append(f'{path}: relative link {ref}')
                     continue
-                if ref.startswith(OTHER_APPS):
+                if '..' in ref.split('/'):
+                    problems.append(f'{path}: link with .. {ref}')
+                    continue
+                if any(ref == a or ref.startswith(a + '/') or ref.startswith(a + '?') for a in OTHER_APPS):
                     continue
                 target, _, frag = ref.partition('#')
+                target = target.split('?', 1)[0]
                 f = OUT / target.lstrip('/')
                 if target.endswith('/'):
                     f = f / 'index.html'
