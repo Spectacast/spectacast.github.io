@@ -19,7 +19,7 @@ Der Mic-Empfänger auf dem Saal-PC macht aus jedem Telefon einen Audioeingang, d
 ## Was Sie brauchen
 
 - Die kostenlose App auf jedem Telefon (Android oder iOS)
-- Einen Windows-PC pro Saal mit dem Mic-Empfänger
+- Einen Windows-PC oder Mac pro Saal mit dem Mic-Empfänger
 - Das WLAN der Location: Mic arbeitet im lokalen Netzwerk, ohne Internet
 
 {{plans:Show,Complete}}

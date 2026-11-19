@@ -8,7 +8,7 @@
 
 ## Una puerta que responde al instante
 
-Abre la app de puerta en cualquier teléfono o tableta, o conecta un lector de teclado a un portátil. Cada acreditación recibe una respuesta a pantalla completa en verde, ámbar o rojo con un sonido, y el nombre y la categoría de la persona. Si se cae la red, la puerta sigue decidiendo sola y envía sus lecturas cuando vuelve.
+Abre la app de puerta en cualquier teléfono o tableta, o conecta un lector de teclado a un portátil. Cada acreditación recibe una respuesta a pantalla completa en verde, ámbar o rojo con un sonido, y el nombre y la categoría de la persona. Si se cae la red, la puerta sigue decidiendo sola y envía sus lecturas cuando vuelve la red.
 
 {{phone:pass-door-welcome|La app de puerta en un teléfono: una pantalla verde con «Welcome Sofia»}}
 

@@ -24,12 +24,13 @@ Director talks to each tool through a connector, so the video, the audio and the
 - **NDI**: video and audio between PCs, with a multiview of every hall
 - **Spectacast Meet, Mic and Translator**: the meeting as separate feeds, phones as microphones, live translation
 - **Sennheiser EW-DX**: the hall's wireless mics, with levels and battery
-- **Dante, MIDI and folders**: networked audio, control surfaces, clips
+- **MIDI and folders**: control surfaces, and the clips that appear during the show
+- **Dante**: the hall's networked audio, through Dante Virtual Soundcard on a PC
 - **Your own**: any device that speaks HTTP, OSC or plain sockets
 
 ## Built for the hall
 
-Director runs on a PC in the control room and the hall PCs on the venue's own network, so a show keeps going when the internet does not. The fleet page lists every hall's PC, meeting and output at a glance; panels are built from blocks, so a new hall is one more copy, not a new design. The dashboard speaks English, German, Spanish and Italian.
+Director runs on a PC in the control room and talks to the hall PCs over the venue's own network, so a show keeps going when the internet does not. The fleet page lists every hall's PC, meeting and output at a glance; panels are built from blocks, so a new hall is one more copy, not a new design. The dashboard speaks English, German, Spanish and Italian.
 
 {{shot:director-fleet|Director's fleet page: each hall's meeting, people, waiting room and output}}
 

@@ -12,7 +12,7 @@ Nehmen Sie das Signal eines Saalmikrofons, des Mischpults, eines Telefons über 
 
 ## Sie können mitlesen
 
-Die Bedienseite zeigt jeden Satz zweimal, wie gehört und wie gesagt, so kann jemand, der beide Sprachen kann, mitverfolgen. Eine Prüfung warnt, wenn die Übersetzung das Gegenteil der Rednerin zu sagen scheint. Ein Thema und ein Glossar helfen bei Namen und Fachbegriffen.
+Die Bedienseite zeigt jeden Satz zweimal, wie gehört und wie gesagt, so kann jemand, der beide Sprachen beherrscht, mitverfolgen. Eine Prüfung warnt, wenn die Übersetzung das Gegenteil der Rednerin zu sagen scheint. Mit den Dolmetsch-Engines helfen ein Thema und ein Glossar bei Namen und Fachbegriffen.
 
 ## Aus der Regie gestartet
 
@@ -20,6 +20,6 @@ Director startet und stoppt jeden Translator wie jedes andere Gerät, und die Be
 
 ## Engines und Minuten
 
-Translator nutzt eine KI-Sprach-Engine: heute Google Gemini oder OpenAI, und die Engine ist ein Konnektor. Pläne mit Translator enthalten 300 Minuten pro Saal; weitere Minuten werden nach Verbrauch abgerechnet, oder Sie nutzen Ihren eigenen Engine-Schlüssel und zahlen die Engine direkt.
+Translator nutzt eine KI-Sprach-Engine: heute Google Gemini oder OpenAI, und die Engine ist ein Konnektor. Pläne mit Translator enthalten 300 Minuten pro Saal; weitere Minuten werden nach Verbrauch abgerechnet, pro Minute und Sprache, oder Sie nutzen Ihren eigenen Engine-Schlüssel und zahlen die Engine direkt.
 
 {{plans:Complete}}

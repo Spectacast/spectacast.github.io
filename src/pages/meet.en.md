@@ -20,7 +20,7 @@ When the meeting has interpretation channels, Meet can show a clear card for eac
 
 ## What it needs
 
-- A Windows PC per hall, on the venue network with the other PCs
+- A Windows PC or a Mac per hall, on the venue network with the other PCs (interpretation channels need Windows)
 - A Zoom account that can host the meeting; Zoom is the platform today, and the meeting platform is a connector, so others can follow
 - NDI on the network to carry the feeds to the hall's mixer or OBS
 

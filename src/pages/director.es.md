@@ -8,7 +8,7 @@
 
 ## Todas las salas en una pantalla
 
-Cada sala tiene su propia franja: quién está en la reunión y quién habla, la sala de espera y el vestíbulo, Preview y Program, el rótulo y el streaming. Eliges a un ponente, lo pones en el aire con un toque, y la siguiente sala está justo al lado. Una sola persona puede seguir todo un congreso; en el congreso de 18 salas para el que se creó Director, así fue.
+Cada sala tiene su propia franja: quién está en la reunión y quién habla, la sala de espera y el vestíbulo, Preview y Program, el rótulo y el streaming. Eliges a un ponente, lo pones al aire con un toque, y la siguiente sala está justo al lado. Una sola persona puede seguir todo un congreso; en el congreso de 18 salas para el que se creó Director, así fue.
 
 ## Reglas para la rutina
 
@@ -24,12 +24,13 @@ Director habla con cada herramienta mediante un conector, así que el vídeo, el
 - **NDI**: vídeo y audio entre los PC, con un multiview de todas las salas
 - **Spectacast Meet, Mic y Translator**: la reunión como señales separadas, teléfonos como micrófonos, traducción en directo
 - **Sennheiser EW-DX**: los micrófonos inalámbricos de la sala, con nivel y batería
-- **Dante, MIDI y carpetas**: audio en red, superficies de control, clips
+- **MIDI y carpetas**: superficies de control y los clips que aparecen durante el evento
+- **Dante**: el audio en red de la sala, mediante Dante Virtual Soundcard en un PC
 - **Los tuyos**: cualquier equipo que hable HTTP, OSC o sockets
 
 ## Hecho para la sala
 
-Director funciona en un PC de la sala de control y los PC de sala en la red del propio recinto, así que el evento sigue aunque falle internet. La página de la flota muestra de un vistazo el PC, la reunión y la salida de cada sala; los paneles se montan con bloques, de modo que una sala nueva es una copia más, no un diseño nuevo. El panel habla español, inglés, alemán e italiano.
+Director funciona en un PC de la sala de control y habla con los PC de sala por la red del propio recinto, así que el evento sigue aunque falle internet. La página de la flota muestra de un vistazo el PC, la reunión y la salida de cada sala; los paneles se montan con bloques, de modo que una sala nueva es una copia más, no un diseño nuevo. El panel habla español, inglés, alemán e italiano.
 
 {{shot:director-fleet|La flota en Director: la reunión, las personas, la sala de espera y la salida de cada sala}}
 

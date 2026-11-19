@@ -24,12 +24,13 @@ Director parla con ogni strumento tramite un connettore, così video, audio e pi
 - **NDI**: video e audio tra i PC, con un multiview di tutte le sale
 - **Spectacast Meet, Mic e Translator**: la riunione come flussi separati, telefoni come microfoni, traduzione simultanea
 - **Sennheiser EW-DX**: i radiomicrofoni della sala, con livello e batteria
-- **Dante, MIDI e cartelle**: audio in rete, superfici di controllo, video
+- **MIDI e cartelle**: superfici di controllo e i video che vanno in onda durante l'evento
+- **Dante**: l'audio in rete della sala, tramite Dante Virtual Soundcard su un PC
 - **I tuoi**: qualsiasi apparecchio che parli HTTP, OSC o socket
 
 ## Fatto per la sala
 
-Director gira su un PC in regia e i PC di sala sulla rete della sede, così l'evento continua anche se cade internet. La pagina della flotta mostra a colpo d'occhio PC, riunione e uscita di ogni sala; i pannelli si compongono a blocchi, quindi una sala nuova è una copia in più, non un nuovo progetto. La dashboard parla italiano, inglese, tedesco e spagnolo.
+Director gira su un PC in regia e parla con i PC di sala attraverso la rete della sede, così l'evento continua anche se cade internet. La pagina della flotta mostra a colpo d'occhio PC, riunione e uscita di ogni sala; i pannelli si compongono a blocchi, quindi una sala nuova è una copia in più, non un nuovo progetto. La dashboard parla italiano, inglese, tedesco e spagnolo.
 
 {{shot:director-fleet|La flotta in Director: riunione, persone, sala d'attesa e uscita di ogni sala}}
 

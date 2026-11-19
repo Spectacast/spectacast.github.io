@@ -12,7 +12,7 @@ Take the signal from a hall microphone, the mixer, a phone through Spectacast Mi
 
 ## You can read what it says
 
-The control page shows every sentence twice, as heard and as said, so someone who knows both languages can follow along. A check warns when the translation seems to say the opposite of the speaker. A topic and a glossary help it with names and technical terms.
+The control page shows every sentence twice, as heard and as said, so someone who knows both languages can follow along. A check warns when the translation seems to say the opposite of the speaker. With the interpreter engines, a topic and a glossary help it with names and technical terms.
 
 ## Started from the control room
 
@@ -20,6 +20,6 @@ Director starts and stops each Translator like any other device, and the control
 
 ## Engines and minutes
 
-Translator uses an AI speech engine: Google Gemini or OpenAI today, and the engine is a connector. Plans with Translator include 300 minutes per hall; more minutes are billed by use, or you can use your own engine key and pay the engine directly.
+Translator uses an AI speech engine: Google Gemini or OpenAI today, and the engine is a connector. Plans with Translator include 300 minutes per hall; more minutes are billed by use, per minute and language, or you can use your own engine key and pay the engine directly.
 
 {{plans:Complete}}

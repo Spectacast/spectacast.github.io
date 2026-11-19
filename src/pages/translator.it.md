@@ -12,7 +12,7 @@ Prendi il segnale da un microfono di sala, dal mixer, da un telefono con Spectac
 
 ## Puoi leggere cosa dice
 
-La pagina di controllo mostra ogni frase due volte, come sentita e come detta, così chi conosce entrambe le lingue può seguire. Un controllo avvisa quando la traduzione sembra dire il contrario del relatore. Un argomento e un glossario lo aiutano con nomi e termini tecnici.
+La pagina di controllo mostra ogni frase due volte, come sentita e come detta, così chi conosce entrambe le lingue può seguire. Un controllo avvisa quando la traduzione sembra dire il contrario del relatore. Con i motori di interpretariato, un argomento e un glossario lo aiutano con nomi e termini tecnici.
 
 ## Avviato dalla regia
 
@@ -20,6 +20,6 @@ Director avvia e ferma ogni Translator come qualsiasi altro dispositivo, e la pa
 
 ## Motori e minuti
 
-Translator usa un motore vocale con IA: oggi Google Gemini o OpenAI, e il motore è un connettore. I piani con Translator includono 300 minuti per sala; i minuti in più si pagano a consumo, oppure puoi usare la tua chiave del motore e pagare direttamente il motore.
+Translator usa un motore vocale con IA: oggi Google Gemini o OpenAI, e il motore è un connettore. I piani con Translator includono 300 minuti per sala; i minuti in più si pagano a consumo, per minuto e lingua, oppure puoi usare la tua chiave del motore e pagare direttamente il motore.
 
 {{plans:Complete}}

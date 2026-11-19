@@ -19,7 +19,7 @@ The Mic receiver on the hall PC turns each phone into an audio input that OBS, t
 ## What it needs
 
 - The free app on each phone (Android or iOS)
-- A Windows PC per hall running the Mic receiver
+- A Windows PC or a Mac per hall running the Mic receiver
 - The venue's Wi-Fi: Mic works on the local network, without internet
 
 {{plans:Show,Complete}}

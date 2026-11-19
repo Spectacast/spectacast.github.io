@@ -156,13 +156,24 @@ def footer(lang, key):
 
 
 def og_image(body):
-    m = re.search(r'<img src="(/img/screens/[^"]+)"', body)
-    return SITE + (m.group(1) if m else '/brand/lockup-light.png')
+    """The page's first screenshot as a 1200 x 630 JPEG for link previews (some sites do not read WebP)."""
+    m = re.search(r'<img src="/img/screens/([\w-]+)\.webp"', body)
+    if not m:
+        return SITE + '/brand/lockup-light.png'
+    from PIL import Image
+    out = OUT / 'img' / 'og' / f'{m.group(1)}.jpg'
+    if not out.is_file():
+        out.parent.mkdir(parents=True, exist_ok=True)
+        im = Image.open(IMG / f'{m.group(1)}.webp').convert('RGB')
+        w = im.width
+        im = im.crop((0, 0, w, min(im.height, round(w * 630 / 1200)))).resize((1200, 630), Image.LANCZOS)
+        im.save(out, 'JPEG', quality=85, optimize=True, progressive=True)
+    return f'{SITE}/img/og/{m.group(1)}.jpg'
 
 
 def frame(lang, key, title, description, body, main_class):
     """A whole page: head tags, header, the page's own body and the footer."""
-    full_title = title if key == 'home' else f'{title} · Spectacast'
+    full_title = title if key == 'home' or title.startswith('Spectacast') else f'{title} · Spectacast'
     d = html.escape(description)
     return f'''<!doctype html>
 <html lang="{lang}" class="sc">
@@ -251,6 +262,7 @@ def product_blocks(lang, md):
     """{{shot:name|alt}}, {{phone:name|alt}}, {{plans:A,B}} and {{cta}} in a product page's Markdown."""
     l = LABELS[lang]
     md = re.sub(r'\{\{shot:([\w-]+)\|([^}]+)\}\}', lambda m: shot(lang, m.group(1), m.group(2)), md)
+    md = md.replace(' loading="lazy"', '', 1)  # the first screenshot is above the fold
     md = re.sub(r'\{\{phone:([\w-]+)\|([^}]+)\}\}', lambda m: shot(lang, m.group(1), m.group(2), 'phone'), md)
 
     def plans(m):
@@ -284,7 +296,7 @@ def md_page(lang, key):
         body = body.replace('<!--PLANS-->', plans_html(lang))
     title = text_of(re.search(r'<h1>(.*?)</h1>', body).group(1))
     # The description is the first paragraph after the title (for the legal pages: the paragraph after the date).
-    paras = [text_of(p) for p in re.findall(r'<p>(.*?)</p>', body, re.S)]
+    paras = [text_of(p) for p in re.findall(r'<p[^>]*>(.*?)</p>', body, re.S)]
     paras = [p for p in paras if len(p) > 60]
     description = paras[0] if paras else title
     if len(description) > 200:

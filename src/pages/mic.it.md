@@ -19,7 +19,7 @@ Il ricevitore Mic sul PC di sala trasforma ogni telefono in un ingresso audio ch
 ## Cosa serve
 
 - L'app gratuita su ogni telefono (Android o iOS)
-- Un PC Windows per sala con il ricevitore Mic
+- Un PC Windows o un Mac per sala con il ricevitore Mic
 - Il Wi-Fi della sede: Mic funziona sulla rete locale, senza internet
 
 {{plans:Show,Complete}}

@@ -18,7 +18,7 @@ python3 src/build.py --check
   mic, translator, pass), one file per language. Product pages take `{{shot:name|alt text}}` (a
   screenshot from `img/screens/`, in the page's language or in light and dark when those exist),
   `{{phone:name|alt}}`, `{{plans:Director,Show}}` and `{{cta}}`.
-- `tools/screenshots/run.sh`: retakes the screenshots from the apps' own code with an invented
+- `tools/screenshots/run.sh ../pass ../director ../translator ../meet`: retakes the screenshots from the apps' own code with an invented
   Demo Congress 2027 (see the comments in each script).
 - `src/content.py`: seller details, plans, prices and VAT.
 - `src/build.py`: the shared header and footer, the page list, and `LAUNCHED`, which shows the sign-in,

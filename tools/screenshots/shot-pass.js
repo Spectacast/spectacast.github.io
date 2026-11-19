@@ -31,14 +31,6 @@ let current = null;
     current = await startHub();
     const { info } = current;
     const when = new Date(info.snapshotAt);
-    const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, colorScheme: scheme, timezoneId: 'Europe/Berlin', locale: 'en-GB' });
-    const pg = await ctx.newPage();
-    await pg.clock.setFixedTime(when);
-    await pg.goto(base + '/'); await pg.waitForTimeout(1000);
-    for (const tab of ['Setup', 'Attendees', 'Live', 'Reports', 'Rules', 'Certificates']) {
-      await pg.getByRole('button', { name: tab, exact: true }).first().click(); await pg.waitForTimeout(1000);
-      await pg.screenshot({ path: `${out}/pass-${tab.toLowerCase()}-${scheme}.png` });
-    }
     // The door app on a phone: idle, then a badge read by a keyboard scanner.
     const phone = await b.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true, colorScheme: scheme, timezoneId: 'Europe/Berlin' });
     const ph = await phone.newPage();
@@ -48,6 +40,14 @@ let current = null;
     await ph.keyboard.type(info.guest, { delay: 5 }); await ph.keyboard.press('Enter'); await ph.waitForTimeout(700);
     await ph.screenshot({ path: `${out}/pass-door-welcome-${scheme}.png` });
     await phone.close();
+    const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, colorScheme: scheme, timezoneId: 'Europe/Berlin', locale: 'en-GB' });
+    const pg = await ctx.newPage();
+    await pg.clock.setFixedTime(when);
+    await pg.goto(base + '/'); await pg.waitForTimeout(1000);
+    for (const tab of ['Setup', 'Attendees', 'Live', 'Reports', 'Rules', 'Certificates']) {
+      await pg.getByRole('button', { name: tab, exact: true }).first().click(); await pg.waitForTimeout(1000);
+      await pg.screenshot({ path: `${out}/pass-${tab.toLowerCase()}-${scheme}.png` });
+    }
     await ctx.close();
     await current.stop(); current = null;
   }

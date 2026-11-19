@@ -60,6 +60,8 @@ const server = http.createServer((req, res) => {
     const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, colorScheme: scheme, locale: 'en-GB', timezoneId: 'Europe/Berlin' });
     const pg = await ctx.newPage();
     await pg.goto('http://127.0.0.1:4730/'); await pg.waitForTimeout(2000);
+    await pg.getByLabel('Topic').fill('Laparoscopic surgery, Dr. Chiara Fontana').catch(() => {});
+    await pg.locator('body').click({ position: { x: 900, y: 700 } });
     await pg.screenshot({ path: `${out}/translator-${scheme}.png` });
     await ctx.close();
   }

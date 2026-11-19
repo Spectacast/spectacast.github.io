@@ -16,11 +16,11 @@ Director ve quién está en cada reunión, quién espera y quién habla. Desde e
 
 Cuando la reunión tiene canales de interpretación, Meet muestra una tarjeta clara para cada idioma y lleva el audio del intérprete, también una voz de Spectacast Translator, así quien escucha elige su idioma en la reunión como siempre.
 
-{{shot:meet-interpreter-card|La tarjeta que Meet muestra en un canal de interpretación: el idioma y «Live interpretation»}}
+{{shot:meet-interpreter-card|La tarjeta que Meet muestra en un canal de interpretación: el idioma e «Interpretación en vivo»}}
 
 ## Qué necesitas
 
-- Un PC con Windows por sala, en la red del recinto con los demás PC
+- Un PC con Windows o un Mac por sala, en la red del recinto con los demás PC (los canales de interpretación necesitan Windows)
 - Una cuenta de Zoom que pueda organizar la reunión; hoy la plataforma es Zoom, y la plataforma de reuniones es un conector, así que pueden llegar otras
 - NDI en la red, para llevar las señales al mezclador o al OBS de la sala
 

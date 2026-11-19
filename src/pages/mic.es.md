@@ -19,7 +19,7 @@ El receptor de Mic en el PC de sala convierte cada teléfono en una entrada de a
 ## Qué necesitas
 
 - La app gratuita en cada teléfono (Android o iOS)
-- Un PC con Windows por sala con el receptor de Mic
+- Un PC con Windows o un Mac por sala con el receptor de Mic
 - La wifi del recinto: Mic funciona en la red local, sin internet
 
 {{plans:Show,Complete}}

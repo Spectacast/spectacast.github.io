@@ -20,8 +20,8 @@ Quando la riunione ha i canali di interpretariato, Meet mostra una scheda chiara
 
 ## Cosa serve
 
-- Un PC Windows per sala, sulla rete della sede con gli altri PC
-- Un account Zoom che possa ospitare la riunione; oggi la piattaforma è Zoom, e la piattaforma di riunione è un connettore, quindi altre possono seguire
+- Un PC Windows o un Mac per sala, sulla rete della sede con gli altri PC (i canali di interpretariato richiedono Windows)
+- Un account Zoom che possa organizzare la riunione; oggi la piattaforma è Zoom, e la piattaforma di riunione è un connettore, quindi altre possono seguire
 - NDI sulla rete, per portare i flussi al mixer o all'OBS della sala
 
 {{plans:Show,Complete}}
