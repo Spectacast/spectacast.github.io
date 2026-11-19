@@ -10,7 +10,7 @@ Escríbenos cuántas salas tienes, cuándo es el evento y qué debe hacer cada s
 
 ## Soporte
 
-Para clientes con una duda o una avería. Dinos qué programa y qué versión usas, qué hiciste y qué pasó. El botón **Enviar informe** de cada programa nos envía sus registros, y así la respuesta llega antes.
+Para clientes con una duda o un fallo. Dinos qué programa y qué versión usas, qué hiciste y qué pasó. Si puedes, adjunta el registro del programa: así la respuesta llega antes.
 
 <p class="mail"><a href="mailto:support@spectacast.com">support@spectacast.com</a></p>
 

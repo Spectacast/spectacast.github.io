@@ -1,6 +1,6 @@
 # Sicurezza e dati
 
-<p class="lede">La maggior parte di Spectacast gira sui tuoi computer, in sala. Questa pagina dice con parole semplici cosa resta lì, cosa va online e chi lo tratta. Il testo vincolante è l'<a href="{{PRIVACY_URL}}">Informativa privacy</a>.</p>
+<p class="lede">La maggior parte di Spectacast funziona sui tuoi computer, in sala. Questa pagina dice con parole semplici cosa resta lì, cosa va online e chi lo tratta. Il testo vincolante è l'<a href="{{PRIVACY_URL}}">Informativa privacy</a>.</p>
 
 ## Cosa resta in sala
 
@@ -14,25 +14,26 @@ La riunione online è una normale riunione Zoom, sul tuo account Zoom e alle con
 
 | Cosa | Dove va | Perché |
 |---|---|---|
-| **Verifica della licenza:** la chiave di licenza, un identificativo casuale del PC, il programma e la sua versione, la sala e se è in onda | Il nostro server delle licenze nell'Unione Europea | Per verificare che il piano sia attivo e quante sale sono in uso |
+| **Verifica della licenza:** la chiave del PC, l'identificativo che Windows assegna al PC (ne conserviamo solo l'hash), il nome del PC, la versione del programma e i totali giornalieri d'uso: minuti in onda, minuti di Translator per lingua, badge letti | Il nostro server degli account nell'Unione Europea | Per verificare che il piano sia attivo, quanti PC sono in uso e quanti minuti di traduzione sono stati consumati |
 | **Il tuo account:** nome, email, organizzazione, paese, piano | Il nostro server degli account nell'Unione Europea | Per gestire il tuo account e le tue licenze |
+| **Accesso di Meet a Zoom:** il tuo nome e la tua email di Zoom, e l'autorizzazione a ospitare le tue riunioni | Il nostro server nell'Unione Europea | Perché Meet possa ospitare la riunione sul tuo account Zoom; rimosso quando scolleghi Meet da Zoom |
 | **Spectacast Pass:** partecipanti, badge, letture agli ingressi, presenze | Il nostro server di Pass nell'Unione Europea | Pass è ospitato da noi per l'organizzatore dell'evento |
 | **Spectacast Translator:** il parlato da tradurre | Google o OpenAI, secondo il motore che scegli per ogni lingua | Il motore restituisce la traduzione dal vivo |
-| **Un rapporto**, quando premi "Invia rapporto": i log e le versioni del programma | Il nostro server nell'Unione Europea | Per trovare un guasto; cancellato entro 90 giorni |
+| **Il controllo del senso capovolto di Translator**, finché è attivo: la trascrizione scritta dell'ultimo minuto | Google, oppure Anthropic se ne imposti la chiave sul PC | Per segnalare i punti in cui la traduzione dice altro rispetto al relatore |
 | **Pagamenti** | Paddle, che vende Spectacast come Merchant of Record | Paddle incassa il pagamento; non vediamo mai il numero della tua carta |
 
-Il contenuto del tuo evento non fa mai parte della verifica della licenza. Il sito non usa cookie, né strumenti di analisi o pubblicità.
+Il contenuto del tuo evento non fa mai parte della verifica della licenza. Questo sito non usa cookie, né strumenti di analisi o pubblicità; l'accesso al tuo account o a Pass salva un cookie di accesso, necessario per farli funzionare.
 
 ## Quando cade internet
 
-Una sala che perde la connessione continua a funzionare: una licenza a pagamento funziona 14 giorni senza internet. I telefoni agli ingressi di Pass continuano a decidere da soli e inviano le letture quando la rete torna.
+Le sale e la regia continuano a lavorare sulla rete della sede, e una licenza a pagamento funziona 14 giorni senza internet. La riunione online e la traduzione hanno bisogno di internet. I telefoni agli ingressi di Pass continuano a decidere da soli e inviano le letture quando la rete torna.
 
 ## Come sono protetti i dati
 
 - Ogni connessione ai nostri server è cifrata (HTTPS).
 - Le password sono conservate solo come hash con salt, mai in chiaro.
 - I server sono nell'Unione Europea, con accesso limitato alle persone che gestiscono il servizio.
-- I database di Pass e degli account sono salvati in backup ogni notte.
+- I database di Pass e degli account hanno un backup ogni notte.
 - Il parlato inviato ai motori di Translator viaggia su una connessione cifrata, e secondo le loro condizioni API né Google né OpenAI lo usano per addestrare i propri modelli generali.
 
 ## Chi tratta dati per noi
@@ -48,10 +49,10 @@ Paddle non è in questo elenco perché tratta i tuoi dati di pagamento come tito
 
 ## I dati dei tuoi partecipanti
 
-Per le persone presenti al tuo evento il titolare sei tu e noi siamo il tuo responsabile del trattamento (art. 28 GDPR). Trattiamo i loro dati solo secondo le tue istruzioni, e sei tu a decidere per quanto tempo Pass li conserva. Inviamo l'accordo sul trattamento dei dati su richiesta: scrivi a [privacy@spectacast.com](mailto:privacy@spectacast.com).
+Per le persone presenti al tuo evento il titolare sei tu e noi siamo il tuo responsabile del trattamento (art. 28 GDPR). Trattiamo i loro dati solo secondo le tue istruzioni. Inviamo l'accordo sul trattamento dei dati su richiesta: scrivi a [privacy@spectacast.com](mailto:privacy@spectacast.com).
 
 Per quanto tempo si conserva ogni tipo di dato è indicato nell'[Informativa privacy]({{PRIVACY_URL}}).
 
 ## Segnalare un problema di sicurezza
 
-Se trovi una vulnerabilità in Spectacast, scrivi a [support@spectacast.com](mailto:support@spectacast.com) prima di renderla pubblica, così possiamo correggerla per primi.
+Se trovi una vulnerabilità in Spectacast, scrivi a [support@spectacast.com](mailto:support@spectacast.com) prima di renderla pubblica, così possiamo correggerla prima.

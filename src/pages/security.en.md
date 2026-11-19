@@ -14,18 +14,19 @@ The online meeting itself is an ordinary Zoom meeting, held on your own Zoom acc
 
 | What | Where it goes | Why |
 |---|---|---|
-| **Licence check:** the licence key, a random identifier for the PC, the program and its version, the hall, and whether it is on air | Our licence server in the European Union | To check that your plan is active and how many halls are in use |
+| **Licence check:** the PC's key, the identifier Windows gives the PC (we keep only a hash of it), the PC's name, the program version, and daily totals of use: minutes on air, Translator minutes per language, badges scanned | Our account server in the European Union | To check that your plan is active, how many PCs are in use and how many translation minutes were used |
 | **Your account:** name, email, organisation, country, plan | Our account server in the European Union | To run your account and your licences |
+| **Meet's Zoom sign-in:** your Zoom name and email, and the authorisation to host your meetings | Our server in the European Union | So that Meet can host the meeting on your Zoom account; removed when you disconnect Meet from Zoom |
 | **Spectacast Pass:** attendees, badges, door scans, attendance | Our Pass server in the European Union | Pass is hosted by us for the event organiser |
 | **Spectacast Translator:** the speech to translate | Google or OpenAI, whichever engine you choose for a language | The engine returns the translation live |
-| **A report**, when you press "Send report": the program's logs and versions | Our server in the European Union | To find a fault; deleted within 90 days |
+| **Translator's check for flipped meaning**, while it is switched on: the written transcript of the last minute | Google, or Anthropic when you set its key on the PC | To flag the places where the translation says something different from the speaker |
 | **Payments** | Paddle, which sells Spectacast as Merchant of Record | Paddle takes the payment; we never see your card number |
 
-The content of your event is never part of the licence check. The website sets no cookies and uses no analytics or advertising.
+The content of your event is never part of the licence check. This website sets no cookies and uses no analytics or advertising; signing in to your account or to Pass stores one sign-in cookie, which they need to work.
 
 ## When the internet drops
 
-A hall that loses its connection keeps running: a paid licence works for 14 days without the internet. The door phones of Pass keep deciding on their own and send their scans when the network is back.
+The halls and the control room keep working over the venue's own network, and a paid licence works for 14 days without the internet. The online meeting and the translation need the internet. The door phones of Pass keep deciding on their own and send their scans when the network is back.
 
 ## How the data is protected
 
@@ -48,7 +49,7 @@ Paddle is not on this list because it handles your payment details as a controll
 
 ## Your attendees' data
 
-For the people at your event, you are the controller and we are your processor (art. 28 GDPR). We handle their data only on your instructions, and you decide how long Pass keeps it. We send the data processing agreement on request: write to [privacy@spectacast.com](mailto:privacy@spectacast.com).
+For the people at your event, you are the controller and we are your processor (art. 28 GDPR). We handle their data only on your instructions. We send the data processing agreement on request: write to [privacy@spectacast.com](mailto:privacy@spectacast.com).
 
 How long each kind of data is kept is listed in the [Privacy Policy]({{PRIVACY_URL}}).
 

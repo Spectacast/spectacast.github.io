@@ -10,13 +10,13 @@ Schreiben Sie uns, wie viele Säle Sie haben, wann die Veranstaltung stattfindet
 
 ## Support
 
-Für Kundinnen und Kunden mit einer Frage oder einer Störung. Nennen Sie das Programm und die Version, was Sie getan haben und was passiert ist. Die Schaltfläche **Bericht senden** in jedem Programm schickt uns dessen Protokolle; damit kommt die Antwort schneller.
+Für Kunden mit einer Frage oder einer Störung. Nennen Sie das Programm und die Version, was Sie getan haben und was passiert ist. Hängen Sie nach Möglichkeit das Protokoll des Programms an: Damit kommt die Antwort schneller.
 
 <p class="mail"><a href="mailto:support@spectacast.com">support@spectacast.com</a></p>
 
 ## Abrechnung
 
-Fragen zu einer Bestellung, einer Rechnung oder einer Erstattung. Die Regeln für Erstattungen stehen in den [Erstattungsrichtlinie]({{REFUND_URL}}).
+Fragen zu einer Bestellung, einer Rechnung oder einer Erstattung. Die Regeln für Erstattungen stehen in der [Erstattungsrichtlinie]({{REFUND_URL}}).
 
 <p class="mail"><a href="mailto:billing@spectacast.com">billing@spectacast.com</a></p>
 

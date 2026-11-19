@@ -38,7 +38,7 @@
 <section class="p-row">
 <h2>Was im Saal bleibt</h2>
 <div class="p-text"><p>Director, Meet und der Mic-Empfänger sind Programme auf Ihren Saal-PCs. Bild, Ton und die Signale des Meetings laufen zwischen diesen PCs über das Netzwerk des Veranstaltungsorts, und Aufzeichnungen sind Dateien auf Ihren eigenen Festplatten. Wir erhalten nichts davon.</p>
-<p>Telefone als Mikrofone werden mit dem PC gekoppelt, mit dem sie sprechen, und ihr Ton ist auf dem Weg Ende-zu-Ende verschlüsselt.</p>
+<p>Telefone als Mikrofone werden mit dem PC gekoppelt, mit dem sie sprechen, und ihr Ton wird Ende-zu-Ende verschlüsselt übertragen.</p>
 <p>Das Online-Meeting selbst ist ein gewöhnliches Zoom-Meeting, auf Ihrem eigenen Zoom-Konto und zu den Bedingungen von Zoom.</p></div>
 </section>
 <section class="p-row">
@@ -53,14 +53,19 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Lizenzprüfung:</strong> der Lizenzschlüssel, eine zufällige Kennung des PCs, das Programm und seine Version, der Saal und ob er auf Sendung ist</td>
-<td>Unser Lizenzserver in der Europäischen Union</td>
-<td>Um zu prüfen, ob Ihr Plan aktiv ist und wie viele Säle in Gebrauch sind</td>
+<td><strong>Lizenzprüfung:</strong> der Schlüssel des PCs, die Kennung, die Windows dem PC gibt (wir speichern nur einen Hash davon), der Name des PCs, die Programmversion und Tagessummen der Nutzung: Minuten auf Sendung, Translator-Minuten je Sprache, gescannte Badges</td>
+<td>Unser Kontoserver in der Europäischen Union</td>
+<td>Um zu prüfen, ob Ihr Plan aktiv ist, wie viele PCs in Gebrauch sind und wie viele Übersetzungsminuten verbraucht wurden</td>
 </tr>
 <tr>
 <td><strong>Ihr Konto:</strong> Name, E-Mail-Adresse, Organisation, Land, Plan</td>
 <td>Unser Kontoserver in der Europäischen Union</td>
 <td>Um Ihr Konto und Ihre Lizenzen zu führen</td>
+</tr>
+<tr>
+<td><strong>Zoom-Anmeldung von Meet:</strong> Ihr Zoom-Name, Ihre E-Mail-Adresse und die Berechtigung, Ihre Meetings zu hosten</td>
+<td>Unser Server in der Europäischen Union</td>
+<td>Damit Meet das Meeting auf Ihrem Zoom-Konto hosten kann; entfernt, wenn Sie Meet von Zoom trennen</td>
 </tr>
 <tr>
 <td><strong>Spectacast Pass:</strong> Teilnehmer, Badges, Scans an den Eingängen, Anwesenheit</td>
@@ -69,13 +74,13 @@
 </tr>
 <tr>
 <td><strong>Spectacast Translator:</strong> die zu übersetzende Sprache</td>
-<td>Google oder OpenAI, je nachdem, welchen Dienst Sie für eine Sprache wählen</td>
-<td>Der Dienst liefert die Übersetzung live zurück</td>
+<td>Google oder OpenAI, je nachdem, welche Engine Sie für eine Sprache wählen</td>
+<td>Die Engine liefert die Übersetzung live zurück</td>
 </tr>
 <tr>
-<td><strong>Ein Bericht</strong>, wenn Sie auf „Bericht senden“ klicken: die Protokolle und Versionen des Programms</td>
-<td>Unser Server in der Europäischen Union</td>
-<td>Um einen Fehler zu finden; innerhalb von 90 Tagen gelöscht</td>
+<td><strong>Translators Prüfung auf Sinnumkehr</strong>, solange sie eingeschaltet ist: die Mitschrift der letzten Minute als Text</td>
+<td>Google, oder Anthropic, wenn Sie dessen Schlüssel auf dem PC hinterlegen</td>
+<td>Um die Stellen zu markieren, an denen die Übersetzung etwas anderes sagt als die sprechende Person</td>
 </tr>
 <tr>
 <td><strong>Zahlungen</strong></td>
@@ -84,11 +89,11 @@
 </tr>
 </tbody>
 </table>
-<p>Der Inhalt Ihrer Veranstaltung ist nie Teil der Lizenzprüfung. Die Website setzt keine Cookies und verwendet weder Analyse noch Werbung.</p></div>
+<p>Der Inhalt Ihrer Veranstaltung ist nie Teil der Lizenzprüfung. Diese Website setzt keine Cookies und verwendet weder Analyse noch Werbung; die Anmeldung bei Ihrem Konto oder bei Pass speichert ein Anmelde-Cookie, das dafür nötig ist.</p></div>
 </section>
 <section class="p-row">
 <h2>Wenn das Internet ausfällt</h2>
-<div class="p-text"><p>Ein Saal, der die Verbindung verliert, läuft weiter: Eine bezahlte Lizenz funktioniert 14 Tage ohne Internet. Die Telefone an den Eingängen entscheiden bei Pass selbstständig weiter und senden ihre Scans, sobald das Netz wieder da ist.</p></div>
+<div class="p-text"><p>Die Säle und die Regie arbeiten über das Netzwerk des Veranstaltungsorts weiter, und eine bezahlte Lizenz funktioniert 14 Tage ohne Internet. Das Online-Meeting und die Übersetzung brauchen das Internet. Die Telefone an den Eingängen entscheiden bei Pass selbstständig weiter und senden ihre Scans, sobald das Netz wieder da ist.</p></div>
 </section>
 <section class="p-row">
 <h2>Wie die Daten geschützt sind</h2>
@@ -97,7 +102,7 @@
 <li>Passwörter werden nur als gesalzene Hashes gespeichert, nie im Klartext.</li>
 <li>Die Server stehen in der Europäischen Union; Zugriff haben nur die Personen, die den Dienst betreiben.</li>
 <li>Die Datenbanken von Pass und der Konten werden jede Nacht gesichert.</li>
-<li>Sprache für die Dienste von Translator wird über eine verschlüsselte Verbindung gesendet, und nach ihren API-Bedingungen nutzen weder Google noch OpenAI sie zum Training ihrer allgemeinen Modelle.</li>
+<li>Sprache für die Engines von Translator wird über eine verschlüsselte Verbindung gesendet, und nach ihren API-Bedingungen nutzen weder Google noch OpenAI sie zum Training ihrer allgemeinen Modelle.</li>
 </ul></div>
 </section>
 <section class="p-row">
@@ -133,11 +138,11 @@
 </tr>
 </tbody>
 </table>
-<p>Paddle steht nicht auf dieser Liste, weil es Ihre Zahlungsdaten als eigener Verantwortlicher verarbeitet. Wenn Sie Translator mit Ihrem eigenen Schlüssel von Google oder OpenAI nutzen, schließen Sie den Vertrag direkt mit dem Dienst, und wir erhalten nichts.</p></div>
+<p>Paddle steht nicht auf dieser Liste, weil es Ihre Zahlungsdaten als eigenständiger Verantwortlicher verarbeitet. Wenn Sie Translator mit Ihrem eigenen Schlüssel von Google oder OpenAI nutzen, schließen Sie den Vertrag direkt mit der Engine, und wir erhalten nichts.</p></div>
 </section>
 <section class="p-row">
 <h2>Die Daten Ihrer Teilnehmer</h2>
-<div class="p-text"><p>Für die Personen Ihrer Veranstaltung sind Sie der Verantwortliche und wir Ihr Auftragsverarbeiter (Art. 28 DSGVO). Wir verarbeiten ihre Daten nur nach Ihren Weisungen, und Sie entscheiden, wie lange Pass sie aufbewahrt. Den Vertrag zur Auftragsverarbeitung senden wir auf Anfrage: Schreiben Sie an <a href="mailto:privacy@spectacast.com">privacy@spectacast.com</a>.</p>
+<div class="p-text"><p>Für die Personen Ihrer Veranstaltung sind Sie der Verantwortliche und wir Ihr Auftragsverarbeiter (Art. 28 DSGVO). Wir verarbeiten ihre Daten nur nach Ihren Weisungen. Den Vertrag zur Auftragsverarbeitung senden wir auf Anfrage: Schreiben Sie an <a href="mailto:privacy@spectacast.com">privacy@spectacast.com</a>.</p>
 <p>Wie lange jede Art von Daten aufbewahrt wird, steht in der <a href="/de/datenschutz/">Datenschutzerklärung</a>.</p></div>
 </section>
 <section class="p-row">

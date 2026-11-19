@@ -10,7 +10,7 @@ Write how many halls you have, when the event is and what each hall has to do: r
 
 ## Support
 
-For customers with a question or a fault. Say which program and version you use, what you did and what happened. The **Send report** button in each program sends us its logs, which makes the answer faster.
+For customers with a question or a fault. Say which program and version you use, what you did and what happened. If you can, attach the program's log: it makes the answer faster.
 
 <p class="mail"><a href="mailto:support@spectacast.com">support@spectacast.com</a></p>
 

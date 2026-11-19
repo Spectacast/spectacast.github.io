@@ -10,7 +10,7 @@ Scrivici quante sale hai, quando si tiene l'evento e cosa deve fare ogni sala: r
 
 ## Assistenza
 
-Per i clienti con una domanda o un guasto. Indica il programma e la versione che usi, cosa hai fatto e cosa è successo. Il pulsante **Invia rapporto** di ogni programma ci invia i suoi log, e la risposta arriva prima.
+Per i clienti con una domanda o un guasto. Indica il programma e la versione che usi, cosa hai fatto e cosa è successo. Se puoi, allega il log del programma: la risposta arriva prima.
 
 <p class="mail"><a href="mailto:support@spectacast.com">support@spectacast.com</a></p>
 

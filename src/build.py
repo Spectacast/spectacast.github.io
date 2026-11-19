@@ -103,7 +103,7 @@ TRADEMARKS = ('Zoom is a trademark of Zoom Communications, Inc. NDI is a registe
               'OBS Studio is a project of the OBS Project.')
 DATE = {'en': '18 November 2026', 'de': '18. November 2026', 'es': '18 de noviembre de 2026', 'it': '18 novembre 2026'}
 # A legal page changed after that day carries its own date.
-DATE_OF = {'privacy': {'en': '19 November 2026', 'de': '19. November 2026', 'es': '19 de noviembre de 2026', 'it': '19 novembre 2026'}}
+DATE_OF = {}
 
 MARK_SVG = ('<svg viewBox="140 80 250 340" aria-hidden="true"><path d="M290 116 H252 A68 68 0 0 0 252 252 H260 '
             'A68 68 0 0 1 260 388 H196" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round" '

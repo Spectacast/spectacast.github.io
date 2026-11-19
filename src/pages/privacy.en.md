@@ -72,7 +72,6 @@ Our server records each visit's IP address, page, date and browser in its access
 - **Paddle.com** (Merchant of Record): orders, payments, invoices, taxes.
 - **Hetzner Online GmbH**, Germany: hosting of Pass, the licence server and this website.
 - **Google** and **OpenAI**: speech to translate, as described above.
-- **Brevo** (Sendinblue SAS), France: sends the emails of your account and the badges that Pass emails to attendees.
 - **Porkbun, LLC**, United States: forwards email sent to our spectacast.com addresses to our mailbox.
 - Our accountant and lawyers, and public authorities where the law requires it.
 

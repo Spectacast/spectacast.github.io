@@ -6,7 +6,7 @@
 
 Director, Meet und der Mic-Empfänger sind Programme auf Ihren Saal-PCs. Bild, Ton und die Signale des Meetings laufen zwischen diesen PCs über das Netzwerk des Veranstaltungsorts, und Aufzeichnungen sind Dateien auf Ihren eigenen Festplatten. Wir erhalten nichts davon.
 
-Telefone als Mikrofone werden mit dem PC gekoppelt, mit dem sie sprechen, und ihr Ton ist auf dem Weg Ende-zu-Ende verschlüsselt.
+Telefone als Mikrofone werden mit dem PC gekoppelt, mit dem sie sprechen, und ihr Ton wird Ende-zu-Ende verschlüsselt übertragen.
 
 Das Online-Meeting selbst ist ein gewöhnliches Zoom-Meeting, auf Ihrem eigenen Zoom-Konto und zu den Bedingungen von Zoom.
 
@@ -14,18 +14,19 @@ Das Online-Meeting selbst ist ein gewöhnliches Zoom-Meeting, auf Ihrem eigenen 
 
 | Was | Wohin | Warum |
 |---|---|---|
-| **Lizenzprüfung:** der Lizenzschlüssel, eine zufällige Kennung des PCs, das Programm und seine Version, der Saal und ob er auf Sendung ist | Unser Lizenzserver in der Europäischen Union | Um zu prüfen, ob Ihr Plan aktiv ist und wie viele Säle in Gebrauch sind |
+| **Lizenzprüfung:** der Schlüssel des PCs, die Kennung, die Windows dem PC gibt (wir speichern nur einen Hash davon), der Name des PCs, die Programmversion und Tagessummen der Nutzung: Minuten auf Sendung, Translator-Minuten je Sprache, gescannte Badges | Unser Kontoserver in der Europäischen Union | Um zu prüfen, ob Ihr Plan aktiv ist, wie viele PCs in Gebrauch sind und wie viele Übersetzungsminuten verbraucht wurden |
 | **Ihr Konto:** Name, E-Mail-Adresse, Organisation, Land, Plan | Unser Kontoserver in der Europäischen Union | Um Ihr Konto und Ihre Lizenzen zu führen |
+| **Zoom-Anmeldung von Meet:** Ihr Zoom-Name, Ihre E-Mail-Adresse und die Berechtigung, Ihre Meetings zu hosten | Unser Server in der Europäischen Union | Damit Meet das Meeting auf Ihrem Zoom-Konto hosten kann; entfernt, wenn Sie Meet von Zoom trennen |
 | **Spectacast Pass:** Teilnehmer, Badges, Scans an den Eingängen, Anwesenheit | Unser Pass-Server in der Europäischen Union | Pass wird von uns für den Veranstalter gehostet |
-| **Spectacast Translator:** die zu übersetzende Sprache | Google oder OpenAI, je nachdem, welchen Dienst Sie für eine Sprache wählen | Der Dienst liefert die Übersetzung live zurück |
-| **Ein Bericht**, wenn Sie auf „Bericht senden“ klicken: die Protokolle und Versionen des Programms | Unser Server in der Europäischen Union | Um einen Fehler zu finden; innerhalb von 90 Tagen gelöscht |
+| **Spectacast Translator:** die zu übersetzende Sprache | Google oder OpenAI, je nachdem, welche Engine Sie für eine Sprache wählen | Die Engine liefert die Übersetzung live zurück |
+| **Translators Prüfung auf Sinnumkehr**, solange sie eingeschaltet ist: die Mitschrift der letzten Minute als Text | Google, oder Anthropic, wenn Sie dessen Schlüssel auf dem PC hinterlegen | Um die Stellen zu markieren, an denen die Übersetzung etwas anderes sagt als die sprechende Person |
 | **Zahlungen** | Paddle, das Spectacast als Merchant of Record verkauft | Paddle nimmt die Zahlung entgegen; wir sehen Ihre Kartennummer nie |
 
-Der Inhalt Ihrer Veranstaltung ist nie Teil der Lizenzprüfung. Die Website setzt keine Cookies und verwendet weder Analyse noch Werbung.
+Der Inhalt Ihrer Veranstaltung ist nie Teil der Lizenzprüfung. Diese Website setzt keine Cookies und verwendet weder Analyse noch Werbung; die Anmeldung bei Ihrem Konto oder bei Pass speichert ein Anmelde-Cookie, das dafür nötig ist.
 
 ## Wenn das Internet ausfällt
 
-Ein Saal, der die Verbindung verliert, läuft weiter: Eine bezahlte Lizenz funktioniert 14 Tage ohne Internet. Die Telefone an den Eingängen entscheiden bei Pass selbstständig weiter und senden ihre Scans, sobald das Netz wieder da ist.
+Die Säle und die Regie arbeiten über das Netzwerk des Veranstaltungsorts weiter, und eine bezahlte Lizenz funktioniert 14 Tage ohne Internet. Das Online-Meeting und die Übersetzung brauchen das Internet. Die Telefone an den Eingängen entscheiden bei Pass selbstständig weiter und senden ihre Scans, sobald das Netz wieder da ist.
 
 ## Wie die Daten geschützt sind
 
@@ -33,7 +34,7 @@ Ein Saal, der die Verbindung verliert, läuft weiter: Eine bezahlte Lizenz funkt
 - Passwörter werden nur als gesalzene Hashes gespeichert, nie im Klartext.
 - Die Server stehen in der Europäischen Union; Zugriff haben nur die Personen, die den Dienst betreiben.
 - Die Datenbanken von Pass und der Konten werden jede Nacht gesichert.
-- Sprache für die Dienste von Translator wird über eine verschlüsselte Verbindung gesendet, und nach ihren API-Bedingungen nutzen weder Google noch OpenAI sie zum Training ihrer allgemeinen Modelle.
+- Sprache für die Engines von Translator wird über eine verschlüsselte Verbindung gesendet, und nach ihren API-Bedingungen nutzen weder Google noch OpenAI sie zum Training ihrer allgemeinen Modelle.
 
 ## Wer für uns Daten verarbeitet
 
@@ -44,11 +45,11 @@ Ein Saal, der die Verbindung verliert, läuft weiter: Eine bezahlte Lizenz funkt
 | **Brevo (Sendinblue SAS)** | Versand der E-Mails Ihres Kontos und der Badges, die Pass per E-Mail an Teilnehmer schickt | Frankreich |
 | **Porkbun, LLC** | Weiterleitung von E-Mails an unsere spectacast.com-Adressen | Vereinigte Staaten |
 
-Paddle steht nicht auf dieser Liste, weil es Ihre Zahlungsdaten als eigener Verantwortlicher verarbeitet. Wenn Sie Translator mit Ihrem eigenen Schlüssel von Google oder OpenAI nutzen, schließen Sie den Vertrag direkt mit dem Dienst, und wir erhalten nichts.
+Paddle steht nicht auf dieser Liste, weil es Ihre Zahlungsdaten als eigenständiger Verantwortlicher verarbeitet. Wenn Sie Translator mit Ihrem eigenen Schlüssel von Google oder OpenAI nutzen, schließen Sie den Vertrag direkt mit der Engine, und wir erhalten nichts.
 
 ## Die Daten Ihrer Teilnehmer
 
-Für die Personen Ihrer Veranstaltung sind Sie der Verantwortliche und wir Ihr Auftragsverarbeiter (Art. 28 DSGVO). Wir verarbeiten ihre Daten nur nach Ihren Weisungen, und Sie entscheiden, wie lange Pass sie aufbewahrt. Den Vertrag zur Auftragsverarbeitung senden wir auf Anfrage: Schreiben Sie an [privacy@spectacast.com](mailto:privacy@spectacast.com).
+Für die Personen Ihrer Veranstaltung sind Sie der Verantwortliche und wir Ihr Auftragsverarbeiter (Art. 28 DSGVO). Wir verarbeiten ihre Daten nur nach Ihren Weisungen. Den Vertrag zur Auftragsverarbeitung senden wir auf Anfrage: Schreiben Sie an [privacy@spectacast.com](mailto:privacy@spectacast.com).
 
 Wie lange jede Art von Daten aufbewahrt wird, steht in der [Datenschutzerklärung]({{PRIVACY_URL}}).
 
