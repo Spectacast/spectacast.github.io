@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en" class="sc">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meet guide · Spectacast</title>
+<meta name="description" content="Spectacast Meet joins the online meeting from the hall PC and turns each participant, the gallery and each screen share into a video feed for the hall.">
+<link rel="canonical" href="https://spectacast.com/docs/meet/">
+<link rel="alternate" hreflang="en" href="https://spectacast.com/docs/meet/">
+<link rel="alternate" hreflang="de" href="https://spectacast.com/de/hilfe/meet/">
+<link rel="alternate" hreflang="es" href="https://spectacast.com/es/ayuda/meet/">
+<link rel="alternate" hreflang="it" href="https://spectacast.com/it/guida/meet/">
+<link rel="alternate" hreflang="x-default" href="https://spectacast.com/docs/meet/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Spectacast">
+<meta property="og:title" content="Meet guide · Spectacast">
+<meta property="og:description" content="Spectacast Meet joins the online meeting from the hall PC and turns each participant, the gallery and each screen share into a video feed for the hall.">
+<meta property="og:url" content="https://spectacast.com/docs/meet/">
+<meta property="og:image" content="https://spectacast.com/img/og/meet-interpreter-card-en.jpg">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/design/spectacast.css">
+<link rel="stylesheet" href="/site.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="site-head">
+    <a class="brand" href="/"><svg viewBox="140 80 250 340" aria-hidden="true"><path d="M290 116 H252 A68 68 0 0 0 252 252 H260 A68 68 0 0 1 260 388 H196" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/><circle cx="356" cy="116" r="27" fill="#ff3b30"/></svg>spectacast</a>
+    <nav aria-label="Main menu"><a class="nav-product" href="/#modules">Product</a><a href="/pricing/">Pricing</a><a href="/docs/" aria-current="page">Docs</a></nav>
+    <nav class="langs" aria-label="Language"><a href="/de/hilfe/meet/" hreflang="de" lang="de" aria-label="Deutsch">DE</a><a href="/es/ayuda/meet/" hreflang="es" lang="es" aria-label="Español">ES</a><a href="/it/guida/meet/" hreflang="it" lang="it" aria-label="Italiano">IT</a></nav>
+    <div class="cta"><a class="sc-btn sc-btn--primary" href="mailto:info@spectacast.com">Contact us</a></div>
+  </header>
+  <main class="doc guide">
+<nav class="doc-nav" aria-label="Docs"><p>Docs</p><ul><li><a href="/docs/">Overview</a></li><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/account-and-billing/">Account and billing</a></li><li><a href="/docs/director/">Director guide</a></li><li><a href="/docs/meet/" aria-current="page">Meet guide</a></li><li><a href="/docs/mic/">Mic guide</a></li><li><a href="/docs/translator/">Translator guide</a></li><li><a href="/docs/pass/">Pass guide</a></li></ul></nav>
+<article>
+<h1>Meet guide</h1>
+<p class="lede">Spectacast Meet joins the online meeting from the hall PC and turns each participant, the gallery and each screen share into a video feed for the hall.</p>
+
+<h2>What you need</h2>
+<ul>
+<li>A Windows PC in the hall, on the same network as the control room.</li>
+<li>A Zoom account that can host the meeting.</li>
+<li>OBS Studio on the same PC, or a mixer that receives NDI.</li>
+</ul>
+<h2>Install and sign in</h2>
+<ol>
+<li>Run Spectacast Setup on the hall PC and pick <strong>Hall PC</strong>. Setup installs what the hall PC runs, Meet among it, and shows a code to activate the PC as a hall PC under <strong>Plan and PCs</strong> in your account.</li>
+<li>Start Meet. Its control panel opens in its own window; the tray icon brings it back.</li>
+<li>Sign in with Zoom, and set the meeting the hall hosts under <strong>Settings</strong>: the meeting number, the name Meet shows in the meeting, and the microphone and speakers of the hall.</li>
+</ol>
+<p>Meet starts again by itself after a restart of the PC, with the same settings and outputs.</p>
+<h2>The control panel</h2>
+<table>
+<thead>
+<tr>
+<th>Tab</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Meeting</td>
+<td>start as host or join, leave or end, chat, mute everyone</td>
+</tr>
+<tr>
+<td>Participants</td>
+<td>mute, video, spotlight, hands, roles, rename, waiting room and breakout rooms, and a button per output to put someone on it</td>
+</tr>
+<tr>
+<td>Outputs</td>
+<td>how many feeds, and for each what it shows, at which resolution, with which sound</td>
+</tr>
+<tr>
+<td>Settings</td>
+<td>the meeting, the name, the audio devices, the Zoom sign-in, and the log</td>
+</tr>
+</tbody>
+</table>
+<h2>The feeds</h2>
+<p>Each output is an NDI source on the network. For each one, choose what it shows:</p>
+<ul>
+<li><strong>Participant:</strong> one person, chosen by name.</li>
+<li><strong>Active Speaker:</strong> whoever spoke last.</li>
+<li><strong>Spotlight:</strong> the spotlighted person, or a chosen person when nobody is.</li>
+<li><strong>Zoom view:</strong> the meeting laid out the way Zoom does, without names or Zoom's graphics: the share while someone shares, otherwise the gallery or the speaker.</li>
+</ul>
+<p>Then choose the picture (the camera, or the screen share when there is one) and the sound: that person's, the whole meeting, or the meeting without one person, for a return feed the room already hears. In OBS, add the feed as an NDI source.</p>
+<h2>From the control room</h2>
+<p>In Director, Meet appears on <strong>Devices</strong> like any other device, and the channel strip on <strong>Panels</strong> shows who is in the meeting, who is talking and who is waiting. From there the operator admits people, mutes, and puts a speaker on an output, without touching the hall PC.</p>
+<h2>Interpretation channels</h2>
+<p>When the meeting has interpretation, Meet can join as the interpreter of a language and speak with a voice from <a href="/docs/translator/">Translator</a>, or from a person in the booth. Listeners choose the language in Zoom as usual.</p>
+<figure class="shot "><img src="/img/screens/meet-interpreter-card-en.webp" alt="The card Meet shows on an interpretation channel: the language and &quot;Live interpretation&quot;" width="1280" height="720"></figure>
+
+<h2>When something does not work</h2>
+<ul>
+<li><strong>"Cannot connect to Zoom (no internet?)":</strong> Meet keeps trying every minute; check the hall PC's internet.</li>
+<li><strong>An output is black:</strong> nobody matches it, for example the chosen person has left. Pick another person, or set the output to Active Speaker.</li>
+<li><strong>What Zoom answered:</strong> the log is at the bottom of <strong>Settings</strong>.</li>
+</ul>
+</article>
+  </main>
+  <footer class="site-foot">
+    <p><a href="/pricing/">Pricing</a> · <a href="/docs/">Docs</a> · <a href="/downloads/">Downloads</a> · <a href="/terms/">Terms</a> · <a href="/refunds/">Refund Policy</a> · <a href="/privacy/">Privacy</a> · <a href="mailto:info@spectacast.com">info@spectacast.com</a></p>
+    <p>English · <a href="/de/hilfe/meet/" hreflang="de" lang="de">Deutsch</a> · <a href="/es/ayuda/meet/" hreflang="es" lang="es">Español</a> · <a href="/it/guida/meet/" hreflang="it" lang="it">Italiano</a></p>
+    <p>© 2026 Spectacast · spectacast.com</p>
+    <p>Zoom is a trademark of Zoom Communications, Inc. NDI is a registered trademark of Vizrt NDI AB. OBS Studio is a project of the OBS Project.</p>
+  </footer>
+</div>
+</body>
+</html>

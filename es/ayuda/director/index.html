@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es" class="sc">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guía de Director · Spectacast</title>
+<meta name="description" content="De un PC de control nuevo a tu primera sala al aire en una media hora.">
+<link rel="canonical" href="https://spectacast.com/es/ayuda/director/">
+<link rel="alternate" hreflang="en" href="https://spectacast.com/docs/director/">
+<link rel="alternate" hreflang="de" href="https://spectacast.com/de/hilfe/director/">
+<link rel="alternate" hreflang="es" href="https://spectacast.com/es/ayuda/director/">
+<link rel="alternate" hreflang="it" href="https://spectacast.com/it/guida/director/">
+<link rel="alternate" hreflang="x-default" href="https://spectacast.com/docs/director/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Spectacast">
+<meta property="og:title" content="Guía de Director · Spectacast">
+<meta property="og:description" content="De un PC de control nuevo a tu primera sala al aire en una media hora.">
+<meta property="og:url" content="https://spectacast.com/es/ayuda/director/">
+<meta property="og:image" content="https://spectacast.com/img/og/director-channels-es.jpg">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/design/spectacast.css">
+<link rel="stylesheet" href="/site.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="site-head">
+    <a class="brand" href="/es/"><svg viewBox="140 80 250 340" aria-hidden="true"><path d="M290 116 H252 A68 68 0 0 0 252 252 H260 A68 68 0 0 1 260 388 H196" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/><circle cx="356" cy="116" r="27" fill="#ff3b30"/></svg>spectacast</a>
+    <nav aria-label="Menú principal"><a class="nav-product" href="/es/#modules">Producto</a><a href="/es/precios/">Precios</a><a href="/es/ayuda/" aria-current="page">Ayuda</a></nav>
+    <nav class="langs" aria-label="Idioma"><a href="/docs/director/" hreflang="en" lang="en" aria-label="English">EN</a><a href="/de/hilfe/director/" hreflang="de" lang="de" aria-label="Deutsch">DE</a><a href="/it/guida/director/" hreflang="it" lang="it" aria-label="Italiano">IT</a></nav>
+    <div class="cta"><a class="sc-btn sc-btn--primary" href="mailto:info@spectacast.com">Contacto</a></div>
+  </header>
+  <main class="doc guide">
+<nav class="doc-nav" aria-label="Ayuda"><p>Ayuda</p><ul><li><a href="/es/ayuda/">Resumen</a></li><li><a href="/es/ayuda/primeros-pasos/">Primeros pasos</a></li><li><a href="/es/ayuda/cuenta-y-facturacion/">Cuenta y facturación</a></li><li><a href="/es/ayuda/director/" aria-current="page">Guía de Director</a></li><li><a href="/es/ayuda/meet/">Guía de Meet</a></li><li><a href="/es/ayuda/mic/">Guía de Mic</a></li><li><a href="/es/ayuda/translator/">Guía de Translator</a></li><li><a href="/es/ayuda/pass/">Guía de Pass</a></li></ul></nav>
+<article>
+<h1>Guía de Director</h1>
+<p class="lede">De un PC de control nuevo a tu primera sala al aire en una media hora.</p>
+
+<p>Necesitas un PC con Windows 10 u 11 para la sala de control y, para cada sala, un PC con Windows con OBS Studio y Spectacast Meet. Todos los PC deben estar en la misma red.</p>
+<h2>1. Instalar en el PC de control</h2>
+<ol>
+<li>Descarga Spectacast Setup desde <a href="/es/descargas/">Descargas</a> y descomprímelo.</li>
+<li>Haz doble clic en <strong>Setup.cmd</strong>. Windows pide permisos de administrador.</li>
+<li>Elige <strong>1, Control room</strong>.</li>
+<li>Setup instala Director, abre sus puertos en el cortafuegos y lo inicia. Luego muestra un código como <code>K7QM-3XRB</code>.</li>
+<li>Inicia sesión en <a href="/account/">spectacast.com/account</a>, abre tu organización y escribe el código en <strong>Plan y PC</strong> antes de una hora. El PC ya tiene su licencia y, si aún no tienes plan, su prueba.</li>
+</ol>
+<p>Director se inicia ahora cada vez que inicias sesión en este PC. Sus archivos están en <code>C:\ProgramData\Spectacast\director</code>: el show en <code>shows\default.json</code>, los ajustes en <code>.env</code> y el registro en <code>logs\engine.log</code>.</p>
+<h2>2. Abrir el panel</h2>
+<p>Abre <strong>http://127.0.0.1:4700</strong> en un navegador de ese PC. El menú de idioma arriba a la derecha cambia entre English, Deutsch, Español e Italiano.</p>
+<p>Para abrir el panel desde una tableta u otro PC, añade estas dos líneas a <code>C:\ProgramData\Spectacast\director\.env</code>, y luego cierra la sesión y vuelve a entrar:</p>
+<pre><code>HOST=0.0.0.0
+PIN=&lt;un PIN tuyo&gt;
+</code></pre>
+<p>Sin PIN, Director no escucha en la red. Quien abre el panel escribe el PIN una vez. Para alguien que debe llevar el show sin cambiarlo, añade <code>OPERATOR_PIN=&lt;otro PIN&gt;</code>: abre solo los paneles.</p>
+<h2>3. Empezar con el show de ejemplo</h2>
+<ol>
+<li>En el menú del show, arriba, haz clic en <strong>Ejemplo…</strong>.</li>
+<li>Elige el ejemplo con dos salas.</li>
+<li>Confirma con <strong>Usarlo</strong>. Esto sustituye el show vacío.</li>
+</ol>
+<p>El ejemplo tiene dos salas, Sala A y Sala B, cada una con Meet y OBS. También tiene una tira de canal por sala, el Wall con ambas pantallas y la regla que pone una sala al aire. Sus direcciones (192.168.1.11 y .12) son de ejemplo; las cambias en el paso siguiente.</p>
+<h2>4. Tu primera sala</h2>
+<p>En el PC de sala:</p>
+<ol>
+<li>En OBS, abre <strong>Herramientas &gt; Configuración del servidor WebSocket</strong>, activa el servidor, deja el puerto 4455 y pon una contraseña.</li>
+<li>Inicia Spectacast Meet e inicia sesión con Zoom.</li>
+</ol>
+<p>En el panel, en la página <strong>Dispositivos</strong>:</p>
+<ol>
+<li>Haz clic en <strong>buscar</strong> en <strong>Buscar en la red</strong>. Director muestra los OBS y Meet que encuentra en la red.</li>
+<li>Abre la tarjeta OBS de Sala A y pon su dirección en <code>ws://&lt;PC de sala&gt;:4455</code>. Luego abre la tarjeta de la reunión de Sala A y pon como host la dirección del PC de sala. Cada tarjeta se pone verde cuando el dispositivo responde.</li>
+<li>Pon la contraseña de OBS en <code>.env</code> como <code>OBS_PASSWORD=&lt;contraseña&gt;</code>, y luego cierra la sesión y vuelve a entrar.</li>
+<li>Si tienes una sola sala, quita los dos dispositivos de Sala B, o déjalos: aparecen desconectados y no hacen nada.</li>
+</ol>
+<h2>5. Al aire</h2>
+<p>Abre <strong>Paneles</strong>. La tira de canal de Sala A muestra su imagen, su reunión y si está al aire.</p>
+<ol>
+<li>Inicia la reunión desde la tira.</li>
+<li>Pulsa <strong>Streaming</strong> en la tira: OBS empieza a emitir a la dirección configurada en OBS.</li>
+<li>Pulsa <strong>Streaming</strong> otra vez para parar. <strong>Iniciar todos los streams</strong> pone todas las salas al aire a la vez.</li>
+</ol>
+<p>En la prueba, dos salas pueden estar al aire 20 minutos seguidos, y las imágenes llevan una marca de prueba. A los 20 minutos las salas salen del aire; reinicia Director (cierra la sesión y vuelve a entrar) para probar otra vez.</p>
+<figure class="shot "><img src="/img/screens/director-channels-es.webp" alt="Spectacast Director con cuatro salas una al lado de otra: quién está en cada reunión, la sala de espera, Preview y Program" width="1600" height="1000"></figure>
+
+<h2>Lo siguiente</h2>
+<ul>
+<li><strong>Más salas:</strong> añade el OBS y el Meet de cada sala en <strong>Dispositivos</strong> y copia una tira de canal en <strong>Paneles</strong>.</li>
+<li><strong>Reglas:</strong> en <strong>Reglas</strong>, cada regla dice qué la activa y qué hace, y muestra cuándo se ejecutó por última vez. Parte de las reglas del ejemplo y cámbialas.</li>
+<li><strong>Mic y Translator:</strong> aparecen en <strong>Dispositivos</strong> como cualquier otro dispositivo. Consulta las guías de <a href="/es/ayuda/mic/">Mic</a> y <a href="/es/ayuda/translator/">Translator</a>.</li>
+</ul>
+<h2>Cuando algo no funciona</h2>
+<ul>
+<li><strong>Una tarjeta sigue roja:</strong> la dirección está mal, o el cortafuegos del PC de sala bloquea el puerto. Haz clic en la tarjeta para ver el último error.</li>
+<li><strong>«sin licencia para salir al aire»:</strong> activa el PC (paso 1.5). La cabecera dice por qué no hay licencia.</li>
+<li><strong>Nada en http://127.0.0.1:4700:</strong> mira <code>C:\ProgramData\Spectacast\director\logs\engine.log</code>.</li>
+<li><strong>Deshacer el ejemplo:</strong> <strong>Nuevo…</strong> en el menú del show empieza uno vacío; <strong>Exportar</strong> guarda antes el que tienes.</li>
+</ul>
+</article>
+  </main>
+  <footer class="site-foot">
+    <p><a href="/es/precios/">Precios</a> · <a href="/es/ayuda/">Ayuda</a> · <a href="/es/descargas/">Descargas</a> · <a href="/es/terminos/">Términos</a> · <a href="/es/reembolsos/">Reembolsos</a> · <a href="/es/privacidad/">Privacidad</a> · <a href="mailto:info@spectacast.com">info@spectacast.com</a></p>
+    <p><a href="/docs/director/" hreflang="en" lang="en">English</a> · <a href="/de/hilfe/director/" hreflang="de" lang="de">Deutsch</a> · Español · <a href="/it/guida/director/" hreflang="it" lang="it">Italiano</a></p>
+    <p>© 2026 Spectacast · spectacast.com</p>
+    <p>Zoom es una marca de Zoom Communications, Inc. NDI es una marca registrada de Vizrt NDI AB. OBS Studio es un proyecto de OBS Project.</p>
+  </footer>
+</div>
+</body>
+</html>
