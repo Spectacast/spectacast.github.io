@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" class="sc">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pass guide · Spectacast</title>
+<meta name="description" content="Set up an event in Pass, turn phones into door scanners, and get the attendance afterwards. Pass runs in the browser, at spectacast.com/pass.">
+<link rel="canonical" href="https://spectacast.com/docs/pass/">
+<link rel="alternate" hreflang="en" href="https://spectacast.com/docs/pass/">
+<link rel="alternate" hreflang="de" href="https://spectacast.com/de/hilfe/pass/">
+<link rel="alternate" hreflang="es" href="https://spectacast.com/es/ayuda/pass/">
+<link rel="alternate" hreflang="it" href="https://spectacast.com/it/guida/pass/">
+<link rel="alternate" hreflang="x-default" href="https://spectacast.com/docs/pass/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Spectacast">
+<meta property="og:title" content="Pass guide · Spectacast">
+<meta property="og:description" content="Set up an event in Pass, turn phones into door scanners, and get the attendance afterwards. Pass runs in the browser, at spectacast.com/pass.">
+<meta property="og:url" content="https://spectacast.com/docs/pass/">
+<meta property="og:image" content="https://spectacast.com/img/og/pass-door-welcome-light.jpg">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/design/spectacast.css">
+<link rel="stylesheet" href="/site.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="site-head">
+    <a class="brand" href="/"><svg viewBox="140 80 250 340" aria-hidden="true"><path d="M290 116 H252 A68 68 0 0 0 252 252 H260 A68 68 0 0 1 260 388 H196" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/><circle cx="356" cy="116" r="27" fill="#ff3b30"/></svg>spectacast</a>
+    <nav aria-label="Main menu"><a class="nav-product" href="/#modules">Product</a><a href="/pricing/">Pricing</a><a href="/docs/" aria-current="page">Docs</a></nav>
+    <nav class="langs" aria-label="Language"><a href="/de/hilfe/pass/" hreflang="de" lang="de" aria-label="Deutsch">DE</a><a href="/es/ayuda/pass/" hreflang="es" lang="es" aria-label="Español">ES</a><a href="/it/guida/pass/" hreflang="it" lang="it" aria-label="Italiano">IT</a></nav>
+    <div class="cta"><a class="sc-btn sc-btn--primary" href="mailto:info@spectacast.com">Contact us</a></div>
+  </header>
+  <main class="doc guide">
+<nav class="doc-nav" aria-label="Docs"><p>Docs</p><ul><li><a href="/docs/">Overview</a></li><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/account-and-billing/">Account and billing</a></li><li><a href="/docs/director/">Director guide</a></li><li><a href="/docs/meet/">Meet guide</a></li><li><a href="/docs/mic/">Mic guide</a></li><li><a href="/docs/translator/">Translator guide</a></li><li><a href="/docs/pass/" aria-current="page">Pass guide</a></li></ul></nav>
+<article>
+<h1>Pass guide</h1>
+<p class="lede">Set up an event in Pass, turn phones into door scanners, and get the attendance afterwards. Pass runs in the browser, at spectacast.com/pass.</p>
+
+<h2>1. The event</h2>
+<p>Sign in at <a href="/pass/">spectacast.com/pass</a> with your Spectacast account and create a <strong>New event</strong>. Then, under <strong>Setup</strong>:</p>
+<ul>
+<li><strong>Zones:</strong> the halls and rooms where presence is counted.</li>
+<li><strong>Doors:</strong> one per entrance, each in a zone.</li>
+<li><strong>Sessions:</strong> the program. Mark with <strong>Counts</strong> the sessions that count towards attendance.</li>
+<li><strong>Categories:</strong> the kinds of attendees, such as Faculty, Delegate or Staff.</li>
+</ul>
+<p>The checklist at the top says what is still missing.</p>
+<h2>2. Attendees and badges</h2>
+<p>Under <strong>Attendees</strong>:</p>
+<ul>
+<li><strong>+ Person</strong> adds one by hand, for example someone who registers at the desk.</li>
+<li><strong>Import</strong> reads a CSV, or Excel saved as CSV, with headers such as First name, Last name, Email, Category and ID (Italian and German headers work too). Other columns are kept as fields that rules and messages can use. Importing again updates the same people.</li>
+<li><strong>Feeds</strong> pull the list from a registration site by themselves, and <strong>Keys for other systems</strong> let a site push its registrations. Ask your registration site's provider, or us, to connect them.</li>
+</ul>
+<p>Each attendee gets a badge with a QR code. <strong>Print all badges</strong> prints them, on your own background if you upload one, or <strong>Email badges</strong> sends each person theirs.</p>
+<h2>3. The doors</h2>
+<p>At each door, use a phone or tablet, or a keyboard scanner plugged into a laptop.</p>
+<ol>
+<li>Under <strong>Setup</strong>, <strong>Doors</strong>, press <strong>Set up a phone</strong> for the door.</li>
+<li>Point the phone's camera at the QR code on the screen and open the link. The door app opens on that door, with nothing to type.</li>
+<li>Add it to the home screen, so it opens like an app.</li>
+</ol>
+<p>The door answers each badge at once, full-screen in green, amber or red, with a sound and the person's name. When the network drops, the door keeps deciding by itself and sends its scans when the network is back.</p>
+<figure class="shot phone"><picture><source srcset="/img/screens/pass-door-welcome-dark.webp" media="(prefers-color-scheme: dark)"><img src="/img/screens/pass-door-welcome-light.webp" alt="The door app on a phone: a green screen with &quot;Welcome Sofia&quot;" width="780" height="1688" loading="lazy"></picture></figure>
+
+<p>A <strong>keyboard scanner</strong> works on the same door page: set it to send Enter after each code. A scanner in storage mode, at a door without a screen, is read out later under <strong>Upload scans</strong>.</p>
+<h2>4. Rules</h2>
+<p>What a door says is decided by <strong>Rules</strong>, tried from the top; the first that matches decides. A new event starts with sensible ones: ignore a double read, refuse unknown or cancelled badges, warn when someone is already inside, refuse a full room, welcome everyone else. Add your own, for example a room for one category only, and try any badge with <strong>Test a scan</strong> before the doors open.</p>
+<h2>5. During the event</h2>
+<p><strong>Live</strong> shows how many people are in each room, the latest scans, the door phones and whether they are online. Anything a door decided while offline differently from the server is listed under <strong>To review</strong>.</p>
+<h2>6. Afterwards</h2>
+<p><strong>Reports</strong> give, per person, the minutes and the percentage spent in each session, ready for Excel. Under <strong>Certificates</strong>, set what a person needs for a certificate of attendance; those who meet it download theirs.</p>
+</article>
+  </main>
+  <footer class="site-foot">
+    <p><a href="/pricing/">Pricing</a> · <a href="/docs/">Docs</a> · <a href="/downloads/">Downloads</a> · <a href="/terms/">Terms</a> · <a href="/refunds/">Refund Policy</a> · <a href="/privacy/">Privacy</a> · <a href="mailto:info@spectacast.com">info@spectacast.com</a></p>
+    <p>English · <a href="/de/hilfe/pass/" hreflang="de" lang="de">Deutsch</a> · <a href="/es/ayuda/pass/" hreflang="es" lang="es">Español</a> · <a href="/it/guida/pass/" hreflang="it" lang="it">Italiano</a></p>
+    <p>© 2026 Spectacast · spectacast.com</p>
+    <p>Zoom is a trademark of Zoom Communications, Inc. NDI is a registered trademark of Vizrt NDI AB. OBS Studio is a project of the OBS Project.</p>
+  </footer>
+</div>
+</body>
+</html>

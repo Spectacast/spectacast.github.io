@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es" class="sc">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guía de Meet · Spectacast</title>
+<meta name="description" content="Spectacast Meet se une a la reunión en línea desde el PC de sala y convierte a cada participante, la galería y cada pantalla compartida en una señal de vídeo para la sala.">
+<link rel="canonical" href="https://spectacast.com/es/ayuda/meet/">
+<link rel="alternate" hreflang="en" href="https://spectacast.com/docs/meet/">
+<link rel="alternate" hreflang="de" href="https://spectacast.com/de/hilfe/meet/">
+<link rel="alternate" hreflang="es" href="https://spectacast.com/es/ayuda/meet/">
+<link rel="alternate" hreflang="it" href="https://spectacast.com/it/guida/meet/">
+<link rel="alternate" hreflang="x-default" href="https://spectacast.com/docs/meet/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Spectacast">
+<meta property="og:title" content="Guía de Meet · Spectacast">
+<meta property="og:description" content="Spectacast Meet se une a la reunión en línea desde el PC de sala y convierte a cada participante, la galería y cada pantalla compartida en una señal de vídeo para la sala.">
+<meta property="og:url" content="https://spectacast.com/es/ayuda/meet/">
+<meta property="og:image" content="https://spectacast.com/img/og/meet-interpreter-card-es.jpg">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/design/spectacast.css">
+<link rel="stylesheet" href="/site.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="site-head">
+    <a class="brand" href="/es/"><svg viewBox="140 80 250 340" aria-hidden="true"><path d="M290 116 H252 A68 68 0 0 0 252 252 H260 A68 68 0 0 1 260 388 H196" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/><circle cx="356" cy="116" r="27" fill="#ff3b30"/></svg>spectacast</a>
+    <nav aria-label="Menú principal"><a class="nav-product" href="/es/#modules">Producto</a><a href="/es/precios/">Precios</a><a href="/es/ayuda/" aria-current="page">Ayuda</a></nav>
+    <nav class="langs" aria-label="Idioma"><a href="/docs/meet/" hreflang="en" lang="en" aria-label="English">EN</a><a href="/de/hilfe/meet/" hreflang="de" lang="de" aria-label="Deutsch">DE</a><a href="/it/guida/meet/" hreflang="it" lang="it" aria-label="Italiano">IT</a></nav>
+    <div class="cta"><a class="sc-btn sc-btn--primary" href="mailto:info@spectacast.com">Contacto</a></div>
+  </header>
+  <main class="doc guide">
+<nav class="doc-nav" aria-label="Ayuda"><p>Ayuda</p><ul><li><a href="/es/ayuda/">Resumen</a></li><li><a href="/es/ayuda/primeros-pasos/">Primeros pasos</a></li><li><a href="/es/ayuda/cuenta-y-facturacion/">Cuenta y facturación</a></li><li><a href="/es/ayuda/director/">Guía de Director</a></li><li><a href="/es/ayuda/meet/" aria-current="page">Guía de Meet</a></li><li><a href="/es/ayuda/mic/">Guía de Mic</a></li><li><a href="/es/ayuda/translator/">Guía de Translator</a></li><li><a href="/es/ayuda/pass/">Guía de Pass</a></li></ul></nav>
+<article>
+<h1>Guía de Meet</h1>
+<p class="lede">Spectacast Meet se une a la reunión en línea desde el PC de sala y convierte a cada participante, la galería y cada pantalla compartida en una señal de vídeo para la sala.</p>
+
+<h2>Qué necesitas</h2>
+<ul>
+<li>Un PC con Windows en la sala, en la misma red que la sala de control. También sirve un Mac, sin canales de interpretación.</li>
+<li>Una cuenta de Zoom que pueda organizar la reunión.</li>
+<li>OBS Studio en el mismo PC, o un mezclador que reciba NDI.</li>
+</ul>
+<h2>Instalar e iniciar sesión</h2>
+<ol>
+<li>Ejecuta Spectacast Setup en el PC de sala y elige <strong>Hall PC</strong>. Setup instala lo que ejecuta el PC de sala, Meet incluido, y muestra un código para activar el PC como PC de sala en tu cuenta, en <strong>Plan y PC</strong>.</li>
+<li>Inicia Meet. Su panel de control se abre en su propia ventana; el icono de la bandeja lo vuelve a mostrar.</li>
+<li>Inicia sesión con Zoom y, en <strong>Ajustes</strong>, indica la reunión que organiza la sala: el número de reunión, el nombre que Meet muestra en la reunión, y el micrófono y los altavoces de la sala.</li>
+</ol>
+<p>Meet se vuelve a iniciar solo tras un reinicio del PC, con los mismos ajustes y salidas.</p>
+<h2>El panel de control</h2>
+<table>
+<thead>
+<tr>
+<th>Pestaña</th>
+<th>Qué hace</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reunión</td>
+<td>iniciar como anfitrión o unirse, salir o terminar, chat, silenciar a todos</td>
+</tr>
+<tr>
+<td>Participantes</td>
+<td>silenciar, vídeo, destacar, manos, roles, renombrar, sala de espera y salas para grupos, y un botón por salida para poner a alguien en ella</td>
+</tr>
+<tr>
+<td>Salidas</td>
+<td>cuántas señales y, para cada una, qué muestra, con qué resolución y con qué sonido</td>
+</tr>
+<tr>
+<td>Ajustes</td>
+<td>la reunión, el nombre, los dispositivos de audio, el inicio de sesión de Zoom y el registro</td>
+</tr>
+</tbody>
+</table>
+<h2>Las señales</h2>
+<p>Cada salida es una fuente NDI en la red. Para cada una, elige qué muestra:</p>
+<ul>
+<li><strong>Participante:</strong> una persona, elegida por su nombre.</li>
+<li><strong>Orador activo:</strong> quien habló por última vez.</li>
+<li><strong>Destacado:</strong> la persona destacada, o una persona elegida cuando no hay nadie destacado.</li>
+<li><strong>Vista de Zoom:</strong> la reunión dispuesta como en Zoom, sin nombres ni gráficos de Zoom: la pantalla compartida mientras alguien comparte, si no la galería o el orador.</li>
+</ul>
+<p>Después elige la imagen (la cámara, o la pantalla compartida cuando la hay) y el sonido: el de esa persona, el de toda la reunión, o la reunión sin una persona, para un retorno que la sala ya oye. En OBS, añade la señal como fuente NDI.</p>
+<h2>Desde la sala de control</h2>
+<p>En Director, Meet aparece en <strong>Dispositivos</strong> como cualquier otro dispositivo, y la tira de canal en <strong>Paneles</strong> muestra quién está en la reunión, quién habla y quién espera. Desde ahí el operador admite personas, silencia y pone a un orador en una salida, sin tocar el PC de sala.</p>
+<h2>Canales de interpretación</h2>
+<p>Cuando la reunión tiene interpretación, Meet puede unirse como intérprete de un idioma y hablar con una voz de <a href="/es/ayuda/translator/">Translator</a> o de una persona en la cabina. Los oyentes eligen el idioma en Zoom como siempre. Los canales de interpretación necesitan Meet en Windows.</p>
+<figure class="shot "><img src="/img/screens/meet-interpreter-card-es.webp" alt="La tarjeta que Meet muestra en un canal de interpretación: el idioma e «Interpretación en vivo»" width="1280" height="720"></figure>
+
+<h2>Cuando algo no funciona</h2>
+<ul>
+<li><strong>«Cannot connect to Zoom (no internet?)»:</strong> Meet lo reintenta cada minuto; revisa el internet del PC de sala.</li>
+<li><strong>Una salida está en negro:</strong> nadie corresponde a ella, por ejemplo porque la persona elegida se ha ido. Elige otra persona, o pon la salida en Orador activo.</li>
+<li><strong>Qué respondió Zoom:</strong> el registro está al final de <strong>Ajustes</strong>.</li>
+</ul>
+</article>
+  </main>
+  <footer class="site-foot">
+    <p><a href="/es/precios/">Precios</a> · <a href="/es/ayuda/">Ayuda</a> · <a href="/es/descargas/">Descargas</a> · <a href="/es/terminos/">Términos</a> · <a href="/es/reembolsos/">Reembolsos</a> · <a href="/es/privacidad/">Privacidad</a> · <a href="mailto:info@spectacast.com">info@spectacast.com</a></p>
+    <p><a href="/docs/meet/" hreflang="en" lang="en">English</a> · <a href="/de/hilfe/meet/" hreflang="de" lang="de">Deutsch</a> · Español · <a href="/it/guida/meet/" hreflang="it" lang="it">Italiano</a></p>
+    <p>© 2026 Spectacast · spectacast.com</p>
+    <p>Zoom es una marca de Zoom Communications, Inc. NDI es una marca registrada de Vizrt NDI AB. OBS Studio es un proyecto de OBS Project.</p>
+  </footer>
+</div>
+</body>
+</html>

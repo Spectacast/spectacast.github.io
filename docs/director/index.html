@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en" class="sc">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Director guide · Spectacast</title>
+<meta name="description" content="From a new control-room PC to your first hall on air in about half an hour.">
+<link rel="canonical" href="https://spectacast.com/docs/director/">
+<link rel="alternate" hreflang="en" href="https://spectacast.com/docs/director/">
+<link rel="alternate" hreflang="de" href="https://spectacast.com/de/hilfe/director/">
+<link rel="alternate" hreflang="es" href="https://spectacast.com/es/ayuda/director/">
+<link rel="alternate" hreflang="it" href="https://spectacast.com/it/guida/director/">
+<link rel="alternate" hreflang="x-default" href="https://spectacast.com/docs/director/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Spectacast">
+<meta property="og:title" content="Director guide · Spectacast">
+<meta property="og:description" content="From a new control-room PC to your first hall on air in about half an hour.">
+<meta property="og:url" content="https://spectacast.com/docs/director/">
+<meta property="og:image" content="https://spectacast.com/img/og/director-channels-en.jpg">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/design/spectacast.css">
+<link rel="stylesheet" href="/site.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="site-head">
+    <a class="brand" href="/"><svg viewBox="140 80 250 340" aria-hidden="true"><path d="M290 116 H252 A68 68 0 0 0 252 252 H260 A68 68 0 0 1 260 388 H196" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/><circle cx="356" cy="116" r="27" fill="#ff3b30"/></svg>spectacast</a>
+    <nav aria-label="Main menu"><a class="nav-product" href="/#modules">Product</a><a href="/pricing/">Pricing</a><a href="/docs/" aria-current="page">Docs</a></nav>
+    <nav class="langs" aria-label="Language"><a href="/de/hilfe/director/" hreflang="de" lang="de" aria-label="Deutsch">DE</a><a href="/es/ayuda/director/" hreflang="es" lang="es" aria-label="Español">ES</a><a href="/it/guida/director/" hreflang="it" lang="it" aria-label="Italiano">IT</a></nav>
+    <div class="cta"><a class="sc-btn sc-btn--primary" href="mailto:info@spectacast.com">Contact us</a></div>
+  </header>
+  <main class="doc guide">
+<nav class="doc-nav" aria-label="Docs"><p>Docs</p><ul><li><a href="/docs/">Overview</a></li><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/account-and-billing/">Account and billing</a></li><li><a href="/docs/director/" aria-current="page">Director guide</a></li><li><a href="/docs/meet/">Meet guide</a></li><li><a href="/docs/mic/">Mic guide</a></li><li><a href="/docs/translator/">Translator guide</a></li><li><a href="/docs/pass/">Pass guide</a></li></ul></nav>
+<article>
+<h1>Director guide</h1>
+<p class="lede">From a new control-room PC to your first hall on air in about half an hour.</p>
+
+<p>You need a Windows 10 or 11 PC for the control room and, for each hall, a Windows PC with OBS Studio and Spectacast Meet. All the PCs must be on the same network.</p>
+<h2>1. Install on the control-room PC</h2>
+<ol>
+<li>Download Spectacast Setup from <a href="/downloads/">Downloads</a> and unzip it.</li>
+<li>Double-click <strong>Setup.cmd</strong>. Windows asks for administrator rights.</li>
+<li>Pick <strong>1, Control room</strong>.</li>
+<li>Setup installs Director, opens its firewall ports and starts it. It then shows a code such as <code>K7QM-3XRB</code>.</li>
+<li>Sign in at <a href="/account/">spectacast.com/account</a>, open your organisation and type the code under <strong>Plan and PCs</strong> within an hour. The PC now has its licence, and its trial if you have no plan yet.</li>
+</ol>
+<p>Director now starts every time you log on to this PC. Its files are in <code>C:\ProgramData\Spectacast\director</code>: the show in <code>shows\default.json</code>, the settings in <code>.env</code> and the log in <code>logs\engine.log</code>.</p>
+<h2>2. Open the dashboard</h2>
+<p>Open <strong>http://127.0.0.1:4700</strong> in a browser on that PC. The language menu at the top right switches between English, Deutsch, Español and Italiano.</p>
+<p>To open the dashboard from a tablet or another PC, add these two lines to <code>C:\ProgramData\Spectacast\director\.env</code>, then log off and on again:</p>
+<p><code>HOST=0.0.0.0
+PIN=&lt;a PIN of your own&gt;</code></p>
+<p>Director refuses to listen on the network without a PIN. Whoever opens the dashboard types the PIN once. For someone who should run the show without changing it, add <code>OPERATOR_PIN=&lt;another PIN&gt;</code>: that opens the panels only.</p>
+<h2>3. Start from the example show</h2>
+<ol>
+<li>In the show menu at the top, click <strong>Example…</strong>.</li>
+<li>Pick the example with two rooms.</li>
+<li>Confirm with <strong>Use it</strong>. This replaces the empty show.</li>
+</ol>
+<p>The example has two halls, Room A and Room B, each with Meet and OBS. It also has a channel strip per hall, the Wall with both screens, and the rule that puts a hall on air. Its addresses (192.168.1.11 and .12) are placeholders, which you change in the next step.</p>
+<h2>4. Your first hall</h2>
+<p>On the hall PC:</p>
+<ol>
+<li>In OBS, open <strong>Tools &gt; WebSocket Server Settings</strong>, turn the server on, keep port 4455 and set a password.</li>
+<li>Start Spectacast Meet and sign in with Zoom.</li>
+</ol>
+<p>On the dashboard, on the <strong>Devices</strong> page:</p>
+<ol>
+<li>Click <strong>scan</strong> under <strong>Scan the network</strong>. Director lists the OBS and Meet it finds on the network.</li>
+<li>Open the OBS card of Room A and set its address to <code>ws://&lt;hall PC&gt;:4455</code>. Then open the meeting card of Room A and set its host to the hall PC's address. Each card turns green once the device answers.</li>
+<li>Put the OBS password in <code>.env</code> as <code>OBS_PASSWORD=&lt;password&gt;</code>, then log off and on again.</li>
+<li>If you have one hall, remove Room B's two devices, or leave them: they show as offline and do nothing.</li>
+</ol>
+<h2>5. On air</h2>
+<p>Open <strong>Panels</strong>. Room A's channel strip shows its picture, its meeting and its on-air state.</p>
+<ol>
+<li>Start the meeting from the strip.</li>
+<li>Press <strong>on air</strong>: OBS starts streaming to the address set in OBS.</li>
+<li>Press <strong>on air</strong> again to stop.</li>
+</ol>
+<p>In the trial, two halls can be on air for 20 minutes per run, and the pictures carry a trial mark. After 20 minutes the halls go off air; restart Director (log off and on) to try again.</p>
+<figure class="shot "><img src="/img/screens/director-channels-en.webp" alt="Director with four halls side by side: who is in each meeting, the waiting room, Preview and Program" width="1600" height="1000"></figure>
+
+<h2>Next</h2>
+<ul>
+<li><strong>More halls:</strong> add each hall's OBS and Meet on <strong>Devices</strong>, then copy a channel strip on <strong>Panels</strong>.</li>
+<li><strong>Rules:</strong> on <strong>Rules</strong>, each rule says what starts it and what it does, and shows when it last ran. Start from the example's rules and change them.</li>
+<li><strong>Mic and Translator:</strong> they appear on <strong>Devices</strong> like any other device. See the <a href="/docs/mic/">Mic</a> and <a href="/docs/translator/">Translator</a> guides.</li>
+</ul>
+<h2>When something does not work</h2>
+<ul>
+<li><strong>A card stays red:</strong> the address is wrong, or the hall PC's firewall blocks the port. Click the card to see the last error.</li>
+<li><strong>"no licence to go on air":</strong> activate the PC (step 1.5). The header says why there is no licence.</li>
+<li><strong>Nothing on http://127.0.0.1:4700:</strong> look at <code>C:\ProgramData\Spectacast\director\logs\engine.log</code>.</li>
+<li><strong>Undo the example:</strong> <strong>New…</strong> in the show menu starts an empty show; <strong>Export</strong> saves the one you have first.</li>
+</ul>
+</article>
+  </main>
+  <footer class="site-foot">
+    <p><a href="/pricing/">Pricing</a> · <a href="/docs/">Docs</a> · <a href="/downloads/">Downloads</a> · <a href="/terms/">Terms</a> · <a href="/refunds/">Refund Policy</a> · <a href="/privacy/">Privacy</a> · <a href="mailto:info@spectacast.com">info@spectacast.com</a></p>
+    <p>English · <a href="/de/hilfe/director/" hreflang="de" lang="de">Deutsch</a> · <a href="/es/ayuda/director/" hreflang="es" lang="es">Español</a> · <a href="/it/guida/director/" hreflang="it" lang="it">Italiano</a></p>
+    <p>© 2026 Spectacast · spectacast.com</p>
+    <p>Zoom is a trademark of Zoom Communications, Inc. NDI is a registered trademark of Vizrt NDI AB. OBS Studio is a project of the OBS Project.</p>
+  </footer>
+</div>
+</body>
+</html>

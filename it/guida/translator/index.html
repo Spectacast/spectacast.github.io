@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="it" class="sc">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guida di Translator · Spectacast</title>
+<meta name="description" content="Translator ascolta chi parla e dice ciò che dice in un&#x27;altra lingua, dal vivo, su qualsiasi uscita audio. Un Translator, detto corsia, per lingua.">
+<link rel="canonical" href="https://spectacast.com/it/guida/translator/">
+<link rel="alternate" hreflang="en" href="https://spectacast.com/docs/translator/">
+<link rel="alternate" hreflang="de" href="https://spectacast.com/de/hilfe/translator/">
+<link rel="alternate" hreflang="es" href="https://spectacast.com/es/ayuda/translator/">
+<link rel="alternate" hreflang="it" href="https://spectacast.com/it/guida/translator/">
+<link rel="alternate" hreflang="x-default" href="https://spectacast.com/docs/translator/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Spectacast">
+<meta property="og:title" content="Guida di Translator · Spectacast">
+<meta property="og:description" content="Translator ascolta chi parla e dice ciò che dice in un&#x27;altra lingua, dal vivo, su qualsiasi uscita audio. Un Translator, detto corsia, per lingua.">
+<meta property="og:url" content="https://spectacast.com/it/guida/translator/">
+<meta property="og:image" content="https://spectacast.com/img/og/translator-light.jpg">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/design/spectacast.css">
+<link rel="stylesheet" href="/site.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="site-head">
+    <a class="brand" href="/it/"><svg viewBox="140 80 250 340" aria-hidden="true"><path d="M290 116 H252 A68 68 0 0 0 252 252 H260 A68 68 0 0 1 260 388 H196" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/><circle cx="356" cy="116" r="27" fill="#ff3b30"/></svg>spectacast</a>
+    <nav aria-label="Menu principale"><a class="nav-product" href="/it/#modules">Prodotto</a><a href="/it/prezzi/">Prezzi</a><a href="/it/guida/" aria-current="page">Guida</a></nav>
+    <nav class="langs" aria-label="Lingua"><a href="/docs/translator/" hreflang="en" lang="en" aria-label="English">EN</a><a href="/de/hilfe/translator/" hreflang="de" lang="de" aria-label="Deutsch">DE</a><a href="/es/ayuda/translator/" hreflang="es" lang="es" aria-label="Español">ES</a></nav>
+    <div class="cta"><a class="sc-btn sc-btn--primary" href="mailto:info@spectacast.com">Contattaci</a></div>
+  </header>
+  <main class="doc guide">
+<nav class="doc-nav" aria-label="Guida"><p>Guida</p><ul><li><a href="/it/guida/">Panoramica</a></li><li><a href="/it/guida/primi-passi/">Primi passi</a></li><li><a href="/it/guida/account-e-fatturazione/">Account e fatturazione</a></li><li><a href="/it/guida/director/">Guida di Director</a></li><li><a href="/it/guida/meet/">Guida di Meet</a></li><li><a href="/it/guida/mic/">Guida di Mic</a></li><li><a href="/it/guida/translator/" aria-current="page">Guida di Translator</a></li><li><a href="/it/guida/pass/">Guida di Pass</a></li></ul></nav>
+<article>
+<h1>Guida di Translator</h1>
+<p class="lede">Translator ascolta chi parla e dice ciò che dice in un'altra lingua, dal vivo, su qualsiasi uscita audio. Un Translator, detto corsia, per lingua.</p>
+
+<h2>Cosa ti serve</h2>
+<ul>
+<li>Un PC Windows in sala o in regia, installato con Spectacast Setup e attivato nel tuo account.</li>
+<li>Un piano con Translator: i suoi minuti arrivano con la licenza del PC, senza configurare nulla. Oppure una tua chiave Google Gemini o OpenAI.</li>
+<li>Un ingresso con la voce di chi parla: un microfono, il mixer, un telefono tramite <a href="/it/guida/mic/">Mic</a> o un segnale via NDI.</li>
+</ul>
+<h2>La pagina di controllo</h2>
+<p>Ogni corsia ha la sua pagina di controllo, su <strong>http://127.0.0.1:4720</strong> per la prima corsia di quel PC. Scegli:</p>
+<ol>
+<li>l'<strong>ingresso</strong>: una scheda audio, o una sorgente NDI come un partecipante di <a href="/it/guida/meet/">Meet</a>;</li>
+<li>l'<strong>uscita</strong>: una scheda audio, un cavo virtuale verso OBS o il mixer, o il canale di interpretariato di Meet;</li>
+<li>la <strong>lingua</strong> in cui parlare;</li>
+</ol>
+<p>e premi <strong>Avvia</strong>. La pagina mostra ogni frase due volte, come sentita e come detta, mentre viene pronunciata.</p>
+<figure class="shot "><picture><source srcset="/img/screens/translator-dark.webp" media="(prefers-color-scheme: dark)"><img src="/img/screens/translator-light.webp" alt="La pagina di controllo di Translator: quello che è stato sentito in italiano e quello che è stato detto in inglese, riga per riga" width="1440" height="900"></picture></figure>
+
+<h2>Motori</h2>
+<p>Il motore decide come suona Translator e quanto velocemente risponde. Google Gemini è quello predefinito; OpenAI è l'altro. I motori <strong>interprete</strong> lavorano come un'interprete di congresso: dai loro l'<strong>Argomento</strong> della sessione e un glossario di nomi e termini tecnici, uno per riga, e li usano.</p>
+<h2>Senso capovolto</h2>
+<p>Mentre una corsia lavora, un secondo modello legge ciò che è stato sentito accanto a ciò che è stato detto e segna in rosso i punti in cui la traduzione dice altro: un «non» perso, un numero, sinistra per destra, un nome. Non cambia nulla di ciò che dice la corsia; serve a chi la segue. La casella <strong>Avvisa quando il senso si capovolge</strong> lo spegne.</p>
+<h2>Nella riunione</h2>
+<p>Per dare una lingua a chi ascolta nella riunione online, imposta l'uscita della corsia sul canale di interpretariato di Meet. Meet entra come interprete di quella lingua, e chi ascolta sceglie la lingua in Zoom. Vedi <a href="/it/guida/meet/">Meet</a>.</p>
+<h2>Dopo un riavvio</h2>
+<p>Una corsia ricorda cosa stava facendo. Dopo un riavvio del PC torna con lo stesso ingresso, la stessa uscita e la stessa lingua, e riparte se era avviata; riprova per dieci minuti finché manca una scheda audio o la rete.</p>
+<h2>Minuti</h2>
+<p>Ogni minuto in cui una corsia parla conta, per lingua. I piani con Translator includono 300 minuti per sala; il tuo account mostra quanti ne hai usati. Vedi <a href="/it/guida/account-e-fatturazione/">Account e fatturazione</a>.</p>
+</article>
+  </main>
+  <footer class="site-foot">
+    <p><a href="/it/prezzi/">Prezzi</a> · <a href="/it/guida/">Guida</a> · <a href="/it/download/">Download</a> · <a href="/it/termini/">Termini</a> · <a href="/it/rimborsi/">Rimborsi</a> · <a href="/it/privacy/">Privacy</a> · <a href="mailto:info@spectacast.com">info@spectacast.com</a></p>
+    <p><a href="/docs/translator/" hreflang="en" lang="en">English</a> · <a href="/de/hilfe/translator/" hreflang="de" lang="de">Deutsch</a> · <a href="/es/ayuda/translator/" hreflang="es" lang="es">Español</a> · Italiano</p>
+    <p>© 2026 Spectacast · spectacast.com</p>
+    <p>Zoom è un marchio di Zoom Communications, Inc. NDI è un marchio registrato di Vizrt NDI AB. OBS Studio è un progetto di OBS Project.</p>
+  </footer>
+</div>
+</body>
+</html>

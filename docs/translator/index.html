@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" class="sc">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Translator guide · Spectacast</title>
+<meta name="description" content="Translator listens to a speaker and says what they say in another language, live, on any audio output. One Translator, called a lane, per language.">
+<link rel="canonical" href="https://spectacast.com/docs/translator/">
+<link rel="alternate" hreflang="en" href="https://spectacast.com/docs/translator/">
+<link rel="alternate" hreflang="de" href="https://spectacast.com/de/hilfe/translator/">
+<link rel="alternate" hreflang="es" href="https://spectacast.com/es/ayuda/translator/">
+<link rel="alternate" hreflang="it" href="https://spectacast.com/it/guida/translator/">
+<link rel="alternate" hreflang="x-default" href="https://spectacast.com/docs/translator/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Spectacast">
+<meta property="og:title" content="Translator guide · Spectacast">
+<meta property="og:description" content="Translator listens to a speaker and says what they say in another language, live, on any audio output. One Translator, called a lane, per language.">
+<meta property="og:url" content="https://spectacast.com/docs/translator/">
+<meta property="og:image" content="https://spectacast.com/img/og/translator-light.jpg">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/design/spectacast.css">
+<link rel="stylesheet" href="/site.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="site-head">
+    <a class="brand" href="/"><svg viewBox="140 80 250 340" aria-hidden="true"><path d="M290 116 H252 A68 68 0 0 0 252 252 H260 A68 68 0 0 1 260 388 H196" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/><circle cx="356" cy="116" r="27" fill="#ff3b30"/></svg>spectacast</a>
+    <nav aria-label="Main menu"><a class="nav-product" href="/#modules">Product</a><a href="/pricing/">Pricing</a><a href="/docs/" aria-current="page">Docs</a></nav>
+    <nav class="langs" aria-label="Language"><a href="/de/hilfe/translator/" hreflang="de" lang="de" aria-label="Deutsch">DE</a><a href="/es/ayuda/translator/" hreflang="es" lang="es" aria-label="Español">ES</a><a href="/it/guida/translator/" hreflang="it" lang="it" aria-label="Italiano">IT</a></nav>
+    <div class="cta"><a class="sc-btn sc-btn--primary" href="mailto:info@spectacast.com">Contact us</a></div>
+  </header>
+  <main class="doc guide">
+<nav class="doc-nav" aria-label="Docs"><p>Docs</p><ul><li><a href="/docs/">Overview</a></li><li><a href="/docs/getting-started/">Getting started</a></li><li><a href="/docs/account-and-billing/">Account and billing</a></li><li><a href="/docs/director/">Director guide</a></li><li><a href="/docs/meet/">Meet guide</a></li><li><a href="/docs/mic/">Mic guide</a></li><li><a href="/docs/translator/" aria-current="page">Translator guide</a></li><li><a href="/docs/pass/">Pass guide</a></li></ul></nav>
+<article>
+<h1>Translator guide</h1>
+<p class="lede">Translator listens to a speaker and says what they say in another language, live, on any audio output. One Translator, called a lane, per language.</p>
+
+<h2>What you need</h2>
+<ul>
+<li>A Windows PC in the hall or the control room, installed by Spectacast Setup and activated in your account.</li>
+<li>A plan with Translator: its minutes come with the PC's licence, with nothing to set up. Or your own Google Gemini or OpenAI key.</li>
+<li>An input with the speaker's voice: a microphone, the mixer, a phone through <a href="/docs/mic/">Mic</a>, or a feed over NDI.</li>
+</ul>
+<h2>The control page</h2>
+<p>Each lane has its own control page, at <strong>http://127.0.0.1:4720</strong> for the first lane on that PC. Pick:</p>
+<ol>
+<li>the <strong>input</strong>: a sound card, or an NDI source such as one participant from <a href="/docs/meet/">Meet</a>;</li>
+<li>the <strong>output</strong>: a sound card, a virtual cable into OBS or the mixer, or Meet's interpreter channel;</li>
+<li>the <strong>language</strong> to speak;</li>
+</ol>
+<p>then press <strong>Start</strong>. The page shows each sentence twice, as heard and as said, while it is spoken.</p>
+<figure class="shot "><picture><source srcset="/img/screens/translator-dark.webp" media="(prefers-color-scheme: dark)"><img src="/img/screens/translator-light.webp" alt="The Translator control page: what was heard in Italian and what was said in English, line by line" width="1440" height="900"></picture></figure>
+
+<h2>Engines</h2>
+<p>The engine decides how Translator sounds and how fast it answers. Google Gemini is the default; OpenAI is the other. The <strong>interpreter</strong> engines act as a congress interpreter: give them the session's <strong>Topic</strong>, and a glossary of names and technical terms, one per line, and they use them.</p>
+<h2>Flagged meaning</h2>
+<p>While a lane runs, a second model reads what was heard beside what was said and flags in red the places where the translation says something different: a dropped "not", a number, left for right, a name. It changes nothing in what the lane says; it is for whoever watches the lane. The box <strong>Warn when the meaning flips</strong> turns it off.</p>
+<h2>In the meeting</h2>
+<p>To give remote listeners a language in Zoom, set the lane's output to Meet's interpreter channel. Meet joins as that language's interpreter, and listeners pick the language in Zoom. See <a href="/docs/meet/">Meet</a>.</p>
+<h2>After a restart</h2>
+<p>A lane remembers what it was doing. After a restart of the PC it comes back with the same input, output and language, and starts again if it was running, trying for ten minutes while a sound card or the network is not there yet.</p>
+<h2>Minutes</h2>
+<p>Every minute a lane speaks counts, per language. Plans with Translator include 300 minutes per hall; your account shows how many you have used. See <a href="/docs/account-and-billing/">Account and billing</a>.</p>
+</article>
+  </main>
+  <footer class="site-foot">
+    <p><a href="/pricing/">Pricing</a> · <a href="/docs/">Docs</a> · <a href="/downloads/">Downloads</a> · <a href="/terms/">Terms</a> · <a href="/refunds/">Refund Policy</a> · <a href="/privacy/">Privacy</a> · <a href="mailto:info@spectacast.com">info@spectacast.com</a></p>
+    <p>English · <a href="/de/hilfe/translator/" hreflang="de" lang="de">Deutsch</a> · <a href="/es/ayuda/translator/" hreflang="es" lang="es">Español</a> · <a href="/it/guida/translator/" hreflang="it" lang="it">Italiano</a></p>
+    <p>© 2026 Spectacast · spectacast.com</p>
+    <p>Zoom is a trademark of Zoom Communications, Inc. NDI is a registered trademark of Vizrt NDI AB. OBS Studio is a project of the OBS Project.</p>
+  </footer>
+</div>
+</body>
+</html>

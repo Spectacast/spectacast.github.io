@@ -52,24 +52,42 @@ PRODUCTS = ('director', 'meet', 'mic', 'translator', 'pass')
 PRODUCT_DIR = {'en': 'products/', 'de': 'de/produkte/', 'es': 'es/productos/', 'it': 'it/prodotti/'}
 for _p in PRODUCTS:
     PAGES[_p] = {l: f'{d}{_p}/' for l, d in PRODUCT_DIR.items()}
-FOOTER_LINKS = ('pricing', 'terms', 'refunds', 'privacy')
+# The docs: a start page, then the guides in the order a new customer needs them. Their sources are
+# src/pages/docs-<name>.<lang>.md ('docs' itself is docs.<lang>.md).
+DOC_DIR = {'en': 'docs/', 'de': 'de/hilfe/', 'es': 'es/ayuda/', 'it': 'it/guida/'}
+DOC_SLUGS = {
+    'start': {'en': 'getting-started', 'de': 'erste-schritte', 'es': 'primeros-pasos', 'it': 'primi-passi'},
+    'account': {'en': 'account-and-billing', 'de': 'konto-und-abrechnung', 'es': 'cuenta-y-facturacion',
+                'it': 'account-e-fatturazione'},
+}
+DOCS = ('docs', 'docs-start', 'docs-account') + tuple(f'docs-{p}' for p in PRODUCTS)
+PAGES['docs'] = dict(DOC_DIR)
+for _d in DOCS[1:]:
+    _name = _d[5:]
+    PAGES[_d] = {l: f'{d}{DOC_SLUGS.get(_name, {}).get(l, _name)}/' for l, d in DOC_DIR.items()}
+PAGES['downloads'] = {'en': 'downloads/', 'de': 'de/downloads/', 'es': 'es/descargas/', 'it': 'it/download/'}
+FOOTER_LINKS = ('pricing', 'docs', 'downloads', 'terms', 'refunds', 'privacy')
 # Paths served by other programs behind the same domain: links to them are not checked here.
 OTHER_APPS = ('/account', '/pass', '/program', '/meet')
 
 LABELS = {
-    'en': {'terms': 'Terms', 'refunds': 'Refund Policy', 'privacy': 'Privacy', 'pricing': 'Pricing',
+    'en': {'overview': 'Overview', 'docs': 'Docs', 'downloads': 'Downloads', 'guides': 'Guides', 'soon': 'Downloads open on launch day of version 1.0. Until then, write to us and we set up Spectacast with you.',
+           'terms': 'Terms', 'refunds': 'Refund Policy', 'privacy': 'Privacy', 'pricing': 'Pricing',
            'product': 'Product', 'contact': 'Contact us', 'signin': 'Sign in', 'trial': 'Start free trial',
            'menu': 'Main menu', 'plans': 'Included in', 'see_pricing': 'See pricing', 'more': 'More about', 'products': 'Products', 'langs': 'Language',
            'draft': 'Draft: the highlighted parts are still to be filled in.'},
-    'de': {'terms': 'AGB', 'refunds': 'Erstattungen', 'privacy': 'Datenschutz', 'pricing': 'Preise',
+    'de': {'overview': 'Überblick', 'docs': 'Hilfe', 'downloads': 'Downloads', 'guides': 'Anleitungen', 'soon': 'Die Downloads öffnen am Tag der Veröffentlichung von Version 1.0. Bis dahin schreiben Sie uns, und wir richten Spectacast mit Ihnen ein.',
+           'terms': 'AGB', 'refunds': 'Erstattungen', 'privacy': 'Datenschutz', 'pricing': 'Preise',
            'product': 'Produkt', 'contact': 'Kontakt', 'signin': 'Anmelden', 'trial': 'Kostenlos testen',
            'menu': 'Hauptmenü', 'plans': 'Enthalten in', 'see_pricing': 'Preise ansehen', 'more': 'Mehr über', 'products': 'Produkte', 'langs': 'Sprache',
            'draft': 'Entwurf: Die markierten Stellen sind noch zu ergänzen.'},
-    'es': {'terms': 'Términos', 'refunds': 'Reembolsos', 'privacy': 'Privacidad', 'pricing': 'Precios',
+    'es': {'overview': 'Resumen', 'docs': 'Ayuda', 'downloads': 'Descargas', 'guides': 'Guías', 'soon': 'Las descargas se abren el día del lanzamiento de la versión 1.0. Hasta entonces, escríbenos y configuramos Spectacast contigo.',
+           'terms': 'Términos', 'refunds': 'Reembolsos', 'privacy': 'Privacidad', 'pricing': 'Precios',
            'product': 'Producto', 'contact': 'Contacto', 'signin': 'Iniciar sesión', 'trial': 'Prueba gratis',
            'menu': 'Menú principal', 'plans': 'Incluido en', 'see_pricing': 'Ver precios', 'more': 'Más sobre', 'products': 'Productos', 'langs': 'Idioma',
            'draft': 'Borrador: las partes resaltadas aún están por completar.'},
-    'it': {'terms': 'Termini', 'refunds': 'Rimborsi', 'privacy': 'Privacy', 'pricing': 'Prezzi',
+    'it': {'overview': 'Panoramica', 'docs': 'Guida', 'downloads': 'Download', 'guides': 'Guide', 'soon': 'I download aprono il giorno del lancio della versione 1.0. Fino ad allora scrivici e configuriamo Spectacast insieme.',
+           'terms': 'Termini', 'refunds': 'Rimborsi', 'privacy': 'Privacy', 'pricing': 'Prezzi',
            'product': 'Prodotto', 'contact': 'Contattaci', 'signin': 'Accedi', 'trial': 'Prova gratis',
            'menu': 'Menu principale', 'plans': 'Incluso in', 'see_pricing': 'Vedi i prezzi', 'more': 'Scopri', 'products': 'Prodotti', 'langs': 'Lingua',
            'draft': 'Bozza: le parti evidenziate sono ancora da completare.'},
@@ -123,8 +141,10 @@ def alternates(key):
 def header(lang, key):
     l = LABELS[lang]
     current = ' aria-current="page"' if key == 'pricing' else ''
+    in_docs = ' aria-current="page"' if key in DOCS else ''
     nav = [f'<a class="nav-product" href="{url(lang, "home")}#modules">{l["product"]}</a>',
-           f'<a href="{url(lang, "pricing")}"{current}>{l["pricing"]}</a>']
+           f'<a href="{url(lang, "pricing")}"{current}>{l["pricing"]}</a>',
+           f'<a href="{url(lang, "docs")}"{in_docs}>{l["docs"]}</a>']
     langs = ''.join(f'<a href="{url(x, key)}" hreflang="{x}" lang="{x}" aria-label="{NAMES[x]}">{x.upper()}</a>'
                     for x in LANGS if x != lang)
     if LAUNCHED:
@@ -279,6 +299,33 @@ def product_blocks(lang, md):
     return md.replace('{{cta}}', f'\n<div class="cta-row">{cta}</div>\n')
 
 
+def doc_title(lang, key):
+    if key == 'docs':
+        return LABELS[lang]['overview']
+    first = (HERE / 'pages' / f'{key}.{lang}.md').read_text().split('\n', 1)[0]
+    return first.lstrip('# ').strip()
+
+
+def doc_nav(lang, key):
+    """The list of docs beside each docs page, the current one marked."""
+    items = []
+    for k in DOCS:
+        cur = ' aria-current="page"' if k == key else ''
+        items.append(f'<li><a href="{url(lang, k)}"{cur}>{html.escape(doc_title(lang, k), quote=False)}</a></li>')
+    return (f'<nav class="doc-nav" aria-label="{LABELS[lang]["docs"]}">'
+            f'<p>{LABELS[lang]["docs"]}</p><ul>{"".join(items)}</ul></nav>')
+
+
+def downloads_block(lang):
+    """Before the launch, the downloads say when they open; on launch day the table of files appears."""
+    l = LABELS[lang]
+    if not LAUNCHED:
+        return (f'\n<div class="notice"><p>{l["soon"]}</p>'
+                f'<p><a class="sc-btn sc-btn--primary" href="mailto:{CONTACT}">{l["contact"]}</a></p></div>\n')
+    # Launch day: the links to the files go here, and the check refuses the placeholder until they do.
+    return '\n<p>[links to the files]</p>\n'
+
+
 def md_page(lang, key):
     v = dict(C.VALUES[lang])
     v['date'] = DATE[lang]
@@ -288,8 +335,9 @@ def md_page(lang, key):
     v['MINUTE_GROSS'] = euro(lang, gross(lang, C.MINUTE, 3), 3)
     assert v['MINUTE_PRICE'] == euro(lang, C.MINUTE, 2), v['MINUTE_PRICE']
     md = (HERE / 'pages' / f'{key}.{lang}.md').read_text()
-    if key in PRODUCTS:
+    if key in PRODUCTS or key in DOCS:
         md = product_blocks(lang, md)
+    md = md.replace('{{downloads}}', downloads_block(lang))
     md = re.sub(r'\{\{(\w+)\}\}', lambda m: v[m.group(1)], md)
     body = mark(markdown.markdown(md, extensions=['tables']))
     if key == 'pricing':
@@ -304,6 +352,9 @@ def md_page(lang, key):
     if 'class="todo"' in body:
         body = f'<p class="draft-note">{LABELS[lang]["draft"]}</p>\n' + body
     main = 'pricing' if key == 'pricing' else 'product' if key in PRODUCTS else 'doc'
+    if key in DOCS:
+        main = 'doc guide'
+        body = f'{doc_nav(lang, key)}\n<article>\n{body}\n</article>'
     return frame(lang, key, title, description, body, main)
 
 
