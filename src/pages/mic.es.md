@@ -6,7 +6,7 @@
 
 ## Un micrófono en cada bolsillo
 
-Instala la app gratuita Spectacast Mic en Android o iPhone, entra en el canal de la sala y habla. La app muestra si se te oye y qué tal es la conexión, con un botón grande para silenciar. Cuando llega una pregunta del público, cualquier teléfono de la sala se convierte en el micrófono.
+Con la app gratuita Spectacast Mic para Android y iPhone, en las tiendas de apps a partir de la versión 1.0, entras en el canal de la sala y hablas. La app muestra si se te oye y qué tal es la conexión, con un botón grande para silenciar. Cuando llega una pregunta del público, cualquier teléfono de la sala se convierte en el micrófono.
 
 ## Intercomunicador para el equipo
 

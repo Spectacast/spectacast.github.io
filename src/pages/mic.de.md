@@ -6,7 +6,7 @@
 
 ## Ein Mikrofon in jeder Tasche
 
-Installieren Sie die kostenlose App Spectacast Mic auf Android oder iPhone, treten Sie dem Kanal des Saals bei und sprechen Sie. Die App zeigt, ob man Sie hört und wie gut die Verbindung ist, mit einer großen Taste zum Stummschalten. Kommt eine Frage aus dem Publikum, wird jedes Telefon im Saal zum Mikrofon.
+Mit der kostenlosen App Spectacast Mic für Android und iPhone, in den App-Stores ab Version 1.0, treten Sie dem Kanal des Saals bei und sprechen. Die App zeigt, ob man Sie hört und wie gut die Verbindung ist, mit einer großen Taste zum Stummschalten. Kommt eine Frage aus dem Publikum, wird jedes Telefon im Saal zum Mikrofon.
 
 ## Intercom für das Team
 

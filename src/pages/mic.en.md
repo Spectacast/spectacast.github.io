@@ -6,7 +6,7 @@
 
 ## A microphone in every pocket
 
-Install the free Spectacast Mic app on Android or iPhone, join the hall's channel, and talk. The app shows whether you can be heard and how good the connection is, with one large button to mute. When a question comes from the floor, any phone in the room becomes the microphone.
+With the free Spectacast Mic app for Android and iPhone, in the app stores from version 1.0, you join the hall's channel and talk. The app shows whether you can be heard and how good the connection is, with one large button to mute. When a question comes from the floor, any phone in the room becomes the microphone.
 
 ## Talkback for the crew
 
