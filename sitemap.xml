@@ -532,4 +532,60 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://spectacast.com/es/descargas/"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://spectacast.com/it/download/"/>
   </url>
+  <url>
+    <loc>https://spectacast.com/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spectacast.com/contact/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://spectacast.com/de/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://spectacast.com/es/contacto/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://spectacast.com/it/contatti/"/>
+  </url>
+  <url>
+    <loc>https://spectacast.com/de/kontakt/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spectacast.com/contact/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://spectacast.com/de/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://spectacast.com/es/contacto/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://spectacast.com/it/contatti/"/>
+  </url>
+  <url>
+    <loc>https://spectacast.com/es/contacto/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spectacast.com/contact/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://spectacast.com/de/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://spectacast.com/es/contacto/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://spectacast.com/it/contatti/"/>
+  </url>
+  <url>
+    <loc>https://spectacast.com/it/contatti/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spectacast.com/contact/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://spectacast.com/de/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://spectacast.com/es/contacto/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://spectacast.com/it/contatti/"/>
+  </url>
+  <url>
+    <loc>https://spectacast.com/security/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spectacast.com/security/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://spectacast.com/de/sicherheit/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://spectacast.com/es/seguridad/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://spectacast.com/it/sicurezza/"/>
+  </url>
+  <url>
+    <loc>https://spectacast.com/de/sicherheit/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spectacast.com/security/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://spectacast.com/de/sicherheit/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://spectacast.com/es/seguridad/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://spectacast.com/it/sicurezza/"/>
+  </url>
+  <url>
+    <loc>https://spectacast.com/es/seguridad/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spectacast.com/security/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://spectacast.com/de/sicherheit/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://spectacast.com/es/seguridad/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://spectacast.com/it/sicurezza/"/>
+  </url>
+  <url>
+    <loc>https://spectacast.com/it/sicurezza/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spectacast.com/security/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://spectacast.com/de/sicherheit/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://spectacast.com/es/seguridad/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://spectacast.com/it/sicurezza/"/>
+  </url>
 </urlset>
