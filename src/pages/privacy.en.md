@@ -11,7 +11,7 @@ This policy explains what personal data Spectacast handles, why, and what your r
 ## In short
 
 - Most of Spectacast runs on our customers' own computers. The video, audio and meetings of an event stay there, and we do not receive them.
-- Two parts send data to the internet: **Spectacast Pass**, which we host, and **Spectacast Translator**, which sends speech to an outside AI engine.
+- Three parts send data to the internet: **Spectacast Pass**, which we host, **Spectacast Translator**, which sends speech to an outside AI engine, and **Spectacast Meet**, which signs in to your Zoom account through our server.
 - For data about the people at an event (attendees, speakers), **the event organiser is the controller and we act as their processor** (art. 28 GDPR).
 - We do not sell personal data, show advertising or use tracking cookies.
 
@@ -27,9 +27,9 @@ This policy explains what personal data Spectacast handles, why, and what your r
 
 ## 2. The licence check (Director, Meet, Mic receiver, Translator)
 
-The installed programs contact our licence server when they start and from time to time. They send the licence key, a random identifier for the computer, the program and its version, and the hall it is assigned to. Our server sees the computer's IP address. We use this to check that the plan is active and how many halls are in use (contract, art. 6.1.b) and keep the log for 12 months. The programs also report when they are on air, without any content of the event. When a refund or a payment dispute is opened for your order, we may give Paddle a summary of this log, such as the computers activated and the hours in use, to show whether the plan was used (legitimate interest, art. 6.1.f).
+The installed programs contact our licence server when they start and from time to time. They send the computer's key, the identifier Windows gives the computer (we store only a hash of it), the computer's name and the program version. Our server sees the computer's IP address. We use this to check that the plan is active and how many halls are in use (contract, art. 6.1.b) and keep the log for 12 months. Once a day they also report totals of use, without any content of the event: minutes on air, Translator minutes per language and badges scanned. When a refund or a payment dispute is opened for your order, we may give Paddle a summary of this log, such as the computers activated and the hours in use, to show whether the plan was used (legitimate interest, art. 6.1.f).
 
-When you press "Send report" in a program, it sends us its logs and versions so we can find a fault. Logs can contain names of devices, meeting participants and hall staff. We use them only for that support case and delete them within 90 days.
+When you sign Spectacast Meet in to Zoom, the sign-in passes through our server. It stores your Zoom name and email, your Zoom user and account numbers, and the authorisation Zoom gives Meet to host your meetings, so that the hall computer can host the meeting on your account (contract, art. 6.1.b). We delete them when you disconnect Meet from Zoom.
 
 ## 3. Spectacast Pass: attendee data
 
@@ -57,6 +57,8 @@ Translator listens to a microphone, a hall feed or a meeting and gives back a li
 
 The engine returns translated audio and a written transcript. Translator shows the transcript on the operator's screen and keeps it in the program's log on the hall computer; it does not send audio or transcripts to us.
 
+While the check for flipped meaning is switched on, Translator also sends the written transcript of the last minute to a text model, which flags the places where the translation says something different from the speaker: a model of Google or, when the customer has set an Anthropic key on the computer, of Anthropic (Anthropic, PBC). The check can be switched off for each lane.
+
 When the plan includes translation minutes, the program uses **our** engine account: the engine processes the speech as our sub-processor, and **we act as processor for the event organiser**, who is the controller of the speakers' voices. When the customer uses **its own** engine keys, the customer contracts with the engine directly and we receive nothing.
 
 What the engines do with it: under their API terms as published on 17 November 2026, neither Google nor OpenAI uses this API data to train its general models. Both keep it for a limited time to detect abuse, then delete it: OpenAI up to 30 days, Google up to 55 days. We keep the optional request logging of our Google project switched off. Their servers may be outside the EU (including the United States); transfers rely on the EU-US Data Privacy Framework and the European Commission's Standard Contractual Clauses.
@@ -65,13 +67,14 @@ Speech can contain personal data, including health information in medical talks 
 
 ## 5. The website spectacast.com
 
-Our server records each visit's IP address, page, date and browser in its access log, to keep the site secure and working (legitimate interest, art. 6.1.f), and deletes the log after 14 days. The site sets no cookies and uses no analytics or advertising. The Pass admin pages store a sign-in token in your browser, which is needed for them to work.
+Our server records each visit's IP address, page, date and browser in its access log, to keep the site secure and working (legitimate interest, art. 6.1.f), and deletes the log after 14 days. The site sets no cookies and uses no analytics or advertising. Your account and the Pass admin pages store a sign-in cookie in your browser, which is needed for them to work.
 
 ## 6. Who else receives data
 
 - **Paddle.com** (Merchant of Record): orders, payments, invoices, taxes.
 - **Hetzner Online GmbH**, Germany: hosting of Pass, the licence server and this website.
 - **Google** and **OpenAI**: speech to translate, as described above.
+- **Brevo** (Sendinblue SAS), France: sends the emails of your account and the badges that Pass emails to attendees.
 - **Porkbun, LLC**, United States: forwards email sent to our spectacast.com addresses to our mailbox.
 - Our accountant and lawyers, and public authorities where the law requires it.
 

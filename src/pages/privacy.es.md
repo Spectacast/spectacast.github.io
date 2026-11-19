@@ -11,7 +11,7 @@ Esta política explica qué datos personales trata Spectacast, por qué y qué d
 ## En resumen
 
 - La mayor parte de Spectacast funciona en los ordenadores de nuestros clientes. El vídeo, el audio y las reuniones de un evento se quedan allí y no los recibimos.
-- Dos partes envían datos a internet: **Spectacast Pass**, que alojamos nosotros, y **Spectacast Translator**, que envía voz a un motor de IA externo.
+- Tres partes envían datos a internet: **Spectacast Pass**, que alojamos nosotros, **Spectacast Translator**, que envía voz a un motor de IA externo, y **Spectacast Meet**, que inicia sesión en tu cuenta de Zoom a través de nuestro servidor.
 - Para los datos de las personas de un evento (asistentes, ponentes), **el organizador del evento es el responsable del tratamiento y nosotros actuamos como su encargado** (art. 28 RGPD).
 - No vendemos datos personales, no mostramos publicidad ni usamos cookies de seguimiento.
 
@@ -27,9 +27,9 @@ Esta política explica qué datos personales trata Spectacast, por qué y qué d
 
 ## 2. La comprobación de la licencia (Director, Meet, receptor de Mic, Translator)
 
-Los programas instalados contactan con nuestro servidor de licencias al arrancar y periódicamente. Envían la clave de licencia, un identificador aleatorio del ordenador, el programa y su versión, y la sala a la que está asignado. Nuestro servidor ve la dirección IP del ordenador. Usamos estos datos para comprobar que el plan está activo y cuántas salas están en uso (contrato, art. 6.1.b) y conservamos el registro durante 12 meses. Los programas también indican cuándo están en emisión, sin ningún contenido del evento. Cuando se abre un reembolso o una disputa de pago sobre tu pedido, podemos entregar a Paddle un resumen de este registro, como los ordenadores activados y las horas de uso, para mostrar si el plan se usó (interés legítimo, art. 6.1.f).
+Los programas instalados contactan con nuestro servidor de licencias al arrancar y periódicamente. Envían la clave del ordenador, el identificador que Windows da al ordenador (solo guardamos su hash), el nombre del ordenador y la versión del programa. Nuestro servidor ve la dirección IP del ordenador. Usamos estos datos para comprobar que el plan está activo y cuántas salas están en uso (contrato, art. 6.1.b) y conservamos el registro durante 12 meses. Una vez al día envían también los totales de uso, sin ningún contenido del evento: minutos en emisión, minutos de Translator por idioma y acreditaciones leídas. Cuando se abre un reembolso o una disputa de pago sobre tu pedido, podemos entregar a Paddle un resumen de este registro, como los ordenadores activados y las horas de uso, para mostrar si el plan se usó (interés legítimo, art. 6.1.f).
 
-Cuando pulsas «Enviar informe» en un programa, este nos envía sus registros y versiones para que podamos encontrar un fallo. Los registros pueden contener nombres de dispositivos, de participantes de la reunión y del personal de sala. Los usamos solo para ese caso de soporte y los eliminamos en un plazo de 90 días.
+Cuando inicias sesión en Zoom desde Spectacast Meet, el inicio de sesión pasa por nuestro servidor. Este guarda tu nombre y tu correo electrónico de Zoom, tus números de usuario y de cuenta de Zoom y la autorización que Zoom da a Meet para organizar tus reuniones, para que el ordenador de la sala pueda organizar la reunión en tu cuenta (contrato, art. 6.1.b). Los eliminamos cuando desconectas Meet de Zoom.
 
 ## 3. Spectacast Pass: datos de asistentes
 
@@ -57,6 +57,8 @@ Translator escucha un micrófono, una señal de sala o una reunión y devuelve u
 
 El motor devuelve audio traducido y una transcripción escrita. Translator muestra la transcripción en la pantalla del operador y la guarda en el registro del programa en el ordenador de la sala; no nos envía audio ni transcripciones.
 
+Mientras la comprobación de sentido invertido está activada, Translator envía además la transcripción escrita del último minuto a un modelo de texto, que marca los puntos donde la traducción dice algo distinto de lo que dijo el ponente: un modelo de Google o, si el cliente ha puesto una clave de Anthropic en el ordenador, de Anthropic (Anthropic, PBC). La comprobación se puede desactivar en cada pista.
+
 Cuando el plan incluye minutos de traducción, el programa usa **nuestra** cuenta del motor: el motor trata la voz como nuestro subencargado, y **nosotros actuamos como encargado del organizador del evento**, que es el responsable de las voces de los ponentes. Cuando el cliente usa **sus propias** claves del motor, contrata directamente con el motor y nosotros no recibimos nada.
 
 Qué hacen los motores con ella: según sus condiciones de API publicadas a 17 de noviembre de 2026, ni Google ni OpenAI usan estos datos de API para entrenar sus modelos generales. Ambos los conservan durante un tiempo limitado para detectar abusos y luego los eliminan: OpenAI hasta 30 días, Google hasta 55 días. Mantenemos desactivado el registro opcional de solicitudes en nuestro proyecto de Google. Sus servidores pueden estar fuera de la UE (incluidos los Estados Unidos); las transferencias se basan en el Marco de Privacidad de Datos UE-EE. UU. y en las Cláusulas Contractuales Tipo de la Comisión Europea.
@@ -65,13 +67,14 @@ La voz puede contener datos personales, incluidos datos de salud en charlas méd
 
 ## 5. El sitio web spectacast.com
 
-Nuestro servidor registra la dirección IP, la página, la fecha y el navegador de cada visita en su registro de accesos, para mantener el sitio seguro y en funcionamiento (interés legítimo, art. 6.1.f), y elimina el registro a los 14 días. El sitio no instala cookies ni usa analítica o publicidad. Las páginas de administración de Pass guardan en tu navegador un token de inicio de sesión, necesario para que funcionen.
+Nuestro servidor registra la dirección IP, la página, la fecha y el navegador de cada visita en su registro de accesos, para mantener el sitio seguro y en funcionamiento (interés legítimo, art. 6.1.f), y elimina el registro a los 14 días. El sitio no instala cookies ni usa analítica o publicidad. Tu cuenta y las páginas de administración de Pass guardan en tu navegador una cookie de inicio de sesión, necesaria para que funcionen.
 
 ## 6. Quién más recibe datos
 
 - **Paddle.com** (Merchant of Record): pedidos, pagos, facturas, impuestos.
 - **Hetzner Online GmbH**, Alemania: alojamiento de Pass, del servidor de licencias y de este sitio web.
 - **Google** y **OpenAI**: voz para traducir, como se describe arriba.
+- **Brevo** (Sendinblue SAS), Francia: envía los correos de tu cuenta y las acreditaciones que Pass envía por correo electrónico a los asistentes.
 - **Porkbun, LLC**, Estados Unidos: reenvía a nuestro buzón el correo enviado a nuestras direcciones de spectacast.com.
 - Nuestro asesor contable y nuestros abogados, y las autoridades públicas cuando la ley lo exija.
 
