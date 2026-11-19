@@ -38,7 +38,7 @@
 
 <h2>A rule has three parts</h2>
 <ol>
-<li><strong>Trigger:</strong> an event of a device (someone enters the waiting room), a value in the state that changes (an OBS starts streaming), an interval, or <strong>run by hand</strong>. A trigger can watch one device or every device of a driver, so one rule serves every hall.</li>
+<li><strong>Trigger:</strong> an event of a device (someone enters the waiting room), a value in the state that changes (an OBS starts streaming), an interval, or <strong>Only when run by hand</strong>. A trigger can watch one device or every device of a driver, so one rule serves every hall.</li>
 <li><strong>Condition</strong> (optional): an expression that must hold, such as <code>obs.studioA.streaming</code>.</li>
 <li><strong>Steps:</strong> the same steps a button runs. See <a href="/docs/director-panels/">Panels</a>.</li>
 </ol>
@@ -54,11 +54,11 @@
 <h2>Try before you trust</h2>
 <ul>
 <li><strong>dry run:</strong> the rule logs what it would do and does nothing.</li>
-<li><strong>Run now</strong> runs a rule once, whatever its trigger.</li>
+<li><strong>Run now</strong> runs a rule once without waiting for its trigger. Its condition must still hold.</li>
 <li><strong>History</strong>, at the bottom of the page, lists every run and every skip with its reason, and each action with its error.</li>
 <li><strong>Graph</strong> draws the whole rule set: triggers on the left, rules in the middle, the devices they touch on the right.</li>
 </ul>
-<p>The <strong>AUTOMATION ON</strong> switch in the header pauses every rule at once and shows <strong>AUTOMATION OFF</strong> while they are paused. The buttons keep working.</p>
+<p>The <strong>AUTOMATION ON</strong> switch at the top of the <strong>Rules</strong> page pauses every rule at once. While they are paused it reads <strong>AUTOMATION OFF</strong>, and the header shows the same on every page. Buttons and <strong>Run now</strong> keep working.</p>
 <h2>Script steps</h2>
 <p>For logic the forms cannot express, a step can be a short JavaScript snippet. It runs on the control-room PC and has what it needs in reach:</p>
 <table>
@@ -106,7 +106,7 @@ if (event.name.startsWith('Dr.')) {
   log('admitted', event.name);
 }
 </code></pre>
-<p><strong>Try (dry run)</strong> in the editor runs the snippet once without touching any device and shows its log. A snippet that fails, or runs for more than five seconds, counts as one failed step, and the steps after it still run.</p>
+<p><strong>Try (dry run)</strong> in the editor runs the snippet once without touching any device and shows its log. A snippet that fails, or runs longer than its <strong>timeout (ms)</strong> (five seconds unless you change it), counts as one failed step, and the steps after it still run.</p>
 </article>
   </main>
   <footer class="site-foot">

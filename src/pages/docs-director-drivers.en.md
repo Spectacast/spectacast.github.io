@@ -6,7 +6,7 @@ A driver you define speaks one of five transports: **OSC**, **UDP**, **TCP**, **
 
 ## 1. Start the driver
 
-On the **Drivers** page click **+ driver over…** and pick the transport. Give the driver a name, then list the settings each device of it asks for: a host, a port, an API key. Every setting has a default, and the templates below read it as `config.<id>`.
+On the **Drivers** page click **+ driver over…** and pick the transport. Give the driver a name, then list the settings each device of it asks for: a host, a port, an API key. A setting has a default or is marked **req** (required), and the templates below read it as `config.<id>`.
 
 ## 2. Commands
 
@@ -31,11 +31,13 @@ TCP and WebSocket devices are online while the connection is up, and Director re
 
 ## 5. Try it against the real device
 
-On the driver's card pick a device and turn on **trace messages**. Every message in and out is listed live, and each incoming one shows which feedback entries match it and what they would set. **Send test** runs a command with the parameters you type.
+Click **Create driver**, then add a device with your driver on the **Devices** page. Back on the **Drivers** page, click **try** on the driver's card, pick the device and click **trace messages**. Every message in and out is listed live, and each incoming one shows which feedback entries match it and what they would set. **Send test** runs a command with the parameters you type.
 
 ## 6. Share it
 
 **export** downloads the definition as a JSON file; **import JSON** adds one to another show. The definitions are saved inside the show file, so a show carries its drivers with it.
+
+Two examples to import and adapt: [a generic OSC device](/examples/drivers/generic-osc.json) and [an HTTP device whose status is polled](/examples/drivers/http-example.json).
 
 ## When this is not enough
 

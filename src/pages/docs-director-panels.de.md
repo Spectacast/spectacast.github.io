@@ -21,7 +21,7 @@ Klicken Sie auf der Seite **Panels** auf **Bearbeiten**. Jetzt fügt ein Klick a
 | **Taste** | Führt beim Drücken ihre Schritte aus |
 | **Schalter** | Eine Liste von Schritten zum Einschalten, eine zum Ausschalten |
 | **Auswahl (Optionen)** | Eine Reihe von Optionen: eine feste Liste oder eine aktuelle, etwa die Szenen eines OBS oder die Personen in einem Meeting |
-| **Text** | Ein Feld mit einer Taste zum Übernehmen, für eine Bauchbinde oder einen Namen |
+| **Texteingabe** | Ein Feld mit einer Taste zum Übernehmen, für eine Bauchbinde oder einen Namen |
 | **Beschriftung** | Zeigt einen Text oder einen Wert |
 | **Gerätestatus** | Zeigt, ob ein Gerät verbunden ist |
 | **Vorschau (Bild eines Geräts)** | Das Live-Bild eines OBS oder einer NDI-Quelle |
@@ -47,7 +47,7 @@ Einträge unter **Rückmeldung** ändern Farbe und Text eines Bedienelements nac
 
 ## Blöcke: ein Kanalstreifen für jeden Saal
 
-Bauen Sie die Bedienelemente eines Saals einmal, wählen Sie sie aus und klicken Sie auf **Block erstellen**. Die Geräte, die sie nennen, werden zu den **Werten** des Blocks. Platzieren Sie den Block einmal pro Saal und geben Sie jeder Platzierung ihre eigenen Geräte. Eine Änderung am Block erreicht jeden Saal zugleich.
+Bauen Sie die Bedienelemente eines Saals einmal, wählen Sie sie aus und klicken Sie auf **Block erstellen**. Die Geräte, die sie nennen, werden zu den Werten des Blocks (unter **Werte**). Platzieren Sie den Block einmal pro Saal und geben Sie jeder Platzierung ihre eigenen Geräte. Eine Änderung am Block erreicht jeden Saal zugleich.
 
 ## Variablen
 

@@ -4,7 +4,7 @@
 
 ## Una regla tiene tres partes
 
-1. **Disparador:** un evento de un dispositivo (alguien entra en la sala de espera), un valor del estado que cambia (un OBS empieza a emitir), un intervalo o **ejecutar a mano**. Un disparador puede vigilar un dispositivo o todos los dispositivos de un driver, de modo que una regla sirve para todas las salas.
+1. **Disparador:** un evento de un dispositivo (alguien entra en la sala de espera), un valor del estado que cambia (un OBS empieza a emitir), un intervalo o **Solo al ejecutarla a mano**. Un disparador puede vigilar un dispositivo o todos los dispositivos de un driver, de modo que una regla sirve para todas las salas.
 2. **Condición** (opcional): una expresión que debe cumplirse, como `obs.studioA.streaming`.
 3. **Pasos:** los mismos pasos que ejecuta un botón. Consulta [Paneles](/es/ayuda/director-panels/).
 
@@ -21,11 +21,11 @@ En la página **Reglas**, **+ regla** empieza una regla vacía y **+ desde plant
 ## Probar antes de fiarse
 
 - **simulación:** la regla anota lo que haría y no hace nada.
-- **Ejecutar ahora** ejecuta una regla una vez, sea cual sea su disparador.
+- **Ejecutar ahora** ejecuta una regla una vez sin esperar a su disparador. Su condición debe cumplirse igualmente.
 - **Historial**, al final de la página, muestra cada ejecución y cada omisión con su motivo, y cada acción con su error.
 - **Diagrama** dibuja todas las reglas: los disparadores a la izquierda, las reglas en el centro y, a la derecha, los dispositivos sobre los que actúan.
 
-El interruptor **AUTOMATIZACIÓN ACTIVADA** de la cabecera pausa todas las reglas a la vez y muestra **AUTOMATIZACIÓN DESACTIVADA** mientras están en pausa. Los botones siguen funcionando.
+El interruptor **AUTOMATIZACIÓN ACTIVADA**, arriba en la página **Reglas**, pausa todas las reglas a la vez. Mientras están en pausa muestra **AUTOMATIZACIÓN DESACTIVADA**, y la cabecera muestra lo mismo en todas las páginas. Los botones y **Ejecutar ahora** siguen funcionando.
 
 ## Pasos de script
 
@@ -50,4 +50,4 @@ if (event.name.startsWith('Dr.')) {
 }
 ```
 
-**Probar (simulación)** en el editor ejecuta el fragmento una vez sin tocar ningún dispositivo y muestra su registro. Un fragmento que falla, o que tarda más de cinco segundos, cuenta como un paso fallido, y los pasos siguientes se ejecutan igualmente.
+**Probar (simulación)** en el editor ejecuta el fragmento una vez sin tocar ningún dispositivo y muestra su registro. Un fragmento que falla, o que tarda más que su **tiempo límite (ms)** (cinco segundos si no lo cambias), cuenta como un paso fallido, y los pasos siguientes se ejecutan igualmente.

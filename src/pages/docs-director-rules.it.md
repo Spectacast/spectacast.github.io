@@ -4,7 +4,7 @@
 
 ## Una regola ha tre parti
 
-1. **Trigger:** un evento di un dispositivo (qualcuno entra in sala d'attesa), un valore dello stato che cambia (un OBS inizia a trasmettere), un intervallo oppure **avvia a mano**. Un trigger può osservare un dispositivo o tutti i dispositivi di un driver, così una regola serve tutte le sale.
+1. **Trigger:** un evento di un dispositivo (qualcuno entra in sala d'attesa), un valore dello stato che cambia (un OBS inizia a trasmettere), un intervallo oppure **Solo se avviata a mano**. Un trigger può osservare un dispositivo o tutti i dispositivi di un driver, così una regola serve tutte le sale.
 2. **Condizione** (facoltativa): un'espressione che deve essere vera, come `obs.studioA.streaming`.
 3. **Passi:** gli stessi passi che esegue un pulsante. Vedi [Pannelli](/it/guida/director-panels/).
 
@@ -21,11 +21,11 @@ Nella pagina **Regole**, **+ regola** inizia una regola vuota e **+ da modello**
 ## Provare prima di fidarsi
 
 - **simulazione:** la regola annota ciò che farebbe e non fa nulla.
-- **Esegui ora** esegue una regola una volta, qualunque sia il suo trigger.
+- **Esegui ora** esegue una regola una volta senza aspettare il suo trigger. La sua condizione deve comunque essere vera.
 - **Cronologia**, in fondo alla pagina, elenca ogni esecuzione e ogni salto con il motivo, e ogni azione con il suo errore.
 - **Diagramma** disegna tutte le regole: i trigger a sinistra, le regole al centro e, a destra, i dispositivi su cui agiscono.
 
-L'interruttore **AUTOMAZIONE ACCESA** nell'intestazione mette in pausa tutte le regole insieme e mostra **AUTOMAZIONE SPENTA** finché sono in pausa. I pulsanti continuano a funzionare.
+L'interruttore **AUTOMAZIONE ACCESA**, in alto nella pagina **Regole**, mette in pausa tutte le regole insieme. Finché sono in pausa mostra **AUTOMAZIONE SPENTA**, e l'intestazione mostra lo stesso in ogni pagina. I pulsanti ed **Esegui ora** continuano a funzionare.
 
 ## Passi di script
 
@@ -50,4 +50,4 @@ if (event.name.startsWith('Dr.')) {
 }
 ```
 
-**Prova (simulazione)** nell'editor esegue il frammento una volta senza toccare alcun dispositivo e ne mostra il registro. Un frammento che fallisce, o che dura più di cinque secondi, conta come un passo fallito, e i passi successivi vengono eseguiti lo stesso.
+**Prova (simulazione)** nell'editor esegue il frammento una volta senza toccare alcun dispositivo e ne mostra il registro. Un frammento che fallisce, o che dura più del suo **timeout (ms)** (cinque secondi se non lo cambi), conta come un passo fallito, e i passi successivi vengono eseguiti lo stesso.

@@ -38,7 +38,7 @@
 
 <p>Ein selbst definierter Treiber spricht einen von fünf Transporten: <strong>OSC</strong>, <strong>UDP</strong>, <strong>TCP</strong>, <strong>HTTP</strong> oder <strong>WebSocket</strong>. Das deckt die meisten Lichtpulte, Audiomischer, Bildmischer, Kreuzschienen und Haussteuerungen ab.</p>
 <h2>1. Den Treiber anlegen</h2>
-<p>Klicken Sie auf der Seite <strong>Treiber</strong> auf <strong>+ Treiber über…</strong> und wählen Sie den Transport. Geben Sie dem Treiber einen Namen und listen Sie die Einstellungen auf, die jedes seiner Geräte braucht: einen Host, einen Port, einen API-Schlüssel. Jede Einstellung hat einen Standardwert, und die Vorlagen unten lesen sie als <code>config.&lt;id&gt;</code>.</p>
+<p>Klicken Sie auf der Seite <strong>Treiber</strong> auf <strong>+ Treiber über…</strong> und wählen Sie den Transport. Geben Sie dem Treiber einen Namen und listen Sie die Einstellungen auf, die jedes seiner Geräte braucht: einen Host, einen Port, einen API-Schlüssel. Eine Einstellung hat einen Standardwert oder ist mit <strong>Pfl.</strong> (Pflichtfeld) markiert, und die Vorlagen unten lesen sie als <code>config.&lt;id&gt;</code>.</p>
 <h2>2. Befehle</h2>
 <p>Klicken Sie für alles, was man dem Gerät sagen kann, auf <strong>+ Befehl</strong>. Ein Befehl wird zu einer Aktion, die Tasten und Regeln ausführen können.</p>
 <ul>
@@ -56,9 +56,10 @@
 <h2>4. Online oder offline</h2>
 <p>TCP- und WebSocket-Geräte sind online, solange die Verbindung steht, und Director verbindet sich von selbst neu. UDP-, OSC- und HTTP-Geräte brauchen einen <strong>Heartbeat</strong>: einen Befehl, der in einem festen Abstand gesendet wird und dessen Antwort zeigt, dass das Gerät da ist. Ohne ihn gelten sie als online.</p>
 <h2>5. Am echten Gerät ausprobieren</h2>
-<p>Wählen Sie auf der Karte des Treibers ein Gerät und schalten Sie <strong>Nachrichten mitschneiden</strong> ein. Jede ein- und ausgehende Nachricht wird live aufgelistet, und jede eingehende zeigt, welche Rückmeldungseinträge auf sie passen und was sie setzen würden. <strong>Test senden</strong> führt einen Befehl mit den Parametern aus, die Sie eingeben.</p>
+<p>Klicken Sie auf <strong>Treiber anlegen</strong> und fügen Sie dann auf der Seite <strong>Geräte</strong> ein Gerät mit Ihrem Treiber hinzu. Zurück auf der Seite <strong>Treiber</strong> klicken Sie auf der Karte des Treibers auf <strong>testen</strong>, wählen das Gerät und klicken auf <strong>Nachrichten mitschneiden</strong>. Jede ein- und ausgehende Nachricht wird live aufgelistet, und jede eingehende zeigt, welche Rückmeldungseinträge auf sie passen und was sie setzen würden. <strong>Test senden</strong> führt einen Befehl mit den Parametern aus, die Sie eingeben.</p>
 <h2>6. Weitergeben</h2>
 <p><strong>exportieren</strong> lädt die Definition als JSON-Datei herunter; <strong>JSON importieren</strong> fügt eine in eine andere Show ein. Die Definitionen werden in der Show-Datei gespeichert, eine Show bringt ihre Treiber also mit.</p>
+<p>Zwei Beispiele zum Importieren und Anpassen: <a href="/examples/drivers/generic-osc.json">ein allgemeines OSC-Gerät</a> und <a href="/examples/drivers/http-example.json">ein HTTP-Gerät, dessen Status abgefragt wird</a>.</p>
 <h2>Wenn das nicht reicht</h2>
 <p>Ein Gerät, das die eigene Bibliothek seines Herstellers braucht, oder ein Protokoll, das diese fünf Transporte nicht tragen, braucht einen in Director eingebauten Treiber. <a href="/de/kontakt/">Schreiben Sie uns</a>, welches Gerät Sie steuern möchten.</p>
 </article>

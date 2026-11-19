@@ -4,7 +4,7 @@
 
 ## A rule has three parts
 
-1. **Trigger:** an event of a device (someone enters the waiting room), a value in the state that changes (an OBS starts streaming), an interval, or **run by hand**. A trigger can watch one device or every device of a driver, so one rule serves every hall.
+1. **Trigger:** an event of a device (someone enters the waiting room), a value in the state that changes (an OBS starts streaming), an interval, or **Only when run by hand**. A trigger can watch one device or every device of a driver, so one rule serves every hall.
 2. **Condition** (optional): an expression that must hold, such as `obs.studioA.streaming`.
 3. **Steps:** the same steps a button runs. See [Panels](/docs/director-panels/).
 
@@ -21,11 +21,11 @@ On the **Rules** page, **+ rule** starts an empty rule and **+ from template** b
 ## Try before you trust
 
 - **dry run:** the rule logs what it would do and does nothing.
-- **Run now** runs a rule once, whatever its trigger.
+- **Run now** runs a rule once without waiting for its trigger. Its condition must still hold.
 - **History**, at the bottom of the page, lists every run and every skip with its reason, and each action with its error.
 - **Graph** draws the whole rule set: triggers on the left, rules in the middle, the devices they touch on the right.
 
-The **AUTOMATION ON** switch in the header pauses every rule at once and shows **AUTOMATION OFF** while they are paused. The buttons keep working.
+The **AUTOMATION ON** switch at the top of the **Rules** page pauses every rule at once. While they are paused it reads **AUTOMATION OFF**, and the header shows the same on every page. Buttons and **Run now** keep working.
 
 ## Script steps
 
@@ -50,4 +50,4 @@ if (event.name.startsWith('Dr.')) {
 }
 ```
 
-**Try (dry run)** in the editor runs the snippet once without touching any device and shows its log. A snippet that fails, or runs for more than five seconds, counts as one failed step, and the steps after it still run.
+**Try (dry run)** in the editor runs the snippet once without touching any device and shows its log. A snippet that fails, or runs longer than its **timeout (ms)** (five seconds unless you change it), counts as one failed step, and the steps after it still run.

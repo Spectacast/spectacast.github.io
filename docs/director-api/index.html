@@ -36,9 +36,9 @@
 <h1>API, webhooks and Stream Deck</h1>
 <p class="lede">Everything the dashboard does goes through an HTTP API on the control-room PC, and other programs can use it too: a registration system, a show controller, a script, a Stream Deck.</p>
 
-<p>The address is that of the dashboard, by default <code>http://&lt;control-room PC&gt;:4700</code>. The API stays on the venue's network: Director does not open it to the internet.</p>
+<p>On the control-room PC the address is <code>http://127.0.0.1:4700</code>. Another machine reaches <code>http://&lt;control-room PC&gt;:4700</code> once <code>.env</code> has <code>HOST=0.0.0.0</code> and a <code>PIN</code> (see the <a href="/docs/director/">Director guide</a>). The API is plain HTTP and stays on the venue's network: Director does not open it to the internet.</p>
 <h2>Access</h2>
-<p>Set a PIN before you open Director to the network (see the <a href="/docs/director/">Director guide</a>). For a program, add an access token of its own to <code>C:\ProgramData\Spectacast\director\.env</code>, then log off and on again:</p>
+<p>Access tokens work only when a PIN is set. For a program, add an access token of its own to <code>C:\ProgramData\Spectacast\director\.env</code>, then log off and on again:</p>
 <pre><code>ACCESS_TOKENS=api:&lt;a token of 8 characters or more&gt;
 </code></pre>
 <table>
@@ -67,7 +67,7 @@
 </tr>
 </tbody>
 </table>
-<p>A program signs in with <code>POST /api/login</code> and the body <code>{ "pin": "&lt;token&gt;" }</code>, and keeps the session cookie it gets back. Webhooks and Stream Deck calls carry the token themselves, as shown below.</p>
+<p>A program signs in with <code>POST /api/login</code> and the body <code>{ "pin": "&lt;token&gt;" }</code>, and keeps the session cookie it gets back. A session ends when Director restarts: sign in again when a call answers <code>401</code>. Five wrong tries lock an address out for 30 seconds. Webhooks carry the token with every call; Stream Deck requests carry the PIN or the operator PIN.</p>
 <h2>What you can call</h2>
 <table>
 <thead>
@@ -115,6 +115,7 @@
 </tr>
 </tbody>
 </table>
+<p>A press through the API or from a Stream Deck runs at once: <strong>Ask first</strong> asks on the dashboard only.</p>
 <h2>Webhooks</h2>
 <p>A call to <code>POST /api/hooks/&lt;name&gt;</code> raises an event that a rule reacts to. The JSON body and the query string become the event's fields.</p>
 <pre><code>curl -X POST http://director:4700/api/hooks/session-start \
@@ -122,6 +123,7 @@
   -d '{ &quot;hall&quot;: &quot;A&quot;, &quot;title&quot;: &quot;Opening&quot; }'
 </code></pre>
 <p>A rule with the trigger <strong>webhook</strong>, event <code>session_start</code>, then reads <code>event.hall</code> and <code>event.title</code>. The token goes in an <code>x-token</code> header, in <code>Authorization: Bearer</code>, or in the address as <code>?token=</code>.</p>
+<p>The operator can hold webhooks back with the <strong>API CALLS APPLY</strong> switch on the <strong>Rules</strong> page. While it reads <strong>API CALLS ONLY LOGGED</strong>, a call is logged and answered with <code>"applied": false</code>, and no rule runs.</p>
 <h2>Stream Deck</h2>
 <p>Bitfocus Companion reaches Director with its <strong>Generic HTTP</strong> module; there is nothing to install in Companion. A key sends one request:</p>
 <table>
@@ -150,7 +152,8 @@
 </tr>
 </tbody>
 </table>
-<p>The control's id is at the top of its properties on the <strong>Panels</strong> page. For keys that light up with the state, Director also speaks OSC to Companion: set <code>BRIDGE_OSC_PORT=&lt;a free UDP port&gt;</code> in <code>.env</code>.</p>
+<p><code>&lt;PIN&gt;</code> is the PIN or, better, the operator PIN (<code>OPERATOR_PIN</code>), which cannot change the show. An access token does not work here. The control's id is at the top of its properties on the <strong>Panels</strong> page.</p>
+<p>For keys that light up with the state, Director also speaks OSC to Companion: in <code>.env</code> set <code>BRIDGE_OSC_PORT=&lt;a free UDP port&gt;</code> and <code>BRIDGE_OSC_FEEDBACK=&lt;Companion's address&gt;:&lt;its OSC listen port&gt;</code>, and have Companion send the OSC message <code>/subscribe</code> with the part of the state it wants as its argument, such as <code>obs.obs01</code>. The OSC port asks for no PIN, so use it on the control-room network only.</p>
 <h2>MIDI</h2>
 <p>A control surface is a device like any other: add it on the <strong>Devices</strong> page with the <strong>MIDI controller</strong> driver. Its keys and faders arrive as events for rules, and rules can light its keys.</p>
 </article>

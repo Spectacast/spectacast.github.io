@@ -16,7 +16,7 @@
 <meta property="og:title" content="Regole e script · Spectacast">
 <meta property="og:description" content="Una regola fa ciò che altrimenti farebbe un operatore a mano: quando succede qualcosa e una condizione è vera, esegue un elenco di passi. Sono le regole a permettere a un solo operatore di seguire…">
 <meta property="og:url" content="https://spectacast.com/it/guida/director-rules/">
-<meta property="og:image" content="https://spectacast.com/img/og/director-rules-en.jpg">
+<meta property="og:image" content="https://spectacast.com/img/og/director-rules-it.jpg">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/design/spectacast.css">
@@ -38,12 +38,12 @@
 
 <h2>Una regola ha tre parti</h2>
 <ol>
-<li><strong>Trigger:</strong> un evento di un dispositivo (qualcuno entra in sala d'attesa), un valore dello stato che cambia (un OBS inizia a trasmettere), un intervallo oppure <strong>avvia a mano</strong>. Un trigger può osservare un dispositivo o tutti i dispositivi di un driver, così una regola serve tutte le sale.</li>
+<li><strong>Trigger:</strong> un evento di un dispositivo (qualcuno entra in sala d'attesa), un valore dello stato che cambia (un OBS inizia a trasmettere), un intervallo oppure <strong>Solo se avviata a mano</strong>. Un trigger può osservare un dispositivo o tutti i dispositivi di un driver, così una regola serve tutte le sale.</li>
 <li><strong>Condizione</strong> (facoltativa): un'espressione che deve essere vera, come <code>obs.studioA.streaming</code>.</li>
 <li><strong>Passi:</strong> gli stessi passi che esegue un pulsante. Vedi <a href="/it/guida/director-panels/">Pannelli</a>.</li>
 </ol>
 <p>Nella pagina <strong>Regole</strong>, <strong>+ regola</strong> inizia una regola vuota e <strong>+ da modello</strong> ne costruisce una comune con i tuoi dispositivi, per esempio «chi parla va su una scena dopo un tempo di attesa» o «una sorgente NDI va offline, passa a una scena di riserva».</p>
-<figure class="shot "><img src="/img/screens/director-rules-en.webp" alt="Le regole di Director: ognuna con ciò che la fa partire e la sua ultima esecuzione" width="1600" height="1000"></figure>
+<figure class="shot "><img src="/img/screens/director-rules-it.webp" alt="Le regole di Director: ognuna con ciò che la fa partire e la sua ultima esecuzione" width="1600" height="1000"></figure>
 
 <h2>Tempi e ordine</h2>
 <ul>
@@ -54,11 +54,11 @@
 <h2>Provare prima di fidarsi</h2>
 <ul>
 <li><strong>simulazione:</strong> la regola annota ciò che farebbe e non fa nulla.</li>
-<li><strong>Esegui ora</strong> esegue una regola una volta, qualunque sia il suo trigger.</li>
+<li><strong>Esegui ora</strong> esegue una regola una volta senza aspettare il suo trigger. La sua condizione deve comunque essere vera.</li>
 <li><strong>Cronologia</strong>, in fondo alla pagina, elenca ogni esecuzione e ogni salto con il motivo, e ogni azione con il suo errore.</li>
 <li><strong>Diagramma</strong> disegna tutte le regole: i trigger a sinistra, le regole al centro e, a destra, i dispositivi su cui agiscono.</li>
 </ul>
-<p>L'interruttore <strong>AUTOMAZIONE ACCESA</strong> nell'intestazione mette in pausa tutte le regole insieme e mostra <strong>AUTOMAZIONE SPENTA</strong> finché sono in pausa. I pulsanti continuano a funzionare.</p>
+<p>L'interruttore <strong>AUTOMAZIONE ACCESA</strong>, in alto nella pagina <strong>Regole</strong>, mette in pausa tutte le regole insieme. Finché sono in pausa mostra <strong>AUTOMAZIONE SPENTA</strong>, e l'intestazione mostra lo stesso in ogni pagina. I pulsanti ed <strong>Esegui ora</strong> continuano a funzionare.</p>
 <h2>Passi di script</h2>
 <p>Per la logica che i moduli non sanno esprimere, un passo può essere un breve frammento di JavaScript. Gira sul PC di regia e ha a portata di mano ciò che gli serve:</p>
 <table>
@@ -106,7 +106,7 @@ if (event.name.startsWith('Dr.')) {
   log('admitted', event.name);
 }
 </code></pre>
-<p><strong>Prova (simulazione)</strong> nell'editor esegue il frammento una volta senza toccare alcun dispositivo e ne mostra il registro. Un frammento che fallisce, o che dura più di cinque secondi, conta come un passo fallito, e i passi successivi vengono eseguiti lo stesso.</p>
+<p><strong>Prova (simulazione)</strong> nell'editor esegue il frammento una volta senza toccare alcun dispositivo e ne mostra il registro. Un frammento che fallisce, o che dura più del suo <strong>timeout (ms)</strong> (cinque secondi se non lo cambi), conta come un passo fallito, e i passi successivi vengono eseguiti lo stesso.</p>
 </article>
   </main>
   <footer class="site-foot">

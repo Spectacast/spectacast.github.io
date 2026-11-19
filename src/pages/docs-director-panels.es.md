@@ -21,7 +21,7 @@ En la página **Paneles** haz clic en **Editar**. Ahora un clic en una celda vac
 | **Botón** | Ejecuta sus pasos al pulsarlo |
 | **Interruptor** | Una lista de pasos para encender y otra para apagar |
 | **Selección (opciones)** | Una fila de opciones: una lista fija o una en vivo, como las escenas de un OBS o las personas de una reunión |
-| **Texto** | Un campo con un botón para aplicar, para un rótulo o un nombre |
+| **Entrada de texto** | Un campo con un botón para aplicar, para un rótulo o un nombre |
 | **Etiqueta** | Muestra un texto o un valor |
 | **Estado del dispositivo** | Muestra si un dispositivo está conectado |
 | **Vista previa (imagen de un dispositivo)** | La imagen en directo de un OBS o de una fuente NDI |
@@ -41,9 +41,9 @@ Una pulsación ejecuta una lista de pasos, de arriba abajo:
 
 **Preguntar antes** hace que el dashboard pregunte antes de ejecutar los pasos: para los botones que nadie debe pulsar por error.
 
-## Retorno: el aspecto de un control
+## Respuesta visual: el aspecto de un control
 
-Las entradas de **Retorno** cambian el color y el texto de un control según el estado en vivo: rojo mientras una sala está al aire, un nombre cuando hay alguien en la sala de espera. Las entradas se comprueban desde arriba, y gana la primera que se cumple.
+Las entradas de **Respuesta visual** cambian el color y el texto de un control según el estado en vivo: rojo mientras una sala está al aire, un nombre cuando hay alguien en la sala de espera. Las entradas se comprueban desde arriba, y gana la primera que se cumple.
 
 ## Bloques: una tira para cada sala
 

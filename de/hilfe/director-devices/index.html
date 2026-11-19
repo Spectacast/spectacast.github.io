@@ -38,12 +38,12 @@
 
 <h2>Ein Gerät hinzufügen</h2>
 <ol>
-<li>Öffnen Sie die Seite <strong>Geräte</strong> und klicken Sie auf <strong>Gerät hinzufügen</strong>.</li>
+<li>Öffnen Sie die Seite <strong>Geräte</strong> und gehen Sie zum Formular <strong>Gerät hinzufügen</strong> unter den Karten.</li>
 <li>Wählen Sie den Treiber und geben Sie einen Namen ein. Das Formular zeigt für jede Einstellung, die der Treiber braucht, ein Feld mit seinem Standardwert.</li>
-<li>Speichern Sie. Die Karte wird grün, sobald das Gerät antwortet. Ein Klick auf eine Karte zeigt ihren Zustand und den letzten Fehler.</li>
+<li>Klicken Sie auf <strong>Hinzufügen</strong>. Der Punkt auf der Karte wird grün, sobald das Gerät antwortet; die Karte zeigt seinen Zustand und den letzten Fehler.</li>
 </ol>
 <p><strong>bearbeiten</strong> auf einer Karte ändert den Namen und die Einstellungen; Director verbindet sich beim Speichern neu. <strong>Netzwerk durchsuchen</strong> und dann <strong>suchen</strong> listet jedes OBS und jedes Spectacast Meet auf, das im Netzwerk antwortet; <strong>im Formular verwenden</strong> füllt das Formular mit einem davon.</p>
-<p>Passwörter stehen nicht in der Show-Datei. Tragen Sie sie in <code>C:\ProgramData\Spectacast\director\.env</code> ein, zum Beispiel <code>OBS_PASSWORD=&lt;Passwort&gt;</code>, und melden Sie sich dann ab und wieder an.</p>
+<p>Das OBS-Passwort steht nicht in der Show-Datei: Tragen Sie es in <code>C:\ProgramData\Spectacast\director\.env</code> als <code>OBS_PASSWORD=&lt;Passwort&gt;</code> ein und melden Sie sich dann ab und wieder an. Das Passwort eines Sennheiser-Empfängers oder eines Mic-Empfängers wird in der Show-Datei gespeichert.</p>
 <h2>Die Treiber, die Director mitbringt</h2>
 <table>
 <thead>
@@ -59,7 +59,7 @@
 </tr>
 <tr>
 <td><strong>NDI discovery</strong></td>
-<td>Die NDI-Quellen im Netzwerk, auch über einen NDI Discovery Server; ihre Bilder auf der Seite <strong>Wall</strong></td>
+<td>Die NDI-Quellen im Netzwerk, auch über einen NDI Discovery Server. Ein Bedienelement <strong>Vorschau</strong> zeigt das Bild jeder dieser Quellen</td>
 </tr>
 <tr>
 <td><strong>Spectacast Meet</strong></td>
@@ -75,7 +75,7 @@
 </tr>
 <tr>
 <td><strong>Sennheiser EW-DX receiver</strong></td>
-<td>Stummschaltung, Gain, Pegel, Funkverbindung und Batterie jedes Kanals. Schalten Sie zuerst den Drittanbieter-Zugriff am Empfänger ein</td>
+<td>Stummschaltung, Gain, Pegel, Funkverbindung und Batterie jedes Kanals. Schalten Sie zuerst in Sennheiser Control Cockpit den 3rd Party Access ein (Firmware 4.0.0 oder neuer)</td>
 </tr>
 <tr>
 <td><strong>MIDI controller</strong></td>
@@ -95,7 +95,7 @@
 <h2>Eingänge von außen</h2>
 <p>Über zwei Eingänge kann ein anderes System in Director etwas auslösen. Beide stehen auf der Seite <strong>Geräte</strong> unter <strong>Eingänge</strong>.</p>
 <ul>
-<li><strong>Webhook:</strong> Ein Aufruf von <code>POST /api/hooks/&lt;name&gt;</code> löst das Ereignis <code>&lt;name&gt;</code> aus. Der JSON-Body und die Parameter der Adresse kommen als Felder des Ereignisses an.</li>
+<li><strong>Webhooks:</strong> Ein Aufruf von <code>POST /api/hooks/&lt;name&gt;</code> löst das Ereignis <code>&lt;name&gt;</code> aus. Der JSON-Body und die Parameter der Adresse kommen als Felder des Ereignisses an.</li>
 <li><strong>OSC-Eingang:</strong> Legen Sie einen Port fest, und jede OSC-Nachricht, die dort ankommt, wird zu einem Ereignis mit dem Namen ihrer Adresse: Aus <code>/cue/go</code> wird <code>cue_go</code>.</li>
 </ul>
 <p>Eine Regel reagiert dann auf das Ereignis. Siehe <a href="/de/hilfe/director-rules/">Regeln und Skripte</a> und <a href="/de/hilfe/director-api/">API, Webhooks und Stream Deck</a>.</p>

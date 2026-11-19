@@ -38,12 +38,12 @@
 
 <h2>Add a device</h2>
 <ol>
-<li>Open the <strong>Devices</strong> page and click <strong>Add device</strong>.</li>
+<li>Open the <strong>Devices</strong> page and go to the <strong>Add device</strong> form below the cards.</li>
 <li>Pick the driver and type a name. The form shows one field for each setting the driver needs, with its default.</li>
-<li>Save. The card turns green as soon as the device answers. Click a card to see its state and its last error.</li>
+<li>Click <strong>Add</strong>. The dot on the card turns green as soon as the device answers; the card shows its state and its last error.</li>
 </ol>
 <p><strong>edit</strong> on a card changes the name and the settings; Director reconnects when you save. <strong>Scan the network</strong>, then <strong>scan</strong>, lists every OBS and every Spectacast Meet that answers on the network; <strong>use in the form</strong> fills the form with one of them.</p>
-<p>Passwords stay out of the show file. Put them in <code>C:\ProgramData\Spectacast\director\.env</code>, for example <code>OBS_PASSWORD=&lt;password&gt;</code>, then log off and on again.</p>
+<p>The OBS password stays out of the show file: put it in <code>C:\ProgramData\Spectacast\director\.env</code> as <code>OBS_PASSWORD=&lt;password&gt;</code>, then log off and on again. The password of a Sennheiser receiver or a Mic receiver is saved in the show file.</p>
 <h2>The drivers that come with Director</h2>
 <table>
 <thead>
@@ -59,7 +59,7 @@
 </tr>
 <tr>
 <td><strong>NDI discovery</strong></td>
-<td>The NDI sources on the network, also through an NDI Discovery Server; their pictures on the <strong>Wall</strong> page</td>
+<td>The NDI sources on the network, also through an NDI Discovery Server. A <strong>Preview</strong> control shows the picture of any of them</td>
 </tr>
 <tr>
 <td><strong>Spectacast Meet</strong></td>
@@ -75,7 +75,7 @@
 </tr>
 <tr>
 <td><strong>Sennheiser EW-DX receiver</strong></td>
-<td>Each channel's mute, gain, level, radio link and battery. Switch on third-party access on the receiver first</td>
+<td>Each channel's mute, gain, level, radio link and battery. In Sennheiser Control Cockpit, switch on 3rd Party Access first (firmware 4.0.0 or newer)</td>
 </tr>
 <tr>
 <td><strong>MIDI controller</strong></td>
@@ -95,7 +95,7 @@
 <h2>Inputs from outside</h2>
 <p>Two inputs let another system start something in Director. Both are on the <strong>Devices</strong> page under <strong>Inputs</strong>.</p>
 <ul>
-<li><strong>webhook:</strong> a call to <code>POST /api/hooks/&lt;name&gt;</code> raises the event <code>&lt;name&gt;</code>. The JSON body and the query string arrive as the event's fields.</li>
+<li><strong>Webhooks:</strong> a call to <code>POST /api/hooks/&lt;name&gt;</code> raises the event <code>&lt;name&gt;</code>. The JSON body and the query string arrive as the event's fields.</li>
 <li><strong>OSC in:</strong> set a port, and every OSC message that arrives on it becomes an event named after its address: <code>/cue/go</code> becomes <code>cue_go</code>.</li>
 </ul>
 <p>A rule then reacts to the event. See <a href="/docs/director-rules/">Rules and scripts</a> and <a href="/docs/director-api/">API, webhooks and Stream Deck</a>.</p>

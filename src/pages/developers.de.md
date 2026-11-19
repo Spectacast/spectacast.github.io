@@ -1,6 +1,6 @@
 # Zum Erweitern gebaut
 
-<p class="lede">An jedem Veranstaltungsort steht ein Gerät, mit dem niemand gerechnet hat. Spectacast Director ist so gemacht, dass Sie es selbst anbinden können: sein Protokoll in einem Formular beschreiben, per Skript ergänzen, was die Formulare nicht sagen können, und alles über eine offene API aus Ihren eigenen Systemen steuern.</p>
+<p class="lede">An jedem Veranstaltungsort steht ein Gerät, mit dem niemand gerechnet hat. Spectacast Director ist so gemacht, dass Sie es selbst anbinden können: sein Protokoll in einem Formular beschreiben, per Skript ergänzen, was die Formulare nicht sagen können, und alles über seine API aus Ihren eigenen Systemen steuern.</p>
 
 {{cta}}
 
@@ -44,4 +44,6 @@ Die Panels des Dashboards ordnen Sie selbst an: Tasten, Auswahlen, Textfelder, P
 
 ## Ihr Gerät lässt sich so nicht anbinden?
 
-Manche Geräte brauchen die eigene Bibliothek ihres Herstellers. Diese Treiber sind in Director eingebaut, wie die für OBS Studio, NDI und Sennheiser EW-DX. Schreiben Sie uns, was Sie steuern möchten.
+Manche Geräte brauchen die eigene Bibliothek ihres Herstellers. Diese Treiber sind in Director eingebaut, wie die für OBS Studio, NDI und Sennheiser EW-DX.
+
+[Schreiben Sie uns, was Sie steuern möchten →](/de/kontakt/)

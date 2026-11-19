@@ -36,9 +36,9 @@
 <h1>API, webhooks y Stream Deck</h1>
 <p class="lede">Todo lo que hace el dashboard pasa por una API HTTP en el PC de control, y otros programas también pueden usarla: un sistema de inscripciones, un controlador de show, un script, un Stream Deck.</p>
 
-<p>La dirección es la del dashboard, por defecto <code>http://&lt;PC de control&gt;:4700</code>. La API se queda en la red del recinto: Director no la abre a internet.</p>
+<p>En el PC de control la dirección es <code>http://127.0.0.1:4700</code>. Otro equipo llega a <code>http://&lt;PC de control&gt;:4700</code> cuando <code>.env</code> tiene <code>HOST=0.0.0.0</code> y un <code>PIN</code> (consulta la <a href="/es/ayuda/director/">guía de Director</a>). La API es HTTP sin cifrar y se queda en la red del recinto: Director no la abre a internet.</p>
 <h2>Acceso</h2>
-<p>Fija un PIN antes de abrir Director a la red (consulta la <a href="/es/ayuda/director/">guía de Director</a>). Para un programa, añade un token de acceso propio en <code>C:\ProgramData\Spectacast\director\.env</code> y después cierra la sesión y vuelve a iniciarla:</p>
+<p>Los tokens de acceso solo funcionan si hay un PIN. Para un programa, añade un token de acceso propio en <code>C:\ProgramData\Spectacast\director\.env</code> y luego cierra la sesión y vuelve a entrar:</p>
 <pre><code>ACCESS_TOKENS=api:&lt;un token de 8 caracteres o más&gt;
 </code></pre>
 <table>
@@ -67,7 +67,7 @@
 </tr>
 </tbody>
 </table>
-<p>Un programa inicia sesión con <code>POST /api/login</code> y el cuerpo <code>{ "pin": "&lt;token&gt;" }</code>, y conserva la cookie de sesión que recibe. Las llamadas de webhooks y de Stream Deck llevan el token ellas mismas, como se muestra abajo.</p>
+<p>Un programa inicia sesión con <code>POST /api/login</code> y el cuerpo <code>{ "pin": "&lt;token&gt;" }</code>, y conserva la cookie de sesión que recibe. Una sesión termina cuando Director se reinicia: inicia sesión de nuevo cuando una llamada responda <code>401</code>. Cinco intentos fallidos bloquean una dirección durante 30 segundos. Los webhooks llevan el token en cada llamada; las peticiones de Stream Deck llevan el PIN o el PIN de operador.</p>
 <h2>Qué puedes llamar</h2>
 <table>
 <thead>
@@ -115,6 +115,7 @@
 </tr>
 </tbody>
 </table>
+<p>Una pulsación hecha por la API o desde un Stream Deck se ejecuta al momento: <strong>Preguntar antes</strong> solo pregunta en el dashboard.</p>
 <h2>Webhooks</h2>
 <p>Una llamada a <code>POST /api/hooks/&lt;name&gt;</code> lanza un evento al que reacciona una regla. El cuerpo JSON y los parámetros de la dirección pasan a ser los campos del evento.</p>
 <pre><code>curl -X POST http://director:4700/api/hooks/session-start \
@@ -122,6 +123,7 @@
   -d '{ &quot;hall&quot;: &quot;A&quot;, &quot;title&quot;: &quot;Opening&quot; }'
 </code></pre>
 <p>Una regla con el disparador <strong>webhook</strong> y el evento <code>session_start</code> lee entonces <code>event.hall</code> y <code>event.title</code>. El token va en una cabecera <code>x-token</code>, en <code>Authorization: Bearer</code> o en la dirección como <code>?token=</code>.</p>
+<p>El operador puede retener los webhooks con el interruptor <strong>LAS LLAMADAS A LA API SE APLICAN</strong> de la página <strong>Reglas</strong>. Mientras muestra <strong>LLAMADAS A LA API SOLO REGISTRADAS</strong>, una llamada se registra y recibe <code>"applied": false</code>, y no se ejecuta ninguna regla.</p>
 <h2>Stream Deck</h2>
 <p>Bitfocus Companion llega a Director con su módulo <strong>Generic HTTP</strong>; no hay nada que instalar en Companion. Una tecla envía una petición:</p>
 <table>
@@ -150,7 +152,8 @@
 </tr>
 </tbody>
 </table>
-<p>El id de un control está arriba en sus propiedades, en la página <strong>Paneles</strong>. Para las teclas que se iluminan según el estado, Director también habla OSC con Companion: pon <code>BRIDGE_OSC_PORT=&lt;un puerto UDP libre&gt;</code> en <code>.env</code>.</p>
+<p><code>&lt;PIN&gt;</code> es el PIN o, mejor, el PIN de operador (<code>OPERATOR_PIN</code>), que no puede cambiar el show. Un token de acceso no sirve aquí. El id de un control está arriba en sus propiedades, en la página <strong>Paneles</strong>.</p>
+<p>Para las teclas que se iluminan según el estado, Director también habla OSC con Companion: pon en <code>.env</code> <code>BRIDGE_OSC_PORT=&lt;un puerto UDP libre&gt;</code> y <code>BRIDGE_OSC_FEEDBACK=&lt;dirección de Companion&gt;:&lt;su puerto de escucha OSC&gt;</code>, y haz que Companion envíe el mensaje OSC <code>/subscribe</code> con la parte del estado que quiere como argumento, por ejemplo <code>obs.obs01</code>. El puerto OSC no pide PIN: úsalo solo en la red de control.</p>
 <h2>MIDI</h2>
 <p>Una superficie de control es un dispositivo como cualquier otro: añádela en la página <strong>Dispositivos</strong> con el driver <strong>MIDI controller</strong>. Sus teclas y faders llegan como eventos para las reglas, y las reglas pueden iluminar sus teclas.</p>
 </article>

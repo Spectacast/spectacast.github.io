@@ -16,7 +16,7 @@
 <meta property="og:title" content="Reglas y scripts · Spectacast">
 <meta property="og:description" content="Una regla hace lo que de otro modo haría un operador a mano: cuando ocurre algo y se cumple una condición, ejecuta una lista de pasos. Gracias a las reglas, un solo operador puede seguir muchas salas.">
 <meta property="og:url" content="https://spectacast.com/es/ayuda/director-rules/">
-<meta property="og:image" content="https://spectacast.com/img/og/director-rules-en.jpg">
+<meta property="og:image" content="https://spectacast.com/img/og/director-rules-es.jpg">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/design/spectacast.css">
@@ -38,12 +38,12 @@
 
 <h2>Una regla tiene tres partes</h2>
 <ol>
-<li><strong>Disparador:</strong> un evento de un dispositivo (alguien entra en la sala de espera), un valor del estado que cambia (un OBS empieza a emitir), un intervalo o <strong>ejecutar a mano</strong>. Un disparador puede vigilar un dispositivo o todos los dispositivos de un driver, de modo que una regla sirve para todas las salas.</li>
+<li><strong>Disparador:</strong> un evento de un dispositivo (alguien entra en la sala de espera), un valor del estado que cambia (un OBS empieza a emitir), un intervalo o <strong>Solo al ejecutarla a mano</strong>. Un disparador puede vigilar un dispositivo o todos los dispositivos de un driver, de modo que una regla sirve para todas las salas.</li>
 <li><strong>Condición</strong> (opcional): una expresión que debe cumplirse, como <code>obs.studioA.streaming</code>.</li>
 <li><strong>Pasos:</strong> los mismos pasos que ejecuta un botón. Consulta <a href="/es/ayuda/director-panels/">Paneles</a>.</li>
 </ol>
 <p>En la página <strong>Reglas</strong>, <strong>+ regla</strong> empieza una regla vacía y <strong>+ desde plantilla</strong> construye una habitual con tus propios dispositivos, por ejemplo «quien habla pasa a una escena tras un tiempo de espera» o «una fuente NDI se cae, cambiar a una escena de reserva».</p>
-<figure class="shot "><img src="/img/screens/director-rules-en.webp" alt="Las reglas de Director: cada una con lo que la activa y su última ejecución" width="1600" height="1000"></figure>
+<figure class="shot "><img src="/img/screens/director-rules-es.webp" alt="Las reglas de Director: cada una con lo que la activa y su última ejecución" width="1600" height="1000"></figure>
 
 <h2>Tiempos y orden</h2>
 <ul>
@@ -54,11 +54,11 @@
 <h2>Probar antes de fiarse</h2>
 <ul>
 <li><strong>simulación:</strong> la regla anota lo que haría y no hace nada.</li>
-<li><strong>Ejecutar ahora</strong> ejecuta una regla una vez, sea cual sea su disparador.</li>
+<li><strong>Ejecutar ahora</strong> ejecuta una regla una vez sin esperar a su disparador. Su condición debe cumplirse igualmente.</li>
 <li><strong>Historial</strong>, al final de la página, muestra cada ejecución y cada omisión con su motivo, y cada acción con su error.</li>
 <li><strong>Diagrama</strong> dibuja todas las reglas: los disparadores a la izquierda, las reglas en el centro y, a la derecha, los dispositivos sobre los que actúan.</li>
 </ul>
-<p>El interruptor <strong>AUTOMATIZACIÓN ACTIVADA</strong> de la cabecera pausa todas las reglas a la vez y muestra <strong>AUTOMATIZACIÓN DESACTIVADA</strong> mientras están en pausa. Los botones siguen funcionando.</p>
+<p>El interruptor <strong>AUTOMATIZACIÓN ACTIVADA</strong>, arriba en la página <strong>Reglas</strong>, pausa todas las reglas a la vez. Mientras están en pausa muestra <strong>AUTOMATIZACIÓN DESACTIVADA</strong>, y la cabecera muestra lo mismo en todas las páginas. Los botones y <strong>Ejecutar ahora</strong> siguen funcionando.</p>
 <h2>Pasos de script</h2>
 <p>Para la lógica que los formularios no pueden expresar, un paso puede ser un fragmento corto de JavaScript. Se ejecuta en el PC de control y tiene a mano lo que necesita:</p>
 <table>
@@ -106,7 +106,7 @@ if (event.name.startsWith('Dr.')) {
   log('admitted', event.name);
 }
 </code></pre>
-<p><strong>Probar (simulación)</strong> en el editor ejecuta el fragmento una vez sin tocar ningún dispositivo y muestra su registro. Un fragmento que falla, o que tarda más de cinco segundos, cuenta como un paso fallido, y los pasos siguientes se ejecutan igualmente.</p>
+<p><strong>Probar (simulación)</strong> en el editor ejecuta el fragmento una vez sin tocar ningún dispositivo y muestra su registro. Un fragmento que falla, o que tarda más que su <strong>tiempo límite (ms)</strong> (cinco segundos si no lo cambias), cuenta como un paso fallido, y los pasos siguientes se ejecutan igualmente.</p>
 </article>
   </main>
   <footer class="site-foot">

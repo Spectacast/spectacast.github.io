@@ -1,6 +1,6 @@
 # Built to be extended
 
-<p class="lede">Every venue has a device nobody planned for. Spectacast Director is made so that you can connect it yourself: describe its protocol on a form, script what the forms cannot say, and drive everything from your own systems through an open API.</p>
+<p class="lede">Every venue has a device nobody planned for. Spectacast Director is made so that you can connect it yourself: describe its protocol on a form, script what the forms cannot say, and drive everything from your own systems through its API.</p>
 
 {{cta}}
 
@@ -44,4 +44,6 @@ The dashboard's panels are yours to lay out: buttons, choices, text fields, leve
 
 ## The device you need is not possible this way?
 
-Some devices need their maker's own library. Those drivers are built into Director, like the ones for OBS Studio, NDI and Sennheiser EW-DX. Tell us what you want to control.
+Some devices need their maker's own library. Those drivers are built into Director, like the ones for OBS Studio, NDI and Sennheiser EW-DX.
+
+[Tell us what you want to control →](/contact/)

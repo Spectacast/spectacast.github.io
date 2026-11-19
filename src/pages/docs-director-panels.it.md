@@ -21,7 +21,7 @@ Nella pagina **Pannelli** fai clic su **Modifica**. Ora un clic su una cella vuo
 | **Pulsante** | Esegue i suoi passi quando viene premuto |
 | **Interruttore** | Un elenco di passi per accendere e uno per spegnere |
 | **Selezione (opzioni)** | Una fila di opzioni: un elenco fisso o uno dal vivo, come le scene di un OBS o le persone in una riunione |
-| **Testo** | Un campo con un pulsante per applicare, per un sottopancia o un nome |
+| **Campo di testo** | Un campo con un pulsante per applicare, per un sottopancia o un nome |
 | **Etichetta** | Mostra un testo o un valore |
 | **Stato del dispositivo** | Mostra se un dispositivo è collegato |
 | **Anteprima (immagine di un dispositivo)** | L'immagine dal vivo di un OBS o di una sorgente NDI |

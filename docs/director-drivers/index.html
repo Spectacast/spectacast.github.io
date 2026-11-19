@@ -38,7 +38,7 @@
 
 <p>A driver you define speaks one of five transports: <strong>OSC</strong>, <strong>UDP</strong>, <strong>TCP</strong>, <strong>HTTP</strong> or <strong>WebSocket</strong>. That covers most lighting desks, audio mixers, video switchers, matrix routers and building controls.</p>
 <h2>1. Start the driver</h2>
-<p>On the <strong>Drivers</strong> page click <strong>+ driver over…</strong> and pick the transport. Give the driver a name, then list the settings each device of it asks for: a host, a port, an API key. Every setting has a default, and the templates below read it as <code>config.&lt;id&gt;</code>.</p>
+<p>On the <strong>Drivers</strong> page click <strong>+ driver over…</strong> and pick the transport. Give the driver a name, then list the settings each device of it asks for: a host, a port, an API key. A setting has a default or is marked <strong>req</strong> (required), and the templates below read it as <code>config.&lt;id&gt;</code>.</p>
 <h2>2. Commands</h2>
 <p>Click <strong>+ command</strong> for each thing the device can be told. A command becomes an action that buttons and rules can run.</p>
 <ul>
@@ -56,9 +56,10 @@
 <h2>4. Online or offline</h2>
 <p>TCP and WebSocket devices are online while the connection is up, and Director reconnects by itself. UDP, OSC and HTTP devices need a <strong>heartbeat</strong>: a command sent at an interval whose answer shows the device is there. Without one they count as online.</p>
 <h2>5. Try it against the real device</h2>
-<p>On the driver's card pick a device and turn on <strong>trace messages</strong>. Every message in and out is listed live, and each incoming one shows which feedback entries match it and what they would set. <strong>Send test</strong> runs a command with the parameters you type.</p>
+<p>Click <strong>Create driver</strong>, then add a device with your driver on the <strong>Devices</strong> page. Back on the <strong>Drivers</strong> page, click <strong>try</strong> on the driver's card, pick the device and click <strong>trace messages</strong>. Every message in and out is listed live, and each incoming one shows which feedback entries match it and what they would set. <strong>Send test</strong> runs a command with the parameters you type.</p>
 <h2>6. Share it</h2>
 <p><strong>export</strong> downloads the definition as a JSON file; <strong>import JSON</strong> adds one to another show. The definitions are saved inside the show file, so a show carries its drivers with it.</p>
+<p>Two examples to import and adapt: <a href="/examples/drivers/generic-osc.json">a generic OSC device</a> and <a href="/examples/drivers/http-example.json">an HTTP device whose status is polled</a>.</p>
 <h2>When this is not enough</h2>
 <p>A device that needs a vendor's own library, or a protocol these five transports cannot carry, needs a driver built into Director. <a href="/contact/">Tell us</a> which device you want to control.</p>
 </article>

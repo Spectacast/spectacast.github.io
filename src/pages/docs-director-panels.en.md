@@ -21,7 +21,7 @@ On the **Panels** page click **Edit**. Now a click on an empty cell adds a contr
 | **Button** | Runs its steps when pressed |
 | **Toggle** | A switch: one list of steps to turn on, one to turn off |
 | **Select (choices)** | A row of choices: a fixed list, or a live one such as an OBS's scenes or the people in a meeting |
-| **Text** | A field with a Set button, for a banner line or a name |
+| **Text entry** | A field with a Set button, for a banner line or a name |
 | **Label** | Shows a text or a value |
 | **Device status** | Shows whether a device is connected |
 | **Preview (picture of a device)** | The live picture of an OBS or an NDI source |

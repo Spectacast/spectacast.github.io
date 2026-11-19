@@ -38,7 +38,7 @@
 
 <p>Un driver definido por ti habla uno de cinco transportes: <strong>OSC</strong>, <strong>UDP</strong>, <strong>TCP</strong>, <strong>HTTP</strong> o <strong>WebSocket</strong>. Con eso se cubre la mayoría de mesas de luces, mezcladores de audio, mezcladores de vídeo, matrices y sistemas de control de edificios.</p>
 <h2>1. Crear el driver</h2>
-<p>En la página <strong>Drivers</strong> haz clic en <strong>+ driver por…</strong> y elige el transporte. Ponle un nombre al driver y enumera los ajustes que pide cada dispositivo suyo: un host, un puerto, una clave de API. Cada ajuste tiene un valor por defecto, y las plantillas de abajo lo leen como <code>config.&lt;id&gt;</code>.</p>
+<p>En la página <strong>Drivers</strong> haz clic en <strong>+ driver por…</strong> y elige el transporte. Ponle un nombre al driver y enumera los ajustes que pide cada dispositivo suyo: un host, un puerto, una clave de API. Un ajuste tiene un valor por defecto o está marcado con <strong>oblig.</strong> (obligatorio), y las plantillas de abajo lo leen como <code>config.&lt;id&gt;</code>.</p>
 <h2>2. Comandos</h2>
 <p>Haz clic en <strong>+ comando</strong> por cada cosa que se le puede ordenar al dispositivo. Un comando se convierte en una acción que los botones y las reglas pueden ejecutar.</p>
 <ul>
@@ -56,9 +56,10 @@
 <h2>4. En línea o fuera de línea</h2>
 <p>Los dispositivos TCP y WebSocket están en línea mientras la conexión está abierta, y Director vuelve a conectar por sí solo. Los dispositivos UDP, OSC y HTTP necesitan un <strong>latido</strong>: un comando enviado a intervalos cuya respuesta demuestra que el dispositivo está ahí. Sin él cuentan como en línea.</p>
 <h2>5. Probarlo con el dispositivo real</h2>
-<p>En la tarjeta del driver elige un dispositivo y activa <strong>registrar mensajes</strong>. Cada mensaje que entra y que sale aparece en directo, y cada uno de los que entran muestra qué entradas de retorno coinciden con él y qué fijarían. <strong>Enviar prueba</strong> ejecuta un comando con los parámetros que escribas.</p>
+<p>Haz clic en <strong>Crear driver</strong> y añade después un dispositivo con tu driver en la página <strong>Dispositivos</strong>. De vuelta en la página <strong>Drivers</strong>, haz clic en <strong>probar</strong> en la tarjeta del driver, elige el dispositivo y haz clic en <strong>registrar mensajes</strong>. Cada mensaje que entra y que sale aparece en directo, y cada uno de los que entran muestra qué entradas de retorno coinciden con él y qué fijarían. <strong>Enviar prueba</strong> ejecuta un comando con los parámetros que escribas.</p>
 <h2>6. Compartirlo</h2>
 <p><strong>exportar</strong> descarga la definición como un archivo JSON; <strong>importar JSON</strong> añade una a otro show. Las definiciones se guardan dentro del archivo del show, así que un show lleva consigo sus drivers.</p>
+<p>Dos ejemplos para importar y adaptar: <a href="/examples/drivers/generic-osc.json">un dispositivo OSC genérico</a> y <a href="/examples/drivers/http-example.json">un dispositivo HTTP cuyo estado se consulta a intervalos</a>.</p>
 <h2>Cuando esto no basta</h2>
 <p>Un dispositivo que necesita la biblioteca de su fabricante, o un protocolo que estos cinco transportes no pueden llevar, necesita un driver integrado en Director. <a href="/es/contacto/">Dinos</a> qué dispositivo quieres controlar.</p>
 </article>

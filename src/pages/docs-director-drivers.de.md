@@ -6,7 +6,7 @@ Ein selbst definierter Treiber spricht einen von fünf Transporten: **OSC**, **U
 
 ## 1. Den Treiber anlegen
 
-Klicken Sie auf der Seite **Treiber** auf **+ Treiber über…** und wählen Sie den Transport. Geben Sie dem Treiber einen Namen und listen Sie die Einstellungen auf, die jedes seiner Geräte braucht: einen Host, einen Port, einen API-Schlüssel. Jede Einstellung hat einen Standardwert, und die Vorlagen unten lesen sie als `config.<id>`.
+Klicken Sie auf der Seite **Treiber** auf **+ Treiber über…** und wählen Sie den Transport. Geben Sie dem Treiber einen Namen und listen Sie die Einstellungen auf, die jedes seiner Geräte braucht: einen Host, einen Port, einen API-Schlüssel. Eine Einstellung hat einen Standardwert oder ist mit **Pfl.** (Pflichtfeld) markiert, und die Vorlagen unten lesen sie als `config.<id>`.
 
 ## 2. Befehle
 
@@ -31,11 +31,13 @@ TCP- und WebSocket-Geräte sind online, solange die Verbindung steht, und Direct
 
 ## 5. Am echten Gerät ausprobieren
 
-Wählen Sie auf der Karte des Treibers ein Gerät und schalten Sie **Nachrichten mitschneiden** ein. Jede ein- und ausgehende Nachricht wird live aufgelistet, und jede eingehende zeigt, welche Rückmeldungseinträge auf sie passen und was sie setzen würden. **Test senden** führt einen Befehl mit den Parametern aus, die Sie eingeben.
+Klicken Sie auf **Treiber anlegen** und fügen Sie dann auf der Seite **Geräte** ein Gerät mit Ihrem Treiber hinzu. Zurück auf der Seite **Treiber** klicken Sie auf der Karte des Treibers auf **testen**, wählen das Gerät und klicken auf **Nachrichten mitschneiden**. Jede ein- und ausgehende Nachricht wird live aufgelistet, und jede eingehende zeigt, welche Rückmeldungseinträge auf sie passen und was sie setzen würden. **Test senden** führt einen Befehl mit den Parametern aus, die Sie eingeben.
 
 ## 6. Weitergeben
 
 **exportieren** lädt die Definition als JSON-Datei herunter; **JSON importieren** fügt eine in eine andere Show ein. Die Definitionen werden in der Show-Datei gespeichert, eine Show bringt ihre Treiber also mit.
+
+Zwei Beispiele zum Importieren und Anpassen: [ein allgemeines OSC-Gerät](/examples/drivers/generic-osc.json) und [ein HTTP-Gerät, dessen Status abgefragt wird](/examples/drivers/http-example.json).
 
 ## Wenn das nicht reicht
 

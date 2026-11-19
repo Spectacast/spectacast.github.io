@@ -4,7 +4,7 @@
 
 ## Eine Regel hat drei Teile
 
-1. **Auslöser:** ein Ereignis eines Geräts (jemand betritt den Warteraum), ein Wert im Zustand, der sich ändert (ein OBS beginnt zu streamen), ein Intervall oder **manuell starten**. Ein Auslöser kann ein Gerät beobachten oder jedes Gerät eines Treibers, sodass eine Regel für alle Säle reicht.
+1. **Auslöser:** ein Ereignis eines Geräts (jemand betritt den Warteraum), ein Wert im Zustand, der sich ändert (ein OBS beginnt zu streamen), ein Intervall oder **Nur bei manuellem Start**. Ein Auslöser kann ein Gerät beobachten oder jedes Gerät eines Treibers, sodass eine Regel für alle Säle reicht.
 2. **Bedingung** (optional): ein Ausdruck, der zutreffen muss, etwa `obs.studioA.streaming`.
 3. **Schritte:** dieselben Schritte, die eine Taste ausführt. Siehe [Panels](/de/hilfe/director-panels/).
 
@@ -21,11 +21,11 @@ Auf der Seite **Regeln** legt **+ Regel** eine leere Regel an, und **+ aus Vorla
 ## Erst testen, dann vertrauen
 
 - **Probelauf:** Die Regel protokolliert, was sie täte, und tut nichts.
-- **Jetzt ausführen** führt eine Regel einmal aus, unabhängig von ihrem Auslöser.
-- **Verlauf**, unten auf der Seite, listet jeden Lauf und jedes Auslassen mit dem Grund auf, und jede Aktion mit ihrem Fehler.
+- **Jetzt ausführen** führt eine Regel einmal aus, ohne auf ihren Auslöser zu warten. Ihre Bedingung muss trotzdem erfüllt sein.
+- **Verlauf**, unten auf der Seite, listet auf, wann eine Regel lief und wann sie übersprungen wurde, mit dem Grund, und jede Aktion mit ihrem Fehler.
 - **Diagramm** zeichnet alle Regeln: links die Auslöser, in der Mitte die Regeln, rechts die Geräte, auf die sie wirken.
 
-Der Schalter **AUTOMATIK AN** in der Kopfzeile pausiert alle Regeln auf einmal und zeigt **AUTOMATIK AUS**, solange sie pausiert sind. Die Tasten funktionieren weiter.
+Der Schalter **AUTOMATIK AN** oben auf der Seite **Regeln** pausiert alle Regeln auf einmal. Solange sie pausiert sind, zeigt er **AUTOMATIK AUS**, und die Kopfzeile zeigt dasselbe auf jeder Seite. Die Tasten und **Jetzt ausführen** funktionieren weiter.
 
 ## Skript-Schritte
 
@@ -50,4 +50,4 @@ if (event.name.startsWith('Dr.')) {
 }
 ```
 
-**Testen (Probelauf)** im Editor führt das Skript einmal aus, ohne ein Gerät anzufassen, und zeigt sein Protokoll. Ein Skript, das fehlschlägt oder länger als fünf Sekunden läuft, zählt als ein fehlgeschlagener Schritt, und die Schritte danach laufen trotzdem.
+**Testen (Probelauf)** im Editor führt das Skript einmal aus, ohne ein Gerät anzufassen, und zeigt sein Protokoll. Ein Skript, das fehlschlägt oder länger läuft als sein **Zeitlimit (ms)** (fünf Sekunden, wenn Sie es nicht ändern), zählt als ein fehlgeschlagener Schritt, und die Schritte danach laufen trotzdem.

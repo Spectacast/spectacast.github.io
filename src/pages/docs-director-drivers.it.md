@@ -6,7 +6,7 @@ Un driver definito da te parla uno di cinque trasporti: **OSC**, **UDP**, **TCP*
 
 ## 1. Creare il driver
 
-Nella pagina **Driver** fai clic su **+ driver su…** e scegli il trasporto. Dai un nome al driver ed elenca le impostazioni che ogni suo dispositivo richiede: un host, una porta, una chiave API. Ogni impostazione ha un valore predefinito, e i modelli qui sotto la leggono come `config.<id>`.
+Nella pagina **Driver** fai clic su **+ driver su…** e scegli il trasporto. Dai un nome al driver ed elenca le impostazioni che ogni suo dispositivo richiede: un host, una porta, una chiave API. Un'impostazione ha un valore predefinito oppure è segnata con **obbl.** (obbligatoria), e i modelli qui sotto la leggono come `config.<id>`.
 
 ## 2. Comandi
 
@@ -31,11 +31,13 @@ I dispositivi TCP e WebSocket sono online finché la connessione è attiva, e Di
 
 ## 5. Provarlo sul dispositivo vero
 
-Sulla scheda del driver scegli un dispositivo e attiva **traccia i messaggi**. Ogni messaggio in entrata e in uscita viene elencato dal vivo, e ognuno di quelli in entrata mostra quali voci di feedback gli corrispondono e cosa imposterebbero. **Invia prova** esegue un comando con i parametri che scrivi.
+Fai clic su **Crea driver**, poi aggiungi un dispositivo con il tuo driver nella pagina **Dispositivi**. Tornato nella pagina **Driver**, fai clic su **prova** sulla scheda del driver, scegli il dispositivo e fai clic su **traccia i messaggi**. Ogni messaggio in entrata e in uscita viene elencato dal vivo, e ognuno di quelli in entrata mostra quali voci di feedback gli corrispondono e cosa imposterebbero. **Invia prova** esegue un comando con i parametri che scrivi.
 
 ## 6. Condividerlo
 
 **esporta** scarica la definizione come file JSON; **importa JSON** ne aggiunge una a un altro show. Le definizioni sono salvate nel file dello show, quindi uno show porta con sé i suoi driver.
+
+Due esempi da importare e adattare: [un dispositivo OSC generico](/examples/drivers/generic-osc.json) e [un dispositivo HTTP il cui stato viene interrogato a intervalli](/examples/drivers/http-example.json).
 
 ## Quando non basta
 

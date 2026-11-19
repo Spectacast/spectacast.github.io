@@ -1,0 +1,73 @@
+{
+  "id": "oscdevice",
+  "title": "Generic OSC device",
+  "version": "1",
+  "description": "A device that answers /ping with /pong, reports channel levels and fires cues. Import it from the Drivers tab and adapt the addresses.",
+  "transport": { "type": "osc" },
+  "config": [
+    {
+      "id": "sendPort",
+      "type": "number",
+      "default": 9000,
+      "description": "Port the device listens on"
+    },
+    {
+      "id": "listenPort",
+      "type": "number",
+      "default": 9001,
+      "description": "Port Director listens on. One per device"
+    }
+  ],
+  "commands": [
+    { "id": "ping", "title": "Ping", "send": { "kind": "osc", "address": "/ping" } },
+    {
+      "id": "setLevel",
+      "title": "Set channel level",
+      "group": "Channels",
+      "params": [
+        { "id": "channel", "type": "number", "required": true },
+        { "id": "level", "type": "number", "default": 0, "description": "0 to 1" }
+      ],
+      "send": {
+        "kind": "osc",
+        "address": "/channel/{{params.channel}}/level",
+        "args": [{ "type": "f", "value": "{{params.level}}" }]
+      }
+    },
+    {
+      "id": "go",
+      "title": "Fire a cue",
+      "group": "Cues",
+      "params": [{ "id": "cue", "type": "string", "required": true }],
+      "send": {
+        "kind": "osc",
+        "address": "/cue/go",
+        "args": [{ "type": "s", "value": "{{params.cue}}" }]
+      }
+    }
+  ],
+  "feedback": [
+    {
+      "id": "pong",
+      "match": { "kind": "osc", "address": "/pong" },
+      "set": [{ "path": "version", "value": "args[0]" }]
+    },
+    {
+      "id": "level",
+      "match": { "kind": "osc", "address": "/channel/{channel}/level" },
+      "set": [{ "path": "channels.{{m.channel}}.level", "value": "args[0]" }],
+      "emit": {
+        "event": "levelChanged",
+        "title": "Channel level changed",
+        "payload": { "channel": "m.channel", "level": "args[0]" }
+      }
+    },
+    {
+      "id": "cueFired",
+      "match": { "kind": "osc", "address": "/cue/*/fired" },
+      "when": "args[0] == 1",
+      "emit": { "event": "cueFired", "title": "Cue fired", "payload": { "cue": "address" } }
+    }
+  ],
+  "connection": { "heartbeat": { "command": "ping", "expect": "pong", "everyMs": 2000 } }
+}

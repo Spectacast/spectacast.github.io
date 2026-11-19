@@ -1,6 +1,6 @@
 # Hecho para ampliarse
 
-<p class="lede">En todo recinto hay un equipo con el que nadie contaba. Spectacast Director está hecho para que lo conectes tú: describe su protocolo en un formulario, resuelve con un script lo que los formularios no saben decir y maneja todo desde tus propios sistemas con una API abierta.</p>
+<p class="lede">En todo recinto hay un equipo con el que nadie contaba. Spectacast Director está hecho para que lo conectes tú: describe su protocolo en un formulario, resuelve con un script lo que los formularios no saben decir y maneja todo desde tus propios sistemas con su API.</p>
 
 {{cta}}
 
@@ -44,4 +44,6 @@ Los paneles del dashboard los organizas tú: botones, selecciones, campos de tex
 
 ## ¿Tu equipo no se puede conectar así?
 
-Algunos equipos necesitan la biblioteca de su fabricante. Esos drivers están integrados en Director, como los de OBS Studio, NDI y Sennheiser EW-DX. Dinos qué quieres controlar.
+Algunos equipos necesitan la biblioteca de su fabricante. Esos drivers están integrados en Director, como los de OBS Studio, NDI y Sennheiser EW-DX.
+
+[Dinos qué quieres controlar →](/es/contacto/)

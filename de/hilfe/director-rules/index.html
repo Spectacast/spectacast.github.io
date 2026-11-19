@@ -16,7 +16,7 @@
 <meta property="og:title" content="Regeln und Skripte · Spectacast">
 <meta property="og:description" content="Eine Regel tut, was sonst ein Operator von Hand täte: Wenn etwas geschieht und eine Bedingung zutrifft, führt sie eine Liste von Schritten aus. Dank der Regeln kann ein einziger Operator viele…">
 <meta property="og:url" content="https://spectacast.com/de/hilfe/director-rules/">
-<meta property="og:image" content="https://spectacast.com/img/og/director-rules-en.jpg">
+<meta property="og:image" content="https://spectacast.com/img/og/director-rules-de.jpg">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/design/spectacast.css">
@@ -38,12 +38,12 @@
 
 <h2>Eine Regel hat drei Teile</h2>
 <ol>
-<li><strong>Auslöser:</strong> ein Ereignis eines Geräts (jemand betritt den Warteraum), ein Wert im Zustand, der sich ändert (ein OBS beginnt zu streamen), ein Intervall oder <strong>manuell starten</strong>. Ein Auslöser kann ein Gerät beobachten oder jedes Gerät eines Treibers, sodass eine Regel für alle Säle reicht.</li>
+<li><strong>Auslöser:</strong> ein Ereignis eines Geräts (jemand betritt den Warteraum), ein Wert im Zustand, der sich ändert (ein OBS beginnt zu streamen), ein Intervall oder <strong>Nur bei manuellem Start</strong>. Ein Auslöser kann ein Gerät beobachten oder jedes Gerät eines Treibers, sodass eine Regel für alle Säle reicht.</li>
 <li><strong>Bedingung</strong> (optional): ein Ausdruck, der zutreffen muss, etwa <code>obs.studioA.streaming</code>.</li>
 <li><strong>Schritte:</strong> dieselben Schritte, die eine Taste ausführt. Siehe <a href="/de/hilfe/director-panels/">Panels</a>.</li>
 </ol>
 <p>Auf der Seite <strong>Regeln</strong> legt <strong>+ Regel</strong> eine leere Regel an, und <strong>+ aus Vorlage</strong> baut eine gängige Regel aus Ihren eigenen Geräten, zum Beispiel „die sprechende Person geht nach einer Haltezeit auf eine Szene“ oder „eine NDI-Quelle fällt aus, auf eine Ersatzszene wechseln“.</p>
-<figure class="shot "><img src="/img/screens/director-rules-en.webp" alt="Die Regeln in Director: jede mit ihrem Auslöser und dem letzten Lauf" width="1600" height="1000"></figure>
+<figure class="shot "><img src="/img/screens/director-rules-de.webp" alt="Die Regeln in Director: jede mit ihrem Auslöser und dem letzten Lauf" width="1600" height="1000"></figure>
 
 <h2>Zeit und Reihenfolge</h2>
 <ul>
@@ -54,11 +54,11 @@
 <h2>Erst testen, dann vertrauen</h2>
 <ul>
 <li><strong>Probelauf:</strong> Die Regel protokolliert, was sie täte, und tut nichts.</li>
-<li><strong>Jetzt ausführen</strong> führt eine Regel einmal aus, unabhängig von ihrem Auslöser.</li>
-<li><strong>Verlauf</strong>, unten auf der Seite, listet jeden Lauf und jedes Auslassen mit dem Grund auf, und jede Aktion mit ihrem Fehler.</li>
+<li><strong>Jetzt ausführen</strong> führt eine Regel einmal aus, ohne auf ihren Auslöser zu warten. Ihre Bedingung muss trotzdem erfüllt sein.</li>
+<li><strong>Verlauf</strong>, unten auf der Seite, listet auf, wann eine Regel lief und wann sie übersprungen wurde, mit dem Grund, und jede Aktion mit ihrem Fehler.</li>
 <li><strong>Diagramm</strong> zeichnet alle Regeln: links die Auslöser, in der Mitte die Regeln, rechts die Geräte, auf die sie wirken.</li>
 </ul>
-<p>Der Schalter <strong>AUTOMATIK AN</strong> in der Kopfzeile pausiert alle Regeln auf einmal und zeigt <strong>AUTOMATIK AUS</strong>, solange sie pausiert sind. Die Tasten funktionieren weiter.</p>
+<p>Der Schalter <strong>AUTOMATIK AN</strong> oben auf der Seite <strong>Regeln</strong> pausiert alle Regeln auf einmal. Solange sie pausiert sind, zeigt er <strong>AUTOMATIK AUS</strong>, und die Kopfzeile zeigt dasselbe auf jeder Seite. Die Tasten und <strong>Jetzt ausführen</strong> funktionieren weiter.</p>
 <h2>Skript-Schritte</h2>
 <p>Für Logik, die die Formulare nicht ausdrücken können, kann ein Schritt ein kurzes Stück JavaScript sein. Es läuft auf dem Regie-PC und hat alles Nötige zur Hand:</p>
 <table>
@@ -106,7 +106,7 @@ if (event.name.startsWith('Dr.')) {
   log('admitted', event.name);
 }
 </code></pre>
-<p><strong>Testen (Probelauf)</strong> im Editor führt das Skript einmal aus, ohne ein Gerät anzufassen, und zeigt sein Protokoll. Ein Skript, das fehlschlägt oder länger als fünf Sekunden läuft, zählt als ein fehlgeschlagener Schritt, und die Schritte danach laufen trotzdem.</p>
+<p><strong>Testen (Probelauf)</strong> im Editor führt das Skript einmal aus, ohne ein Gerät anzufassen, und zeigt sein Protokoll. Ein Skript, das fehlschlägt oder länger läuft als sein <strong>Zeitlimit (ms)</strong> (fünf Sekunden, wenn Sie es nicht ändern), zählt als ein fehlgeschlagener Schritt, und die Schritte danach laufen trotzdem.</p>
 </article>
   </main>
   <footer class="site-foot">

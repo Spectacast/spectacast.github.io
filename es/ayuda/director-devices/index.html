@@ -38,12 +38,12 @@
 
 <h2>Añadir un dispositivo</h2>
 <ol>
-<li>Abre la página <strong>Dispositivos</strong> y haz clic en <strong>Añadir dispositivo</strong>.</li>
+<li>Abre la página <strong>Dispositivos</strong> y ve al formulario <strong>Añadir dispositivo</strong>, debajo de las tarjetas.</li>
 <li>Elige el driver y escribe un nombre. El formulario muestra un campo por cada ajuste que necesita el driver, con su valor por defecto.</li>
-<li>Guarda. La tarjeta se pone verde en cuanto el dispositivo responde. Haz clic en una tarjeta para ver su estado y su último error.</li>
+<li>Haz clic en <strong>Añadir</strong>. El punto de la tarjeta se pone verde en cuanto el dispositivo responde; la tarjeta muestra su estado y su último error.</li>
 </ol>
 <p><strong>editar</strong> en una tarjeta cambia el nombre y los ajustes; Director vuelve a conectar al guardar. <strong>Buscar en la red</strong> y luego <strong>buscar</strong> muestra cada OBS y cada Spectacast Meet que responde en la red; <strong>usar en el formulario</strong> rellena el formulario con uno de ellos.</p>
-<p>Las contraseñas no se guardan en el archivo del show. Ponlas en <code>C:\ProgramData\Spectacast\director\.env</code>, por ejemplo <code>OBS_PASSWORD=&lt;contraseña&gt;</code>, y después cierra la sesión y vuelve a iniciarla.</p>
+<p>La contraseña de OBS no se guarda en el archivo del show: ponla en <code>C:\ProgramData\Spectacast\director\.env</code> como <code>OBS_PASSWORD=&lt;contraseña&gt;</code>, y luego cierra la sesión y vuelve a entrar. La contraseña de un receptor Sennheiser o de un receptor de Mic se guarda en el archivo del show.</p>
 <h2>Los drivers que trae Director</h2>
 <table>
 <thead>
@@ -59,7 +59,7 @@
 </tr>
 <tr>
 <td><strong>NDI discovery</strong></td>
-<td>Las fuentes NDI de la red, también a través de un NDI Discovery Server; sus imágenes en la página <strong>Wall</strong></td>
+<td>Las fuentes NDI de la red, también a través de un NDI Discovery Server. Un control <strong>Vista previa</strong> muestra la imagen de cualquiera de ellas</td>
 </tr>
 <tr>
 <td><strong>Spectacast Meet</strong></td>
@@ -75,7 +75,7 @@
 </tr>
 <tr>
 <td><strong>Sennheiser EW-DX receiver</strong></td>
-<td>Silencio, ganancia, nivel, enlace de radio y batería de cada canal. Activa primero el acceso de terceros en el receptor</td>
+<td>Silencio, ganancia, nivel, enlace de radio y batería de cada canal. Activa primero 3rd Party Access en Sennheiser Control Cockpit (firmware 4.0.0 o posterior)</td>
 </tr>
 <tr>
 <td><strong>MIDI controller</strong></td>
@@ -95,7 +95,7 @@
 <h2>Entradas desde fuera</h2>
 <p>Dos entradas permiten que otro sistema ponga algo en marcha en Director. Las dos están en la página <strong>Dispositivos</strong>, en <strong>Entradas</strong>.</p>
 <ul>
-<li><strong>webhook:</strong> una llamada a <code>POST /api/hooks/&lt;name&gt;</code> lanza el evento <code>&lt;name&gt;</code>. El cuerpo JSON y los parámetros de la dirección llegan como campos del evento.</li>
+<li><strong>Webhooks:</strong> una llamada a <code>POST /api/hooks/&lt;name&gt;</code> lanza el evento <code>&lt;name&gt;</code>. El cuerpo JSON y los parámetros de la dirección llegan como campos del evento.</li>
 <li><strong>Entrada OSC:</strong> fija un puerto, y cada mensaje OSC que llega a él se convierte en un evento con el nombre de su dirección: <code>/cue/go</code> pasa a ser <code>cue_go</code>.</li>
 </ul>
 <p>Después, una regla reacciona al evento. Consulta <a href="/es/ayuda/director-rules/">Reglas y scripts</a> y <a href="/es/ayuda/director-api/">API, webhooks y Stream Deck</a>.</p>

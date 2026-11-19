@@ -2,11 +2,11 @@
 
 <p class="lede">Alles, was das Dashboard tut, läuft über eine HTTP-API auf dem Regie-PC, und andere Programme können sie ebenfalls nutzen: ein Registrierungssystem, eine Showsteuerung, ein Skript, ein Stream Deck.</p>
 
-Die Adresse ist die des Dashboards, standardmäßig `http://<Regie-PC>:4700`. Die API bleibt im Netzwerk des Veranstaltungsorts: Director öffnet sie nicht zum Internet.
+Auf dem Regie-PC lautet die Adresse `http://127.0.0.1:4700`. Ein anderer Rechner erreicht `http://<Regie-PC>:4700`, sobald in `.env` `HOST=0.0.0.0` und eine `PIN` stehen (siehe die [Director-Anleitung](/de/hilfe/director/)). Die API spricht unverschlüsseltes HTTP und bleibt im Netzwerk des Veranstaltungsorts: Director öffnet sie nicht zum Internet.
 
 ## Zugriff
 
-Legen Sie eine PIN fest, bevor Sie Director im Netzwerk erreichbar machen (siehe die [Director-Anleitung](/de/hilfe/director/)). Für ein Programm tragen Sie ein eigenes Zugriffstoken in `C:\ProgramData\Spectacast\director\.env` ein und melden sich dann ab und wieder an:
+Zugriffstoken gelten nur, wenn eine PIN gesetzt ist. Für ein Programm tragen Sie ein eigenes Zugriffstoken in `C:\ProgramData\Spectacast\director\.env` ein und melden sich dann ab und wieder an:
 
 ```
 ACCESS_TOKENS=api:<ein Token mit mindestens 8 Zeichen>
@@ -19,7 +19,7 @@ ACCESS_TOKENS=api:<ein Token mit mindestens 8 Zeichen>
 | `operator:<token>` | Dasselbe wie die Operator-PIN: die Panels |
 | `panels:<token>` | Nur die Panels, für einen Bildschirm in einem Saal |
 
-Ein Programm meldet sich mit `POST /api/login` und dem Body `{ "pin": "<token>" }` an und behält das Sitzungs-Cookie, das es zurückbekommt. Aufrufe von Webhooks und vom Stream Deck tragen das Token selbst, wie unten gezeigt.
+Ein Programm meldet sich mit `POST /api/login` und dem Body `{ "pin": "<token>" }` an und behält das Sitzungs-Cookie, das es zurückbekommt. Eine Sitzung endet, wenn Director neu startet: Melden Sie das Programm neu an, wenn ein Aufruf mit `401` antwortet. Fünf falsche Versuche sperren eine Adresse für 30 Sekunden. Webhooks tragen das Token bei jedem Aufruf; Anfragen vom Stream Deck tragen die PIN oder die Operator-PIN.
 
 ## Was Sie aufrufen können
 
@@ -32,8 +32,10 @@ Ein Programm meldet sich mit `POST /api/login` und dem Body `{ "pin": "<token>" 
 | `POST /api/press` | Drückt ein Bedienelement eines Panels: `{ "panel": "main", "control": "goLive" }` |
 | `POST /api/vars` | Setzt eine Variable: `{ "id": "segment", "value": "panel" }` |
 | `POST /api/rules/<id>/run` | Führt eine Regel jetzt aus |
-| `GET /api/rules/history` | Läufe und Auslassungen jeder Regel |
+| `GET /api/rules/history` | Wann jede Regel lief oder übersprungen wurde |
 | `GET /ws` | Ein WebSocket: einmal der ganze Zustand, dann jede Änderung, sobald sie geschieht |
+
+Ein Tastendruck über die API oder vom Stream Deck wird sofort ausgeführt: **Vorher fragen** fragt nur im Dashboard.
 
 ## Webhooks
 
@@ -47,6 +49,8 @@ curl -X POST http://director:4700/api/hooks/session-start \
 
 Eine Regel mit dem Auslöser **Webhook** und dem Ereignis `session_start` liest dann `event.hall` und `event.title`. Das Token steht in einem Header `x-token`, in `Authorization: Bearer` oder in der Adresse als `?token=`.
 
+Der Operator kann Webhooks mit dem Schalter **API-AUFRUFE WIRKEN** auf der Seite **Regeln** zurückhalten. Solange er **API-AUFRUFE NUR PROTOKOLLIERT** zeigt, wird ein Aufruf protokolliert und mit `"applied": false` beantwortet, und keine Regel läuft.
+
 ## Stream Deck
 
 Bitfocus Companion erreicht Director mit seinem Modul **Generic HTTP**; in Companion ist nichts zu installieren. Eine Taste sendet eine Anfrage:
@@ -58,7 +62,9 @@ Bitfocus Companion erreicht Director mit seinem Modul **Generic HTTP**; in Compa
 | `/api/bridge/action/<device>/<action>?…&token=<PIN>` | Führt die Aktion eines Geräts aus |
 | `/api/bridge/rule/<id>/run?token=<PIN>` | Führt eine Regel aus |
 
-Die ID eines Bedienelements steht oben in seinen Eigenschaften auf der Seite **Panels**. Für Tasten, die je nach Zustand leuchten, spricht Director mit Companion auch OSC: Tragen Sie `BRIDGE_OSC_PORT=<ein freier UDP-Port>` in `.env` ein.
+`<PIN>` ist die PIN oder besser die Operator-PIN (`OPERATOR_PIN`), mit der sich die Show nicht ändern lässt. Ein Zugriffstoken funktioniert hier nicht. Die ID eines Bedienelements steht oben in seinen Eigenschaften auf der Seite **Panels**.
+
+Für Tasten, die je nach Zustand leuchten, spricht Director mit Companion auch OSC: Tragen Sie in `.env` `BRIDGE_OSC_PORT=<ein freier UDP-Port>` und `BRIDGE_OSC_FEEDBACK=<Adresse von Companion>:<dessen OSC-Empfangsport>` ein, und lassen Sie Companion die OSC-Nachricht `/subscribe` mit dem gewünschten Teil des Zustands als Argument senden, zum Beispiel `obs.obs01`. Der OSC-Port fragt nach keiner PIN: Nutzen Sie ihn nur im Regie-Netzwerk.
 
 ## MIDI
 

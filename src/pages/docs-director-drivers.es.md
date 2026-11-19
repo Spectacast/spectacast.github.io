@@ -6,7 +6,7 @@ Un driver definido por ti habla uno de cinco transportes: **OSC**, **UDP**, **TC
 
 ## 1. Crear el driver
 
-En la página **Drivers** haz clic en **+ driver por…** y elige el transporte. Ponle un nombre al driver y enumera los ajustes que pide cada dispositivo suyo: un host, un puerto, una clave de API. Cada ajuste tiene un valor por defecto, y las plantillas de abajo lo leen como `config.<id>`.
+En la página **Drivers** haz clic en **+ driver por…** y elige el transporte. Ponle un nombre al driver y enumera los ajustes que pide cada dispositivo suyo: un host, un puerto, una clave de API. Un ajuste tiene un valor por defecto o está marcado con **oblig.** (obligatorio), y las plantillas de abajo lo leen como `config.<id>`.
 
 ## 2. Comandos
 
@@ -31,11 +31,13 @@ Los dispositivos TCP y WebSocket están en línea mientras la conexión está ab
 
 ## 5. Probarlo con el dispositivo real
 
-En la tarjeta del driver elige un dispositivo y activa **registrar mensajes**. Cada mensaje que entra y que sale aparece en directo, y cada uno de los que entran muestra qué entradas de retorno coinciden con él y qué fijarían. **Enviar prueba** ejecuta un comando con los parámetros que escribas.
+Haz clic en **Crear driver** y añade después un dispositivo con tu driver en la página **Dispositivos**. De vuelta en la página **Drivers**, haz clic en **probar** en la tarjeta del driver, elige el dispositivo y haz clic en **registrar mensajes**. Cada mensaje que entra y que sale aparece en directo, y cada uno de los que entran muestra qué entradas de retorno coinciden con él y qué fijarían. **Enviar prueba** ejecuta un comando con los parámetros que escribas.
 
 ## 6. Compartirlo
 
 **exportar** descarga la definición como un archivo JSON; **importar JSON** añade una a otro show. Las definiciones se guardan dentro del archivo del show, así que un show lleva consigo sus drivers.
+
+Dos ejemplos para importar y adaptar: [un dispositivo OSC genérico](/examples/drivers/generic-osc.json) y [un dispositivo HTTP cuyo estado se consulta a intervalos](/examples/drivers/http-example.json).
 
 ## Cuando esto no basta
 
