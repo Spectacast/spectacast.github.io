@@ -60,7 +60,8 @@ const stop = () => { engine?.kill(); web.kill(); fs.rmSync(runner, { force: true
     if (lang === 'en') {
       for (const [i, name] of ['wall', 'fleet', 'rules', 'devices'].entries()) {
         await pg.locator('header button').nth(i + 1).click(); await pg.waitForTimeout(1500);
-        await pg.screenshot({ path: `${out}/director-${name}-en.png` });
+        // The fleet is a short table: no need for the empty page under it.
+        await pg.screenshot({ path: `${out}/director-${name}-en.png`, ...(name === 'fleet' ? { clip: { x: 0, y: 0, width: 1600, height: 420 } } : {}) });
       }
     }
     await pg.close();

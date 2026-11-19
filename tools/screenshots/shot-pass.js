@@ -11,18 +11,26 @@ const path = require('node:path');
 const [passRepo, out] = process.argv.slice(2);
 if (!passRepo || !out) throw new Error('usage: shot-pass.js <pass repo> <output folder>');
 fs.mkdirSync(out, { recursive: true });
-const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'pass-demo-'));
-const db = path.join(tmp, 'demo.db');
 const node = ['--disable-warning=ExperimentalWarning'];
-const info = JSON.parse(execFileSync('node', [...node, path.join(__dirname, 'seed-pass.ts'), passRepo, db]).toString());
-const hub = spawn('node', [...node, 'src/main.ts', '--db', db, '--port', '4899', '--https-port', '0'], { cwd: passRepo, stdio: 'ignore' });
 const base = 'http://localhost:4899';
+// A fresh database and hub for each colour scheme, so the door's scan is a first read both times.
+async function startHub() {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'pass-demo-'));
+  const db = path.join(tmp, 'demo.db');
+  const info = JSON.parse(execFileSync('node', [...node, path.join(__dirname, 'seed-pass.ts'), passRepo, db]).toString());
+  const hub = spawn('node', [...node, 'src/main.ts', '--db', db, '--port', '4899', '--https-port', '0'], { cwd: passRepo, stdio: 'ignore' });
+  for (let i = 0; i < 50; i++) { try { await fetch(base + '/api/events'); break; } catch { await new Promise((r) => setTimeout(r, 200)); } }
+  const stop = async () => { hub.kill('SIGKILL'); await new Promise((r) => (hub.exitCode !== null || hub.signalCode ? r() : hub.once('exit', r))); fs.rmSync(tmp, { recursive: true, force: true }); };
+  return { info, stop };
+}
+let current = null;
 
 (async () => {
-  for (let i = 0; i < 50; i++) { try { await fetch(base + '/api/events'); break; } catch { await new Promise((r) => setTimeout(r, 200)); } }
   const b = await chromium.launch();
-  const when = new Date(info.snapshotAt);
   for (const scheme of ['light', 'dark']) {
+    current = await startHub();
+    const { info } = current;
+    const when = new Date(info.snapshotAt);
     const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, colorScheme: scheme, timezoneId: 'Europe/Berlin', locale: 'en-GB' });
     const pg = await ctx.newPage();
     await pg.clock.setFixedTime(when);
@@ -41,9 +49,8 @@ const base = 'http://localhost:4899';
     await ph.screenshot({ path: `${out}/pass-door-welcome-${scheme}.png` });
     await phone.close();
     await ctx.close();
+    await current.stop(); current = null;
   }
   await b.close();
-  hub.kill();
-  fs.rmSync(tmp, { recursive: true, force: true });
   console.log('Pass screenshots in', out);
-})().catch((e) => { hub.kill(); console.error(e); process.exit(1); });
+})().catch(async (e) => { await current?.stop(); console.error(e); process.exit(1); });
