@@ -16,7 +16,7 @@
 <meta property="og:title" content="Zum Erweitern gebaut · Spectacast">
 <meta property="og:description" content="An jedem Veranstaltungsort steht ein Gerät, mit dem niemand gerechnet hat. Spectacast Director ist so gemacht, dass Sie es selbst anbinden können: sein Protokoll in einem Formular beschreiben, per…">
 <meta property="og:url" content="https://spectacast.com/de/entwickler/">
-<meta property="og:image" content="https://spectacast.com/img/og/director-rules-de.jpg">
+<meta property="og:image" content="https://spectacast.com/img/og/director-build-driver-de.jpg">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/design/spectacast.css">
@@ -41,12 +41,13 @@
 <h2>Ein Gerät ohne Code anbinden</h2>
 <div class="p-text"><p>Auf der Seite Treiber beschreiben Sie das Protokoll eines Geräts: die Befehle, die es annimmt, und die Nachrichten, die es zurückschickt. Director spricht OSC, UDP, TCP, HTTP und WebSocket; das deckt die meisten Lichtpulte, Audiomischer, Bildmischer und Kreuzschienen ab. Danach hat das Gerät Tasten, einen Live-Zustand und Regeln wie die mitgelieferten.</p>
 <p>Sie testen am echten Gerät, wobei jede ein- und ausgehende Nachricht live aufgelistet wird, und geben einen fertigen Treiber als eine Datei weiter.</p>
-<p><a href="/de/hilfe/director-drivers/">So beschreiben Sie einen Treiber →</a></p></div>
+<p><a href="/de/hilfe/director-drivers/">So beschreiben Sie einen Treiber →</a></p>
+<figure class="viz closeup wide" style="max-width:784px"><div class="cu-scroll"><div class="cu-shot" data-surface="console"><img src="/img/closeups/director-build-driver-de.webp" alt="Nahaufnahme des Treiber-Editors von Director mit dem Beispiel „Generic OSC device“: der Transport OSC über UDP, die Einstellungen, die jedes Gerät verlangt, und die ersten Befehle" width="1568" height="1074" loading="lazy"><span class="cu-mark after" aria-hidden="true" style="left:81.2%;top:7.2%">1</span><span class="cu-mark after" aria-hidden="true" style="left:72.5%;top:35.8%">2</span><span class="cu-mark after" aria-hidden="true" style="left:50.9%;top:59.7%">3</span></div></div><figcaption><p class="cu-hint">Zur Seite wischen, um das ganze Bild zu sehen →</p><ol class="cu-legend"><li><b>Wie es spricht</b>: OSC, UDP, TCP, HTTP oder WebSocket.</li><li><b>Was jedes Gerät braucht</b>: hier zwei Ports, neben seiner Adresse.</li><li><b>Seine Befehle</b>: Jeder wird zu einer Aktion für Tasten und Regeln.</li></ol></figcaption></figure></div>
 </section>
 <section class="p-row">
 <h2>Regeln, und Skripte, wenn Regeln nicht reichen</h2>
 <div class="p-text"><p>Regeln reagieren auf das, was in den Sälen geschieht: Jemand betritt den Warteraum, eine Person ergreift das Wort, eine Quelle fällt aus. Die meisten entstehen aus Formularen. Wo die Logik Ihre eigene ist, kann ein Schritt aus ein paar Zeilen JavaScript bestehen, mit dem ganzen Zustand zur Hand.</p>
-<figure class="shot "><img src="/img/screens/director-rules-de.webp" alt="Die Regeln in Director: jede mit ihrem Auslöser und dem letzten Lauf" width="1600" height="1000" loading="lazy"></figure>
+<figure class="viz closeup wide" style="max-width:784px"><div class="cu-scroll"><div class="cu-shot" data-surface="console"><img src="/img/closeups/director-build-rule-de.webp" alt="Nahaufnahme des Regel-Editors von Director mit der Regel „Active speaker → Speaker“: Wenn in Zoom Saal A die sprechende Person wechselt, setzt OBS Saal A nach einer Haltezeit von 1500 ms seine Szene" width="1568" height="1148" loading="lazy"><span class="cu-mark after" aria-hidden="true" style="left:18.1%;top:13.3%">1</span><span class="cu-mark after" aria-hidden="true" style="left:19.3%;top:38.4%">2</span><span class="cu-mark after" aria-hidden="true" style="left:7.3%;top:69.3%">3</span></div></div><figcaption><p class="cu-hint">Zur Seite wischen, um das ganze Bild zu sehen →</p><ol class="cu-legend"><li><b>Wenn</b>: was die Regel auslöst. Hier wechselt in Saal A die sprechende Person.</li><li><b>Nur wenn</b>: eine Bedingung und eine Haltezeit. Hier muss die Person das Wort anderthalb Sekunden behalten.</li><li><b>Dann</b>: was die Regel tut. Hier wechselt OBS in Saal A die Szene.</li></ol></figcaption></figure>
 
 <p><a href="/de/hilfe/director-rules/">Regeln und Skripte →</a></p></div>
 </section>
@@ -66,7 +67,7 @@
 <section class="p-row">
 <h2>Ihre eigenen Panels</h2>
 <div class="p-text"><p>Die Panels des Dashboards ordnen Sie selbst an: Tasten, Auswahlen, Textfelder, Pegelanzeigen und Live-Bilder, einmal als Block gebaut und einmal pro Saal platziert.</p>
-<figure class="shot "><img src="/img/screens/director-panels-de.webp" alt="Ein Panel in Director mit vier Sälen: ein Block pro Saal, mit Meeting, Warteraum, Preview und Program" width="1600" height="1000" loading="lazy"></figure>
+<figure class="viz closeup wide" style="max-width:788px"><div class="cu-scroll"><div class="cu-shot" data-surface="console"><img src="/img/closeups/director-build-panel-de.webp" alt="Nahaufnahme des Panel-Editors von Director: die Reihe der fertigen Blöcke, das Raster des Panels mit leeren Zellen und die Taste Speichern" width="1576" height="968" loading="lazy"><span class="cu-mark after" aria-hidden="true" style="left:10.9%;top:20.5%">1</span><span class="cu-mark" aria-hidden="true" style="left:69.3%;top:79.8%">2</span><span class="cu-mark before" aria-hidden="true" style="left:74.4%;top:20.5%">3</span></div></div><figcaption><p class="cu-hint">Zur Seite wischen, um das ganze Bild zu sehen →</p><ol class="cu-legend"><li><b>Blöcke</b>: ein ganzer Saal, ein Meeting oder ein Monitor, einmal gebaut und überall eingesetzt.</li><li><b>Auf eine leere Zelle klicken</b>, um ein Bedienelement hinzuzufügen oder einen Block einzusetzen, oder auf ein Bedienelement, um es zu ändern.</li><li><b>Speichern</b>, und das Panel ist einsatzbereit.</li></ol></figcaption></figure>
 
 <p><a href="/de/hilfe/director-panels/">Panels →</a></p></div>
 </section>

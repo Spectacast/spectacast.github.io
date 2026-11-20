@@ -459,6 +459,8 @@ mark.todo {
 :root[data-theme='dark'] .loop video.for-dark { display: block; }
 :root[data-theme='dark'] .loop video.for-light { display: none; }
 @media (min-width: 961px) { .p-row > .loop.tall, .p-row > .closeup { grid-column: 2; } }
+/* Where the second column is narrower than a wide close-up, it takes the whole row and keeps its text readable. */
+@media (min-width: 961px) and (max-width: 1199px) { .p-row > .closeup.wide { grid-column: 1 / -1; } }
 
 .viz-stage { background: var(--sc-bg); border-radius: var(--sc-r-lg); padding: 22px; box-shadow: var(--sc-shadow); }
 .st-flow { display: grid; grid-template-columns: minmax(0, 1fr) 36px minmax(0, 1fr) 36px minmax(0, 1fr); align-items: stretch; }
@@ -599,12 +601,17 @@ mark.todo {
 
 /* No clipping here: a mark near the edge stays whole. */
 .cu-shot { position: relative; border-radius: var(--sc-r-lg); border: 1px solid var(--sc-line); box-shadow: var(--sc-shadow); background: #0c0d10; }
+.cu-shot picture { display: block; border-radius: inherit; }
 .cu-shot img { display: block; width: 100%; height: auto; border-radius: inherit; }
 .cu-mark {
   position: absolute; width: 28px; height: 28px; margin: -14px 0 0 -14px; border-radius: 50%; background: #fff; color: #111318;
   font-size: 14px; font-weight: 700; display: grid; place-items: center; box-shadow: 0 0 0 3px rgba(17, 19, 24, 0.6), 0 2px 8px rgba(0, 0, 0, 0.5);
 }
+/* Beside words that end (after) or start (before) at the mark's place: clear of them at any size of the picture. */
+.cu-mark.after { margin-left: 9px; }
+.cu-mark.before { margin-left: -37px; }
 .closeup figcaption { display: block; }
+.cu-hint { display: none; margin: 0 0 8px; font-size: 13px; color: var(--sc-muted); }
 .cu-legend { margin: 0; padding-left: 22px; color: var(--sc-ink); }
 .cu-legend li { margin: 0 0 4px; }
 .guide .viz { margin: 24px 0; }
@@ -620,6 +627,9 @@ mark.todo {
 @media (max-width: 720px) {
   .viz-stage { padding: 14px; }
   .cu-mark { width: 24px; height: 24px; margin: -12px 0 0 -12px; font-size: 12px; }
+  .cu-mark.after { margin-left: 8px; }
+  .cu-mark.before { margin-left: -32px; }
+  .closeup.wide .cu-hint { display: block; }
   .closeup.wide .cu-scroll { overflow-x: auto; padding: 8px 0 14px; margin: -8px 0 -14px; }
   .closeup.wide .cu-shot { min-width: 600px; box-shadow: none; }
   /* A wide loop keeps its height and loses its sides, so the text in it stays readable. */

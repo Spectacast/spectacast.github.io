@@ -10,7 +10,7 @@
 
 On the **Rules** page, **+ rule** starts an empty rule and **+ from template** builds a common one from your own devices, for example "the active speaker goes to a scene, after a hold time" or "an NDI source goes offline, switch to a fallback scene".
 
-{{shot:director-rules|Director's rules page: each rule with what starts it and when it last ran}}
+{{closeup:director-build-rule|Close-up of Director's rule editor with the rule "Active speaker → Speaker": when the active speaker changes in Zoom Hall A, after a hold time of 1500 ms, OBS Hall A sets its scene|**When**: what starts the rule. Here, the active speaker changes in Hall A.|**Only if**: a condition, and a hold time. Here, the speaker must keep the floor for a second and a half.|**Then**: what it does. Here, OBS in Hall A changes scene.}}
 
 ## Timing and order
 

@@ -16,7 +16,7 @@
 <meta property="og:title" content="Built to be extended · Spectacast">
 <meta property="og:description" content="Every venue has a device nobody planned for. Spectacast Director is made so that you can connect it yourself: describe its protocol on a form, script what the forms cannot say, and drive…">
 <meta property="og:url" content="https://spectacast.com/developers/">
-<meta property="og:image" content="https://spectacast.com/img/og/director-rules-en.jpg">
+<meta property="og:image" content="https://spectacast.com/img/og/director-build-driver-en.jpg">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/design/spectacast.css">
@@ -41,12 +41,13 @@
 <h2>Connect a device without code</h2>
 <div class="p-text"><p>On the Drivers page you describe a device's protocol: the commands it takes and the messages it sends back. Director speaks OSC, UDP, TCP, HTTP and WebSocket, which covers most lighting desks, audio mixers, video switchers and matrix routers. Once described, the device has buttons, live state and rules like the built-in ones.</p>
 <p>You test against the real device, with every message in and out listed live, and you share a finished driver as one file.</p>
-<p><a href="/docs/director-drivers/">How to describe a driver →</a></p></div>
+<p><a href="/docs/director-drivers/">How to describe a driver →</a></p>
+<figure class="viz closeup wide" style="max-width:784px"><div class="cu-scroll"><div class="cu-shot" data-surface="console"><img src="/img/closeups/director-build-driver-en.webp" alt="Close-up of Director&#x27;s driver editor with the example &quot;Generic OSC device&quot;: the transport OSC over UDP, the settings each device asks for, and the first commands" width="1568" height="1074" loading="lazy"><span class="cu-mark after" aria-hidden="true" style="left:80.8%;top:7.2%">1</span><span class="cu-mark after" aria-hidden="true" style="left:64.1%;top:35.8%">2</span><span class="cu-mark after" aria-hidden="true" style="left:50%;top:59.7%">3</span></div></div><figcaption><p class="cu-hint">Swipe sideways to see the whole picture →</p><ol class="cu-legend"><li><b>How it talks</b>: OSC, UDP, TCP, HTTP or WebSocket.</li><li><b>What each device needs</b>: here, two ports besides its address.</li><li><b>Its commands</b>: each one becomes an action for buttons and rules.</li></ol></figcaption></figure></div>
 </section>
 <section class="p-row">
 <h2>Rules, and scripts when rules are not enough</h2>
 <div class="p-text"><p>Rules react to what happens in the halls: someone enters the waiting room, a speaker takes the floor, a source goes offline. Most are built from forms. Where the logic is your own, a step can be a few lines of JavaScript with the whole state in reach.</p>
-<figure class="shot "><img src="/img/screens/director-rules-en.webp" alt="Director&#x27;s rules page: each rule with what starts it and when it last ran" width="1600" height="1000" loading="lazy"></figure>
+<figure class="viz closeup wide" style="max-width:784px"><div class="cu-scroll"><div class="cu-shot" data-surface="console"><img src="/img/closeups/director-build-rule-en.webp" alt="Close-up of Director&#x27;s rule editor with the rule &quot;Active speaker → Speaker&quot;: when the active speaker changes in Zoom Hall A, after a hold time of 1500 ms, OBS Hall A sets its scene" width="1568" height="1148" loading="lazy"><span class="cu-mark after" aria-hidden="true" style="left:14.1%;top:13.3%">1</span><span class="cu-mark after" aria-hidden="true" style="left:16.9%;top:38.4%">2</span><span class="cu-mark after" aria-hidden="true" style="left:7%;top:69.3%">3</span></div></div><figcaption><p class="cu-hint">Swipe sideways to see the whole picture →</p><ol class="cu-legend"><li><b>When</b>: what starts the rule. Here, the active speaker changes in Hall A.</li><li><b>Only if</b>: a condition, and a hold time. Here, the speaker must keep the floor for a second and a half.</li><li><b>Then</b>: what it does. Here, OBS in Hall A changes scene.</li></ol></figcaption></figure>
 
 <p><a href="/docs/director-rules/">Rules and scripts →</a></p></div>
 </section>
@@ -66,7 +67,7 @@
 <section class="p-row">
 <h2>Panels of your own</h2>
 <div class="p-text"><p>The dashboard's panels are yours to lay out: buttons, choices, text fields, level meters and live pictures, built once as a block and placed once per hall.</p>
-<figure class="shot "><img src="/img/screens/director-panels-en.webp" alt="A Director panel with four halls: one block per hall, with its meeting, its waiting room, Preview and Program" width="1600" height="1000" loading="lazy"></figure>
+<figure class="viz closeup wide" style="max-width:788px"><div class="cu-scroll"><div class="cu-shot" data-surface="console"><img src="/img/closeups/director-build-panel-en.webp" alt="Close-up of Director&#x27;s panel editor: the row of ready-made blocks, the panel&#x27;s grid with empty cells, and the Save button" width="1576" height="966" loading="lazy"><span class="cu-mark after" aria-hidden="true" style="left:87.6%;top:12.8%">1</span><span class="cu-mark" aria-hidden="true" style="left:69.3%;top:79.7%">2</span><span class="cu-mark before" aria-hidden="true" style="left:81.1%;top:20.5%">3</span></div></div><figcaption><p class="cu-hint">Swipe sideways to see the whole picture →</p><ol class="cu-legend"><li><b>Blocks</b>: a whole hall, a meeting or a monitor, built once and placed wherever needed.</li><li><b>Click an empty cell</b> to add a control or place a block, or a control to change it.</li><li><b>Save</b>, and the panel is ready to use.</li></ol></figcaption></figure>
 
 <p><a href="/docs/director-panels/">Panels →</a></p></div>
 </section>

@@ -17,7 +17,9 @@ async function withPass(repo, lang, fn) {
   const hub = spawn('node', [...node, 'src/main.ts', '--db', db, '--port', String(PORT), '--https-port', '0'], { cwd: repo, stdio: 'ignore' });
   const base = `http://localhost:${PORT}`;
   try {
-    for (let i = 0; i < 50; i++) { try { await fetch(base + '/api/events'); break; } catch { await new Promise((r) => setTimeout(r, 200)); } }
+    let up = false;
+    for (let i = 0; i < 50 && !up; i++) { try { await fetch(base + '/api/events'); up = true; } catch { await new Promise((r) => setTimeout(r, 200)); } }
+    if (!up) throw new Error('Spectacast Pass did not start on port ' + PORT);
     return await fn({ base, info });
   } finally {
     hub.kill('SIGKILL');

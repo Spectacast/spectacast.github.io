@@ -12,11 +12,13 @@ Lo provi sul dispositivo vero, con ogni messaggio in entrata e in uscita elencat
 
 [Come descrivere un driver →](/it/guida/director-drivers/)
 
+{{closeup:director-build-driver|Primo piano dell'editor dei driver di Director con l'esempio «Generic OSC device»: il trasporto OSC su UDP, le impostazioni che ogni dispositivo richiede e i primi comandi|**Come parla**: OSC, UDP, TCP, HTTP o WebSocket.|**Che cosa serve a ogni dispositivo**: qui, due porte oltre al suo indirizzo.|**I suoi comandi**: ognuno diventa un'azione per pulsanti e regole.}}
+
 ## Regole, e script quando le regole non bastano
 
 Le regole reagiscono a ciò che succede nelle sale: qualcuno entra in sala d'attesa, un relatore prende la parola, una sorgente va offline. Quasi tutte si costruiscono con dei moduli. Dove la logica è la tua, un passo può essere qualche riga di JavaScript con tutto lo stato a portata di mano.
 
-{{shot:director-rules|Le regole di Director: ognuna con ciò che la fa partire e la sua ultima esecuzione}}
+{{closeup:director-build-rule|Primo piano dell'editor delle regole di Director con la regola «Active speaker → Speaker»: quando cambia chi parla in Zoom Sala A, dopo un tempo di attesa di 1500 ms, OBS Sala A imposta la sua scena|**Quando**: che cosa fa partire la regola. Qui cambia chi parla nella Sala A.|**Solo se**: una condizione e un tempo di attesa. Qui chi parla deve tenere la parola per un secondo e mezzo.|**Allora**: che cosa fa. Qui OBS della Sala A cambia scena.}}
 
 [Regole e script →](/it/guida/director-rules/)
 
@@ -38,7 +40,7 @@ Un tasto dello Stream Deck preme qualsiasi controllo della dashboard attraverso 
 
 I pannelli della dashboard li disponi tu: pulsanti, selezioni, campi di testo, indicatori di livello e immagini dal vivo, costruiti una volta come blocco e collocati una volta per sala.
 
-{{shot:director-panels|Un pannello di Director con quattro sale: un blocco per sala, con la riunione, la sala d'attesa, Preview e Program}}
+{{closeup:director-build-panel|Primo piano dell'editor dei pannelli di Director: la fila dei blocchi già pronti, la griglia del pannello con celle vuote e il pulsante Salva|**Blocchi**: una sala intera, una riunione o un monitor, costruiti una volta e messi dove servono.|**Fai clic su una cella vuota** per aggiungere un controllo o inserire un blocco, o su un controllo per modificarlo.|**Salva**, e il pannello è pronto all'uso.}}
 
 [Pannelli →](/it/guida/director-panels/)
 

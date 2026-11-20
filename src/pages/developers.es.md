@@ -12,11 +12,13 @@ Lo pruebas con el dispositivo real, viendo en directo cada mensaje que entra y q
 
 [Cómo describir un driver →](/es/ayuda/director-drivers/)
 
+{{closeup:director-build-driver|Primer plano del editor de drivers de Director con el ejemplo «Generic OSC device»: el transporte OSC sobre UDP, los ajustes que pide cada dispositivo y los primeros comandos|**Cómo habla**: OSC, UDP, TCP, HTTP o WebSocket.|**Qué necesita cada dispositivo**: aquí, dos puertos además de su dirección.|**Sus comandos**: cada uno se convierte en una acción para botones y reglas.}}
+
 ## Reglas, y scripts cuando las reglas no bastan
 
 Las reglas reaccionan a lo que pasa en las salas: alguien entra en la sala de espera, un ponente toma la palabra, una fuente se cae. La mayoría se construye con formularios. Donde la lógica es la tuya, un paso puede ser unas pocas líneas de JavaScript con todo el estado a mano.
 
-{{shot:director-rules|Las reglas de Director: cada una con lo que la activa y su última ejecución}}
+{{closeup:director-build-rule|Primer plano del editor de reglas de Director con la regla «Active speaker → Speaker»: cuando cambia quien habla en Zoom Sala A, tras un tiempo de espera de 1500 ms, OBS Sala A pone su escena|**Cuando**: lo que dispara la regla. Aquí, cambia quien habla en la Sala A.|**Solo si**: una condición y un tiempo de espera. Aquí, quien habla debe conservar la palabra un segundo y medio.|**Entonces**: lo que hace. Aquí, OBS de la Sala A cambia de escena.}}
 
 [Reglas y scripts →](/es/ayuda/director-rules/)
 
@@ -38,7 +40,7 @@ Una tecla de Stream Deck pulsa cualquier control del dashboard a través de Bitf
 
 Los paneles del dashboard los organizas tú: botones, selecciones, campos de texto, medidores de nivel e imágenes en directo, construidos una vez como bloque y colocados una vez por sala.
 
-{{shot:director-panels|Un panel de Director con cuatro salas: un bloque por sala, con su reunión, su sala de espera, Preview y Program}}
+{{closeup:director-build-panel|Primer plano del editor de paneles de Director: la fila de bloques ya hechos, la cuadrícula del panel con celdas vacías y el botón Guardar|**Bloques**: una sala entera, una reunión o un monitor, hechos una vez y colocados donde hagan falta.|**Haz clic en una celda vacía** para añadir un control o colocar un bloque, o en un control para cambiarlo.|**Guarda**, y el panel está listo para usar.}}
 
 [Paneles →](/es/ayuda/director-panels/)
 

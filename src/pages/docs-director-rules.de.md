@@ -10,7 +10,7 @@
 
 Auf der Seite **Regeln** legt **+ Regel** eine leere Regel an, und **+ aus Vorlage** baut eine gängige Regel aus Ihren eigenen Geräten, zum Beispiel „die sprechende Person geht nach einer Haltezeit auf eine Szene“ oder „eine NDI-Quelle fällt aus, auf eine Ersatzszene wechseln“.
 
-{{shot:director-rules|Die Regeln in Director: jede mit ihrem Auslöser und dem letzten Lauf}}
+{{closeup:director-build-rule|Nahaufnahme des Regel-Editors von Director mit der Regel „Active speaker → Speaker“: Wenn in Zoom Saal A die sprechende Person wechselt, setzt OBS Saal A nach einer Haltezeit von 1500 ms seine Szene|**Wenn**: was die Regel auslöst. Hier wechselt in Saal A die sprechende Person.|**Nur wenn**: eine Bedingung und eine Haltezeit. Hier muss die Person das Wort anderthalb Sekunden behalten.|**Dann**: was die Regel tut. Hier wechselt OBS in Saal A die Szene.}}
 
 ## Zeit und Reihenfolge
 

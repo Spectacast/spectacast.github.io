@@ -8,6 +8,8 @@ A driver you define speaks one of five transports: **OSC**, **UDP**, **TCP**, **
 
 On the **Drivers** page click **+ driver over…** and pick the transport. Give the driver a name, then list the settings each device of it asks for: a host, a port, an API key. A setting has a default or is marked **req** (required), and the templates below read it as `config.<id>`.
 
+{{closeup:director-build-driver|Close-up of Director's driver editor with the example "Generic OSC device": the transport OSC over UDP, the settings each device asks for, and the first commands|**How it talks**: OSC, UDP, TCP, HTTP or WebSocket.|**What each device needs**: here, two ports besides its address.|**Its commands**: each one becomes an action for buttons and rules.}}
+
 ## 2. Commands
 
 Click **+ command** for each thing the device can be told. A command becomes an action that buttons and rules can run.

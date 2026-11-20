@@ -10,7 +10,7 @@
 
 En la página **Reglas**, **+ regla** empieza una regla vacía y **+ desde plantilla** construye una habitual con tus propios dispositivos, por ejemplo «quien habla pasa a una escena tras un tiempo de espera» o «una fuente NDI se cae, cambiar a una escena de reserva».
 
-{{shot:director-rules|Las reglas de Director: cada una con lo que la activa y su última ejecución}}
+{{closeup:director-build-rule|Primer plano del editor de reglas de Director con la regla «Active speaker → Speaker»: cuando cambia quien habla en Zoom Sala A, tras un tiempo de espera de 1500 ms, OBS Sala A pone su escena|**Cuando**: lo que dispara la regla. Aquí, cambia quien habla en la Sala A.|**Solo si**: una condición y un tiempo de espera. Aquí, quien habla debe conservar la palabra un segundo y medio.|**Entonces**: lo que hace. Aquí, OBS de la Sala A cambia de escena.}}
 
 ## Tiempos y orden
 

@@ -32,7 +32,7 @@ At each door, use a phone or tablet, or a keyboard scanner plugged into a laptop
 
 The door answers each badge at once, full-screen in green, amber or red, with a sound and the person's name. When the network drops, the door keeps deciding by itself and sends its scans when the network is back.
 
-{{phone:pass-door-welcome|The door app on a phone: a green screen with "Welcome Sofia"}}
+{{closeup:pass-answers|The door app's three answers, each on a phone: green for an entry with the person's name, amber when a badge that is already inside is read again, with a button to continue, and red for a badge that is not found|**Green**: come in, greeted by name.|**Amber**: look first. This badge is already inside, and the door waits for a tap.|**Red**: not valid, with what to do next.}}
 
 A **keyboard scanner** works on the same door page: set it to send Enter after each code. A scanner in storage mode, at a door without a screen, is read out later under **Upload scans**.
 

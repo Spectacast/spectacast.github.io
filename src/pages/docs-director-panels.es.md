@@ -14,6 +14,8 @@ En la página **Paneles** haz clic en **Editar**. Ahora un clic en una celda vac
 
 **+ panel** añade una página. Quien inicia sesión con el PIN de operador ve los paneles y nada más.
 
+{{closeup:director-build-panel|Primer plano del editor de paneles de Director: la fila de bloques ya hechos, la cuadrícula del panel con celdas vacías y el botón Guardar|**Bloques**: una sala entera, una reunión o un monitor, hechos una vez y colocados donde hagan falta.|**Haz clic en una celda vacía** para añadir un control o colocar un bloque, o en un control para cambiarlo.|**Guarda**, y el panel está listo para usar.}}
+
 ## Controles
 
 | Control | Qué hace |

@@ -32,7 +32,7 @@ Nutzen Sie an jedem Zugang ein Telefon oder Tablet oder einen Tastatur-Scanner a
 
 Der Zugang beantwortet jedes Badge sofort, bildschirmfüllend in Grün, Gelb oder Rot, mit einem Ton und dem Namen der Person. Fällt das Netzwerk aus, entscheidet der Zugang selbst weiter und sendet seine Scans, wenn das Netzwerk zurück ist.
 
-{{phone:pass-door-welcome|Die Einlass-App auf einem Telefon: ein grüner Bildschirm mit „Welcome Sofia“}}
+{{closeup:pass-answers|Die drei Antworten des Zugangs, je auf einem Telefon: Grün für einen Eingang mit dem Namen der Person, Gelb, wenn ein Badge gelesen wird, das schon drinnen ist, mit einer Taste zum Fortfahren, und Rot für ein Badge, das nicht gefunden wird|**Grün**: herein, mit Namen begrüßt.|**Gelb**: erst hinsehen. Dieses Badge ist schon drinnen, und der Zugang wartet auf ein Tippen.|**Rot**: ungültig, mit dem nächsten Schritt.}}
 
 Ein **Tastatur-Scanner** funktioniert auf derselben Seite des Zugangs: Stellen Sie ihn so ein, dass er nach jedem Code Enter sendet. Ein Scanner im Speichermodus, an einem Zugang ohne Bildschirm, wird später unter **Scans hochladen** ausgelesen.
 

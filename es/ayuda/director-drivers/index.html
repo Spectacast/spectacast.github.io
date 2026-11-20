@@ -16,7 +16,7 @@
 <meta property="og:title" content="Tu propio driver · Spectacast">
 <meta property="og:description" content="La página Drivers describe el protocolo de un dispositivo sin código. Una vez descrito, el dispositivo tiene acciones, eventos y estado como uno de los incluidos, y los paneles y las reglas lo…">
 <meta property="og:url" content="https://spectacast.com/es/ayuda/director-drivers/">
-<meta property="og:image" content="https://spectacast.com/brand/lockup-light.png">
+<meta property="og:image" content="https://spectacast.com/img/og/director-build-driver-es.jpg">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/design/spectacast.css">
@@ -39,6 +39,8 @@
 <p>Un driver definido por ti habla uno de cinco transportes: <strong>OSC</strong>, <strong>UDP</strong>, <strong>TCP</strong>, <strong>HTTP</strong> o <strong>WebSocket</strong>. Con eso se cubre la mayoría de mesas de luces, mezcladores de audio, mezcladores de vídeo, matrices y sistemas de control de edificios.</p>
 <h2>1. Crear el driver</h2>
 <p>En la página <strong>Drivers</strong> haz clic en <strong>+ driver por…</strong> y elige el transporte. Ponle un nombre al driver y enumera los ajustes que pide cada dispositivo suyo: un host, un puerto, una clave de API. Un ajuste tiene un valor por defecto o está marcado con <strong>oblig.</strong> (obligatorio), y las plantillas de abajo lo leen como <code>config.&lt;id&gt;</code>.</p>
+<figure class="viz closeup wide" style="max-width:784px"><div class="cu-scroll"><div class="cu-shot" data-surface="console"><img src="/img/closeups/director-build-driver-es.webp" alt="Primer plano del editor de drivers de Director con el ejemplo «Generic OSC device»: el transporte OSC sobre UDP, los ajustes que pide cada dispositivo y los primeros comandos" width="1568" height="1074" loading="lazy"><span class="cu-mark after" aria-hidden="true" style="left:81.7%;top:7.2%">1</span><span class="cu-mark after" aria-hidden="true" style="left:77.1%;top:35.8%">2</span><span class="cu-mark after" aria-hidden="true" style="left:56.1%;top:59.7%">3</span></div></div><figcaption><p class="cu-hint">Desliza hacia un lado para ver toda la imagen →</p><ol class="cu-legend"><li><b>Cómo habla</b>: OSC, UDP, TCP, HTTP o WebSocket.</li><li><b>Qué necesita cada dispositivo</b>: aquí, dos puertos además de su dirección.</li><li><b>Sus comandos</b>: cada uno se convierte en una acción para botones y reglas.</li></ol></figcaption></figure>
+
 <h2>2. Comandos</h2>
 <p>Haz clic en <strong>+ comando</strong> por cada cosa que se le puede ordenar al dispositivo. Un comando se convierte en una acción que los botones y las reglas pueden ejecutar.</p>
 <ul>

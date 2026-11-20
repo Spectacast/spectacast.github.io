@@ -14,6 +14,8 @@ Nella pagina **Pannelli** fai clic su **Modifica**. Ora un clic su una cella vuo
 
 **+ pannello** aggiunge una pagina. Chi accede con il PIN operatore vede i pannelli e nient'altro.
 
+{{closeup:director-build-panel|Primo piano dell'editor dei pannelli di Director: la fila dei blocchi già pronti, la griglia del pannello con celle vuote e il pulsante Salva|**Blocchi**: una sala intera, una riunione o un monitor, costruiti una volta e messi dove servono.|**Fai clic su una cella vuota** per aggiungere un controllo o inserire un blocco, o su un controllo per modificarlo.|**Salva**, e il pannello è pronto all'uso.}}
+
 ## Controlli
 
 | Controllo | Cosa fa |
