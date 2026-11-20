@@ -16,11 +16,12 @@
 <meta property="og:title" content="Spectacast Director">
 <meta property="og:description" content="La regia per eventi ibridi dal vivo. Una sola dashboard vede insieme tutti i PC di sala, la riunione online e i microfoni, e le regole si occupano di quello che altrimenti qualcuno farebbe a mano…">
 <meta property="og:url" content="https://spectacast.com/it/prodotti/director/">
-<meta property="og:image" content="https://spectacast.com/img/og/director-channels-it.jpg">
+<meta property="og:image" content="https://spectacast.com/brand/lockup-light.png">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/design/spectacast.css">
 <link rel="stylesheet" href="/site.css">
+<script src="/site.js" defer></script>
 </head>
 <body>
 <div class="wrap">
@@ -37,17 +38,31 @@
 
 <div class="cta-row"><a class="sc-btn sc-btn--primary" href="/it/contatti/">Contattaci</a><a class="sc-btn" href="/it/prezzi/">Vedi i prezzi</a></div>
 
-<figure class="shot "><img src="/img/screens/director-channels-it.webp" alt="Spectacast Director con quattro sale affiancate: chi è in ogni riunione, la sala d&#x27;attesa, Preview e Program" width="1600" height="1000"></figure>
+<figure class="viz loop" data-viz style="--focus:30%"><video muted loop playsinline preload="none" poster="/img/loops/director-speaker-it.webp" width="1280" height="540" aria-label="Registrazione dello schermo di Director: l&#x27;operatore sceglie la dott.ssa Elena Ortega nella Sala A, le apre il microfono e la mette in primo piano"><source data-src="/img/loops/director-speaker-it.webm" type="video/webm"><source data-src="/img/loops/director-speaker-it.mp4" type="video/mp4"></video><figcaption><span>Scegli una relatrice, apri il microfono, mettila in primo piano. Tre tocchi.</span><button type="button" class="viz-pp" hidden aria-pressed="false" data-pause="Pausa" data-play="Riproduci">Pausa</button></figcaption></figure>
 </header>
 <section class="p-row">
 <h2>Tutte le sale su uno schermo</h2>
 <div class="p-text"><p>Ogni sala ha la sua colonna: chi è nella riunione e chi parla, la sala d'attesa e la lobby, Preview e Program, il banner e lo streaming. Scegli un relatore, lo mandi in onda con un tocco, e la sala successiva è subito accanto. Una sola persona può seguire un intero congresso; al congresso di 18 sale per cui Director è nato, è andata così.</p></div>
-
+<figure class="viz closeup" style="max-width:452px"><div class="cu-shot" data-surface="console"><img src="/img/closeups/director-hall-it.webp" alt="Primo piano della Sala A e della Sala B in Director: entrambe in onda, quattro persone in ogni riunione con il livello del microfono, e la sala d&#x27;attesa" width="904" height="624" loading="lazy"><span class="cu-mark" style="left:45.6%;top:9%">1</span><span class="cu-mark" style="left:45.6%;top:21.2%">2</span><span class="cu-mark" style="left:45.6%;top:76%">3</span></div><figcaption><ol class="cu-legend"><li><b>Rosso vuol dire in onda</b>, con la riunione e i microfoni.</li><li><b>Chi è in riunione</b>, ognuno con il livello del microfono dal vivo.</li><li><b>La sala d'attesa</b>: un tocco fa entrare un relatore.</li></ol></figcaption></figure>
 </section>
 <section class="p-row">
 <h2>Regole per la routine</h2>
 <div class="p-text"><p>Ammettere la faculty appena arriva, tenere la sala d'attesa come è stata impostata, rimettere un video al suo posto quando un PC riparte, silenziare la sala mentre va un filmato: le regole reagiscono a quello che succede nella riunione, in OBS e sui microfoni, e lo fanno ogni volta allo stesso modo. Per ogni regola vedi quando è partita l'ultima volta e perché.</p></div>
-<figure class="shot "><img src="/img/screens/director-rules-it.webp" alt="Le regole di Director: ognuna con ciò che la fa partire e la sua ultima esecuzione" width="1600" height="1000" loading="lazy"></figure>
+<figure class="viz story s-rule" data-viz><div class="viz-stage" data-surface="console" role="img" aria-label="Animazione: la dott.ssa Elena Ortega entra nella sala d&#x27;attesa della Sala A, la regola «Ammetti automaticamente» si accende e lei compare in riunione"><div aria-hidden="true"><div class="st-flow">
+<div class="st-tile"><span class="st-label"><span>Sala d'attesa · Sala A</span><span class="st-count"><b class="r-c0">0</b><b class="r-c1">1</b>&nbsp;</span></span>
+<div class="st-row r-guest">Dr. Elena Ortega<small>Relatrice · appena arrivata</small></div>
+<div class="st-empty r-empty">Nessuno in attesa</div></div>
+<div class="st-link r-l1"></div>
+<div class="st-tile r-rule"><span class="st-label"><span>Regola · Ammetti automaticamente</span></span>
+<div class="st-row r-when">Quando qualcuno entra in sala d'attesa<small>e il suo nome è nella lista</small></div>
+<div class="st-row r-then"><span>Allora viene ammesso</span><span class="r-tick">✓</span></div></div>
+<div class="st-link r-l2"></div>
+<div class="st-tile"><span class="st-label"><span>In riunione · Sala A</span><span class="st-count"><b class="r-m3">3</b><b class="r-m4">4</b>&nbsp;</span></span>
+<div class="st-row">Prof. Jonas Weber</div>
+<div class="st-row">Dr. Nils Brandt</div>
+<div class="st-row r-in">Dr. Elena Ortega</div>
+<span class="st-pill">In onda</span></div>
+</div></div></div><figcaption><span><b>Arriva una relatrice. La regola la fa entrare.</b> L'operatore non ha toccato nulla.</span><button type="button" class="viz-pp" hidden aria-pressed="false" data-pause="Pausa" data-play="Riproduci">Pausa</button></figcaption></figure><figure class="viz loop tall" data-viz><video muted loop playsinline preload="none" poster="/img/loops/director-clip-it.webp" width="880" height="1304" aria-label="Registrazione dello schermo di Director: l&#x27;operatore mette il clip su Program nella Sala A, la sala passa a VOD e il suo microfono si silenzia; tornando alla riunione si riapre"><source data-src="/img/loops/director-clip-it.webm" type="video/webm"><source data-src="/img/loops/director-clip-it.mp4" type="video/mp4"></video><figcaption><span>Manda in onda un clip: il microfono della sala si silenzia da solo.</span><button type="button" class="viz-pp" hidden aria-pressed="false" data-pause="Pausa" data-play="Riproduci">Pausa</button></figcaption></figure>
 </section>
 <section class="p-row">
 <h2>Connettori, non un impianto fisso</h2>
@@ -67,7 +82,7 @@
 <section class="p-row">
 <h2>Fatto per la sala</h2>
 <div class="p-text"><p>Director gira su un PC in regia e parla con i PC di sala attraverso la rete della sede, così l'evento continua anche se cade internet. La pagina della flotta mostra a colpo d'occhio PC, riunione e uscita di ogni sala; i pannelli si compongono a blocchi, quindi una sala nuova è una copia in più, non un nuovo progetto. La dashboard parla italiano, inglese, tedesco e spagnolo.</p></div>
-<figure class="shot "><img src="/img/screens/director-fleet-en.webp" alt="La flotta in Director: riunione, persone, sala d&#x27;attesa e uscita di ogni sala" width="1600" height="420" loading="lazy"></figure>
+<figure class="viz closeup" style="max-width:760px"><div class="cu-shot" data-surface="console"><img src="/img/closeups/director-fleet-it.webp" alt="Primo piano della pagina della flotta di Director: quattro sale, ognuna online e nella sua riunione, con i livelli dei microfoni e la sala d&#x27;attesa" width="1520" height="396" loading="lazy"><span class="cu-mark" style="left:36.4%;top:6.7%">1</span><span class="cu-mark" style="left:68.6%;top:6.7%">2</span><span class="cu-mark" style="left:83.5%;top:6.7%">3</span></div><figcaption><ol class="cu-legend"><li><b>Il PC di ogni sala</b>: online e nella sua riunione.</li><li><b>Chi parla</b>: una barra per microfono, dal vivo.</li><li><b>La sala d'attesa</b>: da qui ammetti tutti, oppure la accendi e la spegni.</li></ol></figcaption></figure>
 </section>
 <div class="in-plans"><b>Incluso in</b><span>Spectacast Director</span><span>Spectacast Show</span><span>Spectacast Complete</span><a href="/it/prezzi/">Vedi i prezzi →</a><a class="guide-link" href="/it/guida/director/">Leggi la guida →</a></div>
 <nav class="others" aria-label="Gli altri moduli"><h2>Gli altri moduli</h2><div><a href="/it/prodotti/meet/"><b><span>Spectacast</span> Meet</b>La riunione, in flussi separati.</a><a href="/it/prodotti/mic/"><b><span>Spectacast</span> Mic</b>Telefoni come microfoni.</a><a href="/it/prodotti/translator/"><b><span>Spectacast</span> Translator</b>Traduzione simultanea, come sorgente audio.</a><a href="/it/prodotti/pass/"><b><span>Spectacast</span> Pass</b>Badge, ingressi e presenze.</a></div></nav>

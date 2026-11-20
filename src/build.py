@@ -27,6 +27,7 @@ HERE = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import content as C  # noqa: E402
 import home_texts as T  # noqa: E402
+import visuals  # noqa: E402
 
 OUT = HERE.parent
 SITE = 'https://spectacast.com'
@@ -263,6 +264,8 @@ def frame(lang, key, title, description, body, main_class):
     """A whole page: head tags, header, the page's own body and the footer."""
     full_title = title if key == 'home' or title.startswith('Spectacast') else f'{title} · Spectacast'
     d = html.escape(description)
+    # Only the pages with something that moves load the small script that pauses and plays it.
+    script = '\n<script src="/site.js" defer></script>' if 'data-viz' in body else ''
     return f'''<!doctype html>
 <html lang="{lang}" class="sc">
 <head>
@@ -281,7 +284,7 @@ def frame(lang, key, title, description, body, main_class):
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/design/spectacast.css">
-<link rel="stylesheet" href="/site.css">
+<link rel="stylesheet" href="/site.css">{script}
 </head>
 <body>
 <div class="wrap">
@@ -352,6 +355,13 @@ def product_blocks(lang, md):
     md = re.sub(r'\{\{shot:([\w-]+)\|([^}]+)\}\}', lambda m: shot(lang, m.group(1), m.group(2)), md)
     md = md.replace(' loading="lazy"', '', 1)  # the first screenshot is above the fold
     md = re.sub(r'\{\{phone:([\w-]+)\|([^}]+)\}\}', lambda m: shot(lang, m.group(1), m.group(2), 'phone'), md)
+    md = re.sub(r'\{\{story:([\w-]+)\|([^}]+)\}\}', lambda m: visuals.story(lang, m.group(1), m.group(2)), md)
+    md = re.sub(r'\{\{loop:([\w-]+)\|([^|}]+)\|([^}]+)\}\}', lambda m: visuals.loop(lang, m.group(1), m.group(2), m.group(3)), md)
+
+    def closeup(m):
+        name, alt, *legend = m.group(1).split('|')
+        return visuals.closeup(lang, name, alt, legend)
+    md = re.sub(r'\{\{closeup:([^}]+)\}\}', closeup, md)
 
     def plans(m):
         names = [n.strip() for n in m.group(1).split(',')]
@@ -402,7 +412,7 @@ def product_layout(lang, key, body):
     rows = []
     for part in parts:
         h2, rest = re.match(r'(<h2>.*?</h2>)(.*)', part, re.S).groups()
-        wide = re.findall(r'<figure class="shot ?">.*?</figure>', rest, re.S)
+        wide = re.findall(r'<figure class="(?:shot ?|viz[^"]*)"[^>]*>.*?</figure>', rest, re.S)
         for f in wide:
             rest = rest.replace(f, '')
         rows.append(f'<section class="p-row">\n{h2}\n<div class="p-text">{rest.strip()}</div>\n{"".join(wide)}\n</section>')

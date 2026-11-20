@@ -4,17 +4,21 @@
 
 {{cta}}
 
-{{shot:director-channels|Spectacast Director with four halls side by side: who is in each meeting, the waiting room, Preview and Program}}
+{{loop:director-speaker|Pick a speaker, open the microphone, put them in the spotlight. Three touches.|Screen recording of Director: the operator picks Dr. Elena Ortega in Hall A, opens her microphone and puts her in the spotlight}}
 
 ## Every hall on one screen
 
 Each hall gets its own strip: who is in the meeting and who is talking, the waiting room and the lobby, Preview and Program, the banner and the stream. Pick a speaker, put them on air with one touch, and the next hall is right beside it. One operator can follow a whole congress; at the 18-hall congress Director was built for, one did.
 
+{{closeup:director-hall|Close-up of Hall A and Hall B in Director: both on air, four people in each meeting with their microphone levels, and the waiting room|**Red means on air**, with the meeting and the mics.|**Who is in the meeting**, each with a live microphone level.|**The waiting room**: one touch lets a speaker in.}}
+
 ## Rules for the routine
 
 Admit the faculty as they arrive, keep the waiting room as it was set, put a clip back where it was after a PC restarts, mute the hall when a video plays: rules react to what happens in the meeting, in OBS and on the mics, and do it the same way every time. Each rule shows when it last ran and why.
 
-{{shot:director-rules|Director's rules page: each rule with what starts it and when it last ran}}
+{{story:rule|Animation: Dr. Elena Ortega enters Hall A's waiting room, the rule "Admit automatically" lights up, and she appears in the meeting}}
+
+{{loop:director-clip|Put a clip on air: the hall's own microphone mutes by itself.|Screen recording of Director: the operator puts the clip on Program in Hall A, the hall turns to VOD and its microphone mutes; back on the meeting, it opens again}}
 
 ## Connectors, not a fixed setup
 
@@ -34,6 +38,6 @@ How to connect a device of your own, script the rules and use the API: [Built to
 
 Director runs on a PC in the control room and talks to the hall PCs over the venue's own network, so a show keeps going when the internet does not. The fleet page lists every hall's PC, meeting and output at a glance; panels are built from blocks, so a new hall is one more copy, not a new design. The dashboard speaks English, German, Spanish and Italian.
 
-{{shot:director-fleet|Director's fleet page: each hall's meeting, people, waiting room and output}}
+{{closeup:director-fleet|Close-up of Director's fleet page: four halls, each online and in its meeting, with microphone levels and the waiting room|**Each hall's PC**: online, and in its meeting.|**Who is talking**: one bar per microphone, live.|**The waiting room**: admit everyone, or switch it on and off, from here.}}
 
 {{plans:Director,Show,Complete}}

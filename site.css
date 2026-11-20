@@ -431,3 +431,96 @@ mark.todo {
   .foot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 24px; }
 }
 .sc .doc h1, .sc .pricing h1 { overflow-wrap: break-word; hyphens: auto; }
+
+/* ---------- Moving and marked pictures (src/visuals.py, site.js) ---------- */
+.viz { margin: 32px 0; min-width: 0; }
+.p-row > .viz { grid-column: 1 / -1; margin: 36px 0 0; }
+.p-hero .viz { margin: 8px 0 0; }
+.viz figcaption { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-top: 14px; font-size: 15px; color: var(--sc-muted); }
+.viz figcaption b { color: var(--sc-ink); font-weight: 600; }
+.viz-pp {
+  font: inherit; font-size: 13px; font-weight: 600; color: var(--sc-ink); background: var(--sc-chip);
+  border: 1px solid var(--sc-line); border-radius: 999px; padding: 5px 14px; cursor: pointer;
+}
+.viz-pp:hover { background: var(--sc-hover); }
+.viz-pp:focus-visible { outline: none; box-shadow: var(--sc-focus); }
+
+.loop video {
+  display: block; width: 100%; height: auto; border-radius: var(--sc-r-lg); background: #0c0d10;
+  border: 1px solid var(--sc-line); box-shadow: var(--sc-shadow);
+}
+.loop.tall { max-width: 460px; }
+@media (min-width: 961px) { .p-row > .loop.tall, .p-row > .closeup { grid-column: 2; } }
+
+.viz-stage { background: var(--sc-bg); border-radius: var(--sc-r-lg); padding: 22px; box-shadow: var(--sc-shadow); }
+.st-flow { display: grid; grid-template-columns: minmax(0, 1fr) 36px minmax(0, 1fr) 36px minmax(0, 1fr); align-items: stretch; }
+.st-tile { background: var(--sc-tile); border: 1.5px solid var(--sc-line); border-radius: 12px; padding: 14px; min-width: 0; min-height: 196px; display: flex; flex-direction: column; gap: 8px; }
+.st-label { display: flex; justify-content: space-between; gap: 8px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sc-muted); }
+.st-row { background: var(--sc-chip); border: 1.5px solid transparent; border-radius: 8px; padding: 8px 10px; font-size: 14px; font-weight: 500; line-height: 1.35; overflow-wrap: anywhere; }
+.st-row small { display: block; font-size: 11px; font-weight: 400; color: var(--sc-muted); }
+.st-empty { color: var(--sc-muted); font-size: 13px; text-align: center; margin: auto 0; }
+.st-pill { align-self: flex-start; margin-top: auto; background: #cf2e25; color: #fff; border-radius: 999px; padding: 2px 10px; font-size: 11px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
+.st-link { position: relative; align-self: center; height: 2px; background: var(--sc-line); margin: 0 6px; }
+.st-link::after { content: ""; position: absolute; top: -4px; left: 0; width: 10px; height: 10px; border-radius: 50%; background: var(--sc-ok); opacity: 0; }
+.st-count { position: relative; display: inline-block; width: 1ch; text-align: right; }
+.st-count b { position: absolute; right: 0; font-weight: 600; }
+
+/* The rule story: someone arrives, the rule lights up, they are in the meeting. Ten seconds, then again. */
+.r-then { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.r-tick { color: var(--sc-ok); font-weight: 700; opacity: 0; }
+.r-guest, .r-in, .r-c1, .r-m4 { opacity: 0; }
+.r-guest { animation: r-guest 10s infinite both; }
+.r-empty { animation: r-empty 10s infinite both; }
+.r-c0 { animation: r-c0 10s infinite both; }
+.r-c1 { animation: r-c1 10s infinite both; }
+.r-l1::after { animation: r-dot1 10s infinite both; }
+.r-l2::after { animation: r-dot2 10s infinite both; }
+.r-rule { animation: r-rule 10s infinite both; }
+.r-when { animation: r-when 10s infinite both; }
+.r-then { animation: r-then 10s infinite both; }
+.r-tick { animation: r-tick 10s infinite both; }
+.r-in { animation: r-in 10s infinite both; }
+.r-m3 { animation: r-m3 10s infinite both; }
+.r-m4 { animation: r-m4 10s infinite both; }
+.viz.paused *, .viz.paused *::after { animation-play-state: paused !important; }
+@keyframes r-guest { 0%, 8% { opacity: 0; transform: translateX(-14px); } 13%, 52% { opacity: 1; transform: none; } 58%, 100% { opacity: 0; transform: translateX(14px); } }
+@keyframes r-empty { 0%, 8% { opacity: 1; } 11%, 58% { opacity: 0; } 64%, 100% { opacity: 1; } }
+@keyframes r-c0 { 0%, 10% { opacity: 1; } 12%, 56% { opacity: 0; } 58%, 100% { opacity: 1; } }
+@keyframes r-c1 { 0%, 10% { opacity: 0; } 12%, 56% { opacity: 1; } 58%, 100% { opacity: 0; } }
+@keyframes r-dot1 { 0%, 18% { opacity: 0; left: 0; } 20% { opacity: 1; left: 0; } 28% { opacity: 1; left: calc(100% - 10px); } 30%, 100% { opacity: 0; left: calc(100% - 10px); } }
+@keyframes r-dot2 { 0%, 48% { opacity: 0; left: 0; } 50% { opacity: 1; left: 0; } 58% { opacity: 1; left: calc(100% - 10px); } 60%, 100% { opacity: 0; left: calc(100% - 10px); } }
+@keyframes r-rule { 0%, 28% { border-color: var(--sc-line); } 31%, 60% { border-color: var(--sc-ok); } 66%, 100% { border-color: var(--sc-line); } }
+@keyframes r-when { 0%, 28% { border-color: transparent; } 31%, 40% { border-color: var(--sc-ok); } 44%, 100% { border-color: transparent; } }
+@keyframes r-then { 0%, 40% { border-color: transparent; } 43%, 60% { border-color: var(--sc-ok); } 66%, 100% { border-color: transparent; } }
+@keyframes r-tick { 0%, 46% { opacity: 0; } 49%, 90% { opacity: 1; } 95%, 100% { opacity: 0; } }
+@keyframes r-in { 0%, 58% { opacity: 0; transform: translateY(8px); background: var(--sc-chip); } 62% { opacity: 1; transform: none; background: #24503a; } 76%, 92% { opacity: 1; transform: none; background: var(--sc-chip); } 97%, 100% { opacity: 0; } }
+@keyframes r-m3 { 0%, 60% { opacity: 1; } 62%, 95% { opacity: 0; } 97%, 100% { opacity: 1; } }
+@keyframes r-m4 { 0%, 60% { opacity: 0; } 62%, 95% { opacity: 1; } 97%, 100% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  /* Motion switched off: the end of the story as a still. */
+  .story * , .story *::after { animation: none !important; }
+  .r-guest, .r-c1, .r-m3 { opacity: 0; }
+  .r-in, .r-m4, .r-tick, .r-c0, .r-empty { opacity: 1; }
+  .r-rule { border-color: var(--sc-ok); }
+}
+
+.cu-shot { position: relative; border-radius: var(--sc-r-lg); overflow: hidden; border: 1px solid var(--sc-line); box-shadow: var(--sc-shadow); background: #0c0d10; }
+.cu-shot img { display: block; width: 100%; height: auto; }
+.cu-mark {
+  position: absolute; width: 28px; height: 28px; margin: -14px 0 0 -14px; border-radius: 50%; background: #fff; color: #111318;
+  font-size: 14px; font-weight: 700; display: grid; place-items: center; box-shadow: 0 0 0 3px rgba(17, 19, 24, 0.6), 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+.closeup figcaption { display: block; }
+.cu-legend { margin: 0; padding-left: 22px; color: var(--sc-ink); }
+.cu-legend li { margin: 0 0 4px; }
+.guide .viz { margin: 24px 0; }
+@media (max-width: 720px) {
+  .st-flow { grid-template-columns: minmax(0, 1fr); }
+  .st-tile { min-height: 0; }
+  .st-link { width: 2px; height: 26px; margin: 0 auto; }
+  .st-link::after { left: -4px !important; top: 8px; }
+  .viz-stage { padding: 14px; }
+  .cu-mark { width: 24px; height: 24px; margin: -12px 0 0 -12px; font-size: 12px; }
+  /* A wide loop keeps its height and loses its sides, so the text in it stays readable. */
+  .loop:not(.tall) video { aspect-ratio: 3 / 2; object-fit: cover; object-position: var(--focus, 50%) 50%; }
+}
