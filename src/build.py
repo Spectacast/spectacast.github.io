@@ -27,6 +27,7 @@ HERE = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import content as C  # noqa: E402
 import home_texts as T  # noqa: E402
+import visuals  # noqa: E402
 
 OUT = HERE.parent
 SITE = 'https://spectacast.com'
@@ -244,25 +245,34 @@ def footer(lang, key):
 
 
 def og_image(body):
-    """The page's first screenshot as a 1200 x 630 JPEG for link previews (some sites do not read WebP)."""
-    m = re.search(r'<img src="/img/screens/([\w-]+)\.webp"', body)
+    """The page's first picture (a screenshot, or a loop's still) as a 1200 x 630 JPEG for link previews
+    (some sites do not read WebP)."""
+    m = re.search(r'(?:src|poster)="/img/(screens|loops)/([\w-]+)\.webp"', body)
     if not m:
         return SITE + '/brand/lockup-light.png'
     from PIL import Image
-    out = OUT / 'img' / 'og' / f'{m.group(1)}.jpg'
+    folder, name = m.groups()
+    out = OUT / 'img' / 'og' / f'{name}.jpg'
     if not out.is_file():
         out.parent.mkdir(parents=True, exist_ok=True)
-        im = Image.open(IMG / f'{m.group(1)}.webp').convert('RGB')
+        im = Image.open(OUT / 'img' / folder / f'{name}.webp').convert('RGB')
         w = im.width
-        im = im.crop((0, 0, w, min(im.height, round(w * 630 / 1200)))).resize((1200, 630), Image.LANCZOS)
+        if im.height * 1200 >= w * 630:   # tall enough: its top
+            im = im.crop((0, 0, w, round(w * 630 / 1200))).resize((1200, 630), Image.LANCZOS)
+        else:                             # a wide strip: whole, in the middle of its own background
+            strip = im.resize((1200, round(im.height * 1200 / w)), Image.LANCZOS)
+            im = Image.new('RGB', (1200, 630), strip.getpixel((2, 2)))
+            im.paste(strip, (0, (630 - strip.height) // 2))
         im.save(out, 'JPEG', quality=85, optimize=True, progressive=True)
-    return f'{SITE}/img/og/{m.group(1)}.jpg'
+    return f'{SITE}/img/og/{name}.jpg'
 
 
 def frame(lang, key, title, description, body, main_class):
     """A whole page: head tags, header, the page's own body and the footer."""
     full_title = title if key == 'home' or title.startswith('Spectacast') else f'{title} · Spectacast'
     d = html.escape(description)
+    # Only the pages with something that moves load the small script that pauses and plays it.
+    script = '\n<script src="/site.js" defer></script>' if 'data-viz' in body else ''
     return f'''<!doctype html>
 <html lang="{lang}" class="sc">
 <head>
@@ -281,7 +291,7 @@ def frame(lang, key, title, description, body, main_class):
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/design/spectacast.css">
-<link rel="stylesheet" href="/site.css">
+<link rel="stylesheet" href="/site.css">{script}
 </head>
 <body>
 <div class="wrap">
@@ -352,6 +362,18 @@ def product_blocks(lang, md):
     md = re.sub(r'\{\{shot:([\w-]+)\|([^}]+)\}\}', lambda m: shot(lang, m.group(1), m.group(2)), md)
     md = md.replace(' loading="lazy"', '', 1)  # the first screenshot is above the fold
     md = re.sub(r'\{\{phone:([\w-]+)\|([^}]+)\}\}', lambda m: shot(lang, m.group(1), m.group(2), 'phone'), md)
+    md = re.sub(r'\{\{story:([\w-]+)\|([^}]+)\}\}', lambda m: visuals.story(lang, m.group(1), m.group(2)), md)
+    def loop(m):
+        parts = m.group(1).split('|')
+        if len(parts) != 3:
+            raise SystemExit(f'{{{{loop:{m.group(1)[:40]}…}}}} needs a name, a caption and a description, with | between them')
+        return visuals.loop(lang, *parts)
+    md = re.sub(r'\{\{loop:([^}]+)\}\}', loop, md)
+
+    def closeup(m):
+        name, alt, *legend = m.group(1).split('|')
+        return visuals.closeup(lang, name, alt, legend)
+    md = re.sub(r'\{\{closeup:([^}]+)\}\}', closeup, md)
 
     def plans(m):
         names = [n.strip() for n in m.group(1).split(',')]
@@ -402,7 +424,7 @@ def product_layout(lang, key, body):
     rows = []
     for part in parts:
         h2, rest = re.match(r'(<h2>.*?</h2>)(.*)', part, re.S).groups()
-        wide = re.findall(r'<figure class="shot ?">.*?</figure>', rest, re.S)
+        wide = re.findall(r'<figure class="(?:shot ?|viz[^"]*)"[^>]*>.*?</figure>', rest, re.S)
         for f in wide:
             rest = rest.replace(f, '')
         rows.append(f'<section class="p-row">\n{h2}\n<div class="p-text">{rest.strip()}</div>\n{"".join(wide)}\n</section>')
@@ -552,6 +574,9 @@ def check(written):
                     problems.append(f'{path}: anchor {ref} points to a page this build does not make')
                 elif frag not in ids[target]:
                     problems.append(f'{path}: no anchor #{frag} on {target}')
+    for path, text in written.items():
+        for token in re.findall(r'\{\{(?:story|loop|closeup|shot|phone|plans|cta)\b[^<]{0,60}', text):
+            problems.append(f'{path}: a picture or button written in the page was not understood: {token}')
     if 'class="todo"' in ''.join(written.values()) and LAUNCHED:
         problems.append('placeholders [..] are still on the pages at launch')
     return problems

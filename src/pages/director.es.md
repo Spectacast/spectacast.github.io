@@ -4,17 +4,21 @@
 
 {{cta}}
 
-{{shot:director-channels|Spectacast Director con cuatro salas una al lado de otra: quién está en cada reunión, la sala de espera, Preview y Program}}
+{{loop:director-speaker|Elige a una ponente, abre su micrófono y destácala. Tres toques.|Grabación de pantalla de Director: el operador elige a la Dra. Elena Ortega en la Sala A, abre su micrófono y la destaca}}
 
 ## Todas las salas en una pantalla
 
 Cada sala tiene su propia franja: quién está en la reunión y quién habla, la sala de espera y el vestíbulo, Preview y Program, el rótulo y el streaming. Eliges a un ponente, lo pones al aire con un toque, y la siguiente sala está justo al lado. Una sola persona puede seguir todo un congreso; en el congreso de 18 salas para el que se creó Director, así fue.
 
+{{closeup:director-hall|Primer plano de la Sala A y la Sala B en Director: las dos al aire, el PC de la sala y tres personas en cada reunión con su nivel de micrófono, y la sala de espera|**Rojo significa al aire**, con la reunión y los micrófonos.|**Quién está en la reunión**, cada uno con su nivel de micrófono en vivo.|**La sala de espera**: elige a quien espera y pulsa Admitir.}}
+
 ## Reglas para la rutina
 
 Admitir al profesorado según llega, mantener la sala de espera como se configuró, devolver un clip a su sitio cuando un PC se reinicia, silenciar la sala mientras se reproduce un vídeo: las reglas reaccionan a lo que ocurre en la reunión, en OBS y en los micrófonos, y lo hacen siempre igual. Cada regla muestra cuándo se ejecutó por última vez y por qué.
 
-{{shot:director-rules|Las reglas de Director: cada una con lo que la activa y su última ejecución}}
+{{story:rule|Animación: la Dra. Elena Ortega entra en la sala de espera de la Sala A, la regla «Admitir automáticamente» se ilumina y ella aparece en la reunión}}
+
+{{loop:director-clip|Pon un clip al aire: el micrófono de la sala se silencia solo.|Grabación de pantalla de Director: el operador pone el clip en Program en la Sala A, la sala pasa a VOD y su micrófono se silencia; al volver a la reunión, se abre de nuevo}}
 
 ## Conectores, no una instalación fija
 
@@ -34,6 +38,6 @@ Cómo conectar un equipo tuyo, programar las reglas y usar la API: [Hecho para a
 
 Director funciona en un PC de la sala de control y habla con los PC de sala por la red del propio recinto, así que el evento sigue aunque falle internet. La página de la flota muestra de un vistazo el PC, la reunión y la salida de cada sala; los paneles se montan con bloques, de modo que una sala nueva es una copia más, no un diseño nuevo. El panel habla español, inglés, alemán e italiano.
 
-{{shot:director-fleet|La flota en Director: la reunión, las personas, la sala de espera y la salida de cada sala}}
+{{closeup:director-fleet|Primer plano de la página de la flota de Director: cuatro salas, cada una en línea y en su reunión, con niveles de micrófono y sala de espera|**El PC de cada sala**: en línea y en su reunión.|**Quién habla**: una barra por micrófono, en vivo.|**La sala de espera**: admite a todos, o actívala y desactívala, desde aquí.}}
 
 {{plans:Director,Show,Complete}}

@@ -16,11 +16,12 @@
 <meta property="og:title" content="Spectacast Director">
 <meta property="og:description" content="The control room for live hybrid events. One dashboard sees every hall PC, the online meeting and the microphones at once, and rules take care of what an operator would otherwise do by hand, many…">
 <meta property="og:url" content="https://spectacast.com/products/director/">
-<meta property="og:image" content="https://spectacast.com/img/og/director-channels-en.jpg">
+<meta property="og:image" content="https://spectacast.com/img/og/director-speaker-en.jpg">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/design/spectacast.css">
 <link rel="stylesheet" href="/site.css">
+<script src="/site.js" defer></script>
 </head>
 <body>
 <div class="wrap">
@@ -37,17 +38,31 @@
 
 <div class="cta-row"><a class="sc-btn sc-btn--primary" href="/contact/">Contact us</a><a class="sc-btn" href="/pricing/">See pricing</a></div>
 
-<figure class="shot "><img src="/img/screens/director-channels-en.webp" alt="Spectacast Director with four halls side by side: who is in each meeting, the waiting room, Preview and Program" width="1600" height="1000"></figure>
+<figure class="viz loop" data-viz style="--focus:30%"><video muted loop playsinline preload="none" poster="/img/loops/director-speaker-en.webp" width="1280" height="540" aria-label="Screen recording of Director: the operator picks Dr. Elena Ortega in Hall A, opens her microphone and puts her in the spotlight"><source src="/img/loops/director-speaker-en.webm" type="video/webm"><source src="/img/loops/director-speaker-en.mp4" type="video/mp4"></video><figcaption><span>Pick a speaker, open the microphone, put them in the spotlight. Three touches.</span><button type="button" class="viz-pp" hidden data-pause="Pause" data-play="Play">Pause</button></figcaption></figure>
 </header>
 <section class="p-row">
 <h2>Every hall on one screen</h2>
 <div class="p-text"><p>Each hall gets its own strip: who is in the meeting and who is talking, the waiting room and the lobby, Preview and Program, the banner and the stream. Pick a speaker, put them on air with one touch, and the next hall is right beside it. One operator can follow a whole congress; at the 18-hall congress Director was built for, one did.</p></div>
-
+<figure class="viz closeup" style="max-width:452px"><div class="cu-scroll"><div class="cu-shot" data-surface="console"><img src="/img/closeups/director-hall-en.webp" alt="Close-up of Hall A and Hall B in Director: both on air, the hall&#x27;s PC and three speakers in each meeting with their microphone levels, and the waiting room" width="904" height="624" loading="lazy"><span class="cu-mark" aria-hidden="true" style="left:45.6%;top:9%">1</span><span class="cu-mark" aria-hidden="true" style="left:45.6%;top:21.2%">2</span><span class="cu-mark" aria-hidden="true" style="left:45.6%;top:76%">3</span></div></div><figcaption><ol class="cu-legend"><li><b>Red means on air</b>, with the meeting and the mics.</li><li><b>Who is in the meeting</b>, each with a live microphone level.</li><li><b>The waiting room</b>: pick who is waiting, then Admit.</li></ol></figcaption></figure>
 </section>
 <section class="p-row">
 <h2>Rules for the routine</h2>
 <div class="p-text"><p>Admit the faculty as they arrive, keep the waiting room as it was set, put a clip back where it was after a PC restarts, mute the hall when a video plays: rules react to what happens in the meeting, in OBS and on the mics, and do it the same way every time. Each rule shows when it last ran and why.</p></div>
-<figure class="shot "><img src="/img/screens/director-rules-en.webp" alt="Director&#x27;s rules page: each rule with what starts it and when it last ran" width="1600" height="1000" loading="lazy"></figure>
+<figure class="viz story s-rule" data-viz><div class="viz-stage" data-surface="console" role="img" aria-label="Animation: Dr. Elena Ortega enters Hall A&#x27;s waiting room, the rule &quot;Auto admit&quot; lights up, and she appears in the meeting"><div aria-hidden="true"><div class="st-flow">
+<div class="st-tile"><span class="st-label"><span>Waiting room · Hall A</span><span class="st-count"><b class="r-c0">0</b><b class="r-c1">1</b>&nbsp;</span></span>
+<div class="st-row r-guest">Dr. Elena Ortega<small>Speaker · just arrived</small></div>
+<div class="st-empty r-empty">Nobody waiting</div></div>
+<div class="st-link r-l1"></div>
+<div class="st-tile r-rule"><span class="st-label"><span>Rule · Auto admit</span></span>
+<div class="st-row r-when">When someone enters the waiting room<small>and their name is on the list</small></div>
+<div class="st-row r-then"><span>Then admit them</span><span class="r-tick">✓</span></div></div>
+<div class="st-link r-l2"></div>
+<div class="st-tile"><span class="st-label"><span>In the meeting · Hall A</span><span class="st-count"><b class="r-m3">2</b><b class="r-m4">3</b>&nbsp;</span></span>
+<div class="st-row">Prof. Jonas Weber</div>
+<div class="st-row">Dr. Nils Brandt</div>
+<div class="st-row r-in">Dr. Elena Ortega</div>
+<span class="st-pill">On air</span></div>
+</div></div></div><figcaption><span><b>A speaker arrives. The rule lets them in.</b> The operator touched nothing.</span><button type="button" class="viz-pp" hidden data-pause="Pause" data-play="Play">Pause</button></figcaption></figure><figure class="viz loop tall" data-viz><video muted loop playsinline preload="none" poster="/img/loops/director-clip-en.webp" width="880" height="1304" aria-label="Screen recording of Director: the operator puts the clip on Program in Hall A, the hall turns to VOD and its microphone mutes; back on the meeting, it opens again"><source src="/img/loops/director-clip-en.webm" type="video/webm"><source src="/img/loops/director-clip-en.mp4" type="video/mp4"></video><figcaption><span>Put a clip on air: the hall's own microphone mutes by itself.</span><button type="button" class="viz-pp" hidden data-pause="Pause" data-play="Play">Pause</button></figcaption></figure>
 </section>
 <section class="p-row">
 <h2>Connectors, not a fixed setup</h2>
@@ -67,7 +82,7 @@
 <section class="p-row">
 <h2>Built for the hall</h2>
 <div class="p-text"><p>Director runs on a PC in the control room and talks to the hall PCs over the venue's own network, so a show keeps going when the internet does not. The fleet page lists every hall's PC, meeting and output at a glance; panels are built from blocks, so a new hall is one more copy, not a new design. The dashboard speaks English, German, Spanish and Italian.</p></div>
-<figure class="shot "><img src="/img/screens/director-fleet-en.webp" alt="Director&#x27;s fleet page: each hall&#x27;s meeting, people, waiting room and output" width="1600" height="420" loading="lazy"></figure>
+<figure class="viz closeup wide" style="max-width:760px"><div class="cu-scroll"><div class="cu-shot" data-surface="console"><img src="/img/closeups/director-fleet-en.webp" alt="Close-up of Director&#x27;s fleet page: four halls, each online and in its meeting, with microphone levels and the waiting room" width="1520" height="396" loading="lazy"><span class="cu-mark" aria-hidden="true" style="left:35.6%;top:6.7%">1</span><span class="cu-mark" aria-hidden="true" style="left:66.1%;top:6.7%">2</span><span class="cu-mark" aria-hidden="true" style="left:86.8%;top:6.7%">3</span></div></div><figcaption><ol class="cu-legend"><li><b>Each hall's PC</b>: online, and in its meeting.</li><li><b>Who is talking</b>: one bar per microphone, live.</li><li><b>The waiting room</b>: admit everyone, or switch it on and off, from here.</li></ol></figcaption></figure>
 </section>
 <div class="in-plans"><b>Included in</b><span>Spectacast Director</span><span>Spectacast Show</span><span>Spectacast Complete</span><a href="/pricing/">See pricing →</a><a class="guide-link" href="/docs/director/">Read the guide →</a></div>
 <nav class="others" aria-label="The other modules"><h2>The other modules</h2><div><a href="/products/meet/"><b><span>Spectacast</span> Meet</b>The meeting, as separate feeds.</a><a href="/products/mic/"><b><span>Spectacast</span> Mic</b>Phones as microphones.</a><a href="/products/translator/"><b><span>Spectacast</span> Translator</b>Live translation, as an audio source.</a><a href="/products/pass/"><b><span>Spectacast</span> Pass</b>Badges, doors and attendance.</a></div></nav>
