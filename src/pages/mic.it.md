@@ -8,6 +8,8 @@
 
 Con l'app gratuita Spectacast Mic per Android e iPhone, negli store dalla versione 1.0, entri nel canale della sala e parli. L'app mostra se ti sentono e com'è la connessione, con un grande pulsante per disattivare il microfono. Quando arriva una domanda dal pubblico, qualsiasi telefono in sala diventa il microfono.
 
+{{story:mic}}
+
 ## Intercom per lo staff
 
 I canali tengono separati la sala e lo staff: il direttore di palco parla con la regia su un canale mentre il pubblico ascolta il relatore su un altro. Tutti sul canale vedono chi sta parlando.

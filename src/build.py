@@ -362,7 +362,7 @@ def product_blocks(lang, md):
     md = re.sub(r'\{\{shot:([\w-]+)\|([^}]+)\}\}', lambda m: shot(lang, m.group(1), m.group(2)), md)
     md = md.replace(' loading="lazy"', '', 1)  # the first screenshot is above the fold
     md = re.sub(r'\{\{phone:([\w-]+)\|([^}]+)\}\}', lambda m: shot(lang, m.group(1), m.group(2), 'phone'), md)
-    md = re.sub(r'\{\{story:([\w-]+)\|([^}]+)\}\}', lambda m: visuals.story(lang, m.group(1), m.group(2)), md)
+    md = re.sub(r'\{\{story:([\w-]+)(?:\|([^}]+))?\}\}', lambda m: visuals.story(lang, m.group(1), m.group(2)), md)
     def loop(m):
         parts = m.group(1).split('|')
         if len(parts) != 3:
@@ -529,6 +529,8 @@ def home_page(lang):
     for key in PAGES:  # links written for English point to the same page in this language
         body = body.replace(f'href="{url("en", key)}"', f'href="{url(lang, key)}"') if key != 'home' else body
     body = body.replace('{{cta}}', f'<div class="cta-row">{cta_buttons(lang)}</div>')
+    # Animated explanations, put in after the page's own text is translated: they bring their own.
+    body = re.sub(r'<!--story:(\w+)-->', lambda m: visuals.story(lang, m.group(1)).strip(), body)
     description = desc_en if lang == 'en' else T.HEAD[desc_en][lang]
     return frame(lang, 'home', title_en, description, body.rstrip('\n'), 'home')
 

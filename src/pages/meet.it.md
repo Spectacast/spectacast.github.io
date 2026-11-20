@@ -8,6 +8,8 @@
 
 Un chirurgo in sala operatoria, una relatrice da casa, le slide che qualcuno condivide: ognuno arriva sulla rete della sala come flusso video e audio a sé, via NDI. Il mixer o l'OBS della sala lo sceglie come qualsiasi altra telecamera, e il programma della sala torna nella riunione, così i relatori remoti vedono e sentono la sala.
 
+{{story:feeds}}
+
 ## Guidato dalla regia
 
 Director vede chi è in ogni riunione, chi aspetta e chi parla. Dalla dashboard la regia ammette le persone, le sposta in sala d'attesa o nella lobby, toglie e ridà l'audio e mette ogni relatore sullo schermo della sala, anche in tutte le sale insieme. Le regole possono fare lo stesso da sole: ammettere la faculty per nome, tenere accesa la sala d'attesa, rimettere tutto com'era dopo un riavvio.

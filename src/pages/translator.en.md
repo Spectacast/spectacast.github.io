@@ -10,6 +10,8 @@
 
 Take the signal from a hall microphone, the mixer, a phone through Spectacast Mic, or a hall's program over NDI. Send the translation to a sound card, to the interpreter channel of the meeting through Spectacast Meet, or to the hall. One Translator per language, side by side.
 
+{{story:translate}}
+
 ## You can read what it says
 
 The control page shows every sentence twice, as heard and as said, so someone who knows both languages can follow along. A check warns when the translation seems to say the opposite of the speaker. With the interpreter engines, a topic and a glossary help it with names and technical terms.

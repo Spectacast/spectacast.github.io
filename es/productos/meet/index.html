@@ -21,6 +21,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/design/spectacast.css">
 <link rel="stylesheet" href="/site.css">
+<script src="/site.js" defer></script>
 </head>
 <body>
 <div class="wrap">
@@ -40,7 +41,20 @@
 <section class="p-row">
 <h2>Cada ponente remoto es una fuente</h2>
 <div class="p-text"><p>Un cirujano en el quirófano, una ponente desde casa, las diapositivas que alguien comparte: cada uno llega a la red de la sala como su propia señal de vídeo y audio por NDI. El mezclador o el OBS de la sala lo elige como cualquier otra cámara, y el programa de la sala vuelve a la reunión, así los ponentes remotos ven y oyen la sala.</p></div>
-
+<figure class="viz story s-feeds" data-viz data-steps="5"><div class="viz-stage" data-surface="console" role="img" aria-label="Animación: una ponente en casa, un cirujano en el quirófano y una pantalla compartida están en la reunión de Zoom. Spectacast Meet, en el PC de la sala, da a cada uno una señal propia por NDI, aparecen una a una como fuentes en OBS o en el mezclador, y la primera se pone en pantalla."><div aria-hidden="true"><div class="st-flow">
+<div class="st-tile"><span class="st-label"><span>La reunión de Zoom</span></span>
+<div class="st-row">Dr. Elena Ortega<small>Ponente, en casa</small></div>
+<div class="st-row">Prof. Jonas Weber<small>Cirujano, en el quirófano</small></div>
+<div class="st-row">Diapositivas<small>Una pantalla compartida</small></div></div>
+<div class="st-link go-1"></div>
+<div class="st-tile hot-1"><span class="st-label"><span>PC de la sala · Spectacast Meet</span></span>
+<div class="st-row at-1">Una señal para cada uno<small>vídeo y sonido, por NDI</small></div></div>
+<div class="st-link go-2"></div>
+<div class="st-tile"><span class="st-label"><span>Fuentes en OBS o en el mezclador</span></span>
+<div class="st-row f-pair at-2"><span>Dr. Elena Ortega</span><span class="f-pill f-live at-5">En pantalla</span></div>
+<div class="st-row at-3">Prof. Jonas Weber</div>
+<div class="st-row at-4">Diapositivas</div></div>
+</div></div></div><figcaption><span><b>Cada persona de la reunión se convierte en una fuente propia.</b> La sala las elige como cámaras.</span><button type="button" class="viz-pp" hidden data-pause="Pausa" data-play="Reproducir">Pausa</button></figcaption></figure>
 </section>
 <section class="p-row">
 <h2>Manejado desde la sala de control</h2>

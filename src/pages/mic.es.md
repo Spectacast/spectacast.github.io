@@ -8,6 +8,8 @@
 
 Con la app gratuita Spectacast Mic para Android y iPhone, en las tiendas de apps a partir de la versión 1.0, entras en el canal de la sala y hablas. La app muestra si se te oye y qué tal es la conexión, con un botón grande para silenciar. Cuando llega una pregunta del público, cualquier teléfono de la sala se convierte en el micrófono.
 
+{{story:mic}}
+
 ## Intercomunicador para el equipo
 
 Los canales mantienen separados la sala y el equipo: la regidora habla con la sala de control en un canal mientras el público escucha al ponente en otro. Todos los del canal ven quién está hablando.

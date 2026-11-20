@@ -4,7 +4,7 @@
 
 {{cta}}
 
-{{shot:pass-live|Pass durante el congreso: cuántas personas hay en cada sala y las últimas lecturas en las puertas}}
+{{loop:pass-scan|Una acreditación en la puerta: el teléfono responde en verde y el contador de la sala sube.|Grabación de pantalla de Pass: se lee la acreditación de Sofia Navarro en la puerta de la Sala A, la app de puerta se pone verde con «Bienvenido/a Sofia» y, en la página En directo, la Sala A pasa de 61 a 62 con su lectura arriba en la lista}}
 
 ## Una puerta que responde al instante
 
@@ -19,6 +19,8 @@ Configura las salas, las puertas y las sesiones, las categorías de asistentes y
 ## Asistencia que puedes usar
 
 La ocupación en tiempo real muestra lo llena que está cada sala. Después del evento, Pass da los minutos y el porcentaje que cada persona pasó en cada sesión, listos para Excel, y los participantes descargan su certificado de asistencia cuando cumplen los requisitos que tú fijas.
+
+{{story:cert}}
 
 {{shot:pass-reports|Informes de Pass: personas y minutos por sala, asistencia por sesión}}
 

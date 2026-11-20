@@ -10,6 +10,8 @@
     var button = figure.querySelector('.viz-pp');
     var stopped = still;      // the visitor's own choice
     var visible = false;
+    var steps = !still && +figure.dataset.steps || 0, beat = 0, timer = 0;
+    if (steps) figure.dataset.step = 0;
 
     function apply() {
       var run = visible && !stopped;
@@ -23,8 +25,17 @@
         }
       } else {
         figure.classList.toggle('paused', !run);
+        if (steps) {
+          clearInterval(timer); timer = 0;
+          if (run) timer = setInterval(next, 1300);
+        }
       }
       label();
+    }
+    // A story told in steps: one more every beat, three beats on the last, then from the start.
+    function next() {
+      beat = beat >= steps + 3 ? 0 : beat + 1;
+      figure.dataset.step = Math.min(beat, steps);
     }
     function label() {
       if (button) button.textContent = stopped ? button.dataset.play : button.dataset.pause;

@@ -8,6 +8,8 @@
 
 Mit der kostenlosen App Spectacast Mic für Android und iPhone, in den App-Stores ab Version 1.0, treten Sie dem Kanal des Saals bei und sprechen. Die App zeigt, ob man Sie hört und wie gut die Verbindung ist, mit einer großen Taste zum Stummschalten. Kommt eine Frage aus dem Publikum, wird jedes Telefon im Saal zum Mikrofon.
 
+{{story:mic}}
+
 ## Intercom für das Team
 
 Kanäle halten Saal und Team auseinander: Die Bühnenleitung spricht auf einem Kanal mit der Regie, während das Publikum auf einem anderen den Redner hört. Alle auf einem Kanal sehen, wer gerade spricht.

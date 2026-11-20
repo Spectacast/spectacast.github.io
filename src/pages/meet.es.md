@@ -8,6 +8,8 @@
 
 Un cirujano en el quirófano, una ponente desde casa, las diapositivas que alguien comparte: cada uno llega a la red de la sala como su propia señal de vídeo y audio por NDI. El mezclador o el OBS de la sala lo elige como cualquier otra cámara, y el programa de la sala vuelve a la reunión, así los ponentes remotos ven y oyen la sala.
 
+{{story:feeds}}
+
 ## Manejado desde la sala de control
 
 Director ve quién está en cada reunión, quién espera y quién habla. Desde el panel, el operador admite a las personas, las pasa a la sala de espera o al vestíbulo, silencia y activa el sonido y coloca a cada ponente en la pantalla de la sala, en todas las salas a la vez si hace falta. Las reglas pueden hacer lo mismo solas: admitir al profesorado por su nombre, mantener la sala de espera activada, dejarlo todo como estaba tras un reinicio.

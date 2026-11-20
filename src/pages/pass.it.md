@@ -4,7 +4,7 @@
 
 {{cta}}
 
-{{shot:pass-live|Pass durante il congresso: quante persone ci sono in ogni sala e le ultime letture agli ingressi}}
+{{loop:pass-scan|Un badge all'ingresso: il telefono risponde in verde e il contatore della sala sale.|Registrazione dello schermo di Pass: il badge di Sofia Navarro viene letto all'ingresso della Sala A, l'app dell'ingresso diventa verde con «Benvenuto/a Sofia» e, nella pagina In diretta, la Sala A passa da 61 a 62 con la sua lettura in cima all'elenco}}
 
 ## Un ingresso che risponde subito
 
@@ -19,6 +19,8 @@ Imposta le sale, gli ingressi e le sessioni, le categorie dei partecipanti e le 
 ## Presenze che puoi usare
 
 L'occupazione in tempo reale mostra quanto è piena ogni sala. Dopo l'evento Pass dà i minuti e la percentuale che ogni persona ha passato in ogni sessione, pronti per Excel, e i partecipanti scaricano l'attestato di presenza quando soddisfano i requisiti che stabilisci tu.
+
+{{story:cert}}
 
 {{shot:pass-reports|I report di Pass: persone e minuti per sala, presenze per sessione}}
 

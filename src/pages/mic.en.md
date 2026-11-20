@@ -8,6 +8,8 @@
 
 With the free Spectacast Mic app for Android and iPhone, in the app stores from version 1.0, you join the hall's channel and talk. The app shows whether you can be heard and how good the connection is, with one large button to mute. When a question comes from the floor, any phone in the room becomes the microphone.
 
+{{story:mic}}
+
 ## Talkback for the crew
 
 Channels keep the hall and the crew apart: the stage manager talks to the control room on one channel while the audience hears the speaker on another. Everyone on a channel sees who is talking.

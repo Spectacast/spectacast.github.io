@@ -28,10 +28,11 @@ class Recorder {
     this.page = page; this.clip = clip; this.frames = [];
     this.dir = fs.mkdtempSync(path.join(os.tmpdir(), 'loop-'));
     this.at = { x: clip.x + clip.width * 0.82, y: clip.y + clip.height * 0.86 };
+    this.pointer = true;   // false: nothing is clicked in this loop, so no pointer is drawn
   }
   async start() { await this.page.evaluate(POINTER); await this.page.mouse.move(this.at.x, this.at.y); }
   async frame(ms, ripple = 0) {
-    await this.page.evaluate(([x, y, r]) => window.__pointer(x, y, r), [this.at.x, this.at.y, ripple]);
+    if (this.pointer) await this.page.evaluate(([x, y, r]) => window.__pointer(x, y, r), [this.at.x, this.at.y, ripple]);
     const file = path.join(this.dir, String(this.frames.length).padStart(5, '0') + '.png');
     await this.page.screenshot({ path: file, clip: this.clip });
     this.frames.push({ file, ms });
