@@ -14,7 +14,7 @@ On the **Panels** page click **Edit**. Now a click on an empty cell adds a contr
 
 **+ panel** adds a page. An operator who signs in with the operator PIN sees the panels and nothing else.
 
-{{closeup:director-build-panel|Close-up of Director's panel editor: the row of ready-made blocks, the panel's grid with empty cells, and the Save button|**Start from a block**: a whole hall, a meeting or a monitor, ready-made.|**Click an empty cell** to add a control, or a control to change it.|**Save**, and the panel is ready to use.}}
+{{closeup:director-build-panel|Close-up of Director's panel editor: the row of ready-made blocks, the panel's grid with empty cells, and the Save button|**Blocks**: a whole hall, a meeting or a monitor, built once and placed wherever needed.|**Click an empty cell** to add a control or place a block, or a control to change it.|**Save**, and the panel is ready to use.}}
 
 ## Controls
 

@@ -8,7 +8,7 @@ Un driver definito da te parla uno di cinque trasporti: **OSC**, **UDP**, **TCP*
 
 Nella pagina **Driver** fai clic su **+ driver su…** e scegli il trasporto. Dai un nome al driver ed elenca le impostazioni che ogni suo dispositivo richiede: un host, una porta, una chiave API. Un'impostazione ha un valore predefinito oppure è segnata con **obbl.** (obbligatoria), e i modelli qui sotto la leggono come `config.<id>`.
 
-{{closeup:director-build-driver|Primo piano dell'editor dei driver di Director con l'esempio «Generic OSC device»: il trasporto OSC su UDP, le impostazioni che ogni dispositivo richiede e i primi comandi|**Come parla**: OSC, UDP, TCP, HTTP o WebSocket.|**Che cosa serve a ogni dispositivo**: qui, due porte.|**I suoi comandi**: ognuno diventa un'azione per pulsanti e regole.}}
+{{closeup:director-build-driver|Primo piano dell'editor dei driver di Director con l'esempio «Generic OSC device»: il trasporto OSC su UDP, le impostazioni che ogni dispositivo richiede e i primi comandi|**Come parla**: OSC, UDP, TCP, HTTP o WebSocket.|**Che cosa serve a ogni dispositivo**: qui, due porte oltre al suo indirizzo.|**I suoi comandi**: ognuno diventa un'azione per pulsanti e regole.}}
 
 ## 2. Comandi
 

@@ -32,7 +32,7 @@ A ogni ingresso usa un telefono o un tablet, oppure un lettore a tastiera colleg
 
 Il varco risponde a ogni badge all'istante, a tutto schermo in verde, giallo o rosso, con un suono e il nome della persona. Se cade la rete, il varco continua a decidere da solo e invia le sue scansioni quando la rete torna.
 
-{{closeup:pass-answers|Le tre risposte dell'app dell'ingresso, ognuna su un telefono: verde per un'entrata con il nome della persona, giallo quando viene letto un badge che risulta già dentro, con un pulsante per continuare, e rosso per un badge che non si trova|**Verde**: avanti, con un saluto per nome.|**Giallo**: prima guarda. Questo badge risulta già dentro, e l'ingresso aspetta un tocco.|**Rosso**: non valido, con cosa fare.}}
+{{closeup:pass-answers|Le tre risposte dell'app del varco, ognuna su un telefono: verde per un'entrata con il nome della persona, giallo quando viene letto un badge che risulta già dentro, con un pulsante per continuare, e rosso per un badge che non si trova|**Verde**: avanti, con un saluto per nome.|**Giallo**: prima guarda. Questo badge risulta già dentro, e il varco aspetta un tocco.|**Rosso**: non valido, con che cosa fare.}}
 
 Un **lettore a tastiera** funziona sulla stessa pagina del varco: impostalo perché invii Invio dopo ogni codice. Un lettore in modalità memoria, a un varco senza schermo, si scarica dopo in **Carica scansioni**.
 

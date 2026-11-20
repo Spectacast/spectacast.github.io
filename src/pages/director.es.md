@@ -36,9 +36,9 @@ Cómo conectar un equipo tuyo, programar las reglas y usar la API: [Hecho para a
 
 ## Hecho a tu manera
 
-Nada en el dashboard es fijo. Los paneles se montan con bloques en el editor, las reglas se rellenan como cuando, solo si y entonces, y un equipo propio recibe un driver sin escribir código.
+Nada en el dashboard es fijo. Los paneles se montan con bloques en el editor, las reglas se rellenan como Cuando, Solo si y Entonces, y un equipo propio recibe un driver sin escribir código.
 
-{{closeup:director-build-panel|Primer plano del editor de paneles de Director: la fila de bloques ya hechos, la cuadrícula del panel con celdas vacías y el botón Guardar|**Empieza con un bloque**: una sala entera, una reunión o un monitor, ya hechos.|**Haz clic en una celda vacía** para añadir un control, o en un control para cambiarlo.|**Guarda**, y el panel está listo para usar.}}
+{{closeup:director-build-panel|Primer plano del editor de paneles de Director: la fila de bloques ya hechos, la cuadrícula del panel con celdas vacías y el botón Guardar|**Bloques**: una sala entera, una reunión o un monitor, hechos una vez y colocados donde hagan falta.|**Haz clic en una celda vacía** para añadir un control o colocar un bloque, o en un control para cambiarlo.|**Guarda**, y el panel está listo para usar.}}
 
 {{closeup:director-build-rule|Primer plano del editor de reglas de Director con la regla «Active speaker → Speaker»: cuando cambia quien habla en Zoom Sala A, tras un tiempo de espera de 1500 ms, OBS Sala A pone su escena|**Cuando**: lo que dispara la regla. Aquí, cambia quien habla en la Sala A.|**Solo si**: una condición y un tiempo de espera. Aquí, quien habla debe conservar la palabra un segundo y medio.|**Entonces**: lo que hace. Aquí, OBS de la Sala A cambia de escena.}}
 

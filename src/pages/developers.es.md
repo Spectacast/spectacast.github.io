@@ -12,7 +12,7 @@ Lo pruebas con el dispositivo real, viendo en directo cada mensaje que entra y q
 
 [Cómo describir un driver →](/es/ayuda/director-drivers/)
 
-{{closeup:director-build-driver|Primer plano del editor de drivers de Director con el ejemplo «Generic OSC device»: el transporte OSC sobre UDP, los ajustes que pide cada dispositivo y los primeros comandos|**Cómo habla**: OSC, UDP, TCP, HTTP o WebSocket.|**Qué necesita cada dispositivo**: aquí, dos puertos.|**Sus comandos**: cada uno se convierte en una acción para botones y reglas.}}
+{{closeup:director-build-driver|Primer plano del editor de drivers de Director con el ejemplo «Generic OSC device»: el transporte OSC sobre UDP, los ajustes que pide cada dispositivo y los primeros comandos|**Cómo habla**: OSC, UDP, TCP, HTTP o WebSocket.|**Qué necesita cada dispositivo**: aquí, dos puertos además de su dirección.|**Sus comandos**: cada uno se convierte en una acción para botones y reglas.}}
 
 ## Reglas, y scripts cuando las reglas no bastan
 
@@ -40,7 +40,7 @@ Una tecla de Stream Deck pulsa cualquier control del dashboard a través de Bitf
 
 Los paneles del dashboard los organizas tú: botones, selecciones, campos de texto, medidores de nivel e imágenes en directo, construidos una vez como bloque y colocados una vez por sala.
 
-{{closeup:director-build-panel|Primer plano del editor de paneles de Director: la fila de bloques ya hechos, la cuadrícula del panel con celdas vacías y el botón Guardar|**Empieza con un bloque**: una sala entera, una reunión o un monitor, ya hechos.|**Haz clic en una celda vacía** para añadir un control, o en un control para cambiarlo.|**Guarda**, y el panel está listo para usar.}}
+{{closeup:director-build-panel|Primer plano del editor de paneles de Director: la fila de bloques ya hechos, la cuadrícula del panel con celdas vacías y el botón Guardar|**Bloques**: una sala entera, una reunión o un monitor, hechos una vez y colocados donde hagan falta.|**Haz clic en una celda vacía** para añadir un control o colocar un bloque, o en un control para cambiarlo.|**Guarda**, y el panel está listo para usar.}}
 
 [Paneles →](/es/ayuda/director-panels/)
 

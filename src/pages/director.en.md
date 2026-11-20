@@ -36,9 +36,9 @@ How to connect a device of your own, script the rules and use the API: [Built to
 
 ## Built your way
 
-Nothing on the dashboard is fixed. Panels are put together from blocks in the editor, rules are filled in as when, only if and then, and a device of your own gets a driver without writing code.
+Nothing on the dashboard is fixed. Panels are put together from blocks in the editor, rules are filled in as When, Only if and Then, and a device of your own gets a driver without writing code.
 
-{{closeup:director-build-panel|Close-up of Director's panel editor: the row of ready-made blocks, the panel's grid with empty cells, and the Save button|**Start from a block**: a whole hall, a meeting or a monitor, ready-made.|**Click an empty cell** to add a control, or a control to change it.|**Save**, and the panel is ready to use.}}
+{{closeup:director-build-panel|Close-up of Director's panel editor: the row of ready-made blocks, the panel's grid with empty cells, and the Save button|**Blocks**: a whole hall, a meeting or a monitor, built once and placed wherever needed.|**Click an empty cell** to add a control or place a block, or a control to change it.|**Save**, and the panel is ready to use.}}
 
 {{closeup:director-build-rule|Close-up of Director's rule editor with the rule "Active speaker → Speaker": when the active speaker changes in Zoom Hall A, after a hold time of 1500 ms, OBS Hall A sets its scene|**When**: what starts the rule. Here, the active speaker changes in Hall A.|**Only if**: a condition, and a hold time. Here, the speaker must keep the floor for a second and a half.|**Then**: what it does. Here, OBS in Hall A changes scene.}}
 

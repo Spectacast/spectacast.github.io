@@ -12,8 +12,6 @@ Auf der Seite **Regeln** legt **+ Regel** eine leere Regel an, und **+ aus Vorla
 
 {{closeup:director-build-rule|Nahaufnahme des Regel-Editors von Director mit der Regel „Active speaker → Speaker“: Wenn in Zoom Saal A die sprechende Person wechselt, setzt OBS Saal A nach einer Haltezeit von 1500 ms seine Szene|**Wenn**: was die Regel auslöst. Hier wechselt in Saal A die sprechende Person.|**Nur wenn**: eine Bedingung und eine Haltezeit. Hier muss die Person das Wort anderthalb Sekunden behalten.|**Dann**: was die Regel tut. Hier wechselt OBS in Saal A die Szene.}}
 
-{{shot:director-rules|Die Regeln in Director: jede mit ihrem Auslöser und dem letzten Lauf}}
-
 ## Zeit und Reihenfolge
 
 - **Haltezeit (ms):** Die Regel wartet, und nur der letzte Auslöser einer Folge zählt. Wer spricht, muss das Wort einen Moment behalten, bevor das Bild wechselt.

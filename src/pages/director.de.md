@@ -36,9 +36,9 @@ Wie Sie ein eigenes Gerät anbinden, Regeln per Skript erweitern und die API nut
 
 ## Nach Ihren Vorstellungen gebaut
 
-Nichts auf dem Dashboard ist fest. Panels entstehen im Editor aus Blöcken, Regeln füllen Sie als Wenn, Nur wenn und Dann aus, und ein eigenes Gerät bekommt einen Treiber, ohne Code zu schreiben.
+Nichts auf dem Dashboard ist fest. Panels entstehen im Editor aus Blöcken, Regeln füllen Sie als Wenn, Nur wenn und Dann aus, und ein eigenes Gerät bekommt einen Treiber, ganz ohne Code.
 
-{{closeup:director-build-panel|Nahaufnahme des Panel-Editors von Director: die Reihe der fertigen Blöcke, das Raster des Panels mit leeren Zellen und die Taste Speichern|**Mit einem Block beginnen**: ein ganzer Saal, ein Meeting oder ein Monitor, fertig.|**Auf eine leere Zelle klicken**, um ein Bedienelement hinzuzufügen, oder auf ein Bedienelement, um es zu ändern.|**Speichern**, und das Panel ist einsatzbereit.}}
+{{closeup:director-build-panel|Nahaufnahme des Panel-Editors von Director: die Reihe der fertigen Blöcke, das Raster des Panels mit leeren Zellen und die Taste Speichern|**Blöcke**: ein ganzer Saal, ein Meeting oder ein Monitor, einmal gebaut und überall eingesetzt.|**Auf eine leere Zelle klicken**, um ein Bedienelement hinzuzufügen oder einen Block einzusetzen, oder auf ein Bedienelement, um es zu ändern.|**Speichern**, und das Panel ist einsatzbereit.}}
 
 {{closeup:director-build-rule|Nahaufnahme des Regel-Editors von Director mit der Regel „Active speaker → Speaker“: Wenn in Zoom Saal A die sprechende Person wechselt, setzt OBS Saal A nach einer Haltezeit von 1500 ms seine Szene|**Wenn**: was die Regel auslöst. Hier wechselt in Saal A die sprechende Person.|**Nur wenn**: eine Bedingung und eine Haltezeit. Hier muss die Person das Wort anderthalb Sekunden behalten.|**Dann**: was die Regel tut. Hier wechselt OBS in Saal A die Szene.}}
 

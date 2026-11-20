@@ -36,9 +36,9 @@ Come collegare un tuo apparecchio, programmare le regole e usare l'API: [Fatto p
 
 ## Fatto a modo tuo
 
-Niente nella dashboard è fisso. I pannelli si compongono con blocchi nell'editor, le regole si compilano come quando, solo se e allora, e un tuo apparecchio riceve un driver senza scrivere codice.
+Niente nella dashboard è fisso. I pannelli si compongono con blocchi nell'editor, le regole si compilano come Quando, Solo se e Allora, e un tuo apparecchio riceve un driver senza scrivere codice.
 
-{{closeup:director-build-panel|Primo piano dell'editor dei pannelli di Director: la fila dei blocchi già pronti, la griglia del pannello con celle vuote e il pulsante Salva|**Parti da un blocco**: una sala intera, una riunione o un monitor, già pronti.|**Fai clic su una cella vuota** per aggiungere un controllo, o su un controllo per modificarlo.|**Salva**, e il pannello è pronto all'uso.}}
+{{closeup:director-build-panel|Primo piano dell'editor dei pannelli di Director: la fila dei blocchi già pronti, la griglia del pannello con celle vuote e il pulsante Salva|**Blocchi**: una sala intera, una riunione o un monitor, costruiti una volta e messi dove servono.|**Fai clic su una cella vuota** per aggiungere un controllo o inserire un blocco, o su un controllo per modificarlo.|**Salva**, e il pannello è pronto all'uso.}}
 
 {{closeup:director-build-rule|Primo piano dell'editor delle regole di Director con la regola «Active speaker → Speaker»: quando cambia chi parla in Zoom Sala A, dopo un tempo di attesa di 1500 ms, OBS Sala A imposta la sua scena|**Quando**: che cosa fa partire la regola. Qui cambia chi parla nella Sala A.|**Solo se**: una condizione e un tempo di attesa. Qui chi parla deve tenere la parola per un secondo e mezzo.|**Allora**: che cosa fa. Qui OBS della Sala A cambia scena.}}
 

@@ -12,7 +12,7 @@ Lo provi sul dispositivo vero, con ogni messaggio in entrata e in uscita elencat
 
 [Come descrivere un driver →](/it/guida/director-drivers/)
 
-{{closeup:director-build-driver|Primo piano dell'editor dei driver di Director con l'esempio «Generic OSC device»: il trasporto OSC su UDP, le impostazioni che ogni dispositivo richiede e i primi comandi|**Come parla**: OSC, UDP, TCP, HTTP o WebSocket.|**Che cosa serve a ogni dispositivo**: qui, due porte.|**I suoi comandi**: ognuno diventa un'azione per pulsanti e regole.}}
+{{closeup:director-build-driver|Primo piano dell'editor dei driver di Director con l'esempio «Generic OSC device»: il trasporto OSC su UDP, le impostazioni che ogni dispositivo richiede e i primi comandi|**Come parla**: OSC, UDP, TCP, HTTP o WebSocket.|**Che cosa serve a ogni dispositivo**: qui, due porte oltre al suo indirizzo.|**I suoi comandi**: ognuno diventa un'azione per pulsanti e regole.}}
 
 ## Regole, e script quando le regole non bastano
 
@@ -40,7 +40,7 @@ Un tasto dello Stream Deck preme qualsiasi controllo della dashboard attraverso 
 
 I pannelli della dashboard li disponi tu: pulsanti, selezioni, campi di testo, indicatori di livello e immagini dal vivo, costruiti una volta come blocco e collocati una volta per sala.
 
-{{closeup:director-build-panel|Primo piano dell'editor dei pannelli di Director: la fila dei blocchi già pronti, la griglia del pannello con celle vuote e il pulsante Salva|**Parti da un blocco**: una sala intera, una riunione o un monitor, già pronti.|**Fai clic su una cella vuota** per aggiungere un controllo, o su un controllo per modificarlo.|**Salva**, e il pannello è pronto all'uso.}}
+{{closeup:director-build-panel|Primo piano dell'editor dei pannelli di Director: la fila dei blocchi già pronti, la griglia del pannello con celle vuote e il pulsante Salva|**Blocchi**: una sala intera, una riunione o un monitor, costruiti una volta e messi dove servono.|**Fai clic su una cella vuota** per aggiungere un controllo o inserire un blocco, o su un controllo per modificarlo.|**Salva**, e il pannello è pronto all'uso.}}
 
 [Pannelli →](/it/guida/director-panels/)
 

@@ -22,6 +22,8 @@ LANGS = ('en', 'de', 'es', 'it')
 UI = {
     'pause': {'en': 'Pause', 'de': 'Pause', 'es': 'Pausa', 'it': 'Pausa'},
     'play': {'en': 'Play', 'de': 'Abspielen', 'es': 'Reproducir', 'it': 'Riproduci'},
+    'scroll': {'en': 'Swipe sideways to see the whole picture', 'de': 'Zur Seite wischen, um das ganze Bild zu sehen',
+               'es': 'Desliza hacia un lado para ver toda la imagen', 'it': "Scorri di lato per vedere tutta l'immagine"},
 }
 
 # ---------- animated explanations ----------
@@ -328,11 +330,20 @@ def closeup(lang, name, alt, legend=()):
     marks = json.loads((ROOT / 'img' / 'closeups' / f'{n}.json').read_text())['marks']
     if len(marks) != len(legend):
         raise SystemExit(f'close-up {n}: {len(marks)} marks but {len(legend)} lines saying what they are')
-    dots = ''.join(f'<span class="cu-mark" aria-hidden="true" style="left:{x:g}%;top:{y:g}%">{i + 1}</span>' for i, (x, y) in enumerate(marks))
+    # A mark is [x, y] in % for its middle, or [x, y, "after" | "before"] when it stands beside words that end or
+    # start there: site.css then keeps it clear of them, however small the picture is shown.
+    dots = ''.join(f'<span class="cu-mark{" " + m[2] if len(m) > 2 else ""}" aria-hidden="true" style="left:{m[0]:g}%;top:{m[1]:g}%">{i + 1}</span>'
+                   for i, m in enumerate(marks))
     items = ''.join(f'<li>{_text(item)}</li>' for item in legend)
     # Taken at twice the size, shown at most at its own size, so it stays sharp.
     # A wide one keeps a readable size on a phone and scrolls sideways inside itself.
     wide = ' wide' if w // 2 > 600 else ''
+    img = f'<img src="/img/closeups/{n}.webp" alt="{html.escape(alt)}" width="{w}" height="{h}" loading="lazy">'
+    # A second picture called <name>-dark is shown on a dark page (same size, same marks).
+    if (ROOT / 'img' / 'closeups' / f'{name}-dark-{lang}.webp').is_file():
+        img = f'<picture><source srcset="/img/closeups/{name}-dark-{lang}.webp" media="(prefers-color-scheme: dark)">{img}</picture>'
+    # On a phone a wide one scrolls sideways inside itself: a line above the legend says so.
+    hint = f'<p class="cu-hint">{html.escape(UI["scroll"][lang])} →</p>' if wide else ''
     return (f'\n<figure class="viz closeup{wide}" style="max-width:{w // 2}px"><div class="cu-scroll"><div class="cu-shot" data-surface="console">'
-            f'<img src="/img/closeups/{n}.webp" alt="{html.escape(alt)}" width="{w}" height="{h}" loading="lazy">{dots}</div></div>'
-            f'<figcaption><ol class="cu-legend">{items}</ol></figcaption></figure>\n')
+            f'{img}{dots}</div></div>'
+            f'<figcaption>{hint}<ol class="cu-legend">{items}</ol></figcaption></figure>\n')

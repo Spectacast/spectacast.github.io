@@ -8,7 +8,7 @@ Ein selbst definierter Treiber spricht einen von fünf Transporten: **OSC**, **U
 
 Klicken Sie auf der Seite **Treiber** auf **+ Treiber über…** und wählen Sie den Transport. Geben Sie dem Treiber einen Namen und listen Sie die Einstellungen auf, die jedes seiner Geräte braucht: einen Host, einen Port, einen API-Schlüssel. Eine Einstellung hat einen Standardwert oder ist mit **Pfl.** (Pflichtfeld) markiert, und die Vorlagen unten lesen sie als `config.<id>`.
 
-{{closeup:director-build-driver|Nahaufnahme des Treiber-Editors von Director mit dem Beispiel „Generic OSC device“: der Transport OSC über UDP, die Einstellungen, die jedes Gerät verlangt, und die ersten Befehle|**Wie es spricht**: OSC, UDP, TCP, HTTP oder WebSocket.|**Was jedes Gerät braucht**: hier zwei Ports.|**Seine Befehle**: Jeder wird zu einer Aktion für Tasten und Regeln.}}
+{{closeup:director-build-driver|Nahaufnahme des Treiber-Editors von Director mit dem Beispiel „Generic OSC device“: der Transport OSC über UDP, die Einstellungen, die jedes Gerät verlangt, und die ersten Befehle|**Wie es spricht**: OSC, UDP, TCP, HTTP oder WebSocket.|**Was jedes Gerät braucht**: hier zwei Ports, neben seiner Adresse.|**Seine Befehle**: Jeder wird zu einer Aktion für Tasten und Regeln.}}
 
 ## 2. Befehle
 

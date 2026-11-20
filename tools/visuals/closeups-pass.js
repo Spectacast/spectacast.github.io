@@ -2,7 +2,7 @@
 //   node tools/visuals/closeups-pass.js <pass repo, npm installed> [en,de,es,it]
 // pass-answers: the door app's three answers side by side. Each is the real page on a phone-sized screen
 // (green: a first entry; amber: the same badge at an entry-only door while it is inside; red: a code nobody has);
-// only the frames around them are drawn.
+// only the frames around them are drawn. Taken twice: for light pages and, as pass-answers-dark, for dark ones.
 const { chromium } = require('playwright');
 const { execFileSync } = require('node:child_process');
 const fs = require('node:fs');
@@ -25,28 +25,36 @@ const SHOWN = 236, GAP = 34, PAD = 26, EDGE = 9;   // on the picture: a screen's
       const door = (mode) => `${base}/scan?event=${info.event}&door=${info.door}&name=${encodeURIComponent(info.doorName)}${mode ? '&mode=' + mode : ''}`;
       // What is scanned, where and when: the second scan is twelve minutes later, at the door set to entry only.
       const scans = [[door(''), info.guest, 0], [door('in'), info.guest, 12 * 60_000], [door(''), 'NOBODY2027', 13 * 60_000]];
+      // The colour each answer must have, so a slow hub cannot put a wrong picture on the website unnoticed.
+      const WANT = ['green', 'amber', 'red'];
+      const colour = ([r, g, b]) => (g > r * 1.3 ? 'green' : r > g * 1.6 ? 'red' : r > 150 && g > 100 && b < 90 ? 'amber' : 'other');
       const shots = [];
-      for (const [url, code, later] of scans) {
+      for (const [i, [url, code, later]] of scans.entries()) {
         const ctx = await browser.newContext({ viewport: { width: W, height: H }, deviceScaleFactor: 2, isMobile: true, hasTouch: true, colorScheme: 'light', timezoneId: 'Europe/Berlin', locale: LOCALE[lang] });
         const page = await ctx.newPage();
         await page.clock.setFixedTime(new Date(when + later));
         await page.goto(url); await page.waitForTimeout(1500);
-        await page.keyboard.type(code, { delay: 5 }); await page.keyboard.press('Enter'); await page.waitForTimeout(800);
+        await page.keyboard.type(code, { delay: 5 }); await page.keyboard.press('Enter');
+        await page.waitForSelector('#result:not([hidden])'); await page.waitForTimeout(800);   // shown, and stored by the hub
+        const rgb = await page.evaluate(() => getComputedStyle(document.querySelector('#result')).backgroundColor.match(/\d+/g).map(Number));
+        if (colour(rgb) !== WANT[i]) throw new Error(`pass-answers-${lang}: answer ${i + 1} is ${colour(rgb)} (${rgb}), not ${WANT[i]}`);
         shots.push((await page.screenshot()).toString('base64'));
         await ctx.close();
       }
       const shownH = Math.round(SHOWN * H / W), width = PAD * 2 + SHOWN * 3 + EDGE * 6 + GAP * 2, height = PAD * 2 + shownH + EDGE * 2;
-      const page = await browser.newPage({ viewport: { width, height }, deviceScaleFactor: 2 });
-      await page.setContent(`<style>
-        body { margin: 0; background: #f3f1ea; display: flex; gap: ${GAP}px; padding: ${PAD}px; }
-        div { padding: ${EDGE}px; border-radius: 30px; background: #111318; box-shadow: 0 14px 30px rgba(17,19,24,.25); }
-        img { display: block; width: ${SHOWN}px; height: ${shownH}px; border-radius: 22px; }
-      </style>${shots.map((s) => `<div><img src="data:image/png;base64,${s}"></div>`).join('')}`);
-      const png = path.join(OUT, `pass-answers-${lang}.png`);
-      await page.screenshot({ path: png });
-      await page.close();
-      execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', png, '-quality', '88', png.replace('.png', '.webp')]);
-      fs.rmSync(png);
+      for (const dark of [false, true]) {
+        const page = await browser.newPage({ viewport: { width, height }, deviceScaleFactor: 2 });
+        await page.setContent(`<style>
+          body { margin: 0; background: ${dark ? '#111318' : '#f3f1ea'}; display: flex; gap: ${GAP}px; padding: ${PAD}px; }
+          div { padding: ${EDGE}px; border-radius: 30px; background: ${dark ? '#2b2f38' : '#111318'}; box-shadow: 0 14px 30px rgba(17,19,24,.25); }
+          img { display: block; width: ${SHOWN}px; height: ${shownH}px; border-radius: 22px; }
+        </style>${shots.map((s) => `<div><img src="data:image/png;base64,${s}"></div>`).join('')}`);
+        const png = path.join(OUT, `pass-answers${dark ? '-dark' : ''}-${lang}.png`);
+        await page.screenshot({ path: png });
+        await page.close();
+        execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', png, '-quality', '88', png.replace('.png', '.webp')]);
+        fs.rmSync(png);
+      }
       // One mark on the top edge of each phone.
       const marks = [0, 1, 2].map((i) => [+(((PAD + EDGE + SHOWN / 2 + i * (SHOWN + EDGE * 2 + GAP)) / width) * 100).toFixed(1), +((PAD / height) * 100).toFixed(1)]);
       fs.writeFileSync(path.join(OUT, `pass-answers-${lang}.json`), JSON.stringify({ marks }) + '\n');

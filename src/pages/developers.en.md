@@ -12,7 +12,7 @@ You test against the real device, with every message in and out listed live, and
 
 [How to describe a driver →](/docs/director-drivers/)
 
-{{closeup:director-build-driver|Close-up of Director's driver editor with the example "Generic OSC device": the transport OSC over UDP, the settings each device asks for, and the first commands|**How it talks**: OSC, UDP, TCP, HTTP or WebSocket.|**What each device needs**: here, two ports.|**Its commands**: each one becomes an action for buttons and rules.}}
+{{closeup:director-build-driver|Close-up of Director's driver editor with the example "Generic OSC device": the transport OSC over UDP, the settings each device asks for, and the first commands|**How it talks**: OSC, UDP, TCP, HTTP or WebSocket.|**What each device needs**: here, two ports besides its address.|**Its commands**: each one becomes an action for buttons and rules.}}
 
 ## Rules, and scripts when rules are not enough
 
@@ -40,7 +40,7 @@ A Stream Deck key presses any control of the dashboard through Bitfocus Companio
 
 The dashboard's panels are yours to lay out: buttons, choices, text fields, level meters and live pictures, built once as a block and placed once per hall.
 
-{{closeup:director-build-panel|Close-up of Director's panel editor: the row of ready-made blocks, the panel's grid with empty cells, and the Save button|**Start from a block**: a whole hall, a meeting or a monitor, ready-made.|**Click an empty cell** to add a control, or a control to change it.|**Save**, and the panel is ready to use.}}
+{{closeup:director-build-panel|Close-up of Director's panel editor: the row of ready-made blocks, the panel's grid with empty cells, and the Save button|**Blocks**: a whole hall, a meeting or a monitor, built once and placed wherever needed.|**Click an empty cell** to add a control or place a block, or a control to change it.|**Save**, and the panel is ready to use.}}
 
 [Panels →](/docs/director-panels/)
 

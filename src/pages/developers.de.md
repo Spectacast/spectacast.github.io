@@ -12,7 +12,7 @@ Sie testen am echten Gerät, wobei jede ein- und ausgehende Nachricht live aufge
 
 [So beschreiben Sie einen Treiber →](/de/hilfe/director-drivers/)
 
-{{closeup:director-build-driver|Nahaufnahme des Treiber-Editors von Director mit dem Beispiel „Generic OSC device“: der Transport OSC über UDP, die Einstellungen, die jedes Gerät verlangt, und die ersten Befehle|**Wie es spricht**: OSC, UDP, TCP, HTTP oder WebSocket.|**Was jedes Gerät braucht**: hier zwei Ports.|**Seine Befehle**: Jeder wird zu einer Aktion für Tasten und Regeln.}}
+{{closeup:director-build-driver|Nahaufnahme des Treiber-Editors von Director mit dem Beispiel „Generic OSC device“: der Transport OSC über UDP, die Einstellungen, die jedes Gerät verlangt, und die ersten Befehle|**Wie es spricht**: OSC, UDP, TCP, HTTP oder WebSocket.|**Was jedes Gerät braucht**: hier zwei Ports, neben seiner Adresse.|**Seine Befehle**: Jeder wird zu einer Aktion für Tasten und Regeln.}}
 
 ## Regeln, und Skripte, wenn Regeln nicht reichen
 
@@ -40,7 +40,7 @@ Eine Taste des Stream Deck drückt über Bitfocus Companion jedes Bedienelement 
 
 Die Panels des Dashboards ordnen Sie selbst an: Tasten, Auswahlen, Textfelder, Pegelanzeigen und Live-Bilder, einmal als Block gebaut und einmal pro Saal platziert.
 
-{{closeup:director-build-panel|Nahaufnahme des Panel-Editors von Director: die Reihe der fertigen Blöcke, das Raster des Panels mit leeren Zellen und die Taste Speichern|**Mit einem Block beginnen**: ein ganzer Saal, ein Meeting oder ein Monitor, fertig.|**Auf eine leere Zelle klicken**, um ein Bedienelement hinzuzufügen, oder auf ein Bedienelement, um es zu ändern.|**Speichern**, und das Panel ist einsatzbereit.}}
+{{closeup:director-build-panel|Nahaufnahme des Panel-Editors von Director: die Reihe der fertigen Blöcke, das Raster des Panels mit leeren Zellen und die Taste Speichern|**Blöcke**: ein ganzer Saal, ein Meeting oder ein Monitor, einmal gebaut und überall eingesetzt.|**Auf eine leere Zelle klicken**, um ein Bedienelement hinzuzufügen oder einen Block einzusetzen, oder auf ein Bedienelement, um es zu ändern.|**Speichern**, und das Panel ist einsatzbereit.}}
 
 [Panels →](/de/hilfe/director-panels/)
 

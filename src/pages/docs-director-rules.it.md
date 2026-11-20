@@ -12,8 +12,6 @@ Nella pagina **Regole**, **+ regola** inizia una regola vuota e **+ da modello**
 
 {{closeup:director-build-rule|Primo piano dell'editor delle regole di Director con la regola «Active speaker → Speaker»: quando cambia chi parla in Zoom Sala A, dopo un tempo di attesa di 1500 ms, OBS Sala A imposta la sua scena|**Quando**: che cosa fa partire la regola. Qui cambia chi parla nella Sala A.|**Solo se**: una condizione e un tempo di attesa. Qui chi parla deve tenere la parola per un secondo e mezzo.|**Allora**: che cosa fa. Qui OBS della Sala A cambia scena.}}
 
-{{shot:director-rules|Le regole di Director: ognuna con ciò che la fa partire e la sua ultima esecuzione}}
-
 ## Tempi e ordine
 
 - **tempo di attesa (ms):** la regola aspetta, e conta solo l'ultimo trigger di una raffica. Chi parla deve tenere la parola per un momento prima che l'immagine cambi.
