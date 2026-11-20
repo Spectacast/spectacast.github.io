@@ -450,6 +450,14 @@ mark.todo {
   border: 1px solid var(--sc-line); box-shadow: var(--sc-shadow);
 }
 .loop.tall { max-width: 460px; }
+/* A loop recorded twice: the light one on a light page, the dark one on a dark page. */
+.loop video.for-dark { display: none; background-size: cover; background-position: var(--focus, 50%) 50%; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .loop video.for-dark { display: block; }
+  :root:not([data-theme='light']) .loop video.for-light { display: none; }
+}
+:root[data-theme='dark'] .loop video.for-dark { display: block; }
+:root[data-theme='dark'] .loop video.for-light { display: none; }
 @media (min-width: 961px) { .p-row > .loop.tall, .p-row > .closeup { grid-column: 2; } }
 
 .viz-stage { background: var(--sc-bg); border-radius: var(--sc-r-lg); padding: 22px; box-shadow: var(--sc-shadow); }
@@ -498,7 +506,9 @@ mark.todo {
 @keyframes r-m4 { 0%, 60% { opacity: 0; } 62%, 95% { opacity: 1; } 97%, 100% { opacity: 0; } }
 /* The "how it fits together" story: a remote speaker joins, one touch in the control room, she is on the hall's
    screen, and the hall goes back out to the meeting. Twelve seconds, then again. */
-.f-pair { display: flex; justify-content: space-between; align-items: center; gap: 8px; position: relative; }
+.f-pair { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 4px 8px; position: relative; }
+/* In a narrow tile the pill goes under the name, and the name is not broken inside a word. */
+.f-pair > span:first-child { flex: 1 1 auto; overflow-wrap: normal; }
 .f-pill { flex: none; border-radius: 999px; padding: 2px 9px; font-size: 11px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #fff; opacity: 0; }
 .f-live { background: #cf2e25; }
 .f-spot { background: #1f7a4d; }
@@ -539,8 +549,10 @@ mark.todo {
 /* Stories told in steps: site.js counts data-step up on the figure; without it (no script, motion switched off)
    every step has happened, which is the still. at-N appears at step N, till-N leaves at it, hot-N is lit during
    it, and a link with go-N sends its dot across during it. */
-[class*="at-"], [class*="till-"] { transition: opacity 0.35s ease, transform 0.35s ease; }
-[class*="hot-"] { transition: border-color 0.3s ease; }
+.story [class*="at-"] { transition: opacity 0.35s ease, transform 0.35s ease; }
+.story [class*="hot-"] { transition: border-color 0.3s ease; }
+/* What a travelling dot brings appears once the dot is across; going back to the start, it leaves at once. */
+.story[data-step]:not([data-step="0"]) .late { transition-delay: 0.7s; }
 .story:not([data-step]) [class*="till-"] { opacity: 0; }
 .story:is([data-step="0"]) .at-1 { opacity: 0; transform: translateY(6px); }
 .story:is([data-step="1"], [data-step="2"], [data-step="3"], [data-step="4"], [data-step="5"], [data-step="6"]) .till-1 { opacity: 0; }
@@ -572,9 +584,10 @@ mark.todo {
 .st-paper b { font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; }
 .st-paper .f-pill { opacity: 1; margin-top: 6px; }
 .st-row .f-meter { margin: 6px 0 0; }
-.f-meter.wide { width: 100%; }
+.f-meter.wide { width: 100%; background: color-mix(in srgb, var(--sc-muted) 45%, transparent); }
+.st-or { background: none; border-color: var(--sc-line); color: var(--sc-muted); }
 .f-meter.wide b { animation: none; }
-.f-pill[class*="at-"] { opacity: 1; }
+.story .f-pill[class*="at-"] { opacity: 1; }
 /* The end of the story as a still: for visitors who switched motion off, and until site.js is there to pause
    it (the script adds .on). */
 .story:not(.on) *, .story:not(.on) *::after, .story:not(.on) *::before { animation: none !important; }
@@ -610,5 +623,5 @@ mark.todo {
   .closeup.wide .cu-scroll { overflow-x: auto; padding: 8px 0 14px; margin: -8px 0 -14px; }
   .closeup.wide .cu-shot { min-width: 600px; box-shadow: none; }
   /* A wide loop keeps its height and loses its sides, so the text in it stays readable. */
-  .loop:not(.tall) video { aspect-ratio: 3 / 2; object-fit: cover; object-position: var(--focus, 50%) 50%; }
+  .loop:not(.tall) video { aspect-ratio: var(--crop, 3 / 2); object-fit: cover; object-position: var(--focus, 50%) 50%; }
 }

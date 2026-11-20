@@ -360,7 +360,9 @@ def product_blocks(lang, md):
     """{{shot:name|alt}}, {{phone:name|alt}}, {{plans:A,B}} and {{cta}} in a product page's Markdown."""
     l = LABELS[lang]
     md = re.sub(r'\{\{shot:([\w-]+)\|([^}]+)\}\}', lambda m: shot(lang, m.group(1), m.group(2)), md)
-    md = md.replace(' loading="lazy"', '', 1)  # the first screenshot is above the fold
+    # A screenshot before the first heading is above the fold: the browser should not wait with it.
+    top, sep, rest = md.partition('\n## ')
+    md = top.replace(' loading="lazy"', '', 1) + sep + rest
     md = re.sub(r'\{\{phone:([\w-]+)\|([^}]+)\}\}', lambda m: shot(lang, m.group(1), m.group(2), 'phone'), md)
     md = re.sub(r'\{\{story:([\w-]+)(?:\|([^}]+))?\}\}', lambda m: visuals.story(lang, m.group(1), m.group(2)), md)
     def loop(m):

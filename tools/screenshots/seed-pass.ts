@@ -8,7 +8,7 @@ import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 
 const [passRepo, dbFile, lang = 'en'] = process.argv.slice(2);
-if (!passRepo || !dbFile) throw new Error('usage: seed-pass.ts <pass repo> <database file>');
+if (!passRepo || !dbFile) throw new Error('usage: seed-pass.ts <pass repo> <database file> [en|de|es|it]');
 const { Store } = await import(pathToFileURL(path.resolve(passRepo, 'src/store.ts')).href);
 
 let seed = 20271;

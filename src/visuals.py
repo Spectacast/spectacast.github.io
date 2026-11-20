@@ -50,9 +50,9 @@ STORY_TEXTS = {
         'spot': {'en': 'Spotlight', 'de': 'Spotlight', 'es': 'Destacada', 'it': 'In evidenza'},
         'inhall': {'en': 'In Hall A · the screen', 'de': 'In Saal A · die Leinwand', 'es': 'En la Sala A · la pantalla', 'it': 'In Sala A · lo schermo'},
         'idle': {'en': 'Waiting for the speaker', 'de': 'Wartet auf die Rednerin', 'es': 'Esperando a la ponente', 'it': 'In attesa della relatrice'},
-        'pc': {'en': "The hall's PC, with OBS Studio and Spectacast Meet", 'de': 'Der Saal-PC, mit OBS Studio und Spectacast Meet', 'es': 'El PC de la sala, con OBS Studio y Spectacast Meet', 'it': 'Il PC di sala, con OBS Studio e Spectacast Meet'},
+        'pc': {'en': "The hall's PC, with OBS Studio and Spectacast Meet", 'de': 'Der Saal-PC, mit OBS Studio und Spectacast Meet', 'es': 'El PC de sala, con OBS Studio y Spectacast Meet', 'it': 'Il PC di sala, con OBS Studio e Spectacast Meet'},
         'cap_b': {'en': "A remote speaker joins. The operator puts them on the hall's screen.", 'de': 'Eine Rednerin schaltet sich zu. Die Regie bringt sie auf die Leinwand im Saal.', 'es': 'Se conecta una ponente remota. El operador la pone en la pantalla de la sala.', 'it': 'Una relatrice si collega da remoto. La regia la porta sullo schermo della sala.'},
-        'cap': {'en': 'The hall goes back out to everyone online.', 'de': 'Der Saal geht zurück an alle, die online dabei sind.', 'es': 'La sala vuelve a todos los que están en línea.', 'it': 'La sala torna a tutti quelli che sono online.'},
+        'cap': {'en': 'The hall goes back out to everyone online.', 'de': 'Der Saal geht zurück an alle, die online dabei sind.', 'es': 'La sala se devuelve a todos los que están en línea.', 'it': 'La sala viene rimandata a tutti quelli che sono online.'},
         'alt': {
             'en': 'Animation: a remote speaker joins the Zoom meeting and appears in Director in the control room. The operator picks her and puts her in the spotlight, she appears on the screen in Hall A, and the audience online sees and hears the hall.',
             'de': 'Animation: Eine Rednerin schaltet sich ins Zoom-Meeting zu und erscheint in Director in der Regie. Der Operator wählt sie aus und setzt sie ins Spotlight, sie erscheint auf der Leinwand in Saal A, und das Publikum online sieht und hört den Saal.',
@@ -66,37 +66,37 @@ STORY_TEXTS = {
         'in': {'en': 'in', 'de': 'ein', 'es': 'entrada', 'it': 'entrata'},
         'out': {'en': 'out', 'de': 'aus', 'es': 'salida', 'it': 'uscita'},
         'att': {'en': 'Attendance', 'de': 'Anwesenheit', 'es': 'Asistencia', 'it': 'Presenze'},
-        'minutes': {'en': '218 minutes in sessions', 'de': '218 Minuten in Sessions', 'es': '218 minutos en sesiones', 'it': '218 minuti nelle sessioni'},
-        'percent': {'en': '87 % of the program', 'de': '87 % des Programms', 'es': '87 % del programa', 'it': '87 % del programma'},
-        'needed': {'en': 'you asked for 75 %', 'de': 'verlangt sind 75 %', 'es': 'pides el 75 %', 'it': 'ne chiedi il 75 %'},
+        'minutes': {'en': '195 minutes in sessions', 'de': '195 Minuten in Sessions', 'es': '195 minutos en sesiones', 'it': '195 minuti nelle sessioni'},
+        'percent': {'en': '87% of the program', 'de': '87 % des Programms', 'es': '87 % del programa', 'it': '87 % del programma'},
+        'needed': {'en': 'you ask for 75%', 'de': 'verlangt sind 75 %', 'es': 'pides el 75 %', 'it': 'ne chiedi il 75 %'},
         'cert': {'en': 'Certificate', 'de': 'Bescheinigung', 'es': 'Certificado', 'it': 'Attestato'},
         'notyet': {'en': 'Not yet', 'de': 'Noch nicht', 'es': 'Todavía no', 'it': 'Non ancora'},
-        'title': {'en': 'Certificate of attendance', 'de': 'Teilnahmebescheinigung', 'es': 'Certificado de asistencia', 'it': 'Attestato di presenza'},
+        'title': {'en': 'Certificate of attendance', 'de': 'Teilnahmebescheinigung', 'es': 'Certificado de asistencia', 'it': 'Attestato di partecipazione'},
         'ready': {'en': 'Ready to download', 'de': 'Bereit zum Download', 'es': 'Listo para descargar', 'it': 'Pronto da scaricare'},
         'cap_b': {'en': 'Scans become minutes. Minutes become the certificate.', 'de': 'Aus Scans werden Minuten. Aus Minuten wird die Bescheinigung.', 'es': 'Las lecturas se convierten en minutos. Los minutos, en el certificado.', 'it': "Le letture diventano minuti. I minuti diventano l'attestato."},
         'cap': {'en': 'Whoever meets the requirements you set downloads it themselves.', 'de': 'Wer Ihre Vorgaben erfüllt, lädt sie selbst herunter.', 'es': 'Quien cumple los requisitos que pones lo descarga por su cuenta.', 'it': 'Chi soddisfa i requisiti che imposti lo scarica da solo.'},
         'alt': {
-            'en': 'Animation: Sofia Navarro is scanned in at 09:02 and out at 12:40 at the Hall A door. Pass counts 218 minutes in sessions, 87 % of the program where 75 % is asked, and her certificate of attendance is ready to download.',
-            'de': 'Animation: Sofia Navarro wird am Eingang von Saal A um 09:02 beim Hineingehen und um 12:40 beim Hinausgehen gescannt. Pass zählt 218 Minuten in Sessions, 87 % des Programms bei verlangten 75 %, und ihre Teilnahmebescheinigung steht zum Download bereit.',
-            'es': 'Animación: a Sofia Navarro se le lee la acreditación al entrar a las 09:02 y al salir a las 12:40 en la puerta de la Sala A. Pass cuenta 218 minutos en sesiones, el 87 % del programa cuando se pide el 75 %, y su certificado de asistencia queda listo para descargar.',
-            'it': "Animazione: il badge di Sofia Navarro viene letto all'ingresso della Sala A alle 09:02 in entrata e alle 12:40 in uscita. Pass conta 218 minuti nelle sessioni, l'87 % del programma a fronte del 75 % richiesto, e il suo attestato di presenza è pronto da scaricare.",
+            'en': 'Animation: Sofia Navarro is scanned in at 09:02 and out at 12:40 at the Hall A door. Pass counts 195 minutes in sessions, 87% of the program where 75% is asked, and her certificate of attendance is ready to download.',
+            'de': 'Animation: Sofia Navarro wird am Eingang von Saal A um 09:02 beim Hineingehen und um 12:40 beim Hinausgehen gescannt. Pass zählt 195 Minuten in Sessions, 87 % des Programms bei verlangten 75 %, und ihre Teilnahmebescheinigung steht zum Download bereit.',
+            'es': 'Animación: a Sofia Navarro se le lee la acreditación al entrar a las 09:02 y al salir a las 12:40 en la puerta de la Sala A. Pass cuenta 195 minutos en sesiones, el 87 % del programa cuando se pide el 75 %, y su certificado de asistencia queda listo para descargar.',
+            'it': "Animazione: il badge di Sofia Navarro viene letto all'ingresso della Sala A alle 09:02 in entrata e alle 12:40 in uscita. Pass conta 195 minuti nelle sessioni, l'87 % del programma a fronte del 75 % richiesto, e il suo attestato di partecipazione è pronto da scaricare.",
         },
     },
     'translate': {
         'heard': {'en': 'Heard · Italian', 'de': 'Gehört · Italienisch', 'es': 'Oído · italiano', 'it': 'Sentito · italiano'},
         'mic': {'en': "The speaker's microphone", 'de': 'Das Mikrofon der Rednerin', 'es': 'El micrófono de la ponente', 'it': 'Il microfono della relatrice'},
         'pair': {'en': 'Italian → English', 'de': 'Italienisch → Englisch', 'es': 'Italiano → inglés', 'it': 'Italiano → inglese'},
-        'said': {'en': 'Said · English', 'de': 'Gesprochen · Englisch', 'es': 'Dicho · inglés', 'it': 'Detto · inglese'},
+        'said': {'en': 'Said · English', 'de': 'Gesagt · Englisch', 'es': 'Dicho · inglés', 'it': 'Detto · inglese'},
         'hall': {'en': "The hall's speakers", 'de': 'Die Lautsprecher im Saal', 'es': 'Los altavoces de la sala', 'it': 'Gli altoparlanti della sala'},
-        'channel': {'en': 'An interpretation channel of the meeting', 'de': 'Ein Dolmetschkanal des Meetings', 'es': 'Un canal de interpretación de la reunión', 'it': 'Un canale di interpretariato della riunione'},
-        'headsets': {'en': 'The headsets', 'de': 'Die Kopfhörer', 'es': 'Los auriculares', 'it': 'Le cuffie'},
-        'cap_b': {'en': 'The speaker talks in Italian. The hall hears English.', 'de': 'Die Rednerin spricht Italienisch. Der Saal hört Englisch.', 'es': 'La ponente habla en italiano. La sala oye inglés.', 'it': 'La relatrice parla in italiano. La sala sente inglese.'},
-        'cap': {'en': 'On any audio output, and you can read both.', 'de': 'Auf jedem Audioausgang, und beides lässt sich mitlesen.', 'es': 'En cualquier salida de audio, y puedes leer las dos.', 'it': 'Su qualsiasi uscita audio, e puoi leggere entrambe.'},
+        'channel': {'en': 'or an interpretation channel of the meeting', 'de': 'oder ein Dolmetschkanal des Meetings', 'es': 'o un canal de interpretación de la reunión', 'it': 'oppure un canale di interpretariato della riunione'},
+        'headsets': {'en': 'or the headsets', 'de': 'oder die Kopfhörer', 'es': 'o los auriculares', 'it': 'oppure le cuffie'},
+        'cap_b': {'en': 'The speaker talks in Italian. The hall hears English.', 'de': 'Die Rednerin spricht Italienisch. Der Saal hört Englisch.', 'es': 'La ponente habla en italiano. La sala la oye en inglés.', 'it': "La relatrice parla in italiano. La sala la sente in inglese."},
+        'cap': {'en': 'On the audio output you choose, and you can read both.', 'de': 'Auf dem Audioausgang Ihrer Wahl, und beides lässt sich mitlesen.', 'es': 'En la salida de audio que elijas, y puedes leer las dos.', 'it': "Sull'uscita audio che scegli, e puoi leggere entrambe."},
         'alt': {
-            'en': 'Animation: a speaker says a sentence in Italian into the microphone. Spectacast Translator shows it as heard and as said in English, and the English voice goes to the hall\'s speakers, an interpretation channel of the meeting and the headsets.',
-            'de': 'Animation: Eine Rednerin sagt einen Satz auf Italienisch ins Mikrofon. Spectacast Translator zeigt ihn wie gehört und wie auf Englisch gesprochen, und die englische Stimme geht an die Lautsprecher im Saal, einen Dolmetschkanal des Meetings und die Kopfhörer.',
-            'es': 'Animación: una ponente dice una frase en italiano al micrófono. Spectacast Translator la muestra tal como se oyó y tal como se dijo en inglés, y la voz en inglés va a los altavoces de la sala, a un canal de interpretación de la reunión y a los auriculares.',
-            'it': "Animazione: una relatrice dice una frase in italiano al microfono. Spectacast Translator la mostra come sentita e come detta in inglese, e la voce in inglese va agli altoparlanti della sala, a un canale di interpretariato della riunione e alle cuffie.",
+            'en': 'Animation: a speaker says a sentence in Italian into the microphone. Spectacast Translator shows it as heard and as said in English, and the English voice goes to the hall\'s speakers. It could also go to an interpretation channel of the meeting or to the headsets.',
+            'de': 'Animation: Eine Rednerin sagt einen Satz auf Italienisch ins Mikrofon. Spectacast Translator zeigt ihn wie gehört und wie auf Englisch gesagt, und die englische Stimme geht an die Lautsprecher im Saal. Ebenso könnte sie an einen Dolmetschkanal des Meetings oder an die Kopfhörer gehen.',
+            'es': 'Animación: una ponente dice una frase en italiano al micrófono. Spectacast Translator la muestra tal como se oyó y tal como se dijo en inglés, y la voz en inglés va a los altavoces de la sala. También podría ir a un canal de interpretación de la reunión o a los auriculares.',
+            'it': "Animazione: una relatrice dice una frase in italiano al microfono. Spectacast Translator la mostra come sentita e come detta in inglese, e la voce in inglese va agli altoparlanti della sala. Potrebbe andare anche a un canale di interpretariato della riunione o alle cuffie.",
         },
     },
     'feeds': {
@@ -104,37 +104,37 @@ STORY_TEXTS = {
         'home': {'en': 'Speaker, at home', 'de': 'Rednerin, zu Hause', 'es': 'Ponente, en casa', 'it': 'Relatrice, da casa'},
         'theatre': {'en': 'Surgeon, in the operating room', 'de': 'Chirurg, im OP', 'es': 'Cirujano, en el quirófano', 'it': 'Chirurgo, in sala operatoria'},
         'slides': {'en': 'Slides', 'de': 'Folien', 'es': 'Diapositivas', 'it': 'Slide'},
-        'share': {'en': 'A screen share', 'de': 'Eine Bildschirmfreigabe', 'es': 'Una pantalla compartida', 'it': 'Uno schermo condiviso'},
-        'pc': {'en': 'Hall PC · Spectacast Meet', 'de': 'Saal-PC · Spectacast Meet', 'es': 'PC de la sala · Spectacast Meet', 'it': 'PC di sala · Spectacast Meet'},
-        'each': {'en': 'A feed for each one', 'de': 'Ein Signal für jede Person', 'es': 'Una señal para cada uno', 'it': 'Un segnale per ognuno'},
+        'share': {'en': 'A screen share', 'de': 'Eine Bildschirmfreigabe', 'es': 'Una pantalla compartida', 'it': 'Una condivisione schermo'},
+        'pc': {'en': 'Hall PC · Spectacast Meet', 'de': 'Saal-PC · Spectacast Meet', 'es': 'PC de sala · Spectacast Meet', 'it': 'PC di sala · Spectacast Meet'},
+        'each': {'en': 'A feed for each one', 'de': 'Je ein eigenes Signal', 'es': 'Una señal para cada uno', 'it': 'Un flusso per ognuno'},
         'sound': {'en': 'video and sound, over NDI', 'de': 'Bild und Ton, über NDI', 'es': 'vídeo y sonido, por NDI', 'it': 'video e audio, via NDI'},
         'sources': {'en': 'Sources in OBS or the mixer', 'de': 'Quellen in OBS oder im Mischpult', 'es': 'Fuentes en OBS o en el mezclador', 'it': 'Sorgenti in OBS o nel mixer'},
         'onscreen': {'en': 'On the screen', 'de': 'Auf der Leinwand', 'es': 'En pantalla', 'it': 'Sullo schermo'},
-        'cap_b': {'en': 'Everyone in the meeting becomes a source of their own.', 'de': 'Jede Person im Meeting wird zu einer eigenen Quelle.', 'es': 'Cada persona de la reunión se convierte en una fuente propia.', 'it': 'Ogni persona in riunione diventa una sorgente a sé.'},
+        'cap_b': {'en': 'Each remote speaker becomes a source of their own.', 'de': 'Jede Person aus der Ferne wird zu einer eigenen Quelle.', 'es': 'Cada ponente remoto se convierte en una fuente propia.', 'it': 'Ogni relatore remoto diventa una sorgente a sé.'},
         'cap': {'en': 'The hall picks them like cameras.', 'de': 'Der Saal wählt sie wie Kameras.', 'es': 'La sala las elige como cámaras.', 'it': 'La sala le sceglie come telecamere.'},
         'alt': {
             'en': 'Animation: a speaker at home, a surgeon in the operating room and a screen share are in the Zoom meeting. Spectacast Meet on the hall PC gives each one a feed of its own over NDI, they appear one by one as sources in OBS or the mixer, and the first is put on the screen.',
             'de': 'Animation: Eine Rednerin zu Hause, ein Chirurg im OP und eine Bildschirmfreigabe sind im Zoom-Meeting. Spectacast Meet auf dem Saal-PC gibt jedem ein eigenes Signal über NDI, sie erscheinen nacheinander als Quellen in OBS oder im Mischpult, und die erste kommt auf die Leinwand.',
-            'es': 'Animación: una ponente en casa, un cirujano en el quirófano y una pantalla compartida están en la reunión de Zoom. Spectacast Meet, en el PC de la sala, da a cada uno una señal propia por NDI, aparecen una a una como fuentes en OBS o en el mezclador, y la primera se pone en pantalla.',
-            'it': "Animazione: una relatrice da casa, un chirurgo in sala operatoria e uno schermo condiviso sono nella riunione Zoom. Spectacast Meet, sul PC di sala, dà a ognuno un segnale proprio via NDI, compaiono uno dopo l'altro come sorgenti in OBS o nel mixer, e la prima va sullo schermo.",
+            'es': 'Animación: una ponente en casa, un cirujano en el quirófano y una pantalla compartida están en la reunión de Zoom. Spectacast Meet, en el PC de sala, da a cada uno una señal propia por NDI, aparecen una a una como fuentes en OBS o en el mezclador, y la primera se pone en pantalla.',
+            'it': "Animazione: una relatrice da casa, un chirurgo in sala operatoria e una condivisione schermo sono nella riunione Zoom. Spectacast Meet, sul PC di sala, dà a ognuno un flusso proprio via NDI, compaiono uno dopo l'altro come sorgenti in OBS o nel mixer, e la prima va sullo schermo.",
         },
     },
     'mic': {
         'phone': {'en': 'A phone · Spectacast Mic', 'de': 'Ein Telefon · Spectacast Mic', 'es': 'Un teléfono · Spectacast Mic', 'it': 'Un telefono · Spectacast Mic'},
         'channel': {'en': 'Channel · Hall A', 'de': 'Kanal · Saal A', 'es': 'Canal · Sala A', 'it': 'Canale · Sala A'},
         'question': {'en': 'A question from the floor', 'de': 'Eine Frage aus dem Publikum', 'es': 'Una pregunta del público', 'it': 'Una domanda dalla platea'},
-        'heard': {'en': 'You can be heard', 'de': 'Sie sind zu hören', 'es': 'Se te oye', 'it': 'Ti sentono'},
-        'pc': {'en': 'Hall PC · Mic receiver', 'de': 'Saal-PC · Mic-Empfänger', 'es': 'PC de la sala · receptor de Mic', 'it': 'PC di sala · ricevitore Mic'},
-        'wifi': {'en': "Over the venue's Wi-Fi", 'de': 'Über das WLAN vor Ort', 'es': 'Por la wifi del recinto', 'it': 'Sul Wi-Fi della sede'},
+        'heard': {'en': 'You can talk', 'de': 'Du kannst sprechen', 'es': 'Puedes hablar', 'it': 'Puoi parlare'},
+        'pc': {'en': 'Hall PC · Mic receiver', 'de': 'Saal-PC · Mic-Empfänger', 'es': 'PC de sala · receptor de Mic', 'it': 'PC di sala · ricevitore Mic'},
+        'wifi': {'en': "Over the venue's Wi-Fi", 'de': 'Über das WLAN der Location', 'es': 'Por la wifi del recinto', 'it': 'Sul Wi-Fi della sede'},
         'nointernet': {'en': 'no internet needed', 'de': 'ohne Internet', 'es': 'sin internet', 'it': 'senza internet'},
         'inputs': {'en': 'Audio inputs · OBS, mixer, meeting', 'de': 'Audioeingänge · OBS, Mischpult, Meeting', 'es': 'Entradas de audio · OBS, mezclador, reunión', 'it': 'Ingressi audio · OBS, mixer, riunione'},
         'hallmic': {'en': 'Hall microphone', 'de': 'Saalmikrofon', 'es': 'Micrófono de sala', 'it': 'Microfono di sala'},
-        'cap_b': {'en': 'Someone talks into their phone. The hall PC gets one more microphone.', 'de': 'Jemand spricht ins eigene Telefon. Der Saal-PC bekommt ein weiteres Mikrofon.', 'es': 'Alguien habla a su teléfono. El PC de la sala recibe un micrófono más.', 'it': 'Qualcuno parla nel proprio telefono. Il PC di sala riceve un microfono in più.'},
+        'cap_b': {'en': 'Someone talks into their phone. The hall PC gets one more microphone.', 'de': 'Jemand spricht ins eigene Telefon. Der Saal-PC bekommt ein weiteres Mikrofon.', 'es': 'Alguien habla a su teléfono. El PC de sala recibe un micrófono más.', 'it': 'Qualcuno parla nel proprio telefono. Il PC di sala riceve un microfono in più.'},
         'cap': {'en': 'Next to the hall\'s own, for OBS, the mixer or the meeting.', 'de': 'Neben denen des Saals, für OBS, das Mischpult oder das Meeting.', 'es': 'Junto a los de la sala, para OBS, el mezclador o la reunión.', 'it': 'Accanto a quelli della sala, per OBS, il mixer o la riunione.'},
         'alt': {
             'en': 'Animation: someone in the audience joins the Hall A channel in the Spectacast Mic app and talks into the phone. Over the venue\'s Wi-Fi the Mic receiver on the hall PC gets the voice, and it appears as one more audio input, next to the hall microphone.',
-            'de': 'Animation: Jemand im Publikum tritt in der App Spectacast Mic dem Kanal von Saal A bei und spricht ins Telefon. Über das WLAN vor Ort erhält der Mic-Empfänger auf dem Saal-PC die Stimme, und sie erscheint als weiterer Audioeingang neben dem Saalmikrofon.',
-            'es': 'Animación: alguien del público entra en el canal de la Sala A en la app Spectacast Mic y habla al teléfono. Por la wifi del recinto, el receptor de Mic del PC de la sala recibe la voz, y aparece como una entrada de audio más, junto al micrófono de sala.',
+            'de': 'Animation: Jemand im Publikum tritt in der App Spectacast Mic dem Kanal von Saal A bei und spricht ins Telefon. Über das WLAN der Location erhält der Mic-Empfänger auf dem Saal-PC die Stimme, und sie erscheint als weiterer Audioeingang neben dem Saalmikrofon.',
+            'es': 'Animación: alguien del público entra en el canal de la Sala A en la app Spectacast Mic y habla al teléfono. Por la wifi del recinto, el receptor de Mic del PC de sala recibe la voz, y aparece como una entrada de audio más, junto al micrófono de sala.',
             'it': "Animazione: qualcuno in platea entra nel canale della Sala A nell'app Spectacast Mic e parla nel telefono. Sul Wi-Fi della sede il ricevitore Mic del PC di sala riceve la voce, che compare come un ingresso audio in più, accanto al microfono di sala.",
         },
     },
@@ -186,12 +186,12 @@ def _cert(t):
 <div class="st-row at-2">Sofia Navarro<small>12:40 ← {t('out')}</small></div></div>
 <div class="st-link go-3"></div>
 <div class="st-tile hot-3"><span class="st-label"><span>{t('att')}</span></span>
-<div class="st-row at-3">{t('minutes')}</div>
+<div class="st-row at-3 late">{t('minutes')}</div>
 <div class="st-row at-4">{t('percent')}<i class="f-meter wide"><b style="width:87%"></b></i><small>{t('needed')}</small></div></div>
 <div class="st-link go-5"></div>
 <div class="st-tile hot-5"><span class="st-label"><span>{t('cert')}</span></span>
-<div class="st-stack"><div class="st-empty till-5">{t('notyet')}</div>
-<div class="st-paper at-5"><b>{t('title')}</b>Sofia Navarro<span class="f-pill f-spot">{t('ready')}</span></div></div></div>
+<div class="st-stack"><div class="st-empty till-5 late">{t('notyet')}</div>
+<div class="st-paper at-5 late"><b>{t('title')}</b>Sofia Navarro<span class="f-pill f-spot">{t('ready')}</span></div></div></div>
 </div>"""
 
 
@@ -207,8 +207,8 @@ def _translate(t):
 <div class="st-link go-4"></div>
 <div class="st-tile"><span class="st-label"><span>{t('said')}</span></span>
 <div class="st-row at-5">{t('hall')}{METER}</div>
-<div class="st-row at-5">{t('channel')}{METER}</div>
-<div class="st-row at-5">{t('headsets')}{METER}</div></div>
+<div class="st-row st-or at-5">{t('channel')}</div>
+<div class="st-row st-or at-5">{t('headsets')}</div></div>
 </div>"""
 
 
@@ -220,10 +220,10 @@ def _feeds(t):
 <div class="st-row">{t('slides')}<small>{t('share')}</small></div></div>
 <div class="st-link go-1"></div>
 <div class="st-tile hot-1"><span class="st-label"><span>{t('pc')}</span></span>
-<div class="st-row at-1">{t('each')}<small>{t('sound')}</small></div></div>
+<div class="st-row at-1 late">{t('each')}<small>{t('sound')}</small></div></div>
 <div class="st-link go-2"></div>
 <div class="st-tile"><span class="st-label"><span>{t('sources')}</span></span>
-<div class="st-row f-pair at-2"><span>Dr. Elena Ortega</span><span class="f-pill f-live at-5">{t('onscreen')}</span></div>
+<div class="st-row f-pair at-2 late"><span>Dr. Elena Ortega</span><span class="f-pill f-live at-5">{t('onscreen')}</span></div>
 <div class="st-row at-3">Prof. Jonas Weber</div>
 <div class="st-row at-4">{t('slides')}</div></div>
 </div>"""
@@ -236,7 +236,7 @@ def _mic(t):
 <div class="st-row at-1">{t('heard')}{METER}</div></div>
 <div class="st-link go-2"></div>
 <div class="st-tile hot-2"><span class="st-label"><span>{t('pc')}</span></span>
-<div class="st-row at-2">{t('wifi')}<small>{t('nointernet')}</small></div></div>
+<div class="st-row at-2 late">{t('wifi')}<small>{t('nointernet')}</small></div></div>
 <div class="st-link go-3"></div>
 <div class="st-tile"><span class="st-label"><span>{t('inputs')}</span></span>
 <div class="st-row">{t('hallmic')}{METER}</div>
@@ -247,6 +247,7 @@ def _mic(t):
 STORIES = {'rule': _rule, 'fits': _fits, 'cert': _cert, 'translate': _translate, 'feeds': _feeds, 'mic': _mic}
 # Stories told in steps, with how many steps each has.
 STEPS = {'cert': 5, 'translate': 5, 'feeds': 5, 'mic': 4}
+assert max(STEPS.values()) <= 6, 'site.css has the rules for six steps'
 
 
 def _text(text):
@@ -292,19 +293,30 @@ def _file(folder, name, lang, ext):
 
 # On a phone a wide loop is cut to 3:2 so its text stays readable; this is the part to keep, from the left in %.
 LOOP_FOCUS = {'director-speaker': 30, 'pass-scan': 0}
+# A loop that is cut to another shape there.
+LOOP_CROP = {'pass-scan': '73 / 62'}   # the phone, the first two rooms and who was scanned
 
 
 def loop(lang, name, caption, alt):
-    n = _file('loops', name, lang, 'webm')
-    for ext in ('mp4', 'webp'):
-        if not (ROOT / 'img' / 'loops' / f'{n}.{ext}').is_file():
-            raise SystemExit(f'img/loops/{n}.{ext} is missing')
-    w, h = _size(ROOT / 'img' / 'loops' / f'{n}.webp')
+    """A loop with a second recording called <name>-dark shows that one on a dark page."""
+    def video(name, cls='', poster=True):
+        n = _file('loops', name, lang, 'webm')
+        for ext in ('mp4', 'webp'):
+            if not (ROOT / 'img' / 'loops' / f'{n}.{ext}').is_file():
+                raise SystemExit(f'img/loops/{n}.{ext} is missing')
+        w, h = _size(ROOT / 'img' / 'loops' / f'{n}.webp')
+        # The hidden one of two must not fetch its still: a background is only fetched when it is shown.
+        still = f'poster="/img/loops/{n}.webp"' if poster else f'style="background-image:url(/img/loops/{n}.webp)"'
+        return w, h, (f'<video{cls} muted loop playsinline preload="none" {still} width="{w}" height="{h}" aria-label="{html.escape(alt)}">'
+                      f'<source src="/img/loops/{n}.webm" type="video/webm"><source src="/img/loops/{n}.mp4" type="video/mp4"></video>')
+    dark = (ROOT / 'img' / 'loops' / f'{name}-dark-{lang}.webm').is_file()
+    w, h, videos = video(name, ' class="for-light"' if dark else '')
+    if dark:
+        videos += video(f'{name}-dark', ' class="for-dark"', poster=False)[2]
     tall = ' tall' if h > w else ''
-    focus = f' style="--focus:{LOOP_FOCUS[name]}%"' if name in LOOP_FOCUS else ''
-    return (f'\n<figure class="viz loop{tall}" data-viz{focus}>'
-            f'<video muted loop playsinline preload="none" poster="/img/loops/{n}.webp" width="{w}" height="{h}" aria-label="{html.escape(alt)}">'
-            f'<source src="/img/loops/{n}.webm" type="video/webm"><source src="/img/loops/{n}.mp4" type="video/mp4"></video>'
+    style = (f'--focus:{LOOP_FOCUS[name]}%;' if name in LOOP_FOCUS else '') + (f'--crop:{LOOP_CROP[name]};' if name in LOOP_CROP else '')
+    style = f' style="{style.rstrip(";")}"' if style else ''
+    return (f'\n<figure class="viz loop{tall}" data-viz{style}>{videos}'
             f'<figcaption><span>{_text(caption)}</span>{_button(lang)}</figcaption></figure>\n')
 
 

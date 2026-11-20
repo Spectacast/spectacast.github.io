@@ -2,7 +2,9 @@
 //   node tools/visuals/loops-pass.js <pass repo, npm installed> [en,de,es,it] [loop names]
 // The door app and the Live page are the real pages, side by side on one stage; only the paper badge is drawn.
 // The Live page is cut to its rooms and its latest scans: the door phones between them are left out of the picture.
+// Every loop is recorded twice, for light and for dark pages (<name>-<lang> and <name>-dark-<lang>).
 const { chromium } = require('playwright');
+const fs = require('node:fs');
 const path = require('node:path');
 const { withPass } = require('./pass-demo');
 const { Recorder } = require('./record');
@@ -13,14 +15,14 @@ const OUT = process.env.OUT || path.join(__dirname, '..', '..', 'img', 'loops');
 const LOCALE = { en: 'en-GB', de: 'de-DE', es: 'es-ES', it: 'it-IT' };
 
 /** A phone on the left with the door app, the Live page on the right. */
-const stage = (base, info) => `<!doctype html><meta charset="utf-8"><style>
-  html, body { margin: 0; background: #f3f1ea; font-family: Inter, system-ui, sans-serif; }
+const stage = (base, info, dark) => `<!doctype html><meta charset="utf-8"><style>
+  html, body { margin: 0; background: ${dark ? '#111318' : '#f3f1ea'}; font-family: Inter, system-ui, sans-serif; }
   #stage { position: relative; width: 1120px; height: 620px; overflow: hidden; }
-  #phone { position: absolute; left: 36px; top: 26px; width: 292px; height: 568px; border-radius: 34px; background: #111318; box-shadow: 0 18px 40px rgba(17,19,24,.28); }
-  #phone div { position: absolute; inset: 10px; border-radius: 25px; overflow: hidden; background: #fff; }
+  #phone { position: absolute; left: 36px; top: 26px; width: 292px; height: 568px; border-radius: 34px; background: ${dark ? '#2b2f38' : '#111318'}; box-shadow: 0 18px 40px rgba(17,19,24,.28); }
+  #phone div { position: absolute; inset: 10px; border-radius: 25px; overflow: hidden; background: ${dark ? '#111318' : '#fff'}; }
   #phone iframe { width: 390px; height: 786px; border: 0; transform: scale(${272 / 390}); transform-origin: 0 0; }
-  #desk { position: absolute; left: 372px; top: 44px; width: 716px; height: 532px; border-radius: 14px; overflow: hidden; background: #f3f1ea; border: 1px solid #dcd8cc; box-shadow: 0 18px 40px rgba(17,19,24,.16); }
-  #desk iframe { width: 960px; height: 800px; border: 0; margin-top: -66px; transform: scale(${716 / 960}); transform-origin: 0 0; }
+  #desk { position: absolute; left: 372px; top: 44px; width: 716px; height: 532px; border-radius: 14px; overflow: hidden; background: ${dark ? '#111318' : '#f3f1ea'}; border: 1px solid ${dark ? '#2b2f38' : '#dcd8cc'}; box-shadow: 0 18px 40px rgba(17,19,24,.16); }
+  #desk iframe { width: 960px; height: 1100px; border: 0; margin-top: -66px; transform: scale(${716 / 960}); transform-origin: 0 0; }
   #badge { position: absolute; left: 110px; top: 640px; width: 150px; height: 196px; border-radius: 10px; background: #fff; box-shadow: 0 10px 30px rgba(17,19,24,.35); text-align: center; font-size: 13px; color: #111318; }
   #badge i { display: block; height: 18px; border-radius: 10px 10px 0 0; background: #7a4e9b; }
   #badge b { display: block; margin: 9px 0 1px; font-size: 15px; }
@@ -46,9 +48,9 @@ function qr() {
 
 const LOOPS = {
   // A badge at the door: the phone answers in green, and the room's count goes up on the Live page.
-  'pass-scan': async (page, { base, info }) => {
+  'pass-scan': async (page, { base, info }, dark) => {
     // The stage is served from the hub's own address, so the door app runs as it does on a phone (a secure page).
-    await page.route(base + '/__stage', (route) => route.fulfill({ contentType: 'text/html', body: stage(base, info) }));
+    await page.route(base + '/__stage', (route) => route.fulfill({ contentType: 'text/html', body: stage(base, info, dark) }));
     await page.goto(base + '/__stage');
     const door = await (await page.$('#door')).contentFrame(), live = await (await page.$('#live')).contentFrame();
     await live.waitForSelector('nav button'); await page.waitForTimeout(800);
@@ -89,15 +91,20 @@ const LOOPS = {
   const browser = await chromium.launch();
   for (const lang of langs.split(',')) {
     for (const name of Object.keys(LOOPS).filter((n) => !only || only.split(',').includes(n))) {
-      await withPass(repo, lang, async (pass) => {
-        const ctx = await browser.newContext({ viewport: { width: 1120, height: 620 }, deviceScaleFactor: 2, colorScheme: 'light', timezoneId: 'Europe/Berlin', locale: LOCALE[lang] });
-        const page = await ctx.newPage();
-        await page.clock.setFixedTime(new Date(pass.info.snapshotAt));
-        const rec = await LOOPS[name](page, pass);
-        const info = await rec.save(path.join(OUT, `${name}-${lang}`), 1280);
-        console.log(`${name}-${lang}: ${info.seconds.toFixed(1)} s, webm ${Math.round(info.webm / 1024)} KB, mp4 ${Math.round(info.mp4 / 1024)} KB`);
-        await ctx.close();
-      });
+      for (const dark of [false, true]) {
+        await withPass(repo, lang, async (pass) => {
+          const ctx = await browser.newContext({ viewport: { width: 1120, height: 620 }, deviceScaleFactor: 2, colorScheme: dark ? 'dark' : 'light', timezoneId: 'Europe/Berlin', locale: LOCALE[lang] });
+          const page = await ctx.newPage();
+          await page.clock.setFixedTime(new Date(pass.info.snapshotAt));
+          const rec = await LOOPS[name](page, pass, dark);
+          const file = `${name}${dark ? '-dark' : ''}-${lang}`;
+          const info = await rec.save(path.join(OUT, file), 1280);
+          // The picture for link previews is made from the still by src/build.py, when there is none.
+          fs.rmSync(path.join(OUT, '..', 'og', file + '.jpg'), { force: true });
+          console.log(`${file}: ${info.seconds.toFixed(1)} s, webm ${Math.round(info.webm / 1024)} KB, mp4 ${Math.round(info.mp4 / 1024)} KB`);
+          await ctx.close();
+        });
+      }
     }
   }
   await browser.close();
