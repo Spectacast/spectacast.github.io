@@ -8,6 +8,8 @@
 
 Ein Chirurg im OP, eine Rednerin zu Hause, die Folien, die jemand teilt: Alle kommen im Netzwerk des Saals als eigenes Video- und Audiosignal über NDI an. Mischpult oder OBS des Saals wählen sie wie jede andere Kamera, und das Programm des Saals geht zurück ins Meeting, so sehen und hören die Vortragenden aus der Ferne den Saal.
 
+{{story:feeds}}
+
 ## Aus der Regie gesteuert
 
 Director sieht, wer in jedem Meeting ist, wer wartet und wer spricht. Vom Dashboard aus lässt die Regie Personen ein, schickt sie in den Warteraum oder die Lobby, schaltet stumm und wieder laut und bringt alle Vortragenden auf den Bildschirm des Saals, wenn nötig in allen Sälen zugleich. Regeln können dasselbe von sich aus tun: die Faculty nach Namen einlassen, den Warteraum eingeschaltet halten, nach einem Neustart alles wiederherstellen.

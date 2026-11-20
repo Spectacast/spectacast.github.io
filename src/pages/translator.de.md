@@ -10,6 +10,8 @@
 
 Nehmen Sie das Signal eines Saalmikrofons, des Mischpults, eines Telefons über Spectacast Mic oder das Programm eines Saals über NDI. Schicken Sie die Übersetzung auf eine Soundkarte, über Spectacast Meet auf den Dolmetschkanal des Meetings oder in den Saal. Ein Translator pro Sprache, nebeneinander.
 
+{{story:translate}}
+
 ## Sie können mitlesen
 
 Die Bedienseite zeigt jeden Satz zweimal, wie gehört und wie gesagt, so kann jemand, der beide Sprachen beherrscht, mitverfolgen. Eine Prüfung warnt, wenn die Übersetzung das Gegenteil der Rednerin zu sagen scheint. Mit den Dolmetsch-Engines helfen ein Thema und ein Glossar bei Namen und Fachbegriffen.

@@ -10,6 +10,8 @@
 
 Prendi il segnale da un microfono di sala, dal mixer, da un telefono con Spectacast Mic o il programma di una sala via NDI. Manda la traduzione su una scheda audio, sul canale dell'interprete nella riunione tramite Spectacast Meet o in sala. Un Translator per lingua, uno accanto all'altro.
 
+{{story:translate}}
+
 ## Puoi leggere cosa dice
 
 La pagina di controllo mostra ogni frase due volte, come sentita e come detta, così chi conosce entrambe le lingue può seguire. Un controllo avvisa quando la traduzione sembra dire il contrario del relatore. Con i motori di interpretariato, un argomento e un glossario lo aiutano con nomi e termini tecnici.

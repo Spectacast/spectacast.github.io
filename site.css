@@ -450,6 +450,14 @@ mark.todo {
   border: 1px solid var(--sc-line); box-shadow: var(--sc-shadow);
 }
 .loop.tall { max-width: 460px; }
+/* A loop recorded twice: the light one on a light page, the dark one on a dark page. */
+.loop video.for-dark { display: none; background-size: cover; background-position: var(--focus, 50%) 50%; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .loop video.for-dark { display: block; }
+  :root:not([data-theme='light']) .loop video.for-light { display: none; }
+}
+:root[data-theme='dark'] .loop video.for-dark { display: block; }
+:root[data-theme='dark'] .loop video.for-light { display: none; }
 @media (min-width: 961px) { .p-row > .loop.tall, .p-row > .closeup { grid-column: 2; } }
 
 .viz-stage { background: var(--sc-bg); border-radius: var(--sc-r-lg); padding: 22px; box-shadow: var(--sc-shadow); }
@@ -482,7 +490,7 @@ mark.todo {
 .r-in { animation: r-in 10s infinite both; }
 .r-m3 { animation: r-m3 10s infinite both; }
 .r-m4 { animation: r-m4 10s infinite both; }
-.viz.paused *, .viz.paused *::after { animation-play-state: paused !important; }
+.viz.paused *, .viz.paused *::after, .viz.paused *::before { animation-play-state: paused !important; }
 @keyframes r-guest { 0%, 8% { opacity: 0; transform: translateX(-14px); } 13%, 52% { opacity: 1; transform: none; } 58%, 100% { opacity: 0; transform: translateX(14px); } }
 @keyframes r-empty { 0%, 8% { opacity: 1; } 11%, 58% { opacity: 0; } 64%, 100% { opacity: 1; } }
 @keyframes r-c0 { 0%, 10% { opacity: 1; } 12%, 56% { opacity: 0; } 58%, 100% { opacity: 1; } }
@@ -496,12 +504,98 @@ mark.todo {
 @keyframes r-in { 0%, 58% { opacity: 0; transform: translateY(8px); background: var(--sc-chip); } 62% { opacity: 1; transform: none; background: #24503a; } 76%, 92% { opacity: 1; transform: none; background: var(--sc-chip); } 97%, 100% { opacity: 0; } }
 @keyframes r-m3 { 0%, 60% { opacity: 1; } 62%, 95% { opacity: 0; } 97%, 100% { opacity: 1; } }
 @keyframes r-m4 { 0%, 60% { opacity: 0; } 62%, 95% { opacity: 1; } 97%, 100% { opacity: 0; } }
+/* The "how it fits together" story: a remote speaker joins, one touch in the control room, she is on the hall's
+   screen, and the hall goes back out to the meeting. Twelve seconds, then again. */
+.f-pair { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 4px 8px; position: relative; }
+/* In a narrow tile the pill goes under the name, and the name is not broken inside a word. */
+.f-pair > span:first-child { flex: 1 1 auto; overflow-wrap: normal; }
+.f-pill { flex: none; border-radius: 999px; padding: 2px 9px; font-size: 11px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #fff; opacity: 0; }
+.f-live { background: #cf2e25; }
+.f-spot { background: #1f7a4d; }
+.f-tap { position: absolute; right: 34%; top: 50%; width: 22px; height: 22px; margin: -6px 0 0; border-radius: 50%; background: rgba(255, 255, 255, 0.55); box-shadow: 0 0 0 2px rgba(17, 19, 24, 0.7); opacity: 0; }
+.f-screen { display: grid; place-items: center; aspect-ratio: 16 / 9; background: #0c0d10; border: 1.5px solid var(--sc-line); border-radius: 8px; text-align: center; padding: 8px; }
+.f-screen > span { grid-area: 1 / 1; }
+.f-idle { font-size: 13px; color: var(--sc-muted); }
+.f-on { font-size: 15px; font-weight: 600; opacity: 0; }
+.f-meter { display: block; width: 96px; max-width: 100%; height: 4px; margin: 8px auto 0; border-radius: 2px; background: var(--sc-line); overflow: hidden; }
+.f-meter b { display: block; height: 100%; width: 70%; background: var(--sc-ok); animation: f-meter 0.9s ease-in-out infinite alternate; }
+.f-pc { font-size: 11px; color: var(--sc-muted); line-height: 1.4; }
+.st-link::before { content: ""; position: absolute; top: -4px; left: calc(100% - 10px); width: 10px; height: 10px; border-radius: 50%; background: #e0574e; opacity: 0; }
+.s-fits .f-spk { animation: f-spk 12s infinite both; }
+.s-fits .f-l1::after { animation: f-go1 12s infinite both; }
+.s-fits .f-l2::after { animation: f-go2 12s infinite both; }
+.s-fits .f-l1::before { animation: f-back1 12s infinite both; }
+.s-fits .f-l2::before { animation: f-back2 12s infinite both; }
+.s-fits .f-pick { animation: f-pick 12s infinite both; }
+.s-fits .f-tap { animation: f-tap 12s infinite both; }
+.s-fits .f-spot { animation: f-spot 12s infinite both; }
+.s-fits .f-idle { animation: f-idle 12s infinite both; }
+.s-fits .f-on { animation: f-on 12s infinite both; }
+.s-fits .f-screen { animation: f-screen 12s infinite both; }
+.s-fits .f-live { animation: f-live 12s infinite both; }
+@keyframes f-meter { from { width: 22%; } to { width: 88%; } }
+@keyframes f-spk { 0%, 4% { opacity: 0; transform: translateX(-14px); } 9%, 94% { opacity: 1; transform: none; } 98%, 100% { opacity: 0; transform: none; } }
+@keyframes f-go1 { 0%, 11% { opacity: 0; left: 0; } 13% { opacity: 1; left: 0; } 20% { opacity: 1; left: calc(100% - 10px); } 22%, 100% { opacity: 0; left: calc(100% - 10px); } }
+@keyframes f-tap { 0%, 24% { opacity: 0; transform: translate(26px, 18px); } 28% { opacity: 1; transform: none; } 31% { opacity: 1; transform: scale(0.8); } 35%, 100% { opacity: 0; transform: scale(1.7); } }
+@keyframes f-pick { 0%, 19% { opacity: 0; background: var(--sc-chip); color: var(--sc-ink); } 23%, 30% { opacity: 1; background: var(--sc-chip); color: var(--sc-ink); } 32%, 94% { opacity: 1; background: #f3f1ea; color: #111318; } 98%, 100% { opacity: 0; background: #f3f1ea; color: #111318; } }
+@keyframes f-spot { 0%, 32% { opacity: 0; } 35%, 94% { opacity: 1; } 98%, 100% { opacity: 0; } }
+@keyframes f-go2 { 0%, 36% { opacity: 0; left: 0; } 38% { opacity: 1; left: 0; } 45% { opacity: 1; left: calc(100% - 10px); } 47%, 100% { opacity: 0; left: calc(100% - 10px); } }
+@keyframes f-idle { 0%, 46% { opacity: 1; } 49%, 94% { opacity: 0; } 98%, 100% { opacity: 1; } }
+@keyframes f-on { 0%, 46% { opacity: 0; } 49%, 94% { opacity: 1; } 98%, 100% { opacity: 0; } }
+@keyframes f-screen { 0%, 46% { border-color: var(--sc-line); } 49%, 94% { border-color: #cf2e25; } 98%, 100% { border-color: var(--sc-line); } }
+@keyframes f-back2 { 0%, 56% { opacity: 0; left: calc(100% - 10px); } 58% { opacity: 1; left: calc(100% - 10px); } 65% { opacity: 1; left: 0; } 67%, 100% { opacity: 0; left: 0; } }
+@keyframes f-back1 { 0%, 65% { opacity: 0; left: calc(100% - 10px); } 67% { opacity: 1; left: calc(100% - 10px); } 74% { opacity: 1; left: 0; } 76%, 100% { opacity: 0; left: 0; } }
+@keyframes f-live { 0%, 74% { opacity: 0; } 77%, 94% { opacity: 1; } 98%, 100% { opacity: 0; } }
+/* Stories told in steps: site.js counts data-step up on the figure; without it (no script, motion switched off)
+   every step has happened, which is the still. at-N appears at step N, till-N leaves at it, hot-N is lit during
+   it, and a link with go-N sends its dot across during it. */
+.story [class*="at-"] { transition: opacity 0.35s ease, transform 0.35s ease; }
+.story [class*="hot-"] { transition: border-color 0.3s ease; }
+/* What a travelling dot brings appears once the dot is across; going back to the start, it leaves at once. */
+.story[data-step]:not([data-step="0"]) .late { transition-delay: 0.7s; }
+.story:not([data-step]) [class*="till-"] { opacity: 0; }
+.story:is([data-step="0"]) .at-1 { opacity: 0; transform: translateY(6px); }
+.story:is([data-step="1"], [data-step="2"], [data-step="3"], [data-step="4"], [data-step="5"], [data-step="6"]) .till-1 { opacity: 0; }
+.story[data-step="1"] .hot-1 { border-color: var(--sc-ok); }
+.story[data-step="1"] .go-1::after { opacity: 1; left: calc(100% - 10px); transition: left 0.8s ease-in-out; }
+.story:is([data-step="0"], [data-step="1"]) .at-2 { opacity: 0; transform: translateY(6px); }
+.story:is([data-step="2"], [data-step="3"], [data-step="4"], [data-step="5"], [data-step="6"]) .till-2 { opacity: 0; }
+.story[data-step="2"] .hot-2 { border-color: var(--sc-ok); }
+.story[data-step="2"] .go-2::after { opacity: 1; left: calc(100% - 10px); transition: left 0.8s ease-in-out; }
+.story:is([data-step="0"], [data-step="1"], [data-step="2"]) .at-3 { opacity: 0; transform: translateY(6px); }
+.story:is([data-step="3"], [data-step="4"], [data-step="5"], [data-step="6"]) .till-3 { opacity: 0; }
+.story[data-step="3"] .hot-3 { border-color: var(--sc-ok); }
+.story[data-step="3"] .go-3::after { opacity: 1; left: calc(100% - 10px); transition: left 0.8s ease-in-out; }
+.story:is([data-step="0"], [data-step="1"], [data-step="2"], [data-step="3"]) .at-4 { opacity: 0; transform: translateY(6px); }
+.story:is([data-step="4"], [data-step="5"], [data-step="6"]) .till-4 { opacity: 0; }
+.story[data-step="4"] .hot-4 { border-color: var(--sc-ok); }
+.story[data-step="4"] .go-4::after { opacity: 1; left: calc(100% - 10px); transition: left 0.8s ease-in-out; }
+.story:is([data-step="0"], [data-step="1"], [data-step="2"], [data-step="3"], [data-step="4"]) .at-5 { opacity: 0; transform: translateY(6px); }
+.story:is([data-step="5"], [data-step="6"]) .till-5 { opacity: 0; }
+.story[data-step="5"] .hot-5 { border-color: var(--sc-ok); }
+.story[data-step="5"] .go-5::after { opacity: 1; left: calc(100% - 10px); transition: left 0.8s ease-in-out; }
+.story:is([data-step="0"], [data-step="1"], [data-step="2"], [data-step="3"], [data-step="4"], [data-step="5"]) .at-6 { opacity: 0; transform: translateY(6px); }
+.story:is([data-step="6"]) .till-6 { opacity: 0; }
+.story[data-step="6"] .hot-6 { border-color: var(--sc-ok); }
+.story[data-step="6"] .go-6::after { opacity: 1; left: calc(100% - 10px); transition: left 0.8s ease-in-out; }
+.st-stack { display: grid; flex: 1; align-items: center; }
+.st-stack > * { grid-area: 1 / 1; }
+.st-paper { background: #f3f1ea; color: #111318; border-radius: 6px; padding: 12px; font-size: 13px; display: flex; flex-direction: column; gap: 4px; align-items: flex-start; }
+.st-paper b { font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; }
+.st-paper .f-pill { opacity: 1; margin-top: 6px; }
+.st-row .f-meter { margin: 6px 0 0; }
+.f-meter.wide { width: 100%; background: color-mix(in srgb, var(--sc-muted) 45%, transparent); }
+.st-or { background: none; border-color: var(--sc-line); color: var(--sc-muted); }
+.f-meter.wide b { animation: none; }
+.story .f-pill[class*="at-"] { opacity: 1; }
 /* The end of the story as a still: for visitors who switched motion off, and until site.js is there to pause
    it (the script adds .on). */
-.story:not(.on) *, .story:not(.on) *::after { animation: none !important; }
-.story:not(.on) :is(.r-guest, .r-c1, .r-m3) { opacity: 0; }
-.story:not(.on) :is(.r-in, .r-m4, .r-tick, .r-c0, .r-empty) { opacity: 1; }
+.story:not(.on) *, .story:not(.on) *::after, .story:not(.on) *::before { animation: none !important; }
+.story:not(.on) :is(.r-guest, .r-c1, .r-m3, .f-idle) { opacity: 0; }
+.story:not(.on) :is(.r-in, .r-m4, .r-tick, .r-c0, .r-empty, .f-spot, .f-on, .f-live) { opacity: 1; }
 .story:not(.on) .r-rule { border-color: var(--sc-ok); }
+.story:not(.on) .f-pick { background: #f3f1ea; color: #111318; }
+.story:not(.on) .f-screen { border-color: #cf2e25; }
 
 /* No clipping here: a mark near the edge stays whole. */
 .cu-shot { position: relative; border-radius: var(--sc-r-lg); border: 1px solid var(--sc-line); box-shadow: var(--sc-shadow); background: #0c0d10; }
@@ -514,15 +608,20 @@ mark.todo {
 .cu-legend { margin: 0; padding-left: 22px; color: var(--sc-ink); }
 .cu-legend li { margin: 0 0 4px; }
 .guide .viz { margin: 24px 0; }
-@media (max-width: 720px) {
+#how .viz { margin: 36px 0 56px; }
+@media (max-width: 860px) {
+  /* Three tiles side by side get too narrow for their text: one under the other. */
   .st-flow { grid-template-columns: minmax(0, 1fr); }
   .st-tile { min-height: 0; }
   .st-link { width: 2px; height: 26px; margin: 0 auto; }
-  .st-link::after { left: -4px !important; top: 8px; }
+  .st-link::after, .st-link::before { left: -4px !important; top: 8px; }
+  .f-screen { aspect-ratio: auto; min-height: 120px; }
+}
+@media (max-width: 720px) {
   .viz-stage { padding: 14px; }
   .cu-mark { width: 24px; height: 24px; margin: -12px 0 0 -12px; font-size: 12px; }
   .closeup.wide .cu-scroll { overflow-x: auto; padding: 8px 0 14px; margin: -8px 0 -14px; }
   .closeup.wide .cu-shot { min-width: 600px; box-shadow: none; }
   /* A wide loop keeps its height and loses its sides, so the text in it stays readable. */
-  .loop:not(.tall) video { aspect-ratio: 3 / 2; object-fit: cover; object-position: var(--focus, 50%) 50%; }
+  .loop:not(.tall) video { aspect-ratio: var(--crop, 3 / 2); object-fit: cover; object-position: var(--focus, 50%) 50%; }
 }

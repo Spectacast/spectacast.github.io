@@ -16,11 +16,12 @@
 <meta property="og:title" content="Spectacast Pass">
 <meta property="og:description" content="Badges, doors and attendance. Every badge carries a QR code; at each door a phone, a tablet or any scanner reads it and answers at once, and afterwards Pass tells you who was in which session, and…">
 <meta property="og:url" content="https://spectacast.com/products/pass/">
-<meta property="og:image" content="https://spectacast.com/img/og/pass-live-light.jpg">
+<meta property="og:image" content="https://spectacast.com/img/og/pass-scan-en.jpg">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/design/spectacast.css">
 <link rel="stylesheet" href="/site.css">
+<script src="/site.js" defer></script>
 </head>
 <body>
 <div class="wrap">
@@ -37,7 +38,7 @@
 
 <div class="cta-row"><a class="sc-btn sc-btn--primary" href="/contact/">Contact us</a><a class="sc-btn" href="/pricing/">See pricing</a></div>
 
-<figure class="shot "><picture><source srcset="/img/screens/pass-live-dark.webp" media="(prefers-color-scheme: dark)"><img src="/img/screens/pass-live-light.webp" alt="Pass during the congress: how many people are in each room, and the latest scans at the doors" width="1440" height="900"></picture></figure>
+<figure class="viz loop" data-viz style="--focus:0%;--crop:73 / 62"><video class="for-light" muted loop playsinline preload="none" poster="/img/loops/pass-scan-en.webp" width="1280" height="708" aria-label="Screen recording of Pass: Sofia Navarro&#x27;s badge is read at the Hall A door, the door app turns green with &quot;Welcome Sofia&quot;, and on the Live page Hall A goes from 61 to 62 with her scan at the top of the list"><source src="/img/loops/pass-scan-en.webm" type="video/webm"><source src="/img/loops/pass-scan-en.mp4" type="video/mp4"></video><video class="for-dark" muted loop playsinline preload="none" style="background-image:url(/img/loops/pass-scan-dark-en.webp)" width="1280" height="708" aria-label="Screen recording of Pass: Sofia Navarro&#x27;s badge is read at the Hall A door, the door app turns green with &quot;Welcome Sofia&quot;, and on the Live page Hall A goes from 61 to 62 with her scan at the top of the list"><source src="/img/loops/pass-scan-dark-en.webm" type="video/webm"><source src="/img/loops/pass-scan-dark-en.mp4" type="video/mp4"></video><figcaption><span>A badge at the door: the phone answers in green, and the room's count goes up.</span><button type="button" class="viz-pp" hidden data-pause="Pause" data-play="Play">Pause</button></figcaption></figure>
 </header>
 <section class="p-row">
 <h2>A door that answers at once</h2>
@@ -53,7 +54,19 @@
 <section class="p-row">
 <h2>Attendance you can use</h2>
 <div class="p-text"><p>Live occupancy shows how full each room is. After the event, Pass gives the minutes and percentage each person spent in every session, ready for Excel, and participants download their certificate of attendance when they meet the requirements you set.</p></div>
-<figure class="shot "><picture><source srcset="/img/screens/pass-reports-dark.webp" media="(prefers-color-scheme: dark)"><img src="/img/screens/pass-reports-light.webp" alt="Pass reports: people and minutes per room, attendance per session" width="1440" height="900" loading="lazy"></picture></figure>
+<figure class="viz story s-cert" data-viz data-steps="5"><div class="viz-stage" data-surface="console" role="img" aria-label="Animation: Sofia Navarro is scanned in at 09:02 and out at 12:40 at the Hall A door. Pass counts 195 minutes in sessions, 87% of the program where 75% is asked, and her certificate of attendance is ready to download."><div aria-hidden="true"><div class="st-flow">
+<div class="st-tile"><span class="st-label"><span>At the doors · Hall A</span></span>
+<div class="st-row at-1">Sofia Navarro<small>09:02 → in</small></div>
+<div class="st-row at-2">Sofia Navarro<small>12:40 ← out</small></div></div>
+<div class="st-link go-3"></div>
+<div class="st-tile hot-3"><span class="st-label"><span>Attendance</span></span>
+<div class="st-row at-3 late">195 minutes in sessions</div>
+<div class="st-row at-4">87% of the program<i class="f-meter wide"><b style="width:87%"></b></i><small>you ask for 75%</small></div></div>
+<div class="st-link go-5"></div>
+<div class="st-tile hot-5"><span class="st-label"><span>Certificate</span></span>
+<div class="st-stack"><div class="st-empty till-5 late">Not yet</div>
+<div class="st-paper at-5 late"><b>Certificate of attendance</b>Sofia Navarro<span class="f-pill f-spot">Ready to download</span></div></div></div>
+</div></div></div><figcaption><span><b>Scans become minutes. Minutes become the certificate.</b> Whoever meets the requirements you set downloads it themselves.</span><button type="button" class="viz-pp" hidden data-pause="Pause" data-play="Play">Pause</button></figcaption></figure><figure class="shot "><picture><source srcset="/img/screens/pass-reports-dark.webp" media="(prefers-color-scheme: dark)"><img src="/img/screens/pass-reports-light.webp" alt="Pass reports: people and minutes per room, attendance per session" width="1440" height="900" loading="lazy"></picture></figure>
 </section>
 <section class="p-row">
 <h2>Nothing to install</h2>

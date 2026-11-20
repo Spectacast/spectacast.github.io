@@ -4,7 +4,7 @@
 
 {{cta}}
 
-{{shot:pass-live|Pass während des Kongresses: wie viele Personen in jedem Raum sind, und die letzten Scans an den Eingängen}}
+{{loop:pass-scan|Ein Badge am Eingang: Das Telefon antwortet in Grün, und der Zähler des Saals steigt.|Bildschirmaufnahme von Pass: Der Badge von Sofia Navarro wird am Eingang von Saal A gelesen, die Einlass-App wird grün mit „Willkommen Sofia“, und auf der Live-Seite steigt Saal A von 61 auf 62, mit ihrem Scan oben in der Liste}}
 
 ## Ein Eingang, der sofort antwortet
 
@@ -19,6 +19,8 @@ Legen Sie Räume, Eingänge und Sessions an, die Kategorien der Teilnehmenden un
 ## Anwesenheit, mit der Sie arbeiten können
 
 Die Belegung in Echtzeit zeigt, wie voll jeder Raum ist. Nach der Veranstaltung liefert Pass die Minuten und den Anteil, den jede Person in jeder Session verbracht hat, bereit für Excel, und Teilnehmende laden ihre Teilnahmebescheinigung herunter, wenn sie die Anforderungen erfüllen, die Sie festlegen.
+
+{{story:cert}}
 
 {{shot:pass-reports|Berichte in Pass: Personen und Minuten pro Raum, Anwesenheit pro Session}}
 

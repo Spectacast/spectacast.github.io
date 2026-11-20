@@ -16,11 +16,12 @@
 <meta property="og:title" content="Spectacast Pass">
 <meta property="og:description" content="Acreditaciones, accesos y asistencia. Cada acreditación lleva un código QR; en cada puerta un teléfono, una tableta o cualquier lector lo lee y responde al instante, y después Pass te dice quién…">
 <meta property="og:url" content="https://spectacast.com/es/productos/pass/">
-<meta property="og:image" content="https://spectacast.com/img/og/pass-live-light.jpg">
+<meta property="og:image" content="https://spectacast.com/img/og/pass-scan-es.jpg">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/design/spectacast.css">
 <link rel="stylesheet" href="/site.css">
+<script src="/site.js" defer></script>
 </head>
 <body>
 <div class="wrap">
@@ -37,7 +38,7 @@
 
 <div class="cta-row"><a class="sc-btn sc-btn--primary" href="/es/contacto/">Contacto</a><a class="sc-btn" href="/es/precios/">Ver precios</a></div>
 
-<figure class="shot "><picture><source srcset="/img/screens/pass-live-dark.webp" media="(prefers-color-scheme: dark)"><img src="/img/screens/pass-live-light.webp" alt="Pass durante el congreso: cuántas personas hay en cada sala y las últimas lecturas en las puertas" width="1440" height="900"></picture></figure>
+<figure class="viz loop" data-viz style="--focus:0%;--crop:73 / 62"><video class="for-light" muted loop playsinline preload="none" poster="/img/loops/pass-scan-es.webp" width="1280" height="708" aria-label="Grabación de pantalla de Pass: se lee la acreditación de Sofia Navarro en la puerta de la Sala A, la app de puerta se pone verde con «Bienvenido/a Sofia» y, en la página En directo, la Sala A pasa de 61 a 62 con su lectura arriba en la lista"><source src="/img/loops/pass-scan-es.webm" type="video/webm"><source src="/img/loops/pass-scan-es.mp4" type="video/mp4"></video><video class="for-dark" muted loop playsinline preload="none" style="background-image:url(/img/loops/pass-scan-dark-es.webp)" width="1280" height="708" aria-label="Grabación de pantalla de Pass: se lee la acreditación de Sofia Navarro en la puerta de la Sala A, la app de puerta se pone verde con «Bienvenido/a Sofia» y, en la página En directo, la Sala A pasa de 61 a 62 con su lectura arriba en la lista"><source src="/img/loops/pass-scan-dark-es.webm" type="video/webm"><source src="/img/loops/pass-scan-dark-es.mp4" type="video/mp4"></video><figcaption><span>Una acreditación en la puerta: el teléfono responde en verde y el contador de la sala sube.</span><button type="button" class="viz-pp" hidden data-pause="Pausa" data-play="Reproducir">Pausa</button></figcaption></figure>
 </header>
 <section class="p-row">
 <h2>Una puerta que responde al instante</h2>
@@ -53,7 +54,19 @@
 <section class="p-row">
 <h2>Asistencia que puedes usar</h2>
 <div class="p-text"><p>La ocupación en tiempo real muestra lo llena que está cada sala. Después del evento, Pass da los minutos y el porcentaje que cada persona pasó en cada sesión, listos para Excel, y los participantes descargan su certificado de asistencia cuando cumplen los requisitos que tú fijas.</p></div>
-<figure class="shot "><picture><source srcset="/img/screens/pass-reports-dark.webp" media="(prefers-color-scheme: dark)"><img src="/img/screens/pass-reports-light.webp" alt="Informes de Pass: personas y minutos por sala, asistencia por sesión" width="1440" height="900" loading="lazy"></picture></figure>
+<figure class="viz story s-cert" data-viz data-steps="5"><div class="viz-stage" data-surface="console" role="img" aria-label="Animación: a Sofia Navarro se le lee la acreditación al entrar a las 09:02 y al salir a las 12:40 en la puerta de la Sala A. Pass cuenta 195 minutos en sesiones, el 87 % del programa cuando se pide el 75 %, y su certificado de asistencia queda listo para descargar."><div aria-hidden="true"><div class="st-flow">
+<div class="st-tile"><span class="st-label"><span>En las puertas · Sala A</span></span>
+<div class="st-row at-1">Sofia Navarro<small>09:02 → entrada</small></div>
+<div class="st-row at-2">Sofia Navarro<small>12:40 ← salida</small></div></div>
+<div class="st-link go-3"></div>
+<div class="st-tile hot-3"><span class="st-label"><span>Asistencia</span></span>
+<div class="st-row at-3 late">195 minutos en sesiones</div>
+<div class="st-row at-4">87 % del programa<i class="f-meter wide"><b style="width:87%"></b></i><small>pides el 75 %</small></div></div>
+<div class="st-link go-5"></div>
+<div class="st-tile hot-5"><span class="st-label"><span>Certificado</span></span>
+<div class="st-stack"><div class="st-empty till-5 late">Todavía no</div>
+<div class="st-paper at-5 late"><b>Certificado de asistencia</b>Sofia Navarro<span class="f-pill f-spot">Listo para descargar</span></div></div></div>
+</div></div></div><figcaption><span><b>Las lecturas se convierten en minutos. Los minutos, en el certificado.</b> Quien cumple los requisitos que pones lo descarga por su cuenta.</span><button type="button" class="viz-pp" hidden data-pause="Pausa" data-play="Reproducir">Pausa</button></figcaption></figure><figure class="shot "><picture><source srcset="/img/screens/pass-reports-dark.webp" media="(prefers-color-scheme: dark)"><img src="/img/screens/pass-reports-light.webp" alt="Informes de Pass: personas y minutos por sala, asistencia por sesión" width="1440" height="900" loading="lazy"></picture></figure>
 </section>
 <section class="p-row">
 <h2>Nada que instalar</h2>

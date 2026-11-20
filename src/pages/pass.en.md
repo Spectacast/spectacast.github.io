@@ -4,7 +4,7 @@
 
 {{cta}}
 
-{{shot:pass-live|Pass during the congress: how many people are in each room, and the latest scans at the doors}}
+{{loop:pass-scan|A badge at the door: the phone answers in green, and the room's count goes up.|Screen recording of Pass: Sofia Navarro's badge is read at the Hall A door, the door app turns green with "Welcome Sofia", and on the Live page Hall A goes from 61 to 62 with her scan at the top of the list}}
 
 ## A door that answers at once
 
@@ -19,6 +19,8 @@ Set up the rooms, doors and sessions, the categories of attendees and the rules 
 ## Attendance you can use
 
 Live occupancy shows how full each room is. After the event, Pass gives the minutes and percentage each person spent in every session, ready for Excel, and participants download their certificate of attendance when they meet the requirements you set.
+
+{{story:cert}}
 
 {{shot:pass-reports|Pass reports: people and minutes per room, attendance per session}}
 

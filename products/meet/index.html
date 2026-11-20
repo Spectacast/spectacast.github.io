@@ -21,6 +21,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/design/spectacast.css">
 <link rel="stylesheet" href="/site.css">
+<script src="/site.js" defer></script>
 </head>
 <body>
 <div class="wrap">
@@ -40,7 +41,20 @@
 <section class="p-row">
 <h2>Every remote speaker is a source</h2>
 <div class="p-text"><p>A surgeon in the operating room, a speaker at home, the slides someone shares: each arrives on the hall's network as its own video and audio feed over NDI. The hall's mixer or OBS picks them like any other camera, and the hall's program goes back into the meeting, so the remote speakers see and hear the room.</p></div>
-
+<figure class="viz story s-feeds" data-viz data-steps="5"><div class="viz-stage" data-surface="console" role="img" aria-label="Animation: a speaker at home, a surgeon in the operating room and a screen share are in the Zoom meeting. Spectacast Meet on the hall PC gives each one a feed of its own over NDI, they appear one by one as sources in OBS or the mixer, and the first is put on the screen."><div aria-hidden="true"><div class="st-flow">
+<div class="st-tile"><span class="st-label"><span>The Zoom meeting</span></span>
+<div class="st-row">Dr. Elena Ortega<small>Speaker, at home</small></div>
+<div class="st-row">Prof. Jonas Weber<small>Surgeon, in the operating room</small></div>
+<div class="st-row">Slides<small>A screen share</small></div></div>
+<div class="st-link go-1"></div>
+<div class="st-tile hot-1"><span class="st-label"><span>Hall PC · Spectacast Meet</span></span>
+<div class="st-row at-1 late">A feed for each one<small>video and sound, over NDI</small></div></div>
+<div class="st-link go-2"></div>
+<div class="st-tile"><span class="st-label"><span>Sources in OBS or the mixer</span></span>
+<div class="st-row f-pair at-2 late"><span>Dr. Elena Ortega</span><span class="f-pill f-live at-5">On the screen</span></div>
+<div class="st-row at-3">Prof. Jonas Weber</div>
+<div class="st-row at-4">Slides</div></div>
+</div></div></div><figcaption><span><b>Each remote speaker becomes a source of their own.</b> The hall picks them like cameras.</span><button type="button" class="viz-pp" hidden data-pause="Pause" data-play="Play">Pause</button></figcaption></figure>
 </section>
 <section class="p-row">
 <h2>Driven from the control room</h2>
@@ -50,7 +64,7 @@
 <section class="p-row">
 <h2>Interpretation in the meeting</h2>
 <div class="p-text"><p>When the meeting has interpretation channels, Meet can show a clear card for each language and carry the interpreter's audio, including a voice from Spectacast Translator, so listeners pick their language in the meeting as usual.</p></div>
-<figure class="shot "><img src="/img/screens/meet-interpreter-card-en.webp" alt="The card Meet shows on an interpretation channel: the language and &quot;Live interpretation&quot;" width="1280" height="720"></figure>
+<figure class="shot "><img src="/img/screens/meet-interpreter-card-en.webp" alt="The card Meet shows on an interpretation channel: the language and &quot;Live interpretation&quot;" width="1280" height="720" loading="lazy"></figure>
 </section>
 <section class="p-row">
 <h2>What it needs</h2>
