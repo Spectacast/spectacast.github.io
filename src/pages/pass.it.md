@@ -10,7 +10,7 @@
 
 Apri l'app dell'ingresso su qualsiasi telefono o tablet, oppure collega un lettore a tastiera a un portatile. Ogni badge riceve una risposta a tutto schermo in verde, giallo o rosso con un suono, con il nome e la categoria della persona. Se la rete cade, l'ingresso continua a decidere da solo e invia le letture quando la rete torna.
 
-{{phone:pass-door-welcome|L'app dell'ingresso su un telefono: uno schermo verde con «Welcome Sofia»}}
+{{closeup:pass-answers|Le tre risposte dell'app dell'ingresso, ognuna su un telefono: verde per un'entrata con il nome della persona, giallo quando viene letto un badge che risulta già dentro, con un pulsante per continuare, e rosso per un badge che non si trova|**Verde**: avanti, con un saluto per nome.|**Giallo**: prima guarda. Questo badge risulta già dentro, e l'ingresso aspetta un tocco.|**Rosso**: non valido, con cosa fare.}}
 
 ## Il tuo evento, le tue regole
 

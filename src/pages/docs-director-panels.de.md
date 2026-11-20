@@ -14,6 +14,8 @@ Klicken Sie auf der Seite **Panels** auf **Bearbeiten**. Jetzt fügt ein Klick a
 
 **+ Panel** fügt eine Seite hinzu. Wer sich mit der Operator-PIN anmeldet, sieht die Panels und sonst nichts.
 
+{{closeup:director-build-panel|Nahaufnahme des Panel-Editors von Director: die Reihe der fertigen Blöcke, das Raster des Panels mit leeren Zellen und die Taste Speichern|**Mit einem Block beginnen**: ein ganzer Saal, ein Meeting oder ein Monitor, fertig.|**Auf eine leere Zelle klicken**, um ein Bedienelement hinzuzufügen, oder auf ein Bedienelement, um es zu ändern.|**Speichern**, und das Panel ist einsatzbereit.}}
+
 ## Bedienelemente
 
 | Bedienelement | Was es tut |

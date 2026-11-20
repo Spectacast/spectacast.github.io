@@ -10,7 +10,7 @@
 
 Open the door app on any phone or tablet, or plug a keyboard scanner into a laptop. Each badge gets a full-screen answer in green, amber or red with a sound, and the person's name and category. When the network drops, the door keeps deciding on its own and sends its scans when it is back.
 
-{{phone:pass-door-welcome|The door app on a phone: a green screen with "Welcome Sofia"}}
+{{closeup:pass-answers|The door app's three answers, each on a phone: green for an entry with the person's name, amber when a badge that is already inside is read again, with a button to continue, and red for a badge that is not found|**Green**: come in, greeted by name.|**Amber**: look first. This badge is already inside, and the door waits for a tap.|**Red**: not valid, with what to do next.}}
 
 ## Your event, your rules
 

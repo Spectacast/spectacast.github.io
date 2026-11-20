@@ -10,7 +10,7 @@
 
 Öffnen Sie die Einlass-App auf einem Telefon oder Tablet, oder schließen Sie einen Tastatur-Scanner an einen Laptop an. Jeder Badge bekommt eine bildschirmfüllende Antwort in Grün, Gelb oder Rot mit einem Ton, dazu Name und Kategorie der Person. Fällt das Netzwerk aus, entscheidet der Eingang selbst weiter und sendet seine Scans, sobald es zurück ist.
 
-{{phone:pass-door-welcome|Die Einlass-App auf einem Telefon: ein grüner Bildschirm mit „Welcome Sofia“}}
+{{closeup:pass-answers|Die drei Antworten der Einlass-App, je auf einem Telefon: Grün für einen Eingang mit dem Namen der Person, Gelb, wenn ein Badge gelesen wird, der schon drinnen ist, mit einer Taste zum Fortfahren, und Rot für einen Badge, der nicht gefunden wird|**Grün**: herein, mit Namen begrüßt.|**Gelb**: erst hinsehen. Dieser Badge ist schon drinnen, und der Eingang wartet auf ein Tippen.|**Rot**: ungültig, mit dem nächsten Schritt.}}
 
 ## Ihre Veranstaltung, Ihre Regeln
 

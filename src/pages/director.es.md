@@ -34,6 +34,14 @@ Director habla con cada herramienta mediante un conector, así que el vídeo, el
 
 Cómo conectar un equipo tuyo, programar las reglas y usar la API: [Hecho para ampliarse](/es/desarrolladores/).
 
+## Hecho a tu manera
+
+Nada en el dashboard es fijo. Los paneles se montan con bloques en el editor, las reglas se rellenan como cuando, solo si y entonces, y un equipo propio recibe un driver sin escribir código.
+
+{{closeup:director-build-panel|Primer plano del editor de paneles de Director: la fila de bloques ya hechos, la cuadrícula del panel con celdas vacías y el botón Guardar|**Empieza con un bloque**: una sala entera, una reunión o un monitor, ya hechos.|**Haz clic en una celda vacía** para añadir un control, o en un control para cambiarlo.|**Guarda**, y el panel está listo para usar.}}
+
+{{closeup:director-build-rule|Primer plano del editor de reglas de Director con la regla «Active speaker → Speaker»: cuando cambia quien habla en Zoom Sala A, tras un tiempo de espera de 1500 ms, OBS Sala A pone su escena|**Cuando**: lo que dispara la regla. Aquí, cambia quien habla en la Sala A.|**Solo si**: una condición y un tiempo de espera. Aquí, quien habla debe conservar la palabra un segundo y medio.|**Entonces**: lo que hace. Aquí, OBS de la Sala A cambia de escena.}}
+
 ## Hecho para la sala
 
 Director funciona en un PC de la sala de control y habla con los PC de sala por la red del propio recinto, así que el evento sigue aunque falle internet. La página de la flota muestra de un vistazo el PC, la reunión y la salida de cada sala; los paneles se montan con bloques, de modo que una sala nueva es una copia más, no un diseño nuevo. El panel habla español, inglés, alemán e italiano.

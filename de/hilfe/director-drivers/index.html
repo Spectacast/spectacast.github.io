@@ -16,7 +16,7 @@
 <meta property="og:title" content="Ihr eigener Treiber · Spectacast">
 <meta property="og:description" content="Die Seite Treiber beschreibt das Protokoll eines Geräts ohne Code. Danach hat das Gerät Aktionen, Ereignisse und einen Zustand wie ein mitgeliefertes, und Panels und Regeln nutzen es genauso.">
 <meta property="og:url" content="https://spectacast.com/de/hilfe/director-drivers/">
-<meta property="og:image" content="https://spectacast.com/brand/lockup-light.png">
+<meta property="og:image" content="https://spectacast.com/img/og/director-build-driver-de.jpg">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/design/spectacast.css">
@@ -39,6 +39,8 @@
 <p>Ein selbst definierter Treiber spricht einen von fünf Transporten: <strong>OSC</strong>, <strong>UDP</strong>, <strong>TCP</strong>, <strong>HTTP</strong> oder <strong>WebSocket</strong>. Das deckt die meisten Lichtpulte, Audiomischer, Bildmischer, Kreuzschienen und Haussteuerungen ab.</p>
 <h2>1. Den Treiber anlegen</h2>
 <p>Klicken Sie auf der Seite <strong>Treiber</strong> auf <strong>+ Treiber über…</strong> und wählen Sie den Transport. Geben Sie dem Treiber einen Namen und listen Sie die Einstellungen auf, die jedes seiner Geräte braucht: einen Host, einen Port, einen API-Schlüssel. Eine Einstellung hat einen Standardwert oder ist mit <strong>Pfl.</strong> (Pflichtfeld) markiert, und die Vorlagen unten lesen sie als <code>config.&lt;id&gt;</code>.</p>
+<figure class="viz closeup wide" style="max-width:1044px"><div class="cu-scroll"><div class="cu-shot" data-surface="console"><img src="/img/closeups/director-build-driver-de.webp" alt="Nahaufnahme des Treiber-Editors von Director mit dem Beispiel „Generic OSC device“: der Transport OSC über UDP, die Einstellungen, die jedes Gerät verlangt, und die ersten Befehle" width="2088" height="1120" loading="lazy"><span class="cu-mark" aria-hidden="true" style="left:71.8%;top:7.2%">1</span><span class="cu-mark" aria-hidden="true" style="left:56.8%;top:34.8%">2</span><span class="cu-mark" aria-hidden="true" style="left:40.5%;top:57.7%">3</span></div></div><figcaption><ol class="cu-legend"><li><b>Wie es spricht</b>: OSC, UDP, TCP, HTTP oder WebSocket.</li><li><b>Was jedes Gerät braucht</b>: hier zwei Ports.</li><li><b>Seine Befehle</b>: Jeder wird zu einer Aktion für Tasten und Regeln.</li></ol></figcaption></figure>
+
 <h2>2. Befehle</h2>
 <p>Klicken Sie für alles, was man dem Gerät sagen kann, auf <strong>+ Befehl</strong>. Ein Befehl wird zu einer Aktion, die Tasten und Regeln ausführen können.</p>
 <ul>

@@ -32,7 +32,7 @@ En cada puerta usa un teléfono o una tableta, o un lector de teclado conectado 
 
 La puerta responde a cada credencial al instante, a pantalla completa en verde, ámbar o rojo, con un sonido y el nombre de la persona. Si se cae la red, la puerta sigue decidiendo por sí misma y envía sus lecturas cuando vuelve la red.
 
-{{phone:pass-door-welcome|La app de puerta en un teléfono: una pantalla verde con «Welcome Sofia»}}
+{{closeup:pass-answers|Las tres respuestas de la app de puerta, cada una en un teléfono: verde para una entrada con el nombre de la persona, ámbar cuando se lee una acreditación que ya está dentro, con un botón para continuar, y rojo para una acreditación que no se encuentra|**Verde**: adelante, con un saludo por su nombre.|**Ámbar**: mira primero. Esta acreditación ya está dentro, y la puerta espera un toque.|**Rojo**: no válida, con lo que hay que hacer.}}
 
 Un **lector de teclado** funciona en la misma página de la puerta: configúralo para que envíe Enter tras cada código. Un lector en modo de almacenamiento, en una puerta sin pantalla, se vuelca después en **Subir lecturas**.
 

@@ -12,11 +12,13 @@ You test against the real device, with every message in and out listed live, and
 
 [How to describe a driver →](/docs/director-drivers/)
 
+{{closeup:director-build-driver|Close-up of Director's driver editor with the example "Generic OSC device": the transport OSC over UDP, the settings each device asks for, and the first commands|**How it talks**: OSC, UDP, TCP, HTTP or WebSocket.|**What each device needs**: here, two ports.|**Its commands**: each one becomes an action for buttons and rules.}}
+
 ## Rules, and scripts when rules are not enough
 
 Rules react to what happens in the halls: someone enters the waiting room, a speaker takes the floor, a source goes offline. Most are built from forms. Where the logic is your own, a step can be a few lines of JavaScript with the whole state in reach.
 
-{{shot:director-rules|Director's rules page: each rule with what starts it and when it last ran}}
+{{closeup:director-build-rule|Close-up of Director's rule editor with the rule "Active speaker → Speaker": when the active speaker changes in Zoom Hall A, after a hold time of 1500 ms, OBS Hall A sets its scene|**When**: what starts the rule. Here, the active speaker changes in Hall A.|**Only if**: a condition, and a hold time. Here, the speaker must keep the floor for a second and a half.|**Then**: what it does. Here, OBS in Hall A changes scene.}}
 
 [Rules and scripts →](/docs/director-rules/)
 
@@ -38,7 +40,7 @@ A Stream Deck key presses any control of the dashboard through Bitfocus Companio
 
 The dashboard's panels are yours to lay out: buttons, choices, text fields, level meters and live pictures, built once as a block and placed once per hall.
 
-{{shot:director-panels|A Director panel with four halls: one block per hall, with its meeting, its waiting room, Preview and Program}}
+{{closeup:director-build-panel|Close-up of Director's panel editor: the row of ready-made blocks, the panel's grid with empty cells, and the Save button|**Start from a block**: a whole hall, a meeting or a monitor, ready-made.|**Click an empty cell** to add a control, or a control to change it.|**Save**, and the panel is ready to use.}}
 
 [Panels →](/docs/director-panels/)
 

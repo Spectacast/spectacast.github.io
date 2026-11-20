@@ -247,7 +247,7 @@ def footer(lang, key):
 def og_image(body):
     """The page's first picture (a screenshot, or a loop's still) as a 1200 x 630 JPEG for link previews
     (some sites do not read WebP)."""
-    m = re.search(r'(?:src|poster)="/img/(screens|loops)/([\w-]+)\.webp"', body)
+    m = re.search(r'(?:src|poster)="/img/(screens|loops|closeups)/([\w-]+)\.webp"', body)
     if not m:
         return SITE + '/brand/lockup-light.png'
     from PIL import Image
