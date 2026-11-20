@@ -496,16 +496,16 @@ mark.todo {
 @keyframes r-in { 0%, 58% { opacity: 0; transform: translateY(8px); background: var(--sc-chip); } 62% { opacity: 1; transform: none; background: #24503a; } 76%, 92% { opacity: 1; transform: none; background: var(--sc-chip); } 97%, 100% { opacity: 0; } }
 @keyframes r-m3 { 0%, 60% { opacity: 1; } 62%, 95% { opacity: 0; } 97%, 100% { opacity: 1; } }
 @keyframes r-m4 { 0%, 60% { opacity: 0; } 62%, 95% { opacity: 1; } 97%, 100% { opacity: 0; } }
-@media (prefers-reduced-motion: reduce) {
-  /* Motion switched off: the end of the story as a still. */
-  .story * , .story *::after { animation: none !important; }
-  .r-guest, .r-c1, .r-m3 { opacity: 0; }
-  .r-in, .r-m4, .r-tick, .r-c0, .r-empty { opacity: 1; }
-  .r-rule { border-color: var(--sc-ok); }
-}
+/* The end of the story as a still: for visitors who switched motion off, and until site.js is there to pause
+   it (the script adds .on). */
+.story:not(.on) *, .story:not(.on) *::after { animation: none !important; }
+.story:not(.on) :is(.r-guest, .r-c1, .r-m3) { opacity: 0; }
+.story:not(.on) :is(.r-in, .r-m4, .r-tick, .r-c0, .r-empty) { opacity: 1; }
+.story:not(.on) .r-rule { border-color: var(--sc-ok); }
 
-.cu-shot { position: relative; border-radius: var(--sc-r-lg); overflow: hidden; border: 1px solid var(--sc-line); box-shadow: var(--sc-shadow); background: #0c0d10; }
-.cu-shot img { display: block; width: 100%; height: auto; }
+/* No clipping here: a mark near the edge stays whole. */
+.cu-shot { position: relative; border-radius: var(--sc-r-lg); border: 1px solid var(--sc-line); box-shadow: var(--sc-shadow); background: #0c0d10; }
+.cu-shot img { display: block; width: 100%; height: auto; border-radius: inherit; }
 .cu-mark {
   position: absolute; width: 28px; height: 28px; margin: -14px 0 0 -14px; border-radius: 50%; background: #fff; color: #111318;
   font-size: 14px; font-weight: 700; display: grid; place-items: center; box-shadow: 0 0 0 3px rgba(17, 19, 24, 0.6), 0 2px 8px rgba(0, 0, 0, 0.5);
@@ -521,6 +521,8 @@ mark.todo {
   .st-link::after { left: -4px !important; top: 8px; }
   .viz-stage { padding: 14px; }
   .cu-mark { width: 24px; height: 24px; margin: -12px 0 0 -12px; font-size: 12px; }
+  .closeup.wide .cu-scroll { overflow-x: auto; padding: 8px 0 14px; margin: -8px 0 -14px; }
+  .closeup.wide .cu-shot { min-width: 600px; box-shadow: none; }
   /* A wide loop keeps its height and loses its sides, so the text in it stays readable. */
   .loop:not(.tall) video { aspect-ratio: 3 / 2; object-fit: cover; object-position: var(--focus, 50%) 50%; }
 }

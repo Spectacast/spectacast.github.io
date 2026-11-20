@@ -12,7 +12,8 @@ const OUT = path.join(__dirname, '..', '..', 'img', 'closeups');
 fs.mkdirSync(OUT, { recursive: true });
 
 // tab: the place of the page's tab in the header (0 is Panels); clip: the region, in page pixels at 1600 wide;
-// marks: where the numbered marks go, in page pixels, read from the page so they follow each language's layout.
+// marks: where the numbered marks go, in page pixels. The hall's are fixed (its strip is laid out the same in every
+// language); the fleet's are read from the page, because its columns move with the words.
 const CLOSEUPS = [
   { name: 'director-hall', tab: 0, clip: { x: 240, y: 192, width: 452, height: 312 },
     marks: async () => [[446, 220], [446, 258], [446, 429]] },

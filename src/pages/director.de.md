@@ -4,13 +4,13 @@
 
 {{cta}}
 
-{{loop:director-speaker|Referentin auswählen, Mikrofon öffnen, ins Spotlight setzen. Drei Berührungen.|Bildschirmaufnahme von Director: Der Operator wählt Dr. Elena Ortega in Saal A, öffnet ihr Mikrofon und setzt sie ins Spotlight}}
+{{loop:director-speaker|Rednerin auswählen, Mikrofon öffnen, ins Spotlight setzen. Dreimal tippen.|Bildschirmaufnahme von Director: Der Operator wählt Dr. Elena Ortega in Saal A, öffnet ihr Mikrofon und setzt sie ins Spotlight}}
 
 ## Jeder Saal auf einem Bildschirm
 
 Jeder Saal hat seinen eigenen Streifen: wer im Meeting ist und wer spricht, Warteraum und Lobby, Preview und Program, Banner und Stream. Sie wählen eine Rednerin, bringen sie mit einem Tippen auf Sendung, und der nächste Saal steht gleich daneben. Eine Person kann einen ganzen Kongress verfolgen; beim Kongress mit 18 Sälen, für den Director gebaut wurde, war es genau eine.
 
-{{closeup:director-hall|Nahaufnahme von Saal A und Saal B in Director: beide auf Sendung, je vier Personen im Meeting mit Mikrofonpegel, und der Warteraum|**Rot heißt auf Sendung**, mit Meeting und Mikrofonen.|**Wer im Meeting ist**, jeweils mit Live-Mikrofonpegel.|**Der Warteraum**: Eine Berührung lässt eine Referentin ein.}}
+{{closeup:director-hall|Nahaufnahme von Saal A und Saal B in Director: beide auf Sendung, je der Saal-PC und drei Personen im Meeting mit Mikrofonpegel, und der Warteraum|**Rot heißt auf Sendung**, mit Meeting und Mikrofonen.|**Wer im Meeting ist**, jeweils mit Live-Mikrofonpegel.|**Der Warteraum**: Wartende auswählen, dann Zulassen.}}
 
 ## Regeln für die Routine
 
@@ -18,7 +18,7 @@ Die Faculty einlassen, sobald sie ankommt, den Warteraum so halten, wie er einge
 
 {{story:rule|Animation: Dr. Elena Ortega betritt den Warteraum von Saal A, die Regel „Automatisch zulassen“ leuchtet auf, und sie erscheint im Meeting}}
 
-{{loop:director-clip|Einen Clip auf Sendung geben: Das Mikrofon des Saals schaltet sich von selbst stumm.|Bildschirmaufnahme von Director: Der Operator legt den Clip in Saal A auf Program, der Saal wechselt auf VOD und sein Mikrofon wird stumm; zurück im Meeting öffnet es sich wieder}}
+{{loop:director-clip|Einen Clip auf Sendung bringen: Das Mikrofon des Saals schaltet sich von selbst stumm.|Bildschirmaufnahme von Director: Der Operator legt den Clip in Saal A auf Program, der Saal wechselt auf VOD und sein Mikrofon wird stumm; zurück im Meeting öffnet es sich wieder}}
 
 ## Konnektoren statt fester Technik
 

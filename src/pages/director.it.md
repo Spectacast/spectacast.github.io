@@ -4,19 +4,19 @@
 
 {{cta}}
 
-{{loop:director-speaker|Scegli una relatrice, apri il microfono, mettila in primo piano. Tre tocchi.|Registrazione dello schermo di Director: l'operatore sceglie la dott.ssa Elena Ortega nella Sala A, le apre il microfono e la mette in primo piano}}
+{{loop:director-speaker|Scegli una relatrice, apri il microfono, mettila in evidenza. Tre tocchi.|Registrazione dello schermo di Director: l'operatore sceglie la dott.ssa Elena Ortega nella Sala A, le apre il microfono e la mette in evidenza}}
 
 ## Tutte le sale su uno schermo
 
 Ogni sala ha la sua colonna: chi è nella riunione e chi parla, la sala d'attesa e la lobby, Preview e Program, il banner e lo streaming. Scegli un relatore, lo mandi in onda con un tocco, e la sala successiva è subito accanto. Una sola persona può seguire un intero congresso; al congresso di 18 sale per cui Director è nato, è andata così.
 
-{{closeup:director-hall|Primo piano della Sala A e della Sala B in Director: entrambe in onda, quattro persone in ogni riunione con il livello del microfono, e la sala d'attesa|**Rosso vuol dire in onda**, con la riunione e i microfoni.|**Chi è in riunione**, ognuno con il livello del microfono dal vivo.|**La sala d'attesa**: un tocco fa entrare un relatore.}}
+{{closeup:director-hall|Primo piano della Sala A e della Sala B in Director: entrambe in onda, il PC di sala e tre persone in ogni riunione con il livello del microfono, e la sala d'attesa|**Rosso vuol dire in onda**, con la riunione e i microfoni.|**Chi è in riunione**, ognuno con il livello del microfono dal vivo.|**La sala d'attesa**: scegli chi aspetta, poi Ammetti.}}
 
 ## Regole per la routine
 
 Ammettere la faculty appena arriva, tenere la sala d'attesa come è stata impostata, rimettere un video al suo posto quando un PC riparte, silenziare la sala mentre va un filmato: le regole reagiscono a quello che succede nella riunione, in OBS e sui microfoni, e lo fanno ogni volta allo stesso modo. Per ogni regola vedi quando è partita l'ultima volta e perché.
 
-{{story:rule|Animazione: la dott.ssa Elena Ortega entra nella sala d'attesa della Sala A, la regola «Ammetti automaticamente» si accende e lei compare in riunione}}
+{{story:rule|Animazione: la dott.ssa Elena Ortega entra nella sala d'attesa della Sala A, la regola «Ammissione automatica» si accende e lei compare in riunione}}
 
 {{loop:director-clip|Manda in onda un clip: il microfono della sala si silenzia da solo.|Registrazione dello schermo di Director: l'operatore mette il clip su Program nella Sala A, la sala passa a VOD e il suo microfono si silenzia; tornando alla riunione si riapre}}
 

@@ -4,13 +4,13 @@
 
 {{cta}}
 
-{{loop:director-speaker|Elige a una ponente, abre su micrófono y ponla en primer plano. Tres toques.|Grabación de pantalla de Director: el operador elige a la Dra. Elena Ortega en la Sala A, abre su micrófono y la pone en primer plano}}
+{{loop:director-speaker|Elige a una ponente, abre su micrófono y destácala. Tres toques.|Grabación de pantalla de Director: el operador elige a la Dra. Elena Ortega en la Sala A, abre su micrófono y la destaca}}
 
 ## Todas las salas en una pantalla
 
 Cada sala tiene su propia franja: quién está en la reunión y quién habla, la sala de espera y el vestíbulo, Preview y Program, el rótulo y el streaming. Eliges a un ponente, lo pones al aire con un toque, y la siguiente sala está justo al lado. Una sola persona puede seguir todo un congreso; en el congreso de 18 salas para el que se creó Director, así fue.
 
-{{closeup:director-hall|Primer plano de la Sala A y la Sala B en Director: las dos al aire, cuatro personas en cada reunión con su nivel de micrófono, y la sala de espera|**Rojo significa al aire**, con la reunión y los micrófonos.|**Quién está en la reunión**, cada uno con su nivel de micrófono en vivo.|**La sala de espera**: un toque deja entrar a un ponente.}}
+{{closeup:director-hall|Primer plano de la Sala A y la Sala B en Director: las dos al aire, el PC de la sala y tres personas en cada reunión con su nivel de micrófono, y la sala de espera|**Rojo significa al aire**, con la reunión y los micrófonos.|**Quién está en la reunión**, cada uno con su nivel de micrófono en vivo.|**La sala de espera**: elige a quien espera y pulsa Admitir.}}
 
 ## Reglas para la rutina
 

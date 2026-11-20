@@ -30,11 +30,17 @@ async function withDirector(repo, lang, fn) {
   // a file dropped in the cue folder makes someone enter a hall's waiting room.
   const cues = path.join(work, 'cues');
   fs.mkdirSync(cues);
-  const demo = fs.readFileSync(path.join(repo, 'scripts/channels-demo.ts'), 'utf8')
-    .replace(/const GUESTS = \[[^\]]*\];/, "const GUESTS = ['Dr. Elena Ortega', 'Prof. Jonas Weber', 'Dr. Chiara Fontana', 'Dr. Mateo Serrano', 'Dr. Lena Hartmann', 'Prof. Davide Greco'];")
-    .replace("name: 'bob'", "name: 'Dr. Nils Brandt'")
-    .replace('GUESTS.slice(0, 2 + fakes.length)', '[...GUESTS.slice(fakes.length), ...GUESTS.slice(0, fakes.length)].slice(0, 2 + fakes.length)')
-    + `
+  // Each change must find its place: if Director's demo script moved on, stop here and not with wrong pictures.
+  const swap = (text, from, to) => {
+    const out = text.replace(from, to);
+    if (out === text) throw new Error(`scripts/channels-demo.ts has changed: ${from} is not in it any more`);
+    return out;
+  };
+  let demo = fs.readFileSync(path.join(repo, 'scripts/channels-demo.ts'), 'utf8');
+  demo = swap(demo, /const GUESTS = \[[^\]]*\];/, "const GUESTS = ['Dr. Elena Ortega', 'Prof. Jonas Weber', 'Dr. Chiara Fontana', 'Dr. Mateo Serrano', 'Dr. Lena Hartmann', 'Prof. Davide Greco'];");
+  demo = swap(demo, "name: 'bob'", "name: 'Dr. Nils Brandt'");
+  demo = swap(demo, 'GUESTS.slice(0, 2 + fakes.length)', '[...GUESTS.slice(fakes.length), ...GUESTS.slice(0, fakes.length)].slice(0, 2 + fakes.length)');
+  demo += `
 import { readdirSync, readFileSync, rmSync } from 'node:fs';
 setInterval(() => {
   for (const file of readdirSync(${JSON.stringify(cues)})) {
@@ -50,10 +56,17 @@ setInterval(() => {
   let n = 0;
   const cue = (what, name, hall = 0) => fs.writeFileSync(path.join(cues, `${n++}.json`), JSON.stringify({ do: what, name, hall }));
   const engine = spawn('node', [...node, runner, '--show', path.join(work, 'show.json'), '--out', path.join(work, 'run.json'), '--port', '4720', '--listen-port', '12441'], { cwd: repo, stdio: 'ignore' });
-  const web = spawn('npm', ['exec', '-w', 'apps/web', '--', 'vite', '--port', '4721', '--strictPort'], { cwd: repo, stdio: 'ignore', env: { ...process.env, ENGINE_URL: 'http://127.0.0.1:4720' } });
-  const stop = () => { engine.kill(); web.kill(); fs.rmSync(runner, { force: true }); fs.rmSync(work, { recursive: true, force: true }); };
+  // In a group of its own, so that stopping it also stops the vite that npm started.
+  const web = spawn('npm', ['exec', '-w', 'apps/web', '--', 'vite', '--port', '4721', '--strictPort'], { cwd: repo, stdio: 'ignore', detached: true, env: { ...process.env, ENGINE_URL: 'http://127.0.0.1:4720' } });
+  const stop = () => {
+    engine.kill();
+    try { process.kill(-web.pid); } catch { web.kill(); }
+    fs.rmSync(runner, { force: true }); fs.rmSync(work, { recursive: true, force: true });
+  };
   try {
-    for (let i = 0; i < 150; i++) { try { if ((await fetch('http://127.0.0.1:4721/')).ok) break; } catch {} await sleep(200); }
+    let up = false;
+    for (let i = 0; i < 150 && !up; i++) { try { up = (await fetch('http://127.0.0.1:4721/')).ok; } catch {} if (!up) await sleep(200); }
+    if (!up) throw new Error('the Director dashboard did not start within 30 seconds');
     await sleep(5500);
     return await fn('http://127.0.0.1:4721/', cue);
   } finally { stop(); }

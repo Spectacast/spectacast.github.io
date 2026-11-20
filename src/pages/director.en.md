@@ -10,13 +10,13 @@
 
 Each hall gets its own strip: who is in the meeting and who is talking, the waiting room and the lobby, Preview and Program, the banner and the stream. Pick a speaker, put them on air with one touch, and the next hall is right beside it. One operator can follow a whole congress; at the 18-hall congress Director was built for, one did.
 
-{{closeup:director-hall|Close-up of Hall A and Hall B in Director: both on air, four people in each meeting with their microphone levels, and the waiting room|**Red means on air**, with the meeting and the mics.|**Who is in the meeting**, each with a live microphone level.|**The waiting room**: one touch lets a speaker in.}}
+{{closeup:director-hall|Close-up of Hall A and Hall B in Director: both on air, the hall's PC and three speakers in each meeting with their microphone levels, and the waiting room|**Red means on air**, with the meeting and the mics.|**Who is in the meeting**, each with a live microphone level.|**The waiting room**: pick who is waiting, then Admit.}}
 
 ## Rules for the routine
 
 Admit the faculty as they arrive, keep the waiting room as it was set, put a clip back where it was after a PC restarts, mute the hall when a video plays: rules react to what happens in the meeting, in OBS and on the mics, and do it the same way every time. Each rule shows when it last ran and why.
 
-{{story:rule|Animation: Dr. Elena Ortega enters Hall A's waiting room, the rule "Admit automatically" lights up, and she appears in the meeting}}
+{{story:rule|Animation: Dr. Elena Ortega enters Hall A's waiting room, the rule "Auto admit" lights up, and she appears in the meeting}}
 
 {{loop:director-clip|Put a clip on air: the hall's own microphone mutes by itself.|Screen recording of Director: the operator puts the clip on Program in Hall A, the hall turns to VOD and its microphone mutes; back on the meeting, it opens again}}
 

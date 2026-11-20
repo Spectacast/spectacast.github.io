@@ -15,34 +15,35 @@
       var run = visible && !stopped;
       if (video) {
         if (run) {
-          if (!video.currentSrc && !video.dataset.loaded) {
-            video.dataset.loaded = '1';
-            video.querySelectorAll('source[data-src]').forEach(function (s) { s.src = s.dataset.src; });
-            video.load();
-          }
-          var p = video.play();
-          if (p && p.catch) p.catch(function () {});
+          var p = video.play();   // the file is fetched now, not before (preload="none")
+          // The browser may refuse to start it (a phone saving power): then it is stopped, and the button says so.
+          if (p && p.catch) p.catch(function () { if (!stopped && video.paused) { stopped = true; label(); } });
         } else {
           video.pause();
         }
       } else {
         figure.classList.toggle('paused', !run);
       }
-      if (button) {
-        button.textContent = stopped ? button.dataset.play : button.dataset.pause;
-        button.setAttribute('aria-pressed', String(stopped));
-      }
+      label();
+    }
+    function label() {
+      if (button) button.textContent = stopped ? button.dataset.play : button.dataset.pause;
     }
 
+    // An animated explanation moves only once this script is here to pause it; until then it is its still.
+    if (!video && !still) figure.classList.add('on');
     if (button && (video || !still)) {
       button.hidden = false;
-      button.addEventListener('click', function () { stopped = !stopped; apply(); });
+      // Whoever presses Play is looking at it, however little of it the window shows.
+      button.addEventListener('click', function () { stopped = !stopped; if (!stopped) visible = true; apply(); });
     }
     if ('IntersectionObserver' in window) {
+      // On screen: a good third of it, or, when it is taller than the window, half the window.
       new IntersectionObserver(function (entries) {
-        visible = entries[entries.length - 1].isIntersecting;
+        var e = entries[entries.length - 1];
+        visible = e.isIntersecting && (e.intersectionRatio >= 0.35 || e.intersectionRect.height >= window.innerHeight * 0.5);
         apply();
-      }, { threshold: 0.35 }).observe(figure);
+      }, { threshold: [0, 0.1, 0.2, 0.35, 0.5, 0.75] }).observe(figure);
     } else {
       visible = true;
       apply();
